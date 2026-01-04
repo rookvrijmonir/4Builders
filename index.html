@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Builders Vastgoedonderhoud B.V. | Amsterdam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#111111',
+                            gray: '#1A1A1A',
+                            orange: '#FF5722',
+                            light: '#F3F4F6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        header: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex-shrink-0">
+                    <span class="font-header text-2xl font-bold tracking-wider text-white">4<span class="text-brand-orange">BUILDERS</span></span>
+                </a>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#diensten" class="hover:text-brand-orange transition px-3 py-2 text-sm font-medium" data-lang-key="nav_services">Diensten</a>
+                        <a href="#prijzen" class="hover:text-brand-orange transition px-3 py-2 text-sm font-medium" data-lang-key="nav_pricing">Prijzen</a>
+                        <a href="#over-ons" class="hover:text-brand-orange transition px-3 py-2 text-sm font-medium" data-lang-key="nav_about">Over Ons</a>
+                        <a href="#contact" class="bg-brand-orange text-white hover:bg-orange-600 px-4 py-2 rounded-sm text-sm font-bold uppercase tracking-wide transition" data-lang-key="nav_contact">Offerte Aanvragen</a>
+                        
+                        <button onclick="switchLanguage()" class="text-xs border border-white/20 px-2 py-1 rounded hover:bg-white/10">
+                            <span id="current-lang">NL</span> / <span class="text-gray-500">EN</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop" alt="Renovatie Amsterdam" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+            <div class="inline-flex items-center px-3 py-1 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-xs font-bold uppercase tracking-widest mb-6">
+                <i class="ph ph-map-pin mr-2"></i> Amsterdam Centrum & Omgeving
+            </div>
+            <h1 class="text-5xl md:text-7xl font-header font-bold text-white mb-6 uppercase leading-tight">
+                <span data-lang-key="hero_title">Achterhoekse Nuchterheid.<br>Amsterdamse Kwaliteit.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-300 font-light" data-lang-key="hero_sub">
+                Wij komen wél opdagen. Gespecialiseerd vastgoedonderhoud door vakmannen die bouwen aan hun toekomst en uw pand.
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#contact" class="px-8 py-4 bg-brand-orange text-white font-bold rounded-sm uppercase tracking-wider hover:bg-orange-600 transition shadow-lg shadow-orange-900/20" data-lang-key="hero_cta_primary">
+                    Prijsindicatie aanvragen
+                </a>
+                <a href="https://wa.me/31630420742" target="_blank" class="px-8 py-4 border border-white/30 bg-white/5 backdrop-blur-sm text-white font-bold rounded-sm uppercase tracking-wider hover:bg-white/10 transition flex items-center">
+                    <i class="ph ph-whatsapp-logo text-xl mr-2"></i> WhatsApp
+                </a>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-400 border-t border-white/10 pt-8">
+                <div class="flex items-center justify-center gap-3">
+                    <i class="ph ph-clock text-brand-orange text-2xl"></i>
+                    <span data-lang-key="usp_1">Binnen 24 uur reactie. Altijd.</span>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <i class="ph ph-handshake text-brand-orange text-2xl"></i>
+                    <span data-lang-key="usp_2">Afspraak = Afspraak</span>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <i class="ph ph-heart text-brand-orange text-2xl"></i>
+                    <span data-lang-key="usp_3">Maatschappelijk Betrokken</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="diensten" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-header font-bold text-white uppercase mb-4" data-lang-key="services_title">Onze Vakgebieden</h2>
+                <div class="w-20 h-1 bg-brand-orange mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="schilderwerk.html" class="group block bg-brand-gray p-8 border border-white/5 hover:border-brand-orange/50 transition duration-300 rounded-sm">
+                    <i class="ph ph-paint-brush-broad text-4xl text-brand-orange mb-6 group-hover:scale-110 transition"></i>
+                    <h3 class="text-xl font-header font-bold mb-3" data-lang-key="service_1_title">Schilderwerk</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-lang-key="service_1_desc">Strak lakwerk voor kozijnen, deuren en muren.</p>
+                </a>
+                <a href="vloeren.html" class="group block bg-brand-gray p-8 border border-white/5 hover:border-brand-orange/50 transition duration-300 rounded-sm">
+                    <i class="ph ph-squares-four text-4xl text-brand-orange mb-6 group-hover:scale-110 transition"></i>
+                    <h3 class="text-xl font-header font-bold mb-3" data-lang-key="service_2_title">Vloeren</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-lang-key="service_2_desc">Laminaat en PVC leggen. Inclusief ondervloer.</p>
+                </a>
+                <a href="timmerwerk.html" class="group block bg-brand-gray p-8 border border-white/5 hover:border-brand-orange/50 transition duration-300 rounded-sm">
+                    <i class="ph ph-hammer text-4xl text-brand-orange mb-6 group-hover:scale-110 transition"></i>
+                    <h3 class="text-xl font-header font-bold mb-3" data-lang-key="service_3_title">Timmerwerk</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-lang-key="service_3_desc">Kasten op maat, deuren en constructies.</p>
+                </a>
+                <a href="tuin.html" class="group block bg-brand-gray p-8 border border-white/5 hover:border-brand-orange/50 transition duration-300 rounded-sm">
+                    <i class="ph ph-potted-plant text-4xl text-brand-orange mb-6 group-hover:scale-110 transition"></i>
+                    <h3 class="text-xl font-header font-bold mb-3" data-lang-key="service_4_title">Tuin & Bestrating</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-lang-key="service_4_desc">Renovatie van binnentuinen en terrassen.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="prijzen" class="py-24 bg-[#0a0a0a]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-header font-bold text-white uppercase mb-4" data-lang-key="pricing_title">Transparante Vanaf Prijzen</h2>
+                <p class="text-gray-400" data-lang-key="pricing_sub">Geen uurtje-factuurtje. Duidelijkheid vooraf.</p>
+            </div>
+            <div class="overflow-hidden border border-white/10 rounded-sm">
+                <table class="min-w-full text-left text-sm">
+                    <thead class="bg-brand-gray text-white font-header uppercase tracking-wider">
+                        <tr>
+                            <th class="px-6 py-4" data-lang-key="table_work">Werkzaamheden</th>
+                            <th class="px-6 py-4 text-right" data-lang-key="table_price">Vanaf Prijs (ex. BTW)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5 text-gray-300">
+                        <tr class="hover:bg-white/5 transition"><td class="px-6 py-4">Muren witten (Latex spuiten)</td><td class="px-6 py-4 text-right font-bold text-brand-orange">€ 12,- / m²</td></tr>
+                        <tr class="hover:bg-white/5 transition"><td class="px-6 py-4">Kozijnen & Deuren lakken</td><td class="px-6 py-4 text-right font-bold text-brand-orange">€ 150,- / stuk</td></tr>
+                        <tr class="hover:bg-white/5 transition"><td class="px-6 py-4">Laminaat leggen (incl. ondervloer)</td><td class="px-6 py-4 text-right font-bold text-brand-orange">€ 14,- / m²</td></tr>
+                        <tr class="hover:bg-white/5 transition"><td class="px-6 py-4">Deuren afhangen / inkorten</td><td class="px-6 py-4 text-right font-bold text-brand-orange">€ 85,- / stuk</td></tr>
+                        <tr class="hover:bg-white/5 transition"><td class="px-6 py-4">Bestrating Binnentuin</td><td class="px-6 py-4 text-right font-bold text-brand-orange">€ 45,- / m²</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-4 text-xs text-gray-500 text-center italic" data-lang-key="pricing_disclaimer">* Definitieve prijs na beoordeling foto's of bezoek.</p>
+        </div>
+    </section>
+
+    <section id="over-ons" class="py-24 bg-brand-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-header font-bold text-white uppercase mb-6" data-lang-key="about_title">Het Team</h2>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p data-lang-key="about_text_1">4Builders is opgericht vanuit een dubbele missie...</p>
+                    <p data-lang-key="about_text_2">Onze vakmannen hebben gouden handen...</p>
+                    <div class="border-l-4 border-brand-orange pl-4 mt-6">
+                        <p class="text-white font-bold italic">"U krijgt topkwaliteit, wij een eerlijke kans op de arbeidsmarkt."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative h-64 md:h-96 bg-gray-800 rounded-sm overflow-hidden border border-white/10">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop" alt="Team Work" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-[#0a0a0a]">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-header font-bold text-white uppercase mb-4" data-lang-key="contact_title">Start je project</h2>
+                    <p class="text-gray-400" data-lang-key="contact_sub">Vul het formulier in.</p>
+                </div>
+
+                <div class="hs-form-placeholder" style="background: transparent; max-width: 500px; margin: 0 auto;">
+                    
+                    <div style="display: flex; gap: 10px;">
+                        <div style="flex: 1;">
+                            <label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Voornaam</label>
+                            <input type="text" placeholder="Jan" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Achternaam</label>
+                            <input type="text" placeholder="Jansen" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;">
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Telefoonnummer*</label>
+                        <input type="text" placeholder="06 12345678" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;">
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Postcode project*</label>
+                        <input type="text" placeholder="1012 AB" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;">
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Omschrijving</label>
+                        <textarea rows="4" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;"></textarea>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <button style="width: 100%; padding: 12px; background: #FF5722; color: white; font-weight: bold; text-transform: uppercase; border: none; border-radius: 2px; cursor: not-allowed; opacity: 0.7;">
+                            Formulier wordt geladen...
+                        </button>
+                        <p style="color: #666; font-size: 12px; text-align: center; margin-top: 10px;">(HubSpot account in verificatie)</p>
+                    </div>
+
+                </div>
+                </div>
+        </section>
+
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-white font-header text-xl font-bold">4<span class="text-brand-orange">BUILDERS</span> B.V.</div>
+            <div class="text-gray-500 text-sm" data-lang-key="footer_rights">&copy; 2026 4Builders Vastgoedonderhoud.</div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/31630420742" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 15px; border-radius: 50%; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px;">
+        <i class="ph ph-whatsapp-logo text-3xl"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuin & Bestrating Amsterdam | 4Builders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { dark: '#111111', gray: '#1A1A1A', orange: '#FF5722', light: '#F3F4F6' } }, fontFamily: { sans: ['Inter', 'sans-serif'], header: ['Oswald', 'sans-serif'], } } } }
+    </script>
+</head>
+<body class="antialiased">
+    <nav class="fixed w-full z-50 bg-brand-dark/95 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex-shrink-0"><span class="font-header text-2xl font-bold tracking-wider text-white">4<span class="text-brand-orange">BUILDERS</span></span></a>
+                <div class="hidden md:block"><div class="ml-10 flex items-baseline space-x-8"><a href="index.html" class="hover:text-brand-orange transition px-3 py-2 text-sm font-medium">Home</a><a href="schilderwerk.html" class="hover:text-brand-orange transition px-3 py-2 text-sm font-medium">Schilderwerk</a><a href="tuin.html" class="text-brand-orange px-3 py-2 text-sm font-medium">Tuin</a><a href="#contact" class="bg-brand-orange text-white hover:bg-orange-600 px-4 py-2 rounded-sm text-sm font-bold uppercase tracking-wide transition">Offerte</a></div></div>
+            </div>
+        </div>
+    </nav>
+    <div class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0"><img src="https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?q=80&w=2072&auto=format&fit=crop" alt="Tuin Bestrating" class="w-full h-full object-cover opacity-30"><div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center mt-10">
+            <div class="inline-flex items-center px-3 py-1 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-xs font-bold uppercase tracking-widest mb-4"><i class="ph ph-potted-plant mr-2"></i> Bestrating & Groen</div>
+            <h1 class="text-4xl md:text-6xl font-header font-bold text-white uppercase mb-4">Tuinrenovatie in <span class="text-brand-orange">De Stad</span></h1>
+        </div>
+    </div>
+    <section class="py-16 bg-brand-dark">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h2 class="text-3xl font-header font-bold text-white mb-6">Binnentuinen en dakterrassen</h2>
+                    <div class="space-y-4 text-gray-400">
+                        <p>Wilt u uw Amsterdamse binnentuin of dakterras opknappen? Wij voeren grondwerk af, leggen nieuwe tegels en plaatsen schuttingen. Zwaar werk dat wij met plezier voor u uitvoeren.</p>
+                        <p>Onze teams zijn gespecialiseerd in het werken in kleine ruimtes waar niet altijd machines kunnen komen. Handwerk, zoals het hoort.</p>
+                    </div>
+                </div>
+                <div class="bg-brand-gray p-8 border border-white/10 rounded-sm sticky top-24">
+                    <h3 class="text-xl font-header font-bold text-white mb-4">Tarieven Tuin</h3>
+                    <table class="w-full text-sm text-left mb-6"><tbody class="divide-y divide-white/10 text-gray-400"><tr><td class="py-3">Bestrating leggen (zandbed)</td><td class="py-3 text-right text-brand-orange font-bold">€ 45,- / m²</td></tr><tr><td class="py-3">Schutting plaatsen</td><td class="py-3 text-right text-brand-orange font-bold">€ 120,- / m¹</td></tr><tr><td class="py-3">Afvoer tuinafval</td><td class="py-3 text-right text-brand-orange font-bold">In overleg</td></tr></tbody></table>
+                    <a href="#contact" class="block w-full text-center bg-brand-orange text-white font-bold py-3 rounded-sm hover:bg-orange-600 transition uppercase tracking-wider">Vraag offerte aan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="py-24 bg-[#0a0a0a]">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-header font-bold text-white uppercase mb-4">Tuin aanpakken?</h2>
+                <p class="text-gray-400">Vul het formulier in.</p>
+            </div>
+            <div class="hs-form-placeholder" style="background: transparent; max-width: 500px; margin: 0 auto;">
+                <div style="display: flex; gap: 10px;">
+                    <div style="flex: 1;"><label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Voornaam</label><input type="text" placeholder="Jan" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;"></div>
+                    <div style="flex: 1;"><label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Achternaam</label><input type="text" placeholder="Jansen" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="margin-top: 15px;"><label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Telefoonnummer*</label><input type="text" placeholder="06 12345678" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;"></div>
+                <div style="margin-top: 15px;"><label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Postcode project*</label><input type="text" placeholder="1012 AB" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;"></div>
+                <div style="margin-top: 15px;"><label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Omschrijving</label><textarea rows="4" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;"></textarea></div>
+                <div style="margin-top: 20px;"><button style="width: 100%; padding: 12px; background: #FF5722; color: white; font-weight: bold; text-transform: uppercase; border: none; border-radius: 2px; cursor: not-allowed; opacity: 0.7;">Formulier wordt geladen...</button><p style="color: #666; font-size: 12px; text-align: center; margin-top: 10px;">(HubSpot account in verificatie)</p></div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/31630420742" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 15px; border-radius: 50%; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px;"><i class="ph ph-whatsapp-logo text-3xl"></i></a>
+    <script src="js/main.js"></script>
+</body>
+</html>

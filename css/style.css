@@ -1,0 +1,125 @@
+/* css/style.css */
+
+/* --- BASIS INSTELLINGEN --- */
+body {
+    background-color: #111111;
+    color: #F3F4F6;
+    font-family: 'Inter', sans-serif;
+    margin: 0; /* Padding weggehaald voor full-width design */
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    margin-top: 0;
+}
+
+/* --- MOBIEL VRIENDELIJKHEID --- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- FORMULIEREN --- */
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #222;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- EXTRA'S --- */
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: #FF5722;
+    color: white;
+}
+
+/* --- HUBSPOT FORMULIER STYLING (DARK MODE) --- */
+
+/* 1. Algemene container en labels */
+.hs-form-field {
+    margin-bottom: 20px !important;
+}
+
+.hs-form label {
+    color: #F3F4F6 !important; /* Lichte tekst */
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-bottom: 5px !important;
+    display: block !important;
+}
+
+/* 2. De invulvelden (Input, Select, Textarea) */
+.hs-input, 
+.hs-form input[type="text"], 
+.hs-form input[type="email"], 
+.hs-form input[type="tel"], 
+.hs-form select, 
+.hs-form textarea {
+    background-color: #222 !important; /* Donkere achtergrond */
+    border: 1px solid #444 !important; /* Subtiele rand */
+    color: #fff !important; /* Witte tekst tijdens typen */
+    padding: 12px 15px !important;
+    border-radius: 4px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-family: 'Inter', sans-serif !important;
+    transition: all 0.3s ease !important;
+}
+
+/* 3. Focus effect (als je in een veld klikt) */
+.hs-input:focus, 
+.hs-form select:focus, 
+.hs-form textarea:focus {
+    border-color: #FF5722 !important; /* Jouw Oranje Kleur */
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.2) !important;
+}
+
+/* 4. Bestand Upload Veld */
+.hs-form input[type="file"] {
+    background-color: transparent !important;
+    border: none !important;
+    color: #9CA3AF !important; /* Iets grijzer voor de bestandsnaam */
+    padding: 0 !important;
+}
+
+/* 5. De Verzenden Knop */
+.hs-button.primary {
+    background-color: #FF5722 !important; /* Oranje */
+    border: 1px solid #FF5722 !important;
+    color: white !important;
+    font-family: 'Oswald', sans-serif !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    padding: 12px 30px !important;
+    border-radius: 2px !important; /* Iets hoekiger voor bouw-look */
+    cursor: pointer !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+    transition: background-color 0.3s !important;
+}
+
+.hs-button.primary:hover {
+    background-color: #e64a19 !important; /* Iets donkerder oranje bij hover */
+    border-color: #e64a19 !important;
+}
+
+/* 6. Foutmeldingen (als iemand iets vergeet) */
+.hs-error-msgs label {
+    color: #ff4444 !important; /* Rood voor foutmeldingen */
+    font-weight: normal !important;
+    font-size: 12px !important;
+}
