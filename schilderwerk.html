@@ -1,72 +1,426 @@
 <!DOCTYPE html>
 <html lang="nl" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schilder Amsterdam Centrum | 4Builders Vastgoedonderhoud</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <script>
-        tailwind.config = { theme: { extend: { colors: { brand: { dark: '#111111', gray: '#1A1A1A', orange: '#FF5722', light: '#F3F4F6' } }, fontFamily: { sans: ['Inter', 'sans-serif'], header: ['Oswald', 'sans-serif'], } } } }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Schilderwerk Amsterdam | Binnen & Buiten | 4Builders</title>
+  <meta name="description" content="Schilderwerk in Amsterdam: binnen- en buitenschilderwerk, houtrot herstel, lakwerk, sausen en onderhoud. Vraag vrijblijvend een offerte aan.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#111111',
+              gray: '#1A1A1A',
+              orange: '#FF5722',
+              light: '#F3F4F6'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            header: ['Oswald', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body class="antialiased">
-    <nav class="fixed w-full z-50 bg-brand-dark/95 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="index.html" class="flex-shrink-0"><span class="font-header text-2xl font-bold tracking-wider text-white">4<span class="text-brand-orange">BUILDERS</span></span></a>
-                <div class="hidden md:block"><div class="ml-10 flex items-baseline space-x-8"><a href="index.html" class="hover:text-brand-orange transition px-3 py-2 text-sm font-medium">Home</a><a href="schilderwerk.html" class="text-brand-orange px-3 py-2 text-sm font-medium">Schilderwerk</a><a href="vloeren.html" class="hover:text-brand-orange transition px-3 py-2 text-sm font-medium">Vloeren</a><a href="#contact" class="bg-brand-orange text-white hover:bg-orange-600 px-4 py-2 rounded-sm text-sm font-bold uppercase tracking-wide transition">Offerte</a></div></div>
-            </div>
+
+<body class="antialiased bg-brand-dark text-gray-200">
+
+  <!-- NAV (zelfde vibe als index) -->
+  <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex-shrink-0">
+          <span class="font-header text-2xl font-bold tracking-wider text-white">4<span class="text-brand-orange">BUILDERS</span></span>
+        </a>
+
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="index.html#diensten" class="hover:text-brand-orange transition px-3 py-2 text-sm font-medium">Diensten</a>
+            <a href="index.html#over-ons" class="hover:text-brand-orange transition px-3 py-2 text-sm font-medium">Over ons</a>
+            <a href="#contact" class="bg-brand-orange text-white hover:bg-orange-600 px-4 py-2 rounded-sm text-sm font-bold uppercase tracking-wide transition">
+              Offerte aanvragen
+            </a>
+          </div>
         </div>
-    </nav>
-    <div class="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0"><img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop" alt="Schilderwerk Amsterdam" class="w-full h-full object-cover opacity-30"><div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div></div>
-        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center mt-10">
-            <div class="inline-flex items-center px-3 py-1 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-xs font-bold uppercase tracking-widest mb-4"><i class="ph ph-paint-brush-broad mr-2"></i> Binnen & Buiten</div>
-            <h1 class="text-4xl md:text-6xl font-header font-bold text-white uppercase mb-4">Schilderwerk in <span class="text-brand-orange">Amsterdam Centrum</span></h1>
+
+        <div class="md:hidden flex items-center">
+          <a href="#contact" class="bg-brand-orange text-white hover:bg-orange-600 px-4 py-2 rounded-sm text-sm font-bold uppercase tracking-wide transition">
+            Offerte
+          </a>
         </div>
+      </div>
     </div>
-    <section class="py-16 bg-brand-dark">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                <div>
-                    <h2 class="text-3xl font-header font-bold text-white mb-6">Waarom kiezen voor onze schilders?</h2>
-                    <div class="space-y-4 text-gray-400">
-                        <p>Schilderen in Amsterdam Centrum is een vak apart. Scheve kozijnen en monumentaal houtwerk vragen om aandacht. Onze jongens uit de Achterhoek zijn gewend om door te pakken en leveren strak werk af.</p>
-                        <p>Wij werken in teams waarbij er altijd strenge kwaliteitscontrole is door de projectmanager. Dat betekent voor u: <strong>topkwaliteit voor een eerlijke prijs</strong> en duidelijke afspraken.</p>
-                    </div>
-                </div>
-                <div class="bg-brand-gray p-8 border border-white/10 rounded-sm sticky top-24">
-                    <h3 class="text-xl font-header font-bold text-white mb-4">Indicatie Tarieven</h3>
-                    <table class="w-full text-sm text-left mb-6"><tbody class="divide-y divide-white/10 text-gray-400"><tr><td class="py-3">Muren sausen (wit)</td><td class="py-3 text-right text-brand-orange font-bold">€ 12,- / m²</td></tr><tr><td class="py-3">Kozijn lakken (binnen)</td><td class="py-3 text-right text-brand-orange font-bold">€ 150,- / stuk</td></tr></tbody></table>
-                    <a href="#contact" class="block w-full text-center bg-brand-orange text-white font-bold py-3 rounded-sm hover:bg-orange-600 transition uppercase tracking-wider">Vraag offerte aan</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  </nav>
 
-    <section id="contact" class="py-24 bg-[#0a0a0a]">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-header font-bold text-white uppercase mb-4">Start uw klus</h2>
-                <p class="text-gray-400">Vul het formulier in.</p>
-            </div>
-            <div class="hs-form-placeholder" style="background: transparent; max-width: 500px; margin: 0 auto;">
-                <div style="display: flex; gap: 10px;">
-                    <div style="flex: 1;"><label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Voornaam</label><input type="text" placeholder="Jan" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;"></div>
-                    <div style="flex: 1;"><label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Achternaam</label><input type="text" placeholder="Jansen" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;"></div>
-                </div>
-                <div style="margin-top: 15px;"><label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Telefoonnummer*</label><input type="text" placeholder="06 12345678" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;"></div>
-                <div style="margin-top: 15px;"><label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Postcode project*</label><input type="text" placeholder="1012 AB" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;"></div>
-                <div style="margin-top: 15px;"><label style="color: #F3F4F6; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">Omschrijving</label><textarea rows="4" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 4px;"></textarea></div>
-                <div style="margin-top: 20px;"><button style="width: 100%; padding: 12px; background: #FF5722; color: white; font-weight: bold; text-transform: uppercase; border: none; border-radius: 2px; cursor: not-allowed; opacity: 0.7;">Formulier wordt geladen...</button><p style="color: #666; font-size: 12px; text-align: center; margin-top: 10px;">(HubSpot account in verificatie)</p></div>
-            </div>
-        </div>
-    </section>
+  <!-- HERO -->
+  <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+      <!-- Schilderfoto (geen lassen): source.unsplash.com gebruikt de foto-id -->
+      <img
+        src="https://source.unsplash.com/57ldq9age5U/2400x1600"
+        alt="Schilderwerk in Amsterdam"
+        class="w-full h-full object-cover opacity-40">
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+    </div>
 
-    <a href="https://wa.me/31630420742" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 15px; border-radius: 50%; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px;"><i class="ph ph-whatsapp-logo text-3xl"></i></a>
-    <script src="js/main.js"></script>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center px-3 py-1 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-xs font-bold uppercase tracking-widest mb-6">
+        <i class="ph ph-map-pin mr-2"></i> Amsterdam Centrum & Omgeving
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-header font-bold text-white mb-5 uppercase leading-tight">
+        Schilderwerk in <span class="text-brand-orange">Amsterdam</span>
+      </h1>
+
+      <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 font-light">
+        Binnen- en buitenschilderwerk voor woningen, appartementen en VvE’s. Netjes gewerkt, strak opgeleverd.
+      </p>
+
+      <div class="mt-10 flex flex-col md:flex-row justify-center gap-4">
+        <a href="#contact" class="px-8 py-4 bg-brand-orange text-white font-bold rounded-sm uppercase tracking-wider hover:bg-orange-600 transition shadow-lg shadow-orange-900/20">
+          Offerte aanvragen
+        </a>
+        <a href="https://wa.me/31630420742" target="_blank" rel="noopener"
+           class="px-8 py-4 border border-white/30 bg-white/5 backdrop-blur-sm text-white font-bold rounded-sm uppercase tracking-wider hover:bg-white/10 transition flex items-center justify-center">
+          <i class="ph ph-whatsapp-logo text-xl mr-2"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="py-20 bg-brand-dark">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-header font-bold text-white uppercase mb-6">
+        Vakwerk dat past bij Amsterdam
+      </h2>
+
+      <p class="text-gray-300 leading-relaxed">
+        Schilderwerk in Amsterdam vraagt om ervaring. Oude panden, scheve kozijnen, vochtplekken en beperkte bereikbaarheid:
+        het is hier eerder regel dan uitzondering. 4Builders Vastgoedonderhoud B.V. levert schilderwerk dat niet alleen mooi is,
+        maar ook duurzaam en netjes uitgevoerd. We werken met duidelijke afspraken en houden de boel schoon — geen circus, wel resultaat.
+      </p>
+
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-brand-gray p-6 border border-white/10 rounded-sm">
+          <div class="text-brand-orange text-3xl mb-3"><i class="ph ph-check-circle"></i></div>
+          <h3 class="text-white font-bold mb-2">Strakke afwerking</h3>
+          <p class="text-gray-400 text-sm">Saus- en lakwerk zonder strepen, druipers of rafels. Gewoon netjes.</p>
+        </div>
+        <div class="bg-brand-gray p-6 border border-white/10 rounded-sm">
+          <div class="text-brand-orange text-3xl mb-3"><i class="ph ph-broom"></i></div>
+          <h3 class="text-white font-bold mb-2">Netjes werken</h3>
+          <p class="text-gray-400 text-sm">Afplakken, afdekken, opruimen. Je huis is geen bouwplaats.</p>
+        </div>
+        <div class="bg-brand-gray p-6 border border-white/10 rounded-sm">
+          <div class="text-brand-orange text-3xl mb-3"><i class="ph ph-chat-circle-text"></i></div>
+          <h3 class="text-white font-bold mb-2">Duidelijke afspraken</h3>
+          <p class="text-gray-400 text-sm">Heldere planning en snelle communicatie. Geen gedoe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIENSTEN -->
+  <section class="py-20 bg-[#0a0a0a]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-header font-bold text-white uppercase mb-4">
+        Wat we allemaal kunnen
+      </h2>
+      <p class="text-gray-400 mb-10 max-w-3xl">
+        Of je nou een appartement wilt opfrissen, kozijnen wilt aanpakken, houtrot hebt of onderhoud nodig hebt:
+        we pakken het netjes aan en denken praktisch mee.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-brand-gray p-8 border border-white/10 rounded-sm">
+          <h3 class="text-xl font-header font-bold text-white mb-3">Binnenschilderwerk</h3>
+          <ul class="text-gray-400 space-y-2 text-sm">
+            <li>• Muren & plafonds sausen (wit of kleur)</li>
+            <li>• Lakwerk: deuren, kozijnen, trappen, plinten</li>
+            <li>• Kleine herstelwerkzaamheden (scheurtjes, plekjes, bijwerken)</li>
+            <li>• Schuren, gronden en afwerken voor strak resultaat</li>
+            <li>• Nette afplak- en dekwijze (geen verf waar het niet hoort)</li>
+          </ul>
+        </div>
+
+        <div class="bg-brand-gray p-8 border border-white/10 rounded-sm">
+          <h3 class="text-xl font-header font-bold text-white mb-3">Buitenschilderwerk</h3>
+          <ul class="text-gray-400 space-y-2 text-sm">
+            <li>• Kozijnen, ramen en deuren buiten</li>
+            <li>• Gevelhout, boeidelen, dakranden</li>
+            <li>• Grondig voorwerk (schuren/krabben) voor hechting</li>
+            <li>• Bescherming tegen weer, UV en stadsvuil</li>
+            <li>• In overleg steiger/hoogwerker waar nodig</li>
+          </ul>
+        </div>
+
+        <div class="bg-brand-gray p-8 border border-white/10 rounded-sm">
+          <h3 class="text-xl font-header font-bold text-white mb-3">Houtrot & herstel</h3>
+          <ul class="text-gray-400 space-y-2 text-sm">
+            <li>• Houtrot inspectie en aanpak (deelvervanging / reparatie)</li>
+            <li>• Kitwerk controleren/vervangen waar nodig</li>
+            <li>• Aangetaste plekken weer strak in model</li>
+            <li>• Afwerking zodat het niet “opgevuld” oogt</li>
+          </ul>
+        </div>
+
+        <div class="bg-brand-gray p-8 border border-white/10 rounded-sm">
+          <h3 class="text-xl font-header font-bold text-white mb-3">Onderhoud & trajecten</h3>
+          <ul class="text-gray-400 space-y-2 text-sm">
+            <li>• Periodiek onderhoud voor woningen en VvE’s</li>
+            <li>• Opfrisbeurt bij verhuur/verkoop</li>
+            <li>• Schilderwerk combineren met timmer/klein herstel</li>
+            <li>• Duidelijke planning en oplevermomenten</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WERKWIJZE -->
+  <section class="py-20 bg-brand-dark">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-header font-bold text-white uppercase mb-10">
+        Zo werken we
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-brand-gray p-6 border border-white/10 rounded-sm">
+          <div class="text-brand-orange text-2xl font-bold mb-2">1</div>
+          <h3 class="text-white font-bold mb-2">Aanvraag</h3>
+          <p class="text-gray-400 text-sm">Je vertelt kort wat je wilt laten doen. Foto’s? Stuur die via WhatsApp.</p>
+        </div>
+        <div class="bg-brand-gray p-6 border border-white/10 rounded-sm">
+          <div class="text-brand-orange text-2xl font-bold mb-2">2</div>
+          <h3 class="text-white font-bold mb-2">Inventarisatie</h3>
+          <p class="text-gray-400 text-sm">We bepalen samen wat nodig is: voorwerk, materiaal, planning.</p>
+        </div>
+        <div class="bg-brand-gray p-6 border border-white/10 rounded-sm">
+          <div class="text-brand-orange text-2xl font-bold mb-2">3</div>
+          <h3 class="text-white font-bold mb-2">Uitvoering</h3>
+          <p class="text-gray-400 text-sm">Netjes afplakken, strak werken, tempo erop. Geen rommel.</p>
+        </div>
+        <div class="bg-brand-gray p-6 border border-white/10 rounded-sm">
+          <div class="text-brand-orange text-2xl font-bold mb-2">4</div>
+          <h3 class="text-white font-bold mb-2">Oplevering</h3>
+          <p class="text-gray-400 text-sm">Samen checken, puntjes op de i, schoon achterlaten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-[#0a0a0a]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-header font-bold text-white uppercase mb-10">
+        Veelgestelde vragen
+      </h2>
+
+      <div class="space-y-4">
+        <details class="bg-brand-gray border border-white/10 rounded-sm p-5">
+          <summary class="cursor-pointer text-white font-semibold">Moet ik alles leeghalen?</summary>
+          <p class="text-gray-400 text-sm mt-3 leading-relaxed">
+            Nee. We dekken af en werken zo dat het praktisch blijft. Voor grote ruimtes stemmen we vooraf af wat handig is.
+          </p>
+        </details>
+
+        <details class="bg-brand-gray border border-white/10 rounded-sm p-5">
+          <summary class="cursor-pointer text-white font-semibold">Doen jullie ook houtrot herstel?</summary>
+          <p class="text-gray-400 text-sm mt-3 leading-relaxed">
+            Ja. We inspecteren, repareren/vervangen waar nodig en werken het daarna strak af zodat het weer jaren mee kan.
+          </p>
+        </details>
+
+        <details class="bg-brand-gray border border-white/10 rounded-sm p-5">
+          <summary class="cursor-pointer text-white font-semibold">Werken jullie voor VvE’s?</summary>
+          <p class="text-gray-400 text-sm mt-3 leading-relaxed">
+            Ja. Voor VvE’s is duidelijke planning en communicatie cruciaal — dat regelen we strak, inclusief oplevermomenten.
+          </p>
+        </details>
+
+        <details class="bg-brand-gray border border-white/10 rounded-sm p-5">
+          <summary class="cursor-pointer text-white font-semibold">Waarom geen prijzen op de website?</summary>
+          <p class="text-gray-400 text-sm mt-3 leading-relaxed">
+            Omdat de staat van onderhoud, bereikbaarheid en benodigde voorbehandeling het verschil maken.
+            We geven liever een scherpe offerte op basis van jouw situatie dan een “kijk-mij-eens”-prijs die niet klopt.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FORM -->
+  <section id="contact" class="py-24 bg-brand-dark">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-header font-bold text-white uppercase mb-4">
+          Offerte aanvragen
+        </h2>
+        <p class="text-gray-400">
+          Vertel kort wat je wilt laten schilderen. We reageren snel.
+        </p>
+      </div>
+
+      <!-- FORM: zelfde als homepage, zonder file upload -->
+      <form id="custom4BuildersForm" class="space-y-6 bg-brand-gray p-8 rounded-sm border border-white/10 shadow-2xl">
+        <div class="hidden" aria-hidden="true">
+          <input type="text" name="honeypot" tabindex="-1" autocomplete="off" value="">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="relative">
+            <label class="block text-white text-sm font-semibold mb-2">Voornaam*</label>
+            <div class="relative">
+              <input type="text" name="firstname" required class="w-full bg-[#222] border border-[#444] p-3 pr-10 text-white rounded-sm focus:border-brand-orange outline-none transition">
+              <span class="validation-icon absolute right-3 top-3 hidden"></span>
+            </div>
+            <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
+          </div>
+
+          <div class="relative">
+            <label class="block text-white text-sm font-semibold mb-2">Achternaam*</label>
+            <div class="relative">
+              <input type="text" name="lastname" required class="w-full bg-[#222] border border-[#444] p-3 pr-10 text-white rounded-sm focus:border-brand-orange outline-none transition">
+              <span class="validation-icon absolute right-3 top-3 hidden"></span>
+            </div>
+            <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="relative">
+            <label class="block text-white text-sm font-semibold mb-2">E-mail*</label>
+            <div class="relative">
+              <input type="email" name="email" required class="w-full bg-[#222] border border-[#444] p-3 pr-10 text-white rounded-sm focus:border-brand-orange outline-none transition">
+              <span class="validation-icon absolute right-3 top-3 hidden"></span>
+            </div>
+            <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
+          </div>
+
+          <div class="relative">
+            <label class="block text-white text-sm font-semibold mb-2">Telefoonnummer</label>
+            <div class="relative">
+              <input type="tel" name="phone" class="w-full bg-[#222] border border-[#444] p-3 pr-10 text-white rounded-sm focus:border-brand-orange outline-none transition">
+              <span class="validation-icon absolute right-3 top-3 hidden"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="relative">
+            <label class="block text-white text-sm font-semibold mb-2">Postcode klus*</label>
+            <div class="relative">
+              <input type="text" name="zip" required placeholder="1234 AB" class="w-full bg-[#222] border border-[#444] p-3 pr-10 text-white rounded-sm focus:border-brand-orange outline-none transition">
+              <span class="validation-icon absolute right-3 top-3 hidden"></span>
+            </div>
+            <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
+          </div>
+
+          <div class="relative">
+            <label class="block text-white text-sm font-semibold mb-2">Locatie*</label>
+            <div class="relative">
+              <input type="text" name="city" value="Amsterdam" readonly class="w-full bg-brand-dark/50 border border-[#444] p-3 pr-10 text-gray-400 rounded-sm outline-none cursor-not-allowed">
+              <span class="validation-icon absolute right-3 top-3">
+                <i class="ph ph-lock-key text-gray-500 text-xl"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <label class="block text-white text-sm font-semibold mb-2">Omschrijving*</label>
+          <textarea name="message" required rows="4" class="w-full bg-[#222] border border-[#444] p-3 text-white rounded-sm focus:border-brand-orange outline-none transition"
+                    placeholder="Bijv. binnen schilderwerk woonkamer + kozijnen / buiten kozijnen voorgevel / houtrot herstel..."></textarea>
+          <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
+        </div>
+
+        <button type="submit" id="submitBtn"
+                class="flex items-center justify-center gap-2 w-full bg-brand-orange text-white font-bold py-4 rounded-sm uppercase tracking-widest hover:bg-orange-600 transition shadow-lg shadow-orange-900/20">
+          <span id="btnText">Verstuur aanvraag</span>
+          <i id="btnIcon" class="ph ph-paper-plane-tilt text-xl"></i>
+        </button>
+
+        <p class="text-gray-400 text-xs text-center">
+          Foto’s of tekeningen? Stuur ze na het versturen via WhatsApp (link rechts onder).
+        </p>
+
+        <p id="formFeedback" class="hidden text-center mt-4 font-bold"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER (compact, “normaal”) -->
+  <footer class="bg-black py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <div>
+          <a href="index.html" class="inline-block">
+            <div class="text-white font-header text-2xl font-bold tracking-wider">
+              4<span class="text-brand-orange">BUILDERS</span>
+            </div>
+          </a>
+          <p class="text-gray-400 text-sm mt-3 leading-relaxed">
+            Vastgoedonderhoud, renovatie en verbouw in Amsterdam en omgeving.
+          </p>
+        </div>
+
+        <div class="text-sm">
+          <div class="text-white font-bold uppercase tracking-wider mb-3">Contact</div>
+          <div class="text-gray-400 leading-relaxed">
+            Pieter Baststraat 29 H<br>
+            1071TV Amsterdam<br><br>
+            KVK-nummer: 99333074<br><br>
+            <a href="tel:+31630420742" class="hover:text-brand-orange transition">+31 6 30 42 07 42</a><br>
+            <a href="mailto:info@4builders-amsterdam.nl" class="hover:text-brand-orange transition">info@4builders-amsterdam.nl</a>
+          </div>
+        </div>
+
+        <div class="text-sm">
+          <div class="text-white font-bold uppercase tracking-wider mb-3">Openingstijden</div>
+          <div class="text-gray-400 leading-relaxed">
+            Ma–Vr: 08:00 – 18:00<br>
+            Za: 09:00 – 13:00<br>
+            Zo: Gesloten
+          </div>
+
+          <div class="mt-6">
+            <a href="privacy.html" class="text-gray-400 text-sm hover:text-brand-orange transition">Privacy policy</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="text-gray-500 text-sm">&copy; 2026 4Builders Vastgoedonderhoud B.V.</div>
+        <a href="https://wa.me/31630420742" target="_blank" rel="noopener" class="text-gray-400 text-sm hover:text-brand-orange transition">
+          Direct WhatsAppen
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp button -->
+  <a href="https://wa.me/31630420742" target="_blank" rel="noopener"
+     class="fixed bottom-5 right-5 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition z-50 flex items-center justify-center w-14 h-14">
+    <i class="ph ph-whatsapp-logo text-3xl"></i>
+  </a>
+
 </body>
 </html>

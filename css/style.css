@@ -5,7 +5,7 @@ body {
     background-color: #111111;
     color: #F3F4F6;
     font-family: 'Inter', sans-serif;
-    margin: 0; /* Padding weggehaald voor full-width design */
+    margin: 0;
     line-height: 1.6;
 }
 
@@ -21,7 +21,7 @@ img {
     display: block;
 }
 
-/* --- FORMULIEREN --- */
+/* --- FORMULIEREN (algemeen, niet specifiek HubSpot iframe) --- */
 input, textarea, select {
     width: 100%;
     padding: 12px;
@@ -44,15 +44,13 @@ html {
     color: white;
 }
 
-/* --- HUBSPOT FORMULIER STYLING (DARK MODE) --- */
-
-/* 1. Algemene container en labels */
+/* --- HUBSPOT FORMULIER STYLING (LET OP: iframe kan dit negeren) --- */
 .hs-form-field {
     margin-bottom: 20px !important;
 }
 
 .hs-form label {
-    color: #F3F4F6 !important; /* Lichte tekst */
+    color: #F3F4F6 !important;
     font-family: 'Inter', sans-serif !important;
     font-size: 14px !important;
     font-weight: 600 !important;
@@ -60,16 +58,15 @@ html {
     display: block !important;
 }
 
-/* 2. De invulvelden (Input, Select, Textarea) */
-.hs-input, 
-.hs-form input[type="text"], 
-.hs-form input[type="email"], 
-.hs-form input[type="tel"], 
-.hs-form select, 
+.hs-input,
+.hs-form input[type="text"],
+.hs-form input[type="email"],
+.hs-form input[type="tel"],
+.hs-form select,
 .hs-form textarea {
-    background-color: #222 !important; /* Donkere achtergrond */
-    border: 1px solid #444 !important; /* Subtiele rand */
-    color: #fff !important; /* Witte tekst tijdens typen */
+    background-color: #222 !important;
+    border: 1px solid #444 !important;
+    color: #fff !important;
     padding: 12px 15px !important;
     border-radius: 4px !important;
     width: 100% !important;
@@ -78,26 +75,23 @@ html {
     transition: all 0.3s ease !important;
 }
 
-/* 3. Focus effect (als je in een veld klikt) */
-.hs-input:focus, 
-.hs-form select:focus, 
+.hs-input:focus,
+.hs-form select:focus,
 .hs-form textarea:focus {
-    border-color: #FF5722 !important; /* Jouw Oranje Kleur */
+    border-color: #FF5722 !important;
     outline: none !important;
     box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.2) !important;
 }
 
-/* 4. Bestand Upload Veld */
 .hs-form input[type="file"] {
     background-color: transparent !important;
     border: none !important;
-    color: #9CA3AF !important; /* Iets grijzer voor de bestandsnaam */
+    color: #9CA3AF !important;
     padding: 0 !important;
 }
 
-/* 5. De Verzenden Knop */
 .hs-button.primary {
-    background-color: #FF5722 !important; /* Oranje */
+    background-color: #FF5722 !important;
     border: 1px solid #FF5722 !important;
     color: white !important;
     font-family: 'Oswald', sans-serif !important;
@@ -105,7 +99,7 @@ html {
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
     padding: 12px 30px !important;
-    border-radius: 2px !important; /* Iets hoekiger voor bouw-look */
+    border-radius: 2px !important;
     cursor: pointer !important;
     width: 100% !important;
     margin-top: 10px !important;
@@ -113,13 +107,30 @@ html {
 }
 
 .hs-button.primary:hover {
-    background-color: #e64a19 !important; /* Iets donkerder oranje bij hover */
+    background-color: #e64a19 !important;
     border-color: #e64a19 !important;
 }
 
-/* 6. Foutmeldingen (als iemand iets vergeet) */
 .hs-error-msgs label {
-    color: #ff4444 !important; /* Rood voor foutmeldingen */
+    color: #ff4444 !important;
     font-weight: normal !important;
     font-size: 12px !important;
+}
+
+/* --- Mobiel menu (zelfde gedrag als eerder inline) --- */
+#mobile-menu {
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+#mobile-menu.open {
+  max-height: 400px;
+  opacity: 1;
+}
+
+/* --- HubSpot iframe sizing (layout; echte kleuren via JS injectie) --- */
+#hubspotFormTarget iframe {
+  width: 100% !important;
+  border: 0 !important;
 }
