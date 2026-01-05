@@ -45,7 +45,36 @@
 
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#diensten" class="hover:text-brand-orange transition px-3 py-2 text-sm font-medium" data-lang-key="nav_services">Diensten</a>
+
+                        <!-- DIENSTEN dropdown (desktop) -->
+                        <div class="relative group">
+                            <a href="#diensten" class="hover:text-brand-orange transition px-3 py-2 text-sm font-medium inline-flex items-center gap-2" data-lang-key="nav_services">
+                                Diensten
+                                <i class="ph ph-caret-down text-base opacity-70 group-hover:opacity-100 transition"></i>
+                            </a>
+
+                            <div class="absolute left-0 top-full pt-3 hidden group-hover:block">
+                                <div class="w-64 bg-brand-gray border border-white/10 shadow-2xl rounded-sm overflow-hidden">
+                                    <a href="schilderwerk.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-white/5 hover:text-brand-orange transition">
+                                        Schilderwerk
+                                        <span class="block text-xs text-gray-400 mt-1">Binnen & buiten, strak lakwerk</span>
+                                    </a>
+                                    <a href="vloeren.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-white/5 hover:text-brand-orange transition border-t border-white/10">
+                                        Vloeren
+                                        <span class="block text-xs text-gray-400 mt-1">PVC, laminaat, plinten</span>
+                                    </a>
+                                    <a href="timmerwerk.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-white/5 hover:text-brand-orange transition border-t border-white/10">
+                                        Timmerwerk
+                                        <span class="block text-xs text-gray-400 mt-1">Maatwerk, herstel, afbouw</span>
+                                    </a>
+                                    <a href="bestrating.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-white/5 hover:text-brand-orange transition border-t border-white/10">
+                                        Bestrating
+                                        <span class="block text-xs text-gray-400 mt-1">Terras, pad, binnentuin</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <a href="#over-ons" class="hover:text-brand-orange transition px-3 py-2 text-sm font-medium" data-lang-key="nav_about">Over Ons</a>
                         <a href="#contact" class="bg-brand-orange text-white hover:bg-orange-600 px-4 py-2 rounded-sm text-sm font-bold uppercase tracking-wide transition" data-lang-key="nav_contact">Offerte Aanvragen</a>
 
@@ -67,15 +96,26 @@
             </div>
         </div>
 
+        <!-- Mobile menu -->
         <div id="mobile-menu" class="md:hidden bg-brand-gray border-b border-white/10">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#diensten" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-brand-orange block px-3 py-2 rounded-md text-base font-medium" data-lang-key="nav_services">Diensten</a>
+
+                <!-- Sub links -->
+                <div class="px-3 pb-2">
+                    <a href="schilderwerk.html" onclick="toggleMobileMenu()" class="block text-sm text-gray-400 hover:text-brand-orange py-2 transition">Schilderwerk</a>
+                    <a href="vloeren.html" onclick="toggleMobileMenu()" class="block text-sm text-gray-400 hover:text-brand-orange py-2 transition">Vloeren</a>
+                    <a href="timmerwerk.html" onclick="toggleMobileMenu()" class="block text-sm text-gray-400 hover:text-brand-orange py-2 transition">Timmerwerk</a>
+                    <a href="bestrating.html" onclick="toggleMobileMenu()" class="block text-sm text-gray-400 hover:text-brand-orange py-2 transition">Bestrating</a>
+                </div>
+
                 <a href="#over-ons" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-brand-orange block px-3 py-2 rounded-md text-base font-medium" data-lang-key="nav_about">Over Ons</a>
                 <a href="#contact" onclick="toggleMobileMenu()" class="text-brand-orange font-bold block px-3 py-2 rounded-md text-base" data-lang-key="nav_contact">Offerte Aanvragen</a>
             </div>
         </div>
     </nav>
 
+    <!-- HERO (NIET AANGEPAST) -->
     <div class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop" alt="Renovatie Amsterdam" class="w-full h-full object-cover opacity-40">
@@ -96,54 +136,115 @@
                 <a href="#contact" class="px-8 py-4 bg-brand-orange text-white font-bold rounded-sm uppercase tracking-wider hover:bg-orange-600 transition shadow-lg shadow-orange-900/20" data-lang-key="hero_cta_primary">
                     Prijsindicatie aanvragen
                 </a>
-                <a href="https://wa.me/31630420742" target="_blank" class="px-8 py-4 border border-white/30 bg-white/5 backdrop-blur-sm text-white font-bold rounded-sm uppercase tracking-wider hover:bg-white/10 transition flex items-center justify-center">
+                <a href="https://wa.me/31618922134" target="_blank" class="px-8 py-4 border border-white/30 bg-white/5 backdrop-blur-sm text-white font-bold rounded-sm uppercase tracking-wider hover:bg-white/10 transition flex items-center justify-center">
                     <i class="ph ph-whatsapp-logo text-xl mr-2"></i> WhatsApp
                 </a>
             </div>
         </div>
     </div>
 
+    <!-- DIENSTEN (cards klikbaar) -->
     <section id="diensten" class="py-24 bg-brand-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-header font-bold text-white uppercase mb-4" data-lang-key="services_title">Onze Vakgebieden</h2>
             <div class="w-20 h-1 bg-brand-orange mx-auto"></div>
         </div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-brand-gray p-8 border border-white/5 rounded-sm">
+
+            <a href="schilderwerk.html" class="bg-brand-gray p-8 border border-white/5 rounded-sm block hover:border-brand-orange/30 hover:bg-white/5 transition">
                 <i class="ph ph-paint-brush-broad text-4xl text-brand-orange mb-6"></i>
                 <h3 class="text-xl font-header font-bold mb-3">Schilderwerk</h3>
                 <p class="text-gray-400 text-sm">Strak lakwerk voor kozijnen en muren.</p>
-            </div>
-            <div class="bg-brand-gray p-8 border border-white/5 rounded-sm">
+                <div class="mt-5 text-sm text-brand-orange font-bold uppercase tracking-wider">
+                    Bekijk dienst <span class="ml-1">→</span>
+                </div>
+            </a>
+
+            <a href="vloeren.html" class="bg-brand-gray p-8 border border-white/5 rounded-sm block hover:border-brand-orange/30 hover:bg-white/5 transition">
                 <i class="ph ph-squares-four text-4xl text-brand-orange mb-6"></i>
                 <h3 class="text-xl font-header font-bold mb-3">Vloeren</h3>
                 <p class="text-gray-400 text-sm">Laminaat en PVC leggen.</p>
-            </div>
-            <div class="bg-brand-gray p-8 border border-white/5 rounded-sm">
+                <div class="mt-5 text-sm text-brand-orange font-bold uppercase tracking-wider">
+                    Bekijk dienst <span class="ml-1">→</span>
+                </div>
+            </a>
+
+            <a href="timmerwerk.html" class="bg-brand-gray p-8 border border-white/5 rounded-sm block hover:border-brand-orange/30 hover:bg-white/5 transition">
                 <i class="ph ph-hammer text-4xl text-brand-orange mb-6"></i>
                 <h3 class="text-xl font-header font-bold mb-3">Timmerwerk</h3>
                 <p class="text-gray-400 text-sm">Kasten en deuren op maat.</p>
-            </div>
-            <div class="bg-brand-gray p-8 border border-white/5 rounded-sm">
+                <div class="mt-5 text-sm text-brand-orange font-bold uppercase tracking-wider">
+                    Bekijk dienst <span class="ml-1">→</span>
+                </div>
+            </a>
+
+            <a href="bestrating.html" class="bg-brand-gray p-8 border border-white/5 rounded-sm block hover:border-brand-orange/30 hover:bg-white/5 transition">
                 <i class="ph ph-potted-plant text-4xl text-brand-orange mb-6"></i>
-                <h3 class="text-xl font-header font-bold mb-3">Tuin</h3>
-                <p class="text-gray-400 text-sm">Renovatie van binnentuinen.</p>
-            </div>
+                <h3 class="text-xl font-header font-bold mb-3">Bestrating</h3>
+                <p class="text-gray-400 text-sm">Terras, pad en binnentuinen strak aangelegd.</p>
+                <div class="mt-5 text-sm text-brand-orange font-bold uppercase tracking-wider">
+                    Bekijk dienst <span class="ml-1">→</span>
+                </div>
+            </a>
+
         </div>
     </section>
 
+    <!-- OVER ONS (Team verhaal ingevuld) -->
     <section id="over-ons" class="py-24 bg-brand-dark relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
                 <h2 class="text-3xl md:text-4xl font-header font-bold text-white uppercase mb-6" data-lang-key="about_title">Het Team</h2>
-                <p class="text-gray-300 leading-relaxed" data-lang-key="about_text_1">4Builders brengt de Achterhoekse werkmentaliteit naar Amsterdam.</p>
+
+                <p class="text-gray-300 leading-relaxed" data-lang-key="about_text_1">
+                4Builders Vastgoedonderhoud B.V. bestaat uit een vast team van vakmensen met een no-nonsense werkmentaliteit.
+                We combineren een nuchtere aanpak met de hoge kwaliteitsstandaard die in Amsterdam wordt verwacht.
+                <br><br>
+                Wij werken dagelijks aan woningen, appartementen en vastgoedobjecten waar planning, afstemming en afwerking essentieel zijn.
+                Daarom werken we met duidelijke afspraken, vaste aanspreekpunten en een gestructureerde werkwijze.
+                Afspraak is bij ons geen intentie, maar een verplichting.
+                <br><br>
+                Of het nu gaat om schilderwerk, vloeren, timmerwerk of bestrating: we denken mee, werken netjes
+                en leveren op zoals afgesproken. Dat is de reden dat klanten ons blijven inschakelen
+                voor vervolgwerk en onderhoud.
+                </p>
+
+
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-brand-gray p-5 border border-white/10 rounded-sm">
+                        <div class="text-brand-orange text-2xl mb-2"><i class="ph ph-check-circle"></i></div>
+                        <div class="text-white font-bold">Afspraak = afspraak</div>
+                        <div class="text-gray-400 text-sm mt-1">Duidelijke planning, korte lijnen.</div>
+                    </div>
+
+                    <div class="bg-brand-gray p-5 border border-white/10 rounded-sm">
+                        <div class="text-brand-orange text-2xl mb-2"><i class="ph ph-broom"></i></div>
+                        <div class="text-white font-bold">Netjes werken</div>
+                        <div class="text-gray-400 text-sm mt-1">Afdekken, opruimen, schoon opleveren.</div>
+                    </div>
+
+                    <div class="bg-brand-gray p-5 border border-white/10 rounded-sm">
+                        <div class="text-brand-orange text-2xl mb-2"><i class="ph ph-hammer"></i></div>
+                        <div class="text-white font-bold">Echt vakwerk</div>
+                        <div class="text-gray-400 text-sm mt-1">Strak resultaat, details kloppen.</div>
+                    </div>
+
+                    <div class="bg-brand-gray p-5 border border-white/10 rounded-sm">
+                        <div class="text-brand-orange text-2xl mb-2"><i class="ph ph-phone-call"></i></div>
+                        <div class="text-white font-bold">Direct bereikbaar</div>
+                        <div class="text-gray-400 text-sm mt-1">WhatsApp werkt het snelst.</div>
+                    </div>
+                </div>
             </div>
+
             <div class="h-64 md:h-96 bg-gray-800 rounded-sm overflow-hidden border border-white/10">
                 <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop" alt="Team" class="w-full h-full object-cover grayscale">
             </div>
         </div>
     </section>
 
+    <!-- CONTACT / FORM (NIET AANGEPAST) -->
     <section id="contact" class="py-24 bg-[#0a0a0a]">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -235,6 +336,7 @@
         </div>
     </section>
 
+    <!-- FOOTER (zoals je had) -->
     <footer class="bg-black py-12 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -262,8 +364,8 @@
 
             KVK-nummer: 99333074<br><br>
 
-            <a href="tel:+31630420742" class="hover:text-brand-orange transition">
-                +31 6 30 42 07 42
+            <a href="tel:+31618922134" class="hover:text-brand-orange transition">
+                +31 6 18 92 21 34
             </a><br>
 
             <a href="mailto:info@4builders-amsterdam.nl" class="hover:text-brand-orange transition">
@@ -297,7 +399,7 @@
 
         <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3">
         <div class="text-gray-500 text-sm">&copy; 2026 4Builders Vastgoedonderhoud B.V.</div>
-        <a href="https://wa.me/31630420742" target="_blank" rel="noopener"
+        <a href="https://wa.me/31618922134" target="_blank" rel="noopener"
             class="text-gray-400 text-sm hover:text-brand-orange transition">
             Direct WhatsAppen
         </a>
@@ -307,7 +409,7 @@
     </footer>
 
 
-    <a href="https://wa.me/31630420742" target="_blank" class="fixed bottom-5 right-5 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition z-50 flex items-center justify-center w-14 h-14">
+    <a href="https://wa.me/31618922134" target="_blank" class="fixed bottom-5 right-5 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition z-50 flex items-center justify-center w-14 h-14">
         <i class="ph ph-whatsapp-logo text-3xl"></i>
     </a>
 
