@@ -1,10 +1,11 @@
 (function () {
   // --- 1. Menu & Navigatie ---
   window.toggleMobileMenu = function () {
-    const menu = document.getElementById("mobileMenu");
+    const menu = document.getElementById("mobile-menu");
     if (!menu) return;
-    menu.classList.toggle("hidden");
+    menu.classList.toggle("open");
   };
+
 
   // --- 2. Actieve Navigatie Link ---
   window.setActiveNav = function (element) {

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://4builders-amsterdam.nl/sitemap.xml
