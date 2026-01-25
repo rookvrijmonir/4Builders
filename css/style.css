@@ -1241,3 +1241,70 @@ details.faq-item .answer {
 .border-orange {
     border-color: var(--accent-orange);
 }
+
+/* --- Rating Badge Component --- */
+.rating-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.rating-badge .rating-score {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-orange);
+    line-height: 1;
+}
+
+.rating-badge .rating-stars {
+    display: flex;
+    gap: 2px;
+    font-size: 0.875rem;
+}
+
+.rating-badge .rating-stars i {
+    color: var(--accent-orange);
+}
+
+.rating-badge .rating-stars .star-empty {
+    color: #D1D5DB;
+}
+
+.rating-badge .rating-stars .star-partial {
+    position: relative;
+    display: inline-block;
+}
+
+.rating-badge .rating-stars .star-partial .star-bg {
+    color: #D1D5DB;
+}
+
+.rating-badge .rating-stars .star-partial .star-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    color: var(--accent-orange);
+}
+
+.rating-badge .rating-source {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 0.125rem;
+}
+
+/* Large variant for hero sections */
+.rating-badge-lg .rating-score {
+    font-size: 2.5rem;
+}
+
+.rating-badge-lg .rating-stars {
+    font-size: 1rem;
+}
+
+.rating-badge-lg .rating-source {
+    font-size: 0.75rem;
+}
