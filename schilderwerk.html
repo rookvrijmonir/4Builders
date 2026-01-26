@@ -42,64 +42,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script src="js/main.js" defer></script>
+<script src="js/includes.js"></script>
 </head>
 
 <body class="antialiased bg-white text-gray-900">
 
-  <!-- TOP BAR -->
-  <div class="hidden md:block bg-brand-dark text-white py-2 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-      <div class="flex items-center gap-6">
-        <span class="flex items-center gap-2">
-          <i class="ph ph-map-pin text-brand-orange"></i>
-          Amsterdam & Omgeving
-        </span>
-        <span class="flex items-center gap-2">
-          <i class="ph ph-clock text-brand-orange"></i>
-          Ma-Vr: 07:00 - 18:00
-        </span>
-      </div>
-      <div class="flex items-center gap-6">
-        <a href="tel:+31618922134" class="flex items-center gap-2 hover:text-brand-orange transition">
-          <i class="ph ph-phone text-brand-orange"></i>
-          +31 6 18 92 21 34
-        </a>
-        <a href="mailto:info@4builders-amsterdam.nl" class="flex items-center gap-2 hover:text-brand-orange transition">
-          <i class="ph ph-envelope text-brand-orange"></i>
-          info@4builders-amsterdam.nl
-        </a>
-        <a href="en/painting.html" class="flex items-center gap-2 hover:text-brand-orange transition border-l border-white/20 pl-6">
-          <i class="ph ph-globe text-brand-orange"></i>
-          EN
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- NAVIGATION -->
-  <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm md:top-[40px]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <a href="index.html" class="flex-shrink-0">
-          <span class="font-header text-2xl font-bold tracking-wider text-gray-900">4<span class="text-brand-orange">BUILDERS</span></span>
-        </a>
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="index.html#diensten" class="text-gray-700 hover:text-brand-orange transition px-3 py-2 text-sm font-medium">Diensten</a>
-          <a href="index.html#portfolio" class="text-gray-700 hover:text-brand-orange transition px-3 py-2 text-sm font-medium">Ons Werk</a>
-          <a href="index.html#over-ons" class="text-gray-700 hover:text-brand-orange transition px-3 py-2 text-sm font-medium">Over Ons</a>
-          <a href="#contact" class="bg-brand-orange text-white hover:bg-orange-600 px-5 py-2.5 rounded text-sm font-bold uppercase tracking-wide transition shadow-lg shadow-orange-200">
-            Offerte Aanvragen
-          </a>
-        </div>
-        <div class="md:hidden flex items-center gap-4">
-          <a href="en/painting.html" class="text-gray-500 hover:text-brand-orange text-sm font-medium">EN</a>
-          <a href="#contact" class="bg-brand-orange text-white hover:bg-orange-600 px-4 py-2 rounded text-sm font-bold uppercase tracking-wide transition">
-            Offerte
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
+<div id="header-placeholder"></div>
 
   <!-- HERO SECTION -->
   <section class="service-hero relative min-h-[70vh] flex items-center">
@@ -641,112 +590,12 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer-dark py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-        <!-- Company Info -->
-        <div class="lg:col-span-2">
-          <span class="font-header text-2xl font-bold text-white">4<span class="text-brand-orange">BUILDERS</span></span>
-          <p class="text-gray-400 mt-4 max-w-md">
-            Vakmanschap en betrouwbaarheid voor vastgoedonderhoud in Amsterdam. Achterhoekse nuchterheid, Amsterdamse kwaliteit.
-          </p>
-          <div class="flex gap-4 mt-6">
-            <a href="https://wa.me/31618922134" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#25D366] transition" title="WhatsApp">
-              <i class="ph ph-whatsapp-logo text-white"></i>
-            </a>
-            <a href="mailto:info@4builders-amsterdam.nl" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-orange transition" title="E-mail">
-              <i class="ph ph-envelope text-white"></i>
-            </a>
-            <a href="tel:+31618922134" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-orange transition" title="Bellen">
-              <i class="ph ph-phone text-white"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Diensten -->
-        <div>
-          <h4 class="font-header text-lg font-bold mb-4 text-white">Diensten</h4>
-          <ul class="space-y-3">
-            <li><a href="schilderwerk.html" class="text-brand-orange flex items-center gap-2"><i class="ph ph-caret-right text-brand-orange text-sm"></i>Schilderwerk</a></li>
-            <li><a href="vloeren.html" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2"><i class="ph ph-caret-right text-brand-orange text-sm"></i>Vloeren</a></li>
-            <li><a href="timmerwerk.html" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2"><i class="ph ph-caret-right text-brand-orange text-sm"></i>Timmerwerk</a></li>
-            <li><a href="bestrating.html" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2"><i class="ph ph-caret-right text-brand-orange text-sm"></i>Bestrating</a></li>
-            <li><a href="vve.html" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2"><i class="ph ph-caret-right text-brand-orange text-sm"></i>VVE Onderhoud</a></li>
-          </ul>
-        </div>
-
-        <!-- Werkgebied -->
-        <div>
-          <h4 class="font-header text-lg font-bold mb-4 text-white">Werkgebied</h4>
-          <ul class="space-y-3 text-gray-400">
-            <li class="flex items-start gap-2"><i class="ph ph-map-pin text-brand-orange mt-1"></i>Amsterdam Centrum</li>
-            <li class="flex items-start gap-2"><i class="ph ph-map-pin text-brand-orange mt-1"></i>Grachtengordel</li>
-            <li class="flex items-start gap-2"><i class="ph ph-map-pin text-brand-orange mt-1"></i>Jordaan</li>
-            <li class="flex items-start gap-2"><i class="ph ph-map-pin text-brand-orange mt-1"></i>De Pijp</li>
-            <li class="flex items-start gap-2"><i class="ph ph-map-pin text-brand-orange mt-1"></i>Oud-Zuid</li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div>
-          <h4 class="font-header text-lg font-bold mb-4 text-white">Contact</h4>
-          <ul class="space-y-3 text-gray-400">
-            <li class="flex items-start gap-2">
-              <i class="ph ph-phone text-brand-orange mt-1"></i>
-              <a href="tel:+31618922134" class="hover:text-brand-orange transition">+31 6 18 92 21 34</a>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="ph ph-envelope text-brand-orange mt-1"></i>
-              <a href="mailto:info@4builders-amsterdam.nl" class="hover:text-brand-orange transition">info@4builders-amsterdam.nl</a>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="ph ph-clock text-brand-orange mt-1"></i>
-              <span>Ma-Vr: 07:00 - 18:00</span>
-            </li>
-            <li class="pt-2">
-              <a href="privacy.html" class="text-sm hover:text-brand-orange transition">Privacy Policy</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="border-t border-white/10 mt-12 pt-8">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="text-gray-500 text-sm">&copy; 2025 4Builders Vastgoedonderhoud B.V. Alle rechten voorbehouden.</p>
-          <div class="flex items-center gap-6 text-gray-500 text-sm">
-            <span class="flex items-center gap-2"><i class="ph ph-identification-badge text-brand-orange"></i>KVK: 99333074</span>
-            <span class="flex items-center gap-2"><i class="ph ph-shield-check text-brand-orange"></i>Volledig Verzekerd</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- MOBILE STICKY CTA -->
-  <div class="mobile-sticky-cta md:hidden">
-    <div class="grid grid-cols-3 gap-2">
-      <a href="tel:+31618922134" class="flex flex-col items-center justify-center py-3 bg-gray-100 rounded hover:bg-gray-200 transition">
-        <i class="ph ph-phone text-brand-orange text-xl"></i>
-        <span class="text-xs text-gray-700 mt-1">Bellen</span>
-      </a>
-      <a href="https://wa.me/31618922134" target="_blank" class="flex flex-col items-center justify-center py-3 bg-[#25D366] rounded hover:bg-[#20bd5a] transition">
-        <i class="ph ph-whatsapp-logo text-white text-xl"></i>
-        <span class="text-xs text-white mt-1">WhatsApp</span>
-      </a>
-      <a href="#contact" class="flex flex-col items-center justify-center py-3 bg-brand-orange rounded hover:bg-orange-600 transition">
-        <i class="ph ph-envelope-simple text-white text-xl"></i>
-        <span class="text-xs text-white mt-1">Offerte</span>
-      </a>
-    </div>
-  </div>
+<div id="footer-placeholder"></div>
 
   <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/31618922134" target="_blank" class="whatsapp-float hidden md:flex">
     <i class="ph ph-whatsapp-logo"></i>
   </a>
 
-  <script src="js/main.js"></script>
 </body>
 </html>
