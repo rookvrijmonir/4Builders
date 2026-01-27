@@ -45,24 +45,13 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-2 md:gap-4">
+        <div class="relative">
+            <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Postcode klus*</label>
             <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Postcode klus*</label>
-                <div class="relative">
-                    <input type="text" name="zip" required placeholder="1234 AB" class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
-                    <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
-                </div>
-                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
+                <input type="text" name="zip" required placeholder="1234 AB" class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
+                <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
             </div>
-            <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Locatie*</label>
-                <div class="relative">
-                    <input type="text" name="city" value="Amsterdam" readonly class="w-full bg-gray-50 border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-500 rounded outline-none cursor-not-allowed">
-                    <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3">
-                        <i class="ph ph-lock-key text-gray-400 text-base md:text-lg"></i>
-                    </span>
-                </div>
-            </div>
+            <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
         </div>
 
         <div class="relative">
