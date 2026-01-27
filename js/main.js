@@ -7,6 +7,37 @@
   };
 
 
+  // --- 1b. Smooth scroll for same-page hash links (e.g. /#contact on homepage) ---
+  document.addEventListener("click", function (e) {
+    const link = e.target.closest("a[href]");
+    if (!link) return;
+
+    const href = link.getAttribute("href");
+    if (!href) return;
+
+    // Parse the link to check if it points to current page with a hash
+    const url = new URL(href, window.location.origin);
+    const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+    const linkPath = url.pathname.replace(/\/$/, "") || "/";
+
+    if (url.hash && linkPath === currentPath) {
+      e.preventDefault();
+      const target = document.querySelector(url.hash);
+      if (target) {
+        // Close mobile menu if open
+        const menu = document.getElementById("mobile-menu");
+        if (menu && menu.classList.contains("open")) {
+          menu.classList.remove("open");
+        }
+        const navHeight = 80;
+        const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+        window.scrollTo({ top: top, behavior: "smooth" });
+        // Update URL hash without triggering scroll
+        history.pushState(null, "", url.hash);
+      }
+    }
+  });
+
   // --- 2. Actieve Navigatie Link ---
   window.setActiveNav = function (element) {
     document.querySelectorAll(".nav-link").forEach((link) => link.classList.remove("active"));
@@ -349,5 +380,18 @@
   // Form is loaded async via includes.js — wait for components-loaded event
   document.addEventListener("components-loaded", () => {
     setupCustomForm();
+
+    // Scroll to hash target after async components are loaded
+    // Fixes: browser tries to scroll before form/header are in DOM
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          const navHeight = 80; // sticky nav h-20 = 80px
+          const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+          window.scrollTo({ top: top, behavior: "smooth" });
+        }, 150);
+      }
+    }
   });
 })();
