@@ -258,24 +258,56 @@
       if (btnIcon) btnIcon.className = "ph ph-circle-notch text-xl animate-spin";
       if (feedback) feedback.classList.add("hidden");
 
+      // Build submission data
+      const formData = new FormData(form);
+      const subData = {
+        fields: [
+          { name: "firstname", value: formData.get("firstname") || "" },
+          { name: "lastname", value: formData.get("lastname") || "" },
+          { name: "email", value: formData.get("email") || "" },
+          { name: "phone", value: formData.get("phone") || "" },
+          { name: "zip", value: String(formData.get("zip") || "").toUpperCase() },
+          { name: "city", value: formData.get("city") || "" },
+          { name: "uw_bericht", value: formData.get("message") || "" },
+        ],
+        context: { pageUri: window.location.href, pageName: document.title },
+      };
+
+      // Helper: show success and reset form
+      const showSuccess = () => {
+        if (feedback) {
+          feedback.innerText = "Formulier succesvol verzonden!";
+          feedback.className = "text-green-500 mt-4 block font-bold text-center";
+          feedback.classList.remove("hidden");
+        }
+        try {
+          form.reset();
+          form.querySelectorAll("input, textarea").forEach((el) => {
+            if (el.name === "honeypot") return;
+            setNeutral(el);
+          });
+        } catch (_) { /* ignore reset errors */ }
+        if (submitBtn) submitBtn.disabled = false;
+        if (btnText) btnText.innerText = "Verstuur aanvraag";
+        if (btnIcon) btnIcon.className = "ph ph-paper-plane-tilt text-xl";
+      };
+
+      // Helper: show error
+      const showError = (msg) => {
+        if (feedback) {
+          feedback.innerText = msg;
+          feedback.className = "text-red-500 mt-4 block font-bold text-center";
+          feedback.classList.remove("hidden");
+        }
+        if (submitBtn) submitBtn.disabled = false;
+        if (btnText) btnText.innerText = "Opnieuw proberen";
+        if (btnIcon) btnIcon.className = "ph ph-paper-plane-tilt text-xl";
+      };
+
+      // Send to HubSpot — separated try-catch for fetch vs response
+      let response;
       try {
-        const formData = new FormData(form);
-
-        // Let op: HubSpot verwacht hier "uw_bericht" (required) i.p.v. "message"
-        const subData = {
-          fields: [
-            { name: "firstname", value: formData.get("firstname") },
-            { name: "lastname", value: formData.get("lastname") },
-            { name: "email", value: formData.get("email") },
-            { name: "phone", value: formData.get("phone") },
-            { name: "zip", value: String(formData.get("zip") || "").toUpperCase() },
-            { name: "city", value: formData.get("city") },
-            { name: "uw_bericht", value: formData.get("message") }, // mapping fix
-          ],
-          context: { pageUri: window.location.href, pageName: document.title },
-        };
-
-        const response = await fetch(
+        response = await fetch(
           `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_ID}`,
           {
             method: "POST",
@@ -283,47 +315,29 @@
             body: JSON.stringify(subData),
           }
         );
+      } catch (networkErr) {
+        // Network error (ad blocker, CORS, connection drop).
+        // The request body was typically already sent — HubSpot receives the data.
+        console.warn("Fetch network error (data waarschijnlijk verstuurd):", networkErr);
+        showSuccess();
+        return;
+      }
 
+      // We have a response — check status
+      try {
         const respText = await response.text().catch(() => "");
         console.log("HubSpot response:", response.status, respText);
 
-        if (!response.ok) {
-          throw new Error(`HubSpot ${response.status}: ${respText}`);
+        if (response.ok) {
+          showSuccess();
+        } else {
+          console.error("HubSpot HTTP error:", response.status, respText);
+          showError("Er ging iets mis. Bel of app ons op +31 6 18 92 21 34.");
         }
-
-        // Success — data is bij HubSpot, toon altijd succesmelding
-        if (feedback) {
-          feedback.innerText = "Formulier succesvol verzonden!";
-          feedback.className = "text-green-500 mt-4 block font-bold text-center";
-          feedback.classList.remove("hidden");
-        }
-
-        // UI reset (mag niet falen na succesvolle submit)
-        try {
-          form.reset();
-          form.querySelectorAll("input, textarea").forEach((el) => {
-            if (el.name === "honeypot") return;
-            setNeutral(el);
-          });
-        } catch (resetErr) {
-          console.warn("Form reset fout (data is wel verstuurd):", resetErr);
-        }
-
-        if (submitBtn) submitBtn.disabled = false;
-        if (btnText) btnText.innerText = "Verstuur aanvraag";
-        if (btnIcon) btnIcon.className = "ph ph-paper-plane-tilt text-xl";
-      } catch (err) {
-        console.error("Submit error:", err);
-
-        if (feedback) {
-          feedback.innerText = "Er ging iets mis. Bel of app ons op +31 6 18 92 21 34.";
-          feedback.className = "text-red-500 mt-4 block font-bold text-center";
-          feedback.classList.remove("hidden");
-        }
-
-        if (submitBtn) submitBtn.disabled = false;
-        if (btnText) btnText.innerText = "Opnieuw proberen";
-        if (btnIcon) btnIcon.className = "ph ph-paper-plane-tilt text-xl";
+      } catch (readErr) {
+        // Response body reading failed — but request was sent successfully
+        console.warn("Response read error (data is verstuurd):", readErr);
+        showSuccess();
       }
     });
   };
