@@ -8,11 +8,11 @@
 
 /* --- SCROLL OFFSET FOR FIXED HEADER --- */
 html {
-    scroll-padding-top: 100px; /* mobile: nav only */
+    scroll-padding-top: 90px; /* mobile: nav (80px) + breathing room */
 }
 @media (min-width: 768px) {
     html {
-        scroll-padding-top: 140px; /* desktop: top bar + nav */
+        scroll-padding-top: 130px; /* desktop: top bar (40px) + nav (80px) + breathing room */
     }
 }
 
@@ -1010,12 +1010,8 @@ details.faq-item .answer {
     color: var(--accent-orange);
 }
 
-/* Adjust for top bar on desktop */
-@media (min-width: 768px) {
-    body {
-        padding-top: 40px; /* Height of top bar */
-    }
-}
+/* No body padding-top needed: header is fully fixed, hero sections
+   fill viewport underneath. Non-hero pages use service-hero padding. */
 
 /* --- Footer (Dark) --- */
 .footer-dark {
@@ -1050,8 +1046,14 @@ details.faq-item .answer {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: 5rem;
+    padding-top: 6rem;  /* mobile: clears nav (80px) */
     background-color: var(--bg-dark);
+}
+
+@media (min-width: 768px) {
+    .service-hero {
+        padding-top: 9rem; /* desktop: clears top bar + nav (~120px) */
+    }
 }
 
 .service-hero .overlay {
