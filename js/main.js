@@ -8,6 +8,19 @@
 
 
   // --- 1b. Smooth scroll for same-page hash links (e.g. /#contact on homepage) ---
+  function scrollToHash(hash) {
+    const target = document.querySelector(hash);
+    if (!target) return;
+    // Wait for layout to settle (menu closing, reflow)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const navHeight = 80;
+        const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+        window.scrollTo({ top: top, behavior: "smooth" });
+      });
+    });
+  }
+
   document.addEventListener("click", function (e) {
     const link = e.target.closest("a[href]");
     if (!link) return;
@@ -22,19 +35,13 @@
 
     if (url.hash && linkPath === currentPath) {
       e.preventDefault();
-      const target = document.querySelector(url.hash);
-      if (target) {
-        // Close mobile menu if open
-        const menu = document.getElementById("mobile-menu");
-        if (menu && menu.classList.contains("open")) {
-          menu.classList.remove("open");
-        }
-        const navHeight = 80;
-        const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
-        window.scrollTo({ top: top, behavior: "smooth" });
-        // Update URL hash without triggering scroll
-        history.pushState(null, "", url.hash);
+      // Close mobile menu if open
+      const menu = document.getElementById("mobile-menu");
+      if (menu && menu.classList.contains("open")) {
+        menu.classList.remove("open");
       }
+      scrollToHash(url.hash);
+      history.pushState(null, "", url.hash);
     }
   });
 
@@ -384,14 +391,7 @@
     // Scroll to hash target after async components are loaded
     // Fixes: browser tries to scroll before form/header are in DOM
     if (window.location.hash) {
-      const target = document.querySelector(window.location.hash);
-      if (target) {
-        setTimeout(() => {
-          const navHeight = 80; // sticky nav h-20 = 80px
-          const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
-          window.scrollTo({ top: top, behavior: "smooth" });
-        }, 150);
-      }
+      scrollToHash(window.location.hash);
     }
   });
 })();

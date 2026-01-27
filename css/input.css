@@ -1185,32 +1185,60 @@ details.faq-item .answer {
 .section-header {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .section-header {
+        margin: 0 auto 2rem;
+    }
 }
 
 .section-header .badge {
     display: inline-block;
     background-color: var(--accent-orange-light);
     color: var(--accent-orange);
-    padding: 0.5rem 1rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 2px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .section-header .badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+    }
 }
 
 .section-header h2 {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     color: var(--text-dark);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .section-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
 }
 
 .section-header p {
     color: var(--text-light);
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .section-header p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
 }
 
 /* Dark section header variant */
