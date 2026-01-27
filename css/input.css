@@ -1258,7 +1258,7 @@ details.faq-item .answer {
 .contact-card {
     background-color: var(--bg-white);
     border-radius: 12px;
-    padding: 0.75rem;
+    padding: 1.25rem;
     box-shadow: 0 10px 60px rgba(0, 0, 0, 0.08);
     border: 1px solid var(--border-light);
 }
@@ -1266,6 +1266,25 @@ details.faq-item .answer {
 @media (min-width: 768px) {
     .contact-card {
         padding: 2.5rem;
+    }
+}
+
+/* Contact details card - mobile gets card styling for clean visual separation */
+.contact-details-card {
+    background-color: var(--bg-white);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-light);
+}
+
+@media (min-width: 1024px) {
+    .contact-details-card {
+        background: none;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
     }
 }
 
