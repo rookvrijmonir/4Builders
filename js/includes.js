@@ -1,6 +1,6 @@
 /**
  * Component includes loader
- * Loads header and footer components based on page language
+ * Loads header, footer and form components based on page language
  */
 (function() {
     'use strict';
@@ -36,9 +36,15 @@
     }
 
     // Load components when DOM is ready
-    document.addEventListener('DOMContentLoaded', function() {
-        // Load header and footer based on language
-        loadComponent(`header-${lang}`, 'header-placeholder');
-        loadComponent(`footer-${lang}`, 'footer-placeholder');
+    document.addEventListener('DOMContentLoaded', async function() {
+        // Load all components in parallel, wait for all to finish
+        await Promise.all([
+            loadComponent(`header-${lang}`, 'header-placeholder'),
+            loadComponent(`footer-${lang}`, 'footer-placeholder'),
+            loadComponent(`form-${lang}`, 'form-placeholder')
+        ]);
+
+        // Signal that all components are in the DOM
+        document.dispatchEvent(new Event('components-loaded'));
     });
 })();

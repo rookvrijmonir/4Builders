@@ -332,6 +332,10 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     applyTranslations();
+  });
+
+  // Form is loaded async via includes.js — wait for components-loaded event
+  document.addEventListener("components-loaded", () => {
     setupCustomForm();
   });
 })();

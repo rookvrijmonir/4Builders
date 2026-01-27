@@ -1,0 +1,94 @@
+<div class="contact-card form-light">
+    <h3 class="font-header text-2xl font-bold text-gray-900 mb-6">Vertel Over Uw Project</h3>
+
+    <form id="custom4BuildersForm" class="space-y-5">
+        <!-- Honeypot (spam protection) -->
+        <div class="hidden" aria-hidden="true">
+            <input type="text" name="honeypot" tabindex="-1" autocomplete="off" value="">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="relative">
+                <label class="block text-gray-700 text-sm font-semibold mb-2">Voornaam*</label>
+                <div class="relative">
+                    <input type="text" name="firstname" required class="w-full bg-white border border-gray-200 p-3 pr-10 text-gray-900 rounded focus:border-brand-orange outline-none transition">
+                    <span class="validation-icon absolute right-3 top-3 hidden"></span>
+                </div>
+                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
+            </div>
+            <div class="relative">
+                <label class="block text-gray-700 text-sm font-semibold mb-2">Achternaam*</label>
+                <div class="relative">
+                    <input type="text" name="lastname" required class="w-full bg-white border border-gray-200 p-3 pr-10 text-gray-900 rounded focus:border-brand-orange outline-none transition">
+                    <span class="validation-icon absolute right-3 top-3 hidden"></span>
+                </div>
+                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="relative">
+                <label class="block text-gray-700 text-sm font-semibold mb-2">E-mail*</label>
+                <div class="relative">
+                    <input type="email" name="email" required class="w-full bg-white border border-gray-200 p-3 pr-10 text-gray-900 rounded focus:border-brand-orange outline-none transition">
+                    <span class="validation-icon absolute right-3 top-3 hidden"></span>
+                </div>
+                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
+            </div>
+            <div class="relative">
+                <label class="block text-gray-700 text-sm font-semibold mb-2">Telefoonnummer</label>
+                <div class="relative">
+                    <input type="tel" name="phone" class="w-full bg-white border border-gray-200 p-3 pr-10 text-gray-900 rounded focus:border-brand-orange outline-none transition">
+                    <span class="validation-icon absolute right-3 top-3 hidden"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="relative">
+                <label class="block text-gray-700 text-sm font-semibold mb-2">Postcode klus*</label>
+                <div class="relative">
+                    <input type="text" name="zip" required placeholder="1234 AB" class="w-full bg-white border border-gray-200 p-3 pr-10 text-gray-900 rounded focus:border-brand-orange outline-none transition">
+                    <span class="validation-icon absolute right-3 top-3 hidden"></span>
+                </div>
+                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
+            </div>
+            <div class="relative">
+                <label class="block text-gray-700 text-sm font-semibold mb-2">Locatie*</label>
+                <div class="relative">
+                    <input type="text" name="city" value="Amsterdam" readonly class="w-full bg-gray-50 border border-gray-200 p-3 pr-10 text-gray-500 rounded outline-none cursor-not-allowed">
+                    <span class="validation-icon absolute right-3 top-3">
+                        <i class="ph ph-lock-key text-gray-400 text-lg"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative">
+            <label class="block text-gray-700 text-sm font-semibold mb-2">Omschrijving*</label>
+            <textarea name="message" required rows="4" placeholder="Vertel ons over uw project..." class="w-full bg-white border border-gray-200 p-3 text-gray-900 rounded focus:border-brand-orange outline-none transition resize-none"></textarea>
+            <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
+        </div>
+
+        <button type="submit" id="submitBtn" class="flex items-center justify-center gap-2 w-full bg-brand-orange text-white font-bold py-4 rounded uppercase tracking-widest hover:bg-orange-600 transition shadow-lg shadow-orange-200">
+            <span id="btnText">Verstuur aanvraag</span>
+            <i id="btnIcon" class="ph ph-paper-plane-tilt text-xl"></i>
+        </button>
+
+        <!-- Trust signals -->
+        <div class="flex justify-center gap-4 mt-4 text-xs text-gray-500">
+            <span class="flex items-center gap-1">
+                <i class="ph ph-shield-check text-green-500"></i> Volledig verzekerd
+            </span>
+            <span class="flex items-center gap-1">
+                <i class="ph ph-clock text-brand-orange"></i> 24u reactie garantie
+            </span>
+        </div>
+
+        <p class="text-gray-500 text-xs text-center mt-3">
+            Foto's of tekeningen? Stuur ze na het versturen via WhatsApp.
+        </p>
+
+        <p id="formFeedback" class="hidden text-center mt-4 font-bold"></p>
+    </form>
+</div>
