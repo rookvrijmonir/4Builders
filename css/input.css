@@ -1013,6 +1013,21 @@ details.faq-item .answer {
 /* No body padding-top needed: header is fully fixed, hero sections
    fill viewport underneath. Non-hero pages use service-hero padding. */
 
+/* --- Cover 40px gap above fixed nav when top bar scrolls away --- */
+@media (min-width: 768px) {
+    #header-placeholder nav::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+}
+
 /* --- Footer (Dark) --- */
 .footer-dark {
     background-color: var(--bg-dark);
