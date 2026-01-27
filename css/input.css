@@ -1043,26 +1043,50 @@ details.faq-item .answer {
     position: relative;
     min-height: 60vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     overflow: hidden;
-    padding-top: 5rem;
+    padding-bottom: 3rem;
     background-color: var(--bg-dark);
 }
 
 @media (max-width: 767px) {
     .service-hero {
-        min-height: auto;
-        align-items: flex-start;
-        padding-top: 6rem;
-        padding-bottom: 2.5rem;
+        min-height: 60vh;
+        align-items: flex-end;
+        padding-bottom: 2rem;
     }
 }
 
 .service-hero .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, var(--bg-dark), rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.5));
+    background: linear-gradient(to top,
+        #111111 0%,
+        rgba(17, 17, 17, 0.85) 15%,
+        rgba(17, 17, 17, 0.5) 35%,
+        rgba(17, 17, 17, 0.15) 55%,
+        transparent 70%
+    );
+}
+
+/* --- Homepage Hero Overlay: subtle veil + stronger bottom gradient --- */
+.hero-overlay-bottom {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top,
+            rgba(17, 17, 17, 0.8) 0%,
+            rgba(17, 17, 17, 0.5) 25%,
+            rgba(17, 17, 17, 0.15) 50%,
+            transparent 70%
+        ),
+        rgba(17, 17, 17, 0.2);
+}
+
+/* --- Hero Text Shadow for readability --- */
+.hero-text-shadow {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.3);
 }
 
 /* --- Sub-service Cards (Light) --- */
