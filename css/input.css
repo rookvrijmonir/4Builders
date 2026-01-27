@@ -6,6 +6,16 @@
    LIGHT THEME - 4Builders Website
    ============================================ */
 
+/* --- SCROLL OFFSET FOR FIXED HEADER --- */
+html {
+    scroll-padding-top: 100px; /* mobile: nav only */
+}
+@media (min-width: 768px) {
+    html {
+        scroll-padding-top: 140px; /* desktop: top bar + nav */
+    }
+}
+
 /* --- COLOR VARIABLES --- */
 :root {
     --bg-white: #FFFFFF;
