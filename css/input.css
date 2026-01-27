@@ -35,6 +35,10 @@ html {
     --accent-orange-dark: #E64A19;
     --accent-orange-light: rgba(255, 87, 34, 0.1);
 
+    --accent-copper: #B3633A;
+    --accent-copper-dark: #9A5230;
+    --accent-copper-light: rgba(179, 99, 58, 0.1);
+
     --border-light: rgba(0, 0, 0, 0.08);
     --border-medium: rgba(0, 0, 0, 0.12);
     --border-dark: rgba(255, 255, 255, 0.1);
@@ -1426,4 +1430,195 @@ details.faq-item .answer {
 
 .form-trust-signals .ph-clock {
     color: var(--accent-orange);
+}
+
+/* ============================================
+   PREMIUM FORM COMPONENTS
+   ============================================ */
+
+/* --- Premium Form Header (Playfair Display serif) --- */
+.form-premium-header {
+    font-family: 'Playfair Display', 'Georgia', serif !important;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* --- Service Radio Card Grid --- */
+.service-radio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .service-radio-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.625rem;
+    }
+}
+
+/* --- Service Radio Card --- */
+.service-radio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    padding: 0.75rem 0.5rem;
+    border: 1px solid var(--border-medium);
+    border-radius: 8px;
+    background-color: var(--bg-white);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .service-radio-card {
+        padding: 1rem 0.75rem;
+        gap: 0.5rem;
+    }
+}
+
+.service-radio-card i {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    transition: color 0.2s ease;
+}
+
+@media (min-width: 768px) {
+    .service-radio-card i {
+        font-size: 1.5rem;
+    }
+}
+
+.service-radio-card span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-medium);
+    line-height: 1.2;
+    transition: color 0.2s ease;
+}
+
+@media (min-width: 768px) {
+    .service-radio-card span {
+        font-size: 0.8rem;
+    }
+}
+
+.service-radio-card:hover {
+    border-color: var(--accent-copper);
+    background-color: var(--accent-copper-light);
+}
+
+.service-radio-card:hover i {
+    color: var(--accent-copper);
+}
+
+/* Selected state via :has() */
+.service-radio-card:has(input:checked) {
+    border-color: var(--accent-copper);
+    background-color: var(--accent-copper-light);
+    box-shadow: 0 0 0 1px var(--accent-copper);
+}
+
+.service-radio-card:has(input:checked) i {
+    color: var(--accent-copper);
+}
+
+.service-radio-card:has(input:checked) span {
+    color: var(--text-dark);
+}
+
+/* Fallback .selected class for browsers without :has() */
+.service-radio-card.selected {
+    border-color: var(--accent-copper);
+    background-color: var(--accent-copper-light);
+    box-shadow: 0 0 0 1px var(--accent-copper);
+}
+
+.service-radio-card.selected i {
+    color: var(--accent-copper);
+}
+
+.service-radio-card.selected span {
+    color: var(--text-dark);
+}
+
+/* Error state for service selector */
+.service-radio-grid.has-error .service-radio-card {
+    border-color: #ef4444;
+}
+
+/* --- Premium Form Submit Button (Copper) --- */
+.form-submit-btn {
+    background-color: var(--accent-copper);
+    box-shadow: 0 2px 8px rgba(179, 99, 58, 0.25), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-submit-btn:hover {
+    background-color: var(--accent-copper-dark);
+    box-shadow: 0 4px 16px rgba(179, 99, 58, 0.35), 0 2px 6px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+.form-submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(179, 99, 58, 0.2);
+}
+
+.form-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* --- WhatsApp Ghost Button --- */
+.whatsapp-ghost-btn {
+    background-color: transparent;
+    border: 1px solid var(--border-medium);
+    color: var(--text-medium);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.whatsapp-ghost-btn:hover {
+    border-color: #25D366;
+    color: #25D366;
+    background-color: rgba(37, 211, 102, 0.05);
+}
+
+.whatsapp-ghost-btn i {
+    font-size: 1.125rem;
+    color: #25D366;
+}
+
+/* --- Premium Form Input Refinement --- */
+.contact-card.form-light input[type="text"],
+.contact-card.form-light input[type="email"],
+.contact-card.form-light input[type="tel"],
+.contact-card.form-light textarea {
+    border-color: #E5E7EB;
+    border-radius: 6px;
+}
+
+.contact-card.form-light input:focus,
+.contact-card.form-light textarea:focus {
+    border-color: var(--accent-copper);
+    box-shadow: 0 0 0 3px var(--accent-copper-light);
+}
+
+/* --- Conditional Details Reveal Animation --- */
+#detailsWrapper {
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+#detailsWrapper.visible {
+    opacity: 1;
+    max-height: 200px;
+    overflow: visible;
 }

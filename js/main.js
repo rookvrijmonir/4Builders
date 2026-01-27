@@ -135,7 +135,6 @@
         if (isEmpty(v)) return "Postcode is verplicht.";
         return /^\d{4}\s?[A-Z]{2}$/.test(v) ? "" : "Vul een geldige postcode in (bijv. 1234 AB).";
       },
-      message: (el) => (!isEmpty(el.value) ? "" : "Omschrijving is verplicht."),
       phone: (el) => {
         const v = String(el.value || "").trim();
         if (isEmpty(v)) return "Telefoonnummer is verplicht.";
@@ -232,25 +231,67 @@
       return true;
     }
 
+    // Service radio group validator
+    function validateServiceSelection(force) {
+      var serviceError = document.getElementById("serviceError");
+      var grid = form.querySelector(".service-radio-grid");
+      if (!serviceError || !grid) return true;
+
+      var checked = form.querySelector('input[name="service"]:checked');
+
+      if (!force && !checked) {
+        grid.classList.remove("has-error");
+        serviceError.textContent = "";
+        serviceError.classList.add("hidden");
+        return true;
+      }
+
+      if (!checked) {
+        grid.classList.add("has-error");
+        var isEN = window.location.pathname.startsWith("/en");
+        serviceError.textContent = isEN ? "Please select a service." : "Selecteer een dienst.";
+        serviceError.classList.remove("hidden");
+        return false;
+      }
+
+      grid.classList.remove("has-error");
+      serviceError.textContent = "";
+      serviceError.classList.add("hidden");
+      return true;
+    }
+
+    // Combine service + details into uw_bericht for HubSpot
+    function buildUwBericht(fd) {
+      var service = fd.get("service") || "";
+      var details = (fd.get("details") || "").trim();
+      var bericht = "Dienst: " + service;
+      if (details) bericht += "\n\nDetails: " + details;
+      return bericht;
+    }
+
     function validateForm() {
       let ok = true;
       form.querySelectorAll("input, textarea").forEach((el) => {
-        if (el.name === "honeypot") return; // <-- honeypot overslaan
+        if (el.name === "honeypot") return;
+        if (el.name === "service") return;  // handled separately
+        if (el.name === "details") return;  // optional
         const thisOk = validateField(el, { force: true });
         if (!thisOk) ok = false;
       });
+      // Validate service selection
+      if (!validateServiceSelection(true)) ok = false;
       return ok;
     }
 
-    // Zet alles bij start neutraal (behalve honeypot)
+    // Zet alles bij start neutraal (behalve honeypot, service, details)
     form.querySelectorAll("input, textarea").forEach((el) => {
-      if (el.name === "honeypot") return;
+      if (el.name === "honeypot" || el.name === "service" || el.name === "details") return;
       setNeutral(el);
     });
 
-    // Live events (honeypot overslaan)
+    // Live events (skip honeypot, service radios, details)
     form.querySelectorAll("input, textarea").forEach((el) => {
-      if (el.name === "honeypot") return;
+      if (el.name === "honeypot" || el.name === "service" || el.name === "details") return;
 
       el.addEventListener("input", () => {
         validateField(el, { force: false });
@@ -261,6 +302,36 @@
 
       el.addEventListener("blur", () => {
         validateField(el, { force: true });
+      });
+    });
+
+    // --- Service Radio Card Logic ---
+    var serviceRadios = form.querySelectorAll('input[name="service"]');
+    var detailsWrapper = document.getElementById("detailsWrapper");
+
+    serviceRadios.forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        // Toggle .selected class on cards (fallback for :has())
+        form.querySelectorAll(".service-radio-card").forEach(function (card) {
+          card.classList.remove("selected");
+        });
+        var parentCard = radio.closest(".service-radio-card");
+        if (parentCard) parentCard.classList.add("selected");
+
+        // Show details textarea with animation
+        if (detailsWrapper) {
+          detailsWrapper.classList.remove("hidden");
+          // Trigger reflow before adding visible class for transition
+          detailsWrapper.offsetHeight;
+          detailsWrapper.classList.add("visible");
+        }
+
+        // Clear service error
+        validateServiceSelection(false);
+
+        // Clear general feedback
+        var feedback = document.getElementById("formFeedback");
+        if (feedback) feedback.classList.add("hidden");
       });
     });
 
@@ -304,15 +375,16 @@
           { name: "email", value: formData.get("email") || "" },
           { name: "phone", value: formData.get("phone") || "" },
           { name: "zip", value: String(formData.get("zip") || "").toUpperCase() },
-          { name: "uw_bericht", value: formData.get("message") || "" },
+          { name: "uw_bericht", value: buildUwBericht(formData) },
         ],
         context: { pageUri: window.location.href, pageName: document.title },
       };
 
       // Helper: show success and reset form
+      var isEN = window.location.pathname.startsWith("/en");
       const showSuccess = () => {
         if (feedback) {
-          feedback.innerText = "Formulier succesvol verzonden!";
+          feedback.innerText = isEN ? "Form submitted successfully!" : "Formulier succesvol verzonden!";
           feedback.className = "text-green-500 mt-4 block font-bold text-center";
           feedback.classList.remove("hidden");
         }
@@ -322,9 +394,21 @@
             if (el.name === "honeypot") return;
             setNeutral(el);
           });
+          // Reset service card visuals
+          form.querySelectorAll(".service-radio-card").forEach(function (card) {
+            card.classList.remove("selected");
+          });
+          // Hide details wrapper
+          var dw = document.getElementById("detailsWrapper");
+          if (dw) { dw.classList.add("hidden"); dw.classList.remove("visible"); }
+          // Clear service error
+          var se = document.getElementById("serviceError");
+          if (se) { se.textContent = ""; se.classList.add("hidden"); }
+          var sg = form.querySelector(".service-radio-grid");
+          if (sg) sg.classList.remove("has-error");
         } catch (_) { /* ignore reset errors */ }
         if (submitBtn) submitBtn.disabled = false;
-        if (btnText) btnText.innerText = "Verstuur aanvraag";
+        if (btnText) btnText.innerText = isEN ? "Submit Request" : "Verstuur aanvraag";
         if (btnIcon) btnIcon.className = "ph ph-paper-plane-tilt text-xl";
       };
 
@@ -363,7 +447,7 @@
           beaconParams.append("email", formData.get("email") || "");
           beaconParams.append("phone", formData.get("phone") || "");
           beaconParams.append("zip", String(formData.get("zip") || "").toUpperCase());
-          beaconParams.append("uw_bericht", formData.get("message") || "");
+          beaconParams.append("uw_bericht", buildUwBericht(formData));
 
           const beaconSent = navigator.sendBeacon(
             `https://forms.hubspot.com/uploads/form/v2/${PORTAL_ID}/${FORM_ID}`,
@@ -383,7 +467,10 @@
         console.error("All submission methods failed");
         const fd = new FormData(form);
         const name = ((fd.get("firstname") || "") + " " + (fd.get("lastname") || "")).trim();
-        const isEN = window.location.pathname.startsWith("/en");
+        var serviceVal = fd.get("service") || "";
+        var detailsVal = (fd.get("details") || "").trim();
+        var projectInfo = serviceVal;
+        if (detailsVal) projectInfo += " - " + detailsVal;
 
         var waText;
         if (isEN) {
@@ -391,13 +478,13 @@
             + "\nEmail: " + (fd.get("email") || "")
             + "\nPhone: " + (fd.get("phone") || "")
             + "\nPostcode: " + String(fd.get("zip") || "").toUpperCase()
-            + "\n\n" + (fd.get("message") || "");
+            + "\nService: " + projectInfo;
         } else {
           waText = "Hallo, ik wil graag een offerte aanvragen.\n\nNaam: " + name
             + "\nE-mail: " + (fd.get("email") || "")
             + "\nTelefoon: " + (fd.get("phone") || "")
             + "\nPostcode: " + String(fd.get("zip") || "").toUpperCase()
-            + "\n\n" + (fd.get("message") || "");
+            + "\nDienst: " + projectInfo;
         }
 
         var waUrl = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(waText);

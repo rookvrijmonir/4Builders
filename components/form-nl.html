@@ -1,5 +1,5 @@
 <div class="contact-card form-light">
-    <h3 class="font-header text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-6">Vertel Over Uw Project</h3>
+    <h3 class="form-premium-header text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-6">Vertel Over Uw Project</h3>
 
     <form id="custom4BuildersForm" class="space-y-3 md:space-y-5">
         <!-- Honeypot (spam protection) -->
@@ -54,19 +54,63 @@
             <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
         </div>
 
-        <div class="relative">
-            <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Omschrijving*</label>
-            <textarea name="message" required rows="3" placeholder="Vertel ons over uw project..." class="w-full bg-white border border-gray-200 p-2 md:p-3 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition resize-none"></textarea>
-            <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
+        <!-- SERVICE SELECTOR (Radio Cards) -->
+        <div class="relative" id="serviceSelector">
+            <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-2 md:mb-3">Waar kunnen we mee helpen?*</label>
+            <div class="service-radio-grid">
+                <label class="service-radio-card">
+                    <input type="radio" name="service" value="Schilderwerk" class="sr-only">
+                    <i class="ph ph-paint-brush"></i>
+                    <span>Schilderwerk</span>
+                </label>
+                <label class="service-radio-card">
+                    <input type="radio" name="service" value="Vloeren" class="sr-only">
+                    <i class="ph ph-squares-four"></i>
+                    <span>Vloeren</span>
+                </label>
+                <label class="service-radio-card">
+                    <input type="radio" name="service" value="Timmerwerk" class="sr-only">
+                    <i class="ph ph-hammer"></i>
+                    <span>Timmerwerk</span>
+                </label>
+                <label class="service-radio-card">
+                    <input type="radio" name="service" value="Bestrating" class="sr-only">
+                    <i class="ph ph-grid-four"></i>
+                    <span>Bestrating</span>
+                </label>
+                <label class="service-radio-card">
+                    <input type="radio" name="service" value="VvE Onderhoud" class="sr-only">
+                    <i class="ph ph-buildings"></i>
+                    <span>VvE Onderhoud</span>
+                </label>
+                <label class="service-radio-card">
+                    <input type="radio" name="service" value="Anders / Maatwerk" class="sr-only">
+                    <i class="ph ph-wrench"></i>
+                    <span>Anders / Maatwerk</span>
+                </label>
+            </div>
+            <p class="error-text text-red-500 text-xs mt-1 hidden" id="serviceError"></p>
         </div>
 
-        <button type="submit" id="submitBtn" class="flex items-center justify-center gap-2 w-full bg-brand-orange text-white font-bold py-3 md:py-4 rounded uppercase text-sm md:text-base tracking-widest hover:bg-orange-600 transition shadow-lg shadow-orange-200">
+        <!-- DETAILS TEXTAREA (conditional, shown after service selection) -->
+        <div class="relative hidden" id="detailsWrapper">
+            <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Extra details <span class="font-normal text-gray-400">(optioneel)</span></label>
+            <textarea name="details" rows="2" placeholder="Bijv. aantal kamers, oppervlakte, gewenste startdatum..." class="w-full bg-white border border-gray-200 p-2 md:p-3 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition resize-none"></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn" class="form-submit-btn flex items-center justify-center gap-2 w-full text-white font-bold py-3 md:py-4 rounded uppercase text-sm md:text-base tracking-widest transition">
             <span id="btnText">Verstuur aanvraag</span>
             <i id="btnIcon" class="ph ph-paper-plane-tilt text-lg md:text-xl"></i>
         </button>
 
+        <!-- WhatsApp ghost button -->
+        <a href="https://wa.me/31618922134" target="_blank" class="whatsapp-ghost-btn flex items-center justify-center gap-2 w-full py-3 rounded text-sm transition">
+            <i class="ph ph-whatsapp-logo"></i>
+            <span>Liever direct foto's sturen?</span>
+        </a>
+
         <!-- Trust signals (hidden on mobile to save space) -->
-        <div class="hidden md:flex justify-center gap-4 mt-4 text-xs text-gray-500">
+        <div class="hidden md:flex justify-center gap-4 mt-2 text-xs text-gray-500">
             <span class="flex items-center gap-1">
                 <i class="ph ph-shield-check text-green-500"></i> Volledig verzekerd
             </span>
@@ -74,10 +118,6 @@
                 <i class="ph ph-clock text-brand-orange"></i> 24u reactie garantie
             </span>
         </div>
-
-        <p class="text-gray-500 text-xs text-center mt-3">
-            Foto's of tekeningen? <a href="https://wa.me/31618922134" target="_blank" class="text-[#25D366] font-semibold hover:underline">Stuur ze via WhatsApp</a>.
-        </p>
 
         <p id="formFeedback" class="hidden text-center mt-2 md:mt-4 font-bold"></p>
     </form>
