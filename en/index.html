@@ -853,10 +853,10 @@
                 <div id="form-placeholder" class="lg:row-span-2"></div>
 
                 <!-- Contact info + map -->
-                <div>
-                    <div class="space-y-6">
+                <div class="flex flex-col">
+                    <div class="space-y-5">
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
                                 <i class="ph ph-phone text-brand-orange text-xl"></i>
                             </div>
                             <div>
@@ -866,7 +866,7 @@
                         </div>
 
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
                                 <i class="ph ph-envelope text-brand-orange text-xl"></i>
                             </div>
                             <div>
@@ -876,7 +876,7 @@
                         </div>
 
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-[#25D366]/10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-lg bg-[#25D366]/10 flex items-center justify-center flex-shrink-0">
                                 <i class="ph ph-whatsapp-logo text-[#25D366] text-xl"></i>
                             </div>
                             <div>
@@ -886,7 +886,7 @@
                         </div>
 
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
                                 <i class="ph ph-map-pin text-brand-orange text-xl"></i>
                             </div>
                             <div>
@@ -897,12 +897,12 @@
                         </div>
                     </div>
 
-                    <!-- Google Maps -->
-                    <div class="mt-8 rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <!-- Google Maps (grows to fill remaining height, bottom-aligned with form) -->
+                    <div class="mt-6 flex-1 min-h-[200px] rounded-xl overflow-hidden shadow-lg border border-gray-100">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.5076854889844!2d4.8821!3d52.3534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609e8a1c7c8f7%3A0x6c5c3b8c2d8e9b4a!2sPieter%20Baststraat%2029%2C%201071%20TV%20Amsterdam!5e0!3m2!1sen!2snl!4v1705750000000!5m2!1sen!2snl"
                             width="100%"
-                            height="250"
+                            height="100%"
                             style="border:0;"
                             allowfullscreen=""
                             loading="lazy"
