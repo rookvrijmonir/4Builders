@@ -6,14 +6,15 @@
    LIGHT THEME - 4Builders Website
    ============================================ */
 
-/* --- SCROLL OFFSET FOR FIXED HEADER --- */
-html {
-    scroll-padding-top: 90px; /* mobile: nav (80px) + breathing room */
+/* --- Header placeholder: display:contents so sticky nav uses body as
+   containing block (otherwise the small placeholder limits sticky range) --- */
+#header-placeholder {
+    display: contents;
 }
-@media (min-width: 768px) {
-    html {
-        scroll-padding-top: 130px; /* desktop: top bar (40px) + nav (80px) + breathing room */
-    }
+
+/* --- SCROLL OFFSET FOR STICKY HEADER --- */
+html {
+    scroll-padding-top: 90px; /* nav height (80px) + breathing room */
 }
 
 /* --- COLOR VARIABLES --- */
@@ -1010,23 +1011,7 @@ details.faq-item .answer {
     color: var(--accent-orange);
 }
 
-/* No body padding-top needed: header is fully fixed, hero sections
-   fill viewport underneath. Non-hero pages use service-hero padding. */
-
-/* --- Cover 40px gap above fixed nav when top bar scrolls away --- */
-@media (min-width: 768px) {
-    #header-placeholder nav::before {
-        content: '';
-        position: absolute;
-        top: -40px;
-        left: 0;
-        right: 0;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-    }
-}
+/* No body padding-top needed: sticky nav sits in document flow. */
 
 /* --- Footer (Dark) --- */
 .footer-dark {
@@ -1061,14 +1046,8 @@ details.faq-item .answer {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: 6rem;  /* mobile: clears nav (80px) */
+    padding-top: 5rem;
     background-color: var(--bg-dark);
-}
-
-@media (min-width: 768px) {
-    .service-hero {
-        padding-top: 9rem; /* desktop: clears top bar + nav (~120px) */
-    }
 }
 
 .service-hero .overlay {
