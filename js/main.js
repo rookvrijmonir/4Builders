@@ -352,10 +352,45 @@
           }
         );
       } catch (networkErr) {
-        // Network error (ad blocker, CORS, connection drop).
-        // The request body was typically already sent — HubSpot receives the data.
-        console.warn("Fetch network error (data waarschijnlijk verstuurd):", networkErr);
-        showSuccess();
+        // Network error — likely ad blocker blocking api.hsforms.com
+        // Fallback: offer WhatsApp with all form data pre-filled
+        console.error("Fetch network error:", networkErr);
+
+        const fd = new FormData(form);
+        const name = ((fd.get("firstname") || "") + " " + (fd.get("lastname") || "")).trim();
+        const isEN = window.location.pathname.startsWith("/en");
+
+        var waText;
+        if (isEN) {
+          waText = "Hi, I\u2019d like to request a quote.\n\nName: " + name
+            + "\nEmail: " + (fd.get("email") || "")
+            + "\nPhone: " + (fd.get("phone") || "")
+            + "\nPostcode: " + String(fd.get("zip") || "").toUpperCase()
+            + "\n\n" + (fd.get("message") || "");
+        } else {
+          waText = "Hallo, ik wil graag een offerte aanvragen.\n\nNaam: " + name
+            + "\nE-mail: " + (fd.get("email") || "")
+            + "\nTelefoon: " + (fd.get("phone") || "")
+            + "\nPostcode: " + String(fd.get("zip") || "").toUpperCase()
+            + "\n\n" + (fd.get("message") || "");
+        }
+
+        var waUrl = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(waText);
+        var errorMsg = isEN
+          ? "Submission failed (likely due to an ad blocker)."
+          : "Verzenden mislukt (mogelijk door een adblocker).";
+        var linkLabel = isEN ? "Send via WhatsApp" : "Verstuur via WhatsApp";
+
+        if (feedback) {
+          feedback.innerHTML = errorMsg
+            + ' <a href="' + waUrl + '" target="_blank" rel="noopener"'
+            + ' class="underline text-[#25D366]">' + linkLabel + "</a>";
+          feedback.className = "text-red-500 mt-4 block font-bold text-center";
+          feedback.classList.remove("hidden");
+        }
+        if (submitBtn) submitBtn.disabled = false;
+        if (btnText) btnText.innerText = isEN ? "Try again" : "Opnieuw proberen";
+        if (btnIcon) btnIcon.className = "ph ph-paper-plane-tilt text-xl";
         return;
       }
 
@@ -371,8 +406,8 @@
           showError("Er ging iets mis. Bel of app ons op +31 6 18 92 21 34.");
         }
       } catch (readErr) {
-        // Response body reading failed — but request was sent successfully
-        console.warn("Response read error (data is verstuurd):", readErr);
+        // Response received (request was sent) but body read failed — treat as success
+        console.warn("Response read error (request was sent):", readErr);
         showSuccess();
       }
     });
