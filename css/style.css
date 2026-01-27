@@ -368,7 +368,8 @@ html {
     vertical-align: top;
     margin: 0;
     padding: 0;
-    transition: transform 0.5s ease;
+    filter: brightness(1.08);
+    transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 .service-card:hover .card-image img {
