@@ -100,8 +100,8 @@
       message: (el) => (!isEmpty(el.value) ? "" : "Omschrijving is verplicht."),
       phone: (el) => {
         const v = String(el.value || "").trim();
-        if (isEmpty(v)) return ""; // optioneel
-        return /^[0-9+\s()-]{7,}$/.test(v) ? "" : "Vul een geldig telefoonnummer in (of laat leeg).";
+        if (isEmpty(v)) return "Telefoonnummer is verplicht.";
+        return /^[0-9+\s()-]{7,}$/.test(v) ? "" : "Vul een geldig telefoonnummer in.";
       },
       city: (el) => (!isEmpty(el.value) ? "" : "Locatie is verplicht."),
     };
