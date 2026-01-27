@@ -288,37 +288,35 @@
         console.log("HubSpot response:", response.status, respText);
 
         if (!response.ok) {
-          if (feedback) {
-            feedback.innerText = `HubSpot weigert: ${response.status}. Check console.`;
-            feedback.className = "text-red-500 mt-4 block font-bold text-center";
-            feedback.classList.remove("hidden");
-          }
-          throw new Error(respText || `HTTP ${response.status}`);
+          throw new Error(`HubSpot ${response.status}: ${respText}`);
         }
 
-        // Success
-        form.reset();
-
-        // icons/kleuren resetten (behalve honeypot)
-        form.querySelectorAll("input, textarea").forEach((el) => {
-          if (el.name === "honeypot") return;
-          setNeutral(el);
-        });
-
+        // Success — data is bij HubSpot, toon altijd succesmelding
         if (feedback) {
           feedback.innerText = "Formulier succesvol verzonden!";
           feedback.className = "text-green-500 mt-4 block font-bold text-center";
           feedback.classList.remove("hidden");
         }
 
+        // UI reset (mag niet falen na succesvolle submit)
+        try {
+          form.reset();
+          form.querySelectorAll("input, textarea").forEach((el) => {
+            if (el.name === "honeypot") return;
+            setNeutral(el);
+          });
+        } catch (resetErr) {
+          console.warn("Form reset fout (data is wel verstuurd):", resetErr);
+        }
+
         if (submitBtn) submitBtn.disabled = false;
-        if (btnText) btnText.innerText = "Verstuur";
+        if (btnText) btnText.innerText = "Verstuur aanvraag";
         if (btnIcon) btnIcon.className = "ph ph-paper-plane-tilt text-xl";
       } catch (err) {
         console.error("Submit error:", err);
 
         if (feedback) {
-          feedback.innerText = "Er ging iets mis. App ons direct op 06 30 42 07 42.";
+          feedback.innerText = "Er ging iets mis. Bel of app ons op +31 6 18 92 21 34.";
           feedback.className = "text-red-500 mt-4 block font-bold text-center";
           feedback.classList.remove("hidden");
         }
