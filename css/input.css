@@ -14,7 +14,7 @@
 
 /* --- SCROLL OFFSET FOR STICKY HEADER --- */
 html {
-    scroll-padding-top: 90px; /* nav height (80px) + breathing room */
+    scroll-padding-top: 80px; /* matches sticky nav height (h-20 = 80px) */
 }
 
 /* --- COLOR VARIABLES --- */
