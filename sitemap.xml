@@ -3,93 +3,95 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Dutch pages -->
   <url>
-    <loc>https://www.4builders-amsterdam.nl/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/index.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/index.html"/>
+    <loc>https://www.4builders-amsterdam.nl/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.4builders-amsterdam.nl/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.4builders-amsterdam.nl/schilderwerk.html</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/schilderwerk.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/painting.html"/>
+    <loc>https://www.4builders-amsterdam.nl/schilderwerk/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/schilderwerk/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/painting/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.4builders-amsterdam.nl/vloeren.html</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/vloeren.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/flooring.html"/>
+    <loc>https://www.4builders-amsterdam.nl/vloeren/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/vloeren/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/flooring/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.4builders-amsterdam.nl/timmerwerk.html</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/timmerwerk.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/carpentry.html"/>
+    <loc>https://www.4builders-amsterdam.nl/timmerwerk/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/timmerwerk/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/carpentry/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.4builders-amsterdam.nl/bestrating.html</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/bestrating.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/paving.html"/>
+    <loc>https://www.4builders-amsterdam.nl/bestrating/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/bestrating/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/paving/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.4builders-amsterdam.nl/vve.html</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/vve.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/property-management.html"/>
+    <loc>https://www.4builders-amsterdam.nl/vve/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/vve/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/property-management/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.4builders-amsterdam.nl/privacy.html</loc>
+    <loc>https://www.4builders-amsterdam.nl/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <!-- English pages -->
   <url>
-    <loc>https://www.4builders-amsterdam.nl/en/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/index.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/index.html"/>
+    <loc>https://www.4builders-amsterdam.nl/en/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.4builders-amsterdam.nl/"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.4builders-amsterdam.nl/en/painting.html</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/schilderwerk.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/painting.html"/>
+    <loc>https://www.4builders-amsterdam.nl/en/painting/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/schilderwerk/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/painting/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.4builders-amsterdam.nl/en/flooring.html</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/vloeren.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/flooring.html"/>
+    <loc>https://www.4builders-amsterdam.nl/en/flooring/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/vloeren/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/flooring/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.4builders-amsterdam.nl/en/carpentry.html</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/timmerwerk.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/carpentry.html"/>
+    <loc>https://www.4builders-amsterdam.nl/en/carpentry/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/timmerwerk/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/carpentry/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.4builders-amsterdam.nl/en/paving.html</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/bestrating.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/paving.html"/>
+    <loc>https://www.4builders-amsterdam.nl/en/paving/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/bestrating/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/paving/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.4builders-amsterdam.nl/en/property-management.html</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/vve.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/property-management.html"/>
+    <loc>https://www.4builders-amsterdam.nl/en/property-management/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.4builders-amsterdam.nl/vve/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.4builders-amsterdam.nl/en/property-management/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

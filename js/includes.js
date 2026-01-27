@@ -6,10 +6,10 @@
     'use strict';
 
     // Determine if we're on an English page (in /en/ directory)
-    const isEnglish = window.location.pathname.includes('/en/');
+    const isEnglish = window.location.pathname.startsWith('/en/') || window.location.pathname === '/en';
 
-    // Set the base path for components
-    const basePath = isEnglish ? '../components/' : 'components/';
+    // Use absolute path for components (works regardless of page depth)
+    const basePath = '/components/';
 
     // Determine which language components to load
     const lang = isEnglish ? 'en' : 'nl';
