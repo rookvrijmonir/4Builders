@@ -352,10 +352,35 @@
           }
         );
       } catch (networkErr) {
-        // Network error — likely ad blocker blocking api.hsforms.com
-        // Fallback: offer WhatsApp with all form data pre-filled
-        console.error("Fetch network error:", networkErr);
+        // Network error — fetch to api.hsforms.com blocked (ad blocker / privacy tool)
+        // Fallback 1: try sendBeacon via HubSpot v2 endpoint (different domain, no CORS preflight)
+        console.warn("Fetch blocked, trying sendBeacon fallback:", networkErr);
 
+        try {
+          const beaconParams = new URLSearchParams();
+          beaconParams.append("firstname", formData.get("firstname") || "");
+          beaconParams.append("lastname", formData.get("lastname") || "");
+          beaconParams.append("email", formData.get("email") || "");
+          beaconParams.append("phone", formData.get("phone") || "");
+          beaconParams.append("zip", String(formData.get("zip") || "").toUpperCase());
+          beaconParams.append("uw_bericht", formData.get("message") || "");
+
+          const beaconSent = navigator.sendBeacon(
+            `https://forms.hubspot.com/uploads/form/v2/${PORTAL_ID}/${FORM_ID}`,
+            beaconParams
+          );
+
+          if (beaconSent) {
+            console.log("sendBeacon fallback succeeded");
+            showSuccess();
+            return;
+          }
+        } catch (beaconErr) {
+          console.error("sendBeacon fallback also failed:", beaconErr);
+        }
+
+        // Fallback 2: WhatsApp with all form data pre-filled
+        console.error("All submission methods failed");
         const fd = new FormData(form);
         const name = ((fd.get("firstname") || "") + " " + (fd.get("lastname") || "")).trim();
         const isEN = window.location.pathname.startsWith("/en");
@@ -377,8 +402,8 @@
 
         var waUrl = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(waText);
         var errorMsg = isEN
-          ? "Submission failed (likely due to an ad blocker)."
-          : "Verzenden mislukt (mogelijk door een adblocker).";
+          ? "Submission failed. Please try WhatsApp instead:"
+          : "Verzenden mislukt. Probeer WhatsApp:";
         var linkLabel = isEN ? "Send via WhatsApp" : "Verstuur via WhatsApp";
 
         if (feedback) {
