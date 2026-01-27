@@ -1197,9 +1197,15 @@ details.faq-item .answer {
 .contact-card {
     background-color: var(--bg-white);
     border-radius: 12px;
-    padding: 3rem;
+    padding: 1.25rem;
     box-shadow: 0 10px 60px rgba(0, 0, 0, 0.08);
     border: 1px solid var(--border-light);
+}
+
+@media (min-width: 768px) {
+    .contact-card {
+        padding: 2.5rem;
+    }
 }
 
 /* --- Trust Badges Grid --- */
