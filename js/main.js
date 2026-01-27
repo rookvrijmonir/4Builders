@@ -384,9 +384,70 @@
     applyTranslations();
   });
 
+  // --- 5. WhatsApp Prefilled Messages ---
+  const WA_NUMBER = "31618922134";
+
+  const waMessages = {
+    nl: {
+      general:
+        "Hallo, ik wil graag een offerte aanvragen.\n\nKlus: \nPostcode: \nGewenste start: ",
+      schilderwerk:
+        "Hallo, ik wil graag een offerte voor schilderwerk.\n\nBinnen / buiten: \nPostcode: \nGewenste start: ",
+      vloeren:
+        "Hallo, ik wil graag een offerte voor vloeren.\n\nType vloer: \nOppervlakte (m\u00B2): \nPostcode: ",
+      timmerwerk:
+        "Hallo, ik wil graag een offerte voor timmerwerk.\n\nOmschrijving: \nPostcode: \nGewenste start: ",
+      bestrating:
+        "Hallo, ik wil graag een offerte voor bestrating.\n\nOmschrijving: \nPostcode: \nGewenste start: ",
+      vve:
+        "Hallo, ik wil graag een offerte voor VvE-onderhoud.\n\nType werk: \nAdres pand: \nAantal woningen: ",
+    },
+    en: {
+      general:
+        "Hi, I'd like to request a quote.\n\nType of work: \nPostcode: \nPreferred start: ",
+      painting:
+        "Hi, I'd like a quote for painting.\n\nInterior / exterior: \nPostcode: \nPreferred start: ",
+      flooring:
+        "Hi, I'd like a quote for flooring.\n\nFloor type: \nArea (m\u00B2): \nPostcode: ",
+      carpentry:
+        "Hi, I'd like a quote for carpentry.\n\nDescription: \nPostcode: \nPreferred start: ",
+      paving:
+        "Hi, I'd like a quote for paving.\n\nDescription: \nPostcode: \nPreferred start: ",
+      "property-management":
+        "Hi, I'd like a quote for building maintenance (VvE).\n\nType of work: \nBuilding address: \nNumber of units: ",
+    },
+  };
+
+  function detectPageContext() {
+    const p = window.location.pathname;
+    if (p.startsWith("/schilderwerk")) return { lang: "nl", service: "schilderwerk" };
+    if (p.startsWith("/vloeren")) return { lang: "nl", service: "vloeren" };
+    if (p.startsWith("/timmerwerk")) return { lang: "nl", service: "timmerwerk" };
+    if (p.startsWith("/bestrating")) return { lang: "nl", service: "bestrating" };
+    if (p.startsWith("/vve")) return { lang: "nl", service: "vve" };
+    if (p.startsWith("/en/painting")) return { lang: "en", service: "painting" };
+    if (p.startsWith("/en/flooring")) return { lang: "en", service: "flooring" };
+    if (p.startsWith("/en/carpentry")) return { lang: "en", service: "carpentry" };
+    if (p.startsWith("/en/paving")) return { lang: "en", service: "paving" };
+    if (p.startsWith("/en/property-management")) return { lang: "en", service: "property-management" };
+    if (p.startsWith("/en")) return { lang: "en", service: "general" };
+    return { lang: "nl", service: "general" };
+  }
+
+  function setupWhatsAppLinks() {
+    const { lang, service } = detectPageContext();
+    const msg = waMessages[lang]?.[service] || waMessages[lang]?.general || waMessages.nl.general;
+    const url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
+
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
+      link.href = url;
+    });
+  }
+
   // Form is loaded async via includes.js — wait for components-loaded event
   document.addEventListener("components-loaded", () => {
     setupCustomForm();
+    setupWhatsAppLinks();
 
     // Scroll to hash target after async components are loaded
     // Fixes: browser tries to scroll before form/header are in DOM
