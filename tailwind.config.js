@@ -11,6 +11,7 @@ module.exports = {
     "./timmerwerk/**/*.html",
     "./bestrating/**/*.html",
     "./vve/**/*.html",
+    "./renovatie/**/*.html",
     "./privacy/**/*.html"
   ],
   theme: {
