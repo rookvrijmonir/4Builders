@@ -1,4 +1,18 @@
 (function () {
+  // --- 0. UTM Parameter Capture ---
+  // Capture UTM params from URL on first landing, persist in sessionStorage
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+    // Only overwrite if URL contains at least one UTM param (first landing from ad)
+    var hasUtm = utmKeys.some(function (k) { return params.has(k); });
+    if (hasUtm) {
+      utmKeys.forEach(function (k) {
+        sessionStorage.setItem(k, params.get(k) || "");
+      });
+    }
+  })();
+
   // --- 1. Menu & Navigatie ---
   window.toggleMobileMenu = function () {
     const menu = document.getElementById("mobile-menu");
@@ -368,6 +382,14 @@
 
       // Build submission data
       const formData = new FormData(form);
+
+      // Retrieve stored UTM params
+      var utmSource = sessionStorage.getItem("utm_source") || "";
+      var utmMedium = sessionStorage.getItem("utm_medium") || "";
+      var utmCampaign = sessionStorage.getItem("utm_campaign") || "";
+      var utmContent = sessionStorage.getItem("utm_content") || "";
+      var utmTerm = sessionStorage.getItem("utm_term") || "";
+
       const subData = {
         fields: [
           { name: "firstname", value: formData.get("firstname") || "" },
@@ -376,6 +398,11 @@
           { name: "phone", value: formData.get("phone") || "" },
           { name: "zip", value: String(formData.get("zip") || "").toUpperCase() },
           { name: "uw_bericht", value: buildUwBericht(formData) },
+          { name: "utm_source", value: utmSource },
+          { name: "utm_medium", value: utmMedium },
+          { name: "utm_campaign", value: utmCampaign },
+          { name: "utm_content", value: utmContent },
+          { name: "utm_term", value: utmTerm },
         ],
         context: { pageUri: window.location.href, pageName: document.title },
       };
@@ -383,6 +410,20 @@
       // Helper: show success and reset form
       var isEN = window.location.pathname.startsWith("/en");
       const showSuccess = () => {
+        // Fire GA4 generate_lead conversion event
+        if (typeof gtag === "function") {
+          var selectedService = formData.get("service") || "";
+          gtag("event", "generate_lead", {
+            currency: "EUR",
+            value: 0,
+            event_category: "form",
+            event_label: selectedService,
+            utm_source: utmSource,
+            utm_medium: utmMedium,
+            utm_campaign: utmCampaign,
+          });
+        }
+
         if (feedback) {
           feedback.innerText = isEN ? "Form submitted successfully!" : "Formulier succesvol verzonden!";
           feedback.className = "text-green-500 mt-4 block font-bold text-center";
