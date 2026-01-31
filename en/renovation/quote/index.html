@@ -77,7 +77,7 @@
     @media (max-width: 639px) {
       .selection-card { min-height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .form-input { font-size: 16px; }
-      #wa-float { bottom: 80px; }
+      #wa-float { display: none; }
     }
 
     .mobile-cta-bar {
@@ -564,13 +564,13 @@
                 </div>
               </div>
               <div>
-                <label for="email" class="block text-sm font-medium text-brand-dark mb-1.5">Email address</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com"
+                <label for="email" class="block text-sm font-medium text-brand-dark mb-1.5">Email address *</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com"
                        class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                 <p class="text-red-500 text-xs mt-1 hidden" data-error="email">Please enter a valid email address.</p>
               </div>
               <div>
-                <label for="phone" class="block text-sm font-medium text-brand-dark mb-1.5">Phone number</label>
+                <label for="phone" class="block text-sm font-medium text-brand-dark mb-1.5">Phone number <span class="text-brand-gray font-normal">(optional)</span></label>
                 <input type="tel" id="phone" name="phone" placeholder="+31 6 1234 5678"
                        class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                 <p class="text-red-500 text-xs mt-1 hidden" data-error="phone">Please enter a valid phone number.</p>
@@ -810,30 +810,24 @@
         lnErr.classList.remove('hidden'); valid = false;
       } else { ln.classList.remove('border-red-400'); ln.classList.add('border-gray-300'); lnErr.classList.add('hidden'); }
 
+      // Email required
       var email = form.querySelector('[name="email"]');
-      var phone = form.querySelector('[name="phone"]');
       var emailErr = form.querySelector('[data-error="email"]');
+      if (!email.value.trim()) {
+        email.classList.add('border-red-400'); email.classList.remove('border-gray-300');
+        emailErr.textContent = 'Email address is required.'; emailErr.classList.remove('hidden'); valid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.classList.add('border-red-400'); email.classList.remove('border-gray-300');
+        emailErr.textContent = 'Please enter a valid email address.'; emailErr.classList.remove('hidden'); valid = false;
+      } else { email.classList.remove('border-red-400'); email.classList.add('border-gray-300'); emailErr.classList.add('hidden'); }
+
+      // Phone optional — only validate format if filled
+      var phone = form.querySelector('[name="phone"]');
       var phoneErr = form.querySelector('[data-error="phone"]');
-      var contactErr = document.getElementById('error-contact');
-      var hasEmail = email.value.trim();
-      var hasPhone = phone.value.trim();
-
-      email.classList.remove('border-red-400'); email.classList.add('border-gray-300'); emailErr.classList.add('hidden');
-      phone.classList.remove('border-red-400'); phone.classList.add('border-gray-300'); phoneErr.classList.add('hidden');
-      contactErr.classList.add('hidden');
-
-      if (!hasEmail && !hasPhone) {
-        contactErr.classList.remove('hidden'); valid = false;
-      } else {
-        if (hasEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-          email.classList.add('border-red-400'); email.classList.remove('border-gray-300');
-          emailErr.textContent = 'Please enter a valid email address.'; emailErr.classList.remove('hidden'); valid = false;
-        }
-        if (hasPhone && !/^[\d\s\-+().]{7,}$/.test(phone.value)) {
-          phone.classList.add('border-red-400'); phone.classList.remove('border-gray-300');
-          phoneErr.textContent = 'Please enter a valid phone number.'; phoneErr.classList.remove('hidden'); valid = false;
-        }
-      }
+      if (phone.value.trim() && !/^[\d\s\-+().]{7,}$/.test(phone.value)) {
+        phone.classList.add('border-red-400'); phone.classList.remove('border-gray-300');
+        phoneErr.textContent = 'Please enter a valid phone number.'; phoneErr.classList.remove('hidden'); valid = false;
+      } else { phone.classList.remove('border-red-400'); phone.classList.add('border-gray-300'); phoneErr.classList.add('hidden'); }
 
       return valid;
     }

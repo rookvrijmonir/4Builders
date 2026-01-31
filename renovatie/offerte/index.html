@@ -96,8 +96,8 @@
     @media (max-width: 639px) {
       .selection-card { min-height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .form-input { font-size: 16px; } /* Prevent iOS zoom on focus */
-      /* Hide floating WA when mobile CTA bar is visible */
-      #wa-float { bottom: 80px; }
+      /* Hide floating WA on mobile — sticky CTA bar has WhatsApp */
+      #wa-float { display: none; }
     }
 
     /* Mobile sticky CTA bar */
@@ -591,13 +591,13 @@
                 </div>
               </div>
               <div>
-                <label for="email" class="block text-sm font-medium text-brand-dark mb-1.5">E-mailadres</label>
-                <input type="email" id="email" name="email" placeholder="uw@email.nl"
+                <label for="email" class="block text-sm font-medium text-brand-dark mb-1.5">E-mailadres *</label>
+                <input type="email" id="email" name="email" required placeholder="uw@email.nl"
                        class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                 <p class="text-red-500 text-xs mt-1 hidden" data-error="email">Vul een geldig e-mailadres in.</p>
               </div>
               <div>
-                <label for="phone" class="block text-sm font-medium text-brand-dark mb-1.5">Telefoonnummer</label>
+                <label for="phone" class="block text-sm font-medium text-brand-dark mb-1.5">Telefoonnummer <span class="text-brand-gray font-normal">(optioneel)</span></label>
                 <input type="tel" id="phone" name="phone" placeholder="06 1234 5678"
                        class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                 <p class="text-red-500 text-xs mt-1 hidden" data-error="phone">Vul een geldig telefoonnummer in.</p>
@@ -849,32 +849,24 @@
         lnErr.classList.remove('hidden'); valid = false;
       } else { ln.classList.remove('border-red-400'); ln.classList.add('border-gray-300'); lnErr.classList.add('hidden'); }
 
-      // Email or phone — at least one required
+      // Email required
       var email = form.querySelector('[name="email"]');
-      var phone = form.querySelector('[name="phone"]');
       var emailErr = form.querySelector('[data-error="email"]');
+      if (!email.value.trim()) {
+        email.classList.add('border-red-400'); email.classList.remove('border-gray-300');
+        emailErr.textContent = 'E-mailadres is verplicht.'; emailErr.classList.remove('hidden'); valid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.classList.add('border-red-400'); email.classList.remove('border-gray-300');
+        emailErr.textContent = 'Vul een geldig e-mailadres in.'; emailErr.classList.remove('hidden'); valid = false;
+      } else { email.classList.remove('border-red-400'); email.classList.add('border-gray-300'); emailErr.classList.add('hidden'); }
+
+      // Phone optional — only validate format if filled
+      var phone = form.querySelector('[name="phone"]');
       var phoneErr = form.querySelector('[data-error="phone"]');
-      var contactErr = document.getElementById('error-contact');
-      var hasEmail = email.value.trim();
-      var hasPhone = phone.value.trim();
-
-      // Reset
-      email.classList.remove('border-red-400'); email.classList.add('border-gray-300'); emailErr.classList.add('hidden');
-      phone.classList.remove('border-red-400'); phone.classList.add('border-gray-300'); phoneErr.classList.add('hidden');
-      contactErr.classList.add('hidden');
-
-      if (!hasEmail && !hasPhone) {
-        contactErr.classList.remove('hidden'); valid = false;
-      } else {
-        if (hasEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-          email.classList.add('border-red-400'); email.classList.remove('border-gray-300');
-          emailErr.textContent = 'Vul een geldig e-mailadres in.'; emailErr.classList.remove('hidden'); valid = false;
-        }
-        if (hasPhone && !/^[\d\s\-+().]{7,}$/.test(phone.value)) {
-          phone.classList.add('border-red-400'); phone.classList.remove('border-gray-300');
-          phoneErr.textContent = 'Vul een geldig telefoonnummer in.'; phoneErr.classList.remove('hidden'); valid = false;
-        }
-      }
+      if (phone.value.trim() && !/^[\d\s\-+().]{7,}$/.test(phone.value)) {
+        phone.classList.add('border-red-400'); phone.classList.remove('border-gray-300');
+        phoneErr.textContent = 'Vul een geldig telefoonnummer in.'; phoneErr.classList.remove('hidden'); valid = false;
+      } else { phone.classList.remove('border-red-400'); phone.classList.add('border-gray-300'); phoneErr.classList.add('hidden'); }
 
       return valid;
     }
