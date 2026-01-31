@@ -399,7 +399,7 @@
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-3">
           Ontvang uw prijsindicatie
         </h2>
-        <p class="text-brand-gray">Drie simpele stappen. Reactie binnen 24 uur.</p>
+        <p class="text-brand-gray">Vier simpele stappen. Reactie binnen 24 uur.</p>
       </div>
 
       <div class="bg-white border border-gray-200 rounded-2xl shadow-xl shadow-gray-200/50 p-6 sm:p-10 fade-in">
@@ -408,10 +408,11 @@
           <div class="flex justify-between text-sm font-medium mb-3">
             <span id="step-label-1" class="text-brand-orange">1. Project</span>
             <span id="step-label-2" class="text-gray-400">2. Locatie</span>
-            <span id="step-label-3" class="text-gray-400">3. Contact</span>
+            <span id="step-label-3" class="text-gray-400">3. Planning</span>
+            <span id="step-label-4" class="text-gray-400">4. Contact</span>
           </div>
           <div class="w-full bg-gray-200 rounded-full h-1.5">
-            <div id="progress-bar" class="progress-fill bg-brand-orange h-1.5 rounded-full" style="width: 33%"></div>
+            <div id="progress-bar" class="progress-fill bg-brand-orange h-1.5 rounded-full" style="width: 25%"></div>
           </div>
         </div>
 
@@ -468,12 +469,24 @@
                 <span class="font-semibold text-sm block">Jordaan</span>
               </label>
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
+                <input type="radio" name="neighborhood" value="Oud-Zuid" class="hidden">
+                <span class="font-semibold text-sm block">Oud-Zuid</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
                 <input type="radio" name="neighborhood" value="De Pijp" class="hidden">
                 <span class="font-semibold text-sm block">De Pijp</span>
               </label>
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
-                <input type="radio" name="neighborhood" value="Oud-Zuid" class="hidden">
-                <span class="font-semibold text-sm block">Oud-Zuid</span>
+                <input type="radio" name="neighborhood" value="Oud-West" class="hidden">
+                <span class="font-semibold text-sm block">Oud-West</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
+                <input type="radio" name="neighborhood" value="Rivierenbuurt" class="hidden">
+                <span class="font-semibold text-sm block">Rivierenbuurt</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
+                <input type="radio" name="neighborhood" value="Plantage" class="hidden">
+                <span class="font-semibold text-sm block">Plantage</span>
               </label>
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
                 <input type="radio" name="neighborhood" value="Anders" class="hidden">
@@ -487,10 +500,80 @@
             </button>
           </div>
 
-          <!-- ===== STEP 3: Contact Details ===== -->
+          <!-- ===== STEP 3: Budget & Planning ===== -->
           <div id="step-3" class="form-step">
+            <h3 class="text-xl font-bold mb-2">Budget en planning</h3>
+            <p class="text-brand-gray text-sm mb-6">Helpt ons om snel een passend voorstel te maken.</p>
+
+            <div class="mb-6">
+              <p class="text-sm font-medium text-brand-dark mb-3">Indicatief budget *</p>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="budget-cards">
+                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
+                  <input type="radio" name="budget" value="€ 5.000 – € 15.000" class="hidden">
+                  <span class="font-semibold text-sm block">€ 5k – € 15k</span>
+                </label>
+                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
+                  <input type="radio" name="budget" value="€ 15.000 – € 50.000" class="hidden">
+                  <span class="font-semibold text-sm block">€ 15k – € 50k</span>
+                </label>
+                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
+                  <input type="radio" name="budget" value="€ 50.000 – € 100.000" class="hidden">
+                  <span class="font-semibold text-sm block">€ 50k – € 100k</span>
+                </label>
+                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
+                  <input type="radio" name="budget" value="€ 100.000+" class="hidden">
+                  <span class="font-semibold text-sm block">€ 100k+</span>
+                </label>
+                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
+                  <input type="radio" name="budget" value="Nog onbekend" class="hidden">
+                  <span class="font-semibold text-sm block">Nog onbekend</span>
+                </label>
+              </div>
+              <p id="error-budget" class="text-red-500 text-sm mt-2 hidden">Selecteer een budgetrange.</p>
+            </div>
+
+            <div>
+              <p class="text-sm font-medium text-brand-dark mb-3">Gewenste startdatum *</p>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="timeline-cards">
+                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
+                  <input type="radio" name="timeline" value="Zo snel mogelijk" class="hidden">
+                  <span class="font-semibold text-sm block">Zo snel mogelijk</span>
+                </label>
+                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
+                  <input type="radio" name="timeline" value="Binnen 1 maand" class="hidden">
+                  <span class="font-semibold text-sm block">Binnen 1 maand</span>
+                </label>
+                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
+                  <input type="radio" name="timeline" value="1 – 3 maanden" class="hidden">
+                  <span class="font-semibold text-sm block">1 – 3 maanden</span>
+                </label>
+                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
+                  <input type="radio" name="timeline" value="3 – 6 maanden" class="hidden">
+                  <span class="font-semibold text-sm block">3 – 6 maanden</span>
+                </label>
+                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
+                  <input type="radio" name="timeline" value="Flexibel" class="hidden">
+                  <span class="font-semibold text-sm block">Flexibel</span>
+                </label>
+              </div>
+              <p id="error-timeline" class="text-red-500 text-sm mt-2 hidden">Selecteer een gewenste startdatum.</p>
+            </div>
+
+            <div class="flex items-center justify-between mt-6">
+              <button type="button" onclick="goToStep(2)" class="text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
+                <i class="ph ph-arrow-left"></i> Terug
+              </button>
+              <button type="button" onclick="goToStep(4)" id="step3-next"
+                      class="bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center gap-2 text-sm">
+                Volgende <i class="ph ph-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ===== STEP 4: Contact Details ===== -->
+          <div id="step-4" class="form-step">
             <h3 class="text-xl font-bold mb-2">Hoe kunnen we u bereiken?</h3>
-            <p class="text-brand-gray text-sm mb-6">Wij nemen binnen 24 uur contact op.</p>
+            <p class="text-brand-gray text-sm mb-6">Vul e-mail of telefoon in (of beide). Wij nemen binnen 24 uur contact op.</p>
 
             <div class="space-y-4">
               <div class="grid grid-cols-2 gap-4">
@@ -508,17 +591,18 @@
                 </div>
               </div>
               <div>
-                <label for="email" class="block text-sm font-medium text-brand-dark mb-1.5">E-mailadres *</label>
-                <input type="email" id="email" name="email" required placeholder="uw@email.nl"
+                <label for="email" class="block text-sm font-medium text-brand-dark mb-1.5">E-mailadres</label>
+                <input type="email" id="email" name="email" placeholder="uw@email.nl"
                        class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                 <p class="text-red-500 text-xs mt-1 hidden" data-error="email">Vul een geldig e-mailadres in.</p>
               </div>
               <div>
-                <label for="phone" class="block text-sm font-medium text-brand-dark mb-1.5">Telefoonnummer *</label>
-                <input type="tel" id="phone" name="phone" required placeholder="06 1234 5678"
+                <label for="phone" class="block text-sm font-medium text-brand-dark mb-1.5">Telefoonnummer</label>
+                <input type="tel" id="phone" name="phone" placeholder="06 1234 5678"
                        class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                 <p class="text-red-500 text-xs mt-1 hidden" data-error="phone">Vul een geldig telefoonnummer in.</p>
               </div>
+              <p id="error-contact" class="text-red-500 text-sm hidden">Vul minimaal een e-mailadres of telefoonnummer in.</p>
               <div>
                 <label for="details" class="block text-sm font-medium text-brand-dark mb-1.5">Toelichting <span class="text-brand-gray font-normal">(optioneel)</span></label>
                 <textarea id="details" name="details" rows="3" placeholder="Beschrijf kort uw project..."
@@ -533,7 +617,7 @@
               <i id="submit-icon" class="ph ph-paper-plane-tilt text-xl"></i>
             </button>
 
-            <button type="button" onclick="goToStep(2)" class="mt-4 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
+            <button type="button" onclick="goToStep(3)" class="mt-4 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
               <i class="ph ph-arrow-left"></i> Terug
             </button>
 
@@ -625,42 +709,32 @@
 
     // --- Multi-Step Form Logic ---
     var currentStep = 1;
-    var totalSteps = 3;
+    var totalSteps = 4;
 
     window.goToStep = function(step) {
-      // Validate before advancing
       if (step > currentStep && !validateCurrentStep()) return;
 
-      // Hide current step
       var currentEl = document.getElementById('step-' + currentStep);
       if (currentEl) currentEl.classList.remove('active');
 
       currentStep = step;
 
-      // Show target step
       var targetEl = document.getElementById('step-' + step);
       if (targetEl) {
-        // Brief delay for animation
         setTimeout(function() { targetEl.classList.add('active'); }, 50);
       }
 
-      // Update progress bar
       var progress = (step / totalSteps) * 100;
       document.getElementById('progress-bar').style.width = progress + '%';
 
-      // Update step labels
       for (var i = 1; i <= totalSteps; i++) {
         var label = document.getElementById('step-label-' + i);
-        if (i <= step) {
-          label.classList.remove('text-gray-400');
-          label.classList.add('text-brand-orange');
-        } else {
-          label.classList.remove('text-brand-orange');
-          label.classList.add('text-gray-400');
+        if (label) {
+          if (i <= step) { label.classList.remove('text-gray-400'); label.classList.add('text-brand-orange'); }
+          else { label.classList.remove('text-brand-orange'); label.classList.add('text-gray-400'); }
         }
       }
 
-      // Scroll form into view on mobile
       var formSection = document.getElementById('offerte');
       if (formSection && window.innerWidth < 640) {
         formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -682,86 +756,103 @@
         err.classList.add('hidden');
         return true;
       }
+      if (currentStep === 3) {
+        var valid = true;
+        if (!document.querySelector('input[name="budget"]:checked')) {
+          document.getElementById('error-budget').classList.remove('hidden'); valid = false;
+        } else { document.getElementById('error-budget').classList.add('hidden'); }
+        if (!document.querySelector('input[name="timeline"]:checked')) {
+          document.getElementById('error-timeline').classList.remove('hidden'); valid = false;
+        } else { document.getElementById('error-timeline').classList.add('hidden'); }
+        return valid;
+      }
       return true;
     }
 
-    // --- Card Selection with Auto-Advance ---
-    document.querySelectorAll('#service-cards .selection-card').forEach(function(card) {
-      card.addEventListener('click', function() {
-        // Deselect siblings
-        card.closest('.grid').querySelectorAll('.selection-card').forEach(function(c) { c.classList.remove('selected'); });
-        card.classList.add('selected');
-        card.querySelector('input').checked = true;
-        document.getElementById('error-step1').classList.add('hidden');
-        // Auto-advance after brief delay
-        setTimeout(function() { goToStep(2); }, 300);
+    // --- Card Selection ---
+    function setupCardGroup(containerId, errorId, autoAdvanceStep) {
+      document.querySelectorAll('#' + containerId + ' .selection-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+          card.closest('.grid').querySelectorAll('.selection-card').forEach(function(c) { c.classList.remove('selected'); });
+          card.classList.add('selected');
+          card.querySelector('input').checked = true;
+          if (errorId) document.getElementById(errorId).classList.add('hidden');
+          if (autoAdvanceStep) setTimeout(function() { goToStep(autoAdvanceStep); }, 300);
+        });
       });
-    });
+    }
 
-    document.querySelectorAll('#neighborhood-cards .selection-card').forEach(function(card) {
-      card.addEventListener('click', function() {
-        card.closest('.grid').querySelectorAll('.selection-card').forEach(function(c) { c.classList.remove('selected'); });
-        card.classList.add('selected');
-        card.querySelector('input').checked = true;
-        document.getElementById('error-step2').classList.add('hidden');
-        setTimeout(function() { goToStep(3); }, 300);
-      });
-    });
+    setupCardGroup('service-cards', 'error-step1', 2);
+    setupCardGroup('neighborhood-cards', 'error-step2', 3);
+    setupCardGroup('budget-cards', 'error-budget', null);
+    setupCardGroup('timeline-cards', 'error-timeline', null);
 
     // --- Form Validation & Submission ---
     var form = document.getElementById('leadForm');
     var PORTAL_ID = '147527077';
     var FORM_ID = 'c7133bc0-7e37-4a0a-8c2a-419f2d7eeb8f';
 
-    function validateStep3() {
+    function validateContactStep() {
       var valid = true;
-      var fields = {
-        firstname: function(v) { return v.trim() ? '' : 'Voornaam is verplicht.'; },
-        lastname: function(v) { return v.trim() ? '' : 'Achternaam is verplicht.'; },
-        email: function(v) {
-          if (!v.trim()) return 'E-mailadres is verplicht.';
-          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? '' : 'Vul een geldig e-mailadres in.';
-        },
-        phone: function(v) {
-          if (!v.trim()) return 'Telefoonnummer is verplicht.';
-          return /^[\d\s\-+().]{7,}$/.test(v) ? '' : 'Vul een geldig telefoonnummer in.';
-        }
-      };
 
-      Object.keys(fields).forEach(function(name) {
-        var input = form.querySelector('[name="' + name + '"]');
-        var errEl = form.querySelector('[data-error="' + name + '"]');
-        var msg = fields[name](input.value);
-        if (msg) {
-          input.classList.add('border-red-400');
-          input.classList.remove('border-gray-300');
-          if (errEl) { errEl.textContent = msg; errEl.classList.remove('hidden'); }
-          valid = false;
-        } else {
-          input.classList.remove('border-red-400');
-          input.classList.add('border-gray-300');
-          if (errEl) errEl.classList.add('hidden');
+      // Firstname required
+      var fn = form.querySelector('[name="firstname"]');
+      var fnErr = form.querySelector('[data-error="firstname"]');
+      if (!fn.value.trim()) {
+        fn.classList.add('border-red-400'); fn.classList.remove('border-gray-300');
+        fnErr.classList.remove('hidden'); valid = false;
+      } else { fn.classList.remove('border-red-400'); fn.classList.add('border-gray-300'); fnErr.classList.add('hidden'); }
+
+      // Lastname required
+      var ln = form.querySelector('[name="lastname"]');
+      var lnErr = form.querySelector('[data-error="lastname"]');
+      if (!ln.value.trim()) {
+        ln.classList.add('border-red-400'); ln.classList.remove('border-gray-300');
+        lnErr.classList.remove('hidden'); valid = false;
+      } else { ln.classList.remove('border-red-400'); ln.classList.add('border-gray-300'); lnErr.classList.add('hidden'); }
+
+      // Email or phone — at least one required
+      var email = form.querySelector('[name="email"]');
+      var phone = form.querySelector('[name="phone"]');
+      var emailErr = form.querySelector('[data-error="email"]');
+      var phoneErr = form.querySelector('[data-error="phone"]');
+      var contactErr = document.getElementById('error-contact');
+      var hasEmail = email.value.trim();
+      var hasPhone = phone.value.trim();
+
+      // Reset
+      email.classList.remove('border-red-400'); email.classList.add('border-gray-300'); emailErr.classList.add('hidden');
+      phone.classList.remove('border-red-400'); phone.classList.add('border-gray-300'); phoneErr.classList.add('hidden');
+      contactErr.classList.add('hidden');
+
+      if (!hasEmail && !hasPhone) {
+        contactErr.classList.remove('hidden'); valid = false;
+      } else {
+        if (hasEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+          email.classList.add('border-red-400'); email.classList.remove('border-gray-300');
+          emailErr.textContent = 'Vul een geldig e-mailadres in.'; emailErr.classList.remove('hidden'); valid = false;
         }
-      });
+        if (hasPhone && !/^[\d\s\-+().]{7,}$/.test(phone.value)) {
+          phone.classList.add('border-red-400'); phone.classList.remove('border-gray-300');
+          phoneErr.textContent = 'Vul een geldig telefoonnummer in.'; phoneErr.classList.remove('hidden'); valid = false;
+        }
+      }
+
       return valid;
     }
 
     // Live validation on blur
-    form.querySelectorAll('#step-3 input').forEach(function(input) {
-      input.addEventListener('blur', function() {
-        validateStep3();
-      });
+    form.querySelectorAll('#step-4 input').forEach(function(input) {
+      input.addEventListener('blur', function() { validateContactStep(); });
     });
 
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
 
-      // Honeypot check
       var honeypot = form.querySelector('input[name="honeypot"]');
       if (honeypot && honeypot.value) return;
 
-      // Validate step 3
-      if (!validateStep3()) return;
+      if (!validateContactStep()) return;
 
       var submitBtn = document.getElementById('submit-btn');
       var submitText = document.getElementById('submit-text');
@@ -779,8 +870,10 @@
       // Build uw_bericht from service + neighborhood + details
       var service = fd.get('service') || '';
       var neighborhood = fd.get('neighborhood') || '';
+      var budget = fd.get('budget') || '';
+      var timeline = fd.get('timeline') || '';
       var details = (fd.get('details') || '').trim();
-      var bericht = 'Dienst: ' + service + '\nBuurt: ' + neighborhood;
+      var bericht = 'Dienst: ' + service + '\nBuurt: ' + neighborhood + '\nBudget: ' + budget + '\nGewenste start: ' + timeline;
       if (details) bericht += '\n\nToelichting: ' + details;
       bericht += '\n\n[Via landing page: /renovatie/offerte/]';
 
