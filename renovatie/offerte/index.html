@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Premium Renovation & Property Maintenance Amsterdam | 4Builders</title>
-  <meta name="description" content="High-end renovation and maintenance for Amsterdam canal houses. Expert craftsmanship with reliable, transparent communication in English. Request a free quote.">
+  <title>Premium Renovatie & Onderhoud Amsterdam Centrum | 4Builders</title>
+  <meta name="description" content="Hoogwaardige renovatie en onderhoud voor Amsterdamse grachtenpanden. Vakmanschap met Achterhoekse betrouwbaarheid. Vraag een vrijblijvende prijsindicatie aan.">
   <meta name="robots" content="noindex">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Premium Renovation & Maintenance Amsterdam | 4Builders">
-  <meta property="og:description" content="Your Amsterdam property in top condition. High-end renovation and maintenance with reliable Dutch craftsmanship.">
+  <meta property="og:title" content="Premium Renovatie & Onderhoud Amsterdam | 4Builders">
+  <meta property="og:description" content="Uw Amsterdams pand in topconditie. Hoogwaardige renovatie en onderhoud met de betrouwbaarheid van de Achterhoek.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://4builders-amsterdam.nl/landing/en/">
+  <meta property="og:url" content="https://4builders-amsterdam.nl/renovatie/offerte/">
   <meta property="og:image" content="https://4builders-amsterdam.nl/img/renovatie/keuken-en-woonkamer-woning-amsterdam-centrum_1_gebruiken.png">
 
   <!-- GA4 -->
@@ -56,30 +56,51 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <style>
+    /* Smooth scroll */
     html { scroll-behavior: smooth; }
+
+    /* Form step transitions */
     .form-step { display: none; opacity: 0; transform: translateX(20px); transition: opacity 0.3s ease, transform 0.3s ease; }
     .form-step.active { display: block; opacity: 1; transform: translateX(0); }
+
+    /* Selection card hover & active */
     .selection-card { transition: all 0.2s ease; cursor: pointer; }
     .selection-card:hover { border-color: #FF5722; background-color: #FFF7F5; }
     .selection-card.selected { border-color: #FF5722; background-color: #FFF7F5; box-shadow: 0 0 0 2px #FF5722; }
+
+    /* Progress bar animation */
     .progress-fill { transition: width 0.4s ease; }
+
+    /* Hero parallax-like gradient */
     .hero-gradient { background: linear-gradient(135deg, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.5) 50%, rgba(17,17,17,0.3) 100%); }
+
+    /* WhatsApp pulse */
     @keyframes wa-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); } 50% { box-shadow: 0 0 0 12px rgba(37,211,102,0); } }
     .wa-pulse { animation: wa-pulse 2.5s infinite; }
+
+    /* Input focus ring */
     .form-input:focus { outline: none; border-color: #FF5722; box-shadow: 0 0 0 3px rgba(255,87,34,0.15); }
+
+    /* Fade-in on scroll */
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* Portfolio image hover */
     .portfolio-img { transition: transform 0.4s ease; }
     .portfolio-img:hover { transform: scale(1.03); }
 
+    /* Mobile: prevent double-tap zoom on interactive elements */
     a, button, label, input, textarea { touch-action: manipulation; }
 
+    /* Mobile: larger tap targets */
     @media (max-width: 639px) {
       .selection-card { min-height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-      .form-input { font-size: 16px; }
+      .form-input { font-size: 16px; } /* Prevent iOS zoom on focus */
+      /* Hide floating WA when mobile CTA bar is visible */
       #wa-float { bottom: 80px; }
     }
 
+    /* Mobile sticky CTA bar */
     .mobile-cta-bar {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
       background: #111111; border-top: 1px solid rgba(255,255,255,0.1);
@@ -95,49 +116,54 @@
   <!-- ============ MINIMAL HEADER ============ -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <a href="https://4builders-amsterdam.nl/en/" class="flex items-center gap-2" aria-label="4Builders Amsterdam">
+      <!-- Logo -->
+      <a href="https://4builders-amsterdam.nl" class="flex items-center gap-2" aria-label="4Builders Amsterdam">
         <span class="text-xl font-bold tracking-tight">
           <span class="text-brand-orange">4</span><span class="text-brand-dark">Builders</span>
         </span>
         <span class="hidden sm:inline text-xs text-brand-gray font-medium tracking-wide uppercase">Amsterdam</span>
       </a>
+      <!-- Phone -->
       <a href="tel:+31618922134" class="flex items-center gap-2 text-sm font-medium text-brand-dark hover:text-brand-orange transition-colors">
         <i class="ph ph-phone text-brand-orange text-lg"></i>
         <span class="hidden sm:inline">+31 6 18 92 21 34</span>
-        <span class="sm:hidden">Call us</span>
+        <span class="sm:hidden">Bel ons</span>
       </a>
     </div>
   </header>
 
   <!-- ============ HERO SECTION ============ -->
   <section class="relative min-h-[90vh] flex items-center pt-16" id="hero">
+    <!-- Background image -->
     <div class="absolute inset-0">
       <img src="../../img/renovatie/keuken-en-woonkamer-woning-amsterdam-centrum_1_gebruiken.png"
-           alt="Luxury renovated apartment in Amsterdam Centrum"
+           alt="Luxe gerenoveerde woning Amsterdam Centrum"
            class="w-full h-full object-cover">
       <div class="hero-gradient absolute inset-0"></div>
     </div>
 
+    <!-- Hero content -->
     <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32">
       <div class="max-w-2xl">
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-          Your Amsterdam property in top condition. <span class="text-brand-orange">Without the hassle.</span>
+          Uw Amsterdams pand in topconditie. <span class="text-brand-orange">Zonder de kopzorgen.</span>
         </h1>
         <p class="text-lg sm:text-xl text-gray-200 leading-relaxed mb-8 max-w-xl">
-          High-end renovation and maintenance with reliable Dutch craftsmanship. We speak fluent English, Dutch, and quality workmanship.
+          Hoogwaardige renovatie en onderhoud met de betrouwbaarheid van de Achterhoek. Wij spreken vloeiend Amsterdams, Engels en vakmanschap.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25">
-            Request a free quote
+          <a href="#offerte" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25">
+            Vraag een prijsindicatie aan
             <i class="ph ph-arrow-right text-xl"></i>
           </a>
-          <a href="https://wa.me/31618922134?text=Hi%2C%20I'm%20interested%20in%20your%20services%20via%20the%20landing%20page."
+          <a href="https://wa.me/31618922134?text=Hallo%2C%20ik%20heb%20interesse%20in%20jullie%20diensten%20via%20de%20landingspagina."
              target="_blank" rel="noopener"
              class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-medium px-6 py-4 rounded-lg border border-white/20 transition-colors backdrop-blur-sm">
             <i class="ph ph-whatsapp-logo text-xl text-green-400"></i>
-            WhatsApp us directly
+            WhatsApp ons direct
           </a>
         </div>
+        <!-- Trust signals -->
         <div class="flex flex-wrap items-center gap-6 mt-10 text-sm text-gray-300">
           <span class="flex items-center gap-1.5">
             <i class="ph-fill ph-star text-yellow-400"></i>
@@ -149,11 +175,11 @@
           </span>
           <span class="flex items-center gap-1.5">
             <i class="ph ph-shield-check text-green-400"></i>
-            Fully insured
+            Volledig verzekerd
           </span>
           <span class="flex items-center gap-1.5">
             <i class="ph ph-clock text-brand-orange"></i>
-            Response within 24 hours
+            Reactie binnen 24 uur
           </span>
         </div>
       </div>
@@ -169,8 +195,8 @@
             <i class="ph ph-car text-2xl text-brand-orange"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-white mb-1">Parking permits arranged</h3>
-            <p class="text-sm text-gray-400">We handle all permits for materials and crew in the city centre.</p>
+            <h3 class="font-semibold text-white mb-1">Parkeervergunningen geregeld</h3>
+            <p class="text-sm text-gray-400">Wij regelen alle vergunningen voor materiaal en personeel in het centrum.</p>
           </div>
         </div>
         <div class="flex items-start gap-4">
@@ -178,8 +204,8 @@
             <i class="ph ph-ruler text-2xl text-brand-orange"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-white mb-1">Interior finishing specialists</h3>
-            <p class="text-sm text-gray-400">From plastering to painting, flooring and kitchen fitting. We deliver a move-in ready result.</p>
+            <h3 class="font-semibold text-white mb-1">Specialisten in afbouw</h3>
+            <p class="text-sm text-gray-400">Van stucwerk tot schilderwerk, vloeren en keukenmontage. Wij leveren een instapklaar resultaat.</p>
           </div>
         </div>
         <div class="flex items-start gap-4">
@@ -188,7 +214,7 @@
           </div>
           <div>
             <h3 class="font-semibold text-white mb-1">Expat-friendly communication</h3>
-            <p class="text-sm text-gray-400">Fluent English and Dutch. Transparent updates and clear project timelines.</p>
+            <p class="text-sm text-gray-400">Vloeiend Engels en Nederlands. Transparante communicatie, altijd.</p>
           </div>
         </div>
       </div>
@@ -196,61 +222,61 @@
   </section>
 
   <!-- ============ SERVICE GRID ============ -->
-  <section class="py-20 sm:py-28 bg-white" id="services">
+  <section class="py-20 sm:py-28 bg-white" id="diensten">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-14 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Our Services</span>
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Onze Diensten</span>
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
-          Expert craftsmanship for every project
+          Vakmanschap voor elk project
         </h2>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
-        <!-- Full Renovation -->
+        <!-- Totaalrenovatie -->
         <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
           <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
             <i class="ph ph-house text-3xl text-brand-orange"></i>
           </div>
-          <h3 class="text-lg font-bold mb-2">Full Renovation</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Complete renovations of canal houses and apartments. From design to handover, managed end-to-end.</p>
-          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
-            Get a quote <i class="ph ph-arrow-right"></i>
+          <h3 class="text-lg font-bold mb-2">Totaalrenovatie</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Complete verbouwingen van grachtenpanden en appartementen. Van ontwerp tot oplevering.</p>
+          <a href="#offerte" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Offerte aanvragen <i class="ph ph-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Painting -->
+        <!-- Schilderwerk -->
         <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
           <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
             <i class="ph ph-paint-roller text-3xl text-brand-orange"></i>
           </div>
-          <h3 class="text-lg font-bold mb-2">Premium Painting</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Interior and exterior painting with premium materials. Protection and aesthetics for your property.</p>
-          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
-            Get a quote <i class="ph ph-arrow-right"></i>
+          <h3 class="text-lg font-bold mb-2">Premium Schilderwerk</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Binnen- en buitenschilderwerk met premium materialen. Bescherming en esthetiek voor uw pand.</p>
+          <a href="#offerte" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Offerte aanvragen <i class="ph ph-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Flooring -->
+        <!-- Vloeren -->
         <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
           <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
             <i class="ph ph-square-split-horizontal text-3xl text-brand-orange"></i>
           </div>
-          <h3 class="text-lg font-bold mb-2">Flooring</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Herringbone, parquet, tiles and more. Expert floor finishing for a stylish interior.</p>
-          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
-            Get a quote <i class="ph ph-arrow-right"></i>
+          <h3 class="text-lg font-bold mb-2">Vloeren</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Visgraat, parket, tegels en meer. Vakkundige vloerafwerking voor een stijlvol interieur.</p>
+          <a href="#offerte" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Offerte aanvragen <i class="ph ph-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Periodic Maintenance -->
+        <!-- Periodiek Onderhoud -->
         <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
           <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
             <i class="ph ph-wrench text-3xl text-brand-orange"></i>
           </div>
-          <h3 class="text-lg font-bold mb-2">Periodic Maintenance</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Scheduled maintenance and repairs. Preserve the value of your real estate, hassle-free.</p>
-          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
-            Get a quote <i class="ph ph-arrow-right"></i>
+          <h3 class="text-lg font-bold mb-2">Periodiek Onderhoud</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Planmatig onderhoud en reparaties. Behoud de waarde van uw vastgoed zonder gedoe.</p>
+          <a href="#offerte" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Offerte aanvragen <i class="ph ph-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -261,42 +287,42 @@
   <section class="py-20 sm:py-28 bg-brand-light" id="portfolio">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-14 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Recent Work</span>
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Recent Werk</span>
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
-          Amsterdam Centrum renovation
+          Amsterdam Centrum renovatie
         </h2>
-        <p class="text-brand-gray mt-4 max-w-xl mx-auto">Complete transformation of a home in the heart of Amsterdam. From kitchen to patio, every detail finished with care.</p>
+        <p class="text-brand-gray mt-4 max-w-xl mx-auto">Complete transformatie van een woning in het hart van Amsterdam. Van keuken tot patio, elk detail met zorg afgewerkt.</p>
       </div>
 
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 fade-in">
         <div class="overflow-hidden rounded-xl aspect-[4/3]">
           <img src="../../img/renovatie/woonkamer-voorkant-woning-amsterdam-centrum_visgraat.png"
-               alt="Living room with herringbone floor Amsterdam Centrum"
+               alt="Woonkamer met visgraat vloer Amsterdam Centrum"
                class="portfolio-img w-full h-full object-cover" loading="lazy">
         </div>
         <div class="overflow-hidden rounded-xl aspect-[4/3]">
           <img src="../../img/renovatie/keuken-woning-amsterdam-centrum_gebruiken.png"
-               alt="Modern kitchen renovation Amsterdam"
+               alt="Moderne keuken renovatie Amsterdam"
                class="portfolio-img w-full h-full object-cover" loading="lazy">
         </div>
         <div class="overflow-hidden rounded-xl aspect-[4/3]">
           <img src="../../img/renovatie/bad-douche-woning-amsterdam-centrum_gebruiken.jpg"
-               alt="Bathroom renovation Amsterdam Centrum"
+               alt="Badkamer renovatie Amsterdam Centrum"
                class="portfolio-img w-full h-full object-cover" loading="lazy">
         </div>
         <div class="overflow-hidden rounded-xl aspect-[4/3]">
           <img src="../../img/renovatie/patio-woning-amsterdam-centrum_gebruiken.png"
-               alt="Patio and outdoor space Amsterdam canal house"
+               alt="Patio en buitenruimte Amsterdam grachtenpand"
                class="portfolio-img w-full h-full object-cover" loading="lazy">
         </div>
         <div class="overflow-hidden rounded-xl aspect-[4/3]">
           <img src="../../img/renovatie/bedroom-woning-amsterdam-centrum_gebruiken.png"
-               alt="Bedroom renovation Amsterdam"
+               alt="Slaapkamer renovatie Amsterdam"
                class="portfolio-img w-full h-full object-cover" loading="lazy">
         </div>
         <div class="overflow-hidden rounded-xl aspect-[4/3]">
           <img src="../../img/renovatie/schuifdeur-toilet-grachtenwoning-amsterdam-centrum_gebruiken.png"
-               alt="Custom sliding door canal house Amsterdam"
+               alt="Op maat gemaakte schuifdeur grachtenwoning"
                class="portfolio-img w-full h-full object-cover" loading="lazy">
         </div>
       </div>
@@ -307,9 +333,9 @@
   <section class="py-20 sm:py-28 bg-brand-dark" id="reviews">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-14 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Testimonials</span>
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Ervaringen</span>
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
-          What our clients say
+          Wat onze opdrachtgevers zeggen
         </h2>
       </div>
 
@@ -323,10 +349,10 @@
             <i class="ph-fill ph-star text-yellow-400"></i>
             <i class="ph-fill ph-star text-yellow-400"></i>
           </div>
-          <p class="text-gray-300 leading-relaxed mb-6">"We had our entire floor renovated by 4Builders. Excellent communication, clean worksite, and delivered on time. The result exceeded our expectations."</p>
+          <p class="text-gray-300 leading-relaxed mb-6">"Onze volledige verdieping is gerenoveerd door 4Builders. Uitstekende communicatie, netjes en op tijd opgeleverd. Het resultaat overtrof onze verwachtingen."</p>
           <div>
             <p class="font-semibold text-white">Thomas & Lieke V.</p>
-            <p class="text-sm text-brand-orange">Keizersgracht — Full renovation</p>
+            <p class="text-sm text-brand-orange">Keizersgracht — Totaalrenovatie</p>
           </div>
         </div>
 
@@ -355,10 +381,10 @@
             <i class="ph-fill ph-star text-yellow-400"></i>
             <i class="ph-fill ph-star text-yellow-400"></i>
           </div>
-          <p class="text-gray-300 leading-relaxed mb-6">"The entire exterior of our building was painted. Professional, fast, and a fair price. Dutch reliability combined with Amsterdam quality. Highly recommended!"</p>
+          <p class="text-gray-300 leading-relaxed mb-6">"Het hele pand van buiten geschilderd. Professioneel, snel en een eerlijke prijs. Achterhoekse nuchterheid gecombineerd met Amsterdamse kwaliteit. Aanrader!"</p>
           <div>
             <p class="font-semibold text-white">Marieke de B.</p>
-            <p class="text-sm text-brand-orange">Jordaan — Exterior painting</p>
+            <p class="text-sm text-brand-orange">Jordaan — Schilderwerk buitenzijde</p>
           </div>
         </div>
       </div>
@@ -366,14 +392,14 @@
   </section>
 
   <!-- ============ MULTI-STEP LEAD FORM ============ -->
-  <section class="py-20 sm:py-28 bg-white" id="quote">
+  <section class="py-20 sm:py-28 bg-white" id="offerte">
     <div class="max-w-2xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-10 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">No Obligation</span>
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Vrijblijvend</span>
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-3">
-          Get your free quote
+          Ontvang uw prijsindicatie
         </h2>
-        <p class="text-brand-gray">Three simple steps. Response within 24 hours.</p>
+        <p class="text-brand-gray">Drie simpele stappen. Reactie binnen 24 uur.</p>
       </div>
 
       <div class="bg-white border border-gray-200 rounded-2xl shadow-xl shadow-gray-200/50 p-6 sm:p-10 fade-in">
@@ -381,7 +407,7 @@
         <div class="mb-8">
           <div class="flex justify-between text-sm font-medium mb-3">
             <span id="step-label-1" class="text-brand-orange">1. Project</span>
-            <span id="step-label-2" class="text-gray-400">2. Location</span>
+            <span id="step-label-2" class="text-gray-400">2. Locatie</span>
             <span id="step-label-3" class="text-gray-400">3. Contact</span>
           </div>
           <div class="w-full bg-gray-200 rounded-full h-1.5">
@@ -390,42 +416,43 @@
         </div>
 
         <form id="leadForm" novalidate>
+          <!-- Honeypot -->
           <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off">
 
           <!-- ===== STEP 1: Project Type ===== -->
           <div id="step-1" class="form-step active">
-            <h3 class="text-xl font-bold mb-2">What type of project is it?</h3>
-            <p class="text-brand-gray text-sm mb-6">Select the type of work you need.</p>
+            <h3 class="text-xl font-bold mb-2">Wat voor project betreft het?</h3>
+            <p class="text-brand-gray text-sm mb-6">Selecteer het type werkzaamheden.</p>
 
             <div class="grid grid-cols-2 gap-3" id="service-cards">
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
-                <input type="radio" name="service" value="Renovation" class="hidden">
+                <input type="radio" name="service" value="Renovatie" class="hidden">
                 <i class="ph ph-house text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Renovation</span>
+                <span class="font-semibold text-sm block">Renovatie</span>
               </label>
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
-                <input type="radio" name="service" value="Painting" class="hidden">
+                <input type="radio" name="service" value="Schilderwerk" class="hidden">
                 <i class="ph ph-paint-roller text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Painting</span>
+                <span class="font-semibold text-sm block">Schilderwerk</span>
               </label>
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
-                <input type="radio" name="service" value="Maintenance" class="hidden">
+                <input type="radio" name="service" value="Onderhoud" class="hidden">
                 <i class="ph ph-wrench text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Maintenance</span>
+                <span class="font-semibold text-sm block">Onderhoud</span>
               </label>
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
-                <input type="radio" name="service" value="Other" class="hidden">
+                <input type="radio" name="service" value="Anders" class="hidden">
                 <i class="ph ph-dots-three-outline text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Other</span>
+                <span class="font-semibold text-sm block">Anders</span>
               </label>
             </div>
-            <p id="error-step1" class="text-red-500 text-sm mt-3 hidden">Please select an option to continue.</p>
+            <p id="error-step1" class="text-red-500 text-sm mt-3 hidden">Selecteer een optie om verder te gaan.</p>
           </div>
 
           <!-- ===== STEP 2: Neighborhood ===== -->
           <div id="step-2" class="form-step">
-            <h3 class="text-xl font-bold mb-2">Which neighbourhood is the property in?</h3>
-            <p class="text-brand-gray text-sm mb-6">This helps us plan efficiently.</p>
+            <h3 class="text-xl font-bold mb-2">In welke buurt bevindt het pand zich?</h3>
+            <p class="text-brand-gray text-sm mb-6">Dit helpt ons met de planning.</p>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="neighborhood-cards">
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
@@ -433,8 +460,8 @@
                 <span class="font-semibold text-sm block">Centrum</span>
               </label>
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
-                <input type="radio" name="neighborhood" value="Canal Belt" class="hidden">
-                <span class="font-semibold text-sm block">Canal Belt</span>
+                <input type="radio" name="neighborhood" value="Grachtengordel" class="hidden">
+                <span class="font-semibold text-sm block">Grachtengordel</span>
               </label>
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
                 <input type="radio" name="neighborhood" value="Jordaan" class="hidden">
@@ -449,87 +476,90 @@
                 <span class="font-semibold text-sm block">Oud-Zuid</span>
               </label>
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
-                <input type="radio" name="neighborhood" value="Other" class="hidden">
-                <span class="font-semibold text-sm block">Other</span>
+                <input type="radio" name="neighborhood" value="Anders" class="hidden">
+                <span class="font-semibold text-sm block">Anders</span>
               </label>
             </div>
-            <p id="error-step2" class="text-red-500 text-sm mt-3 hidden">Please select a neighbourhood to continue.</p>
+            <p id="error-step2" class="text-red-500 text-sm mt-3 hidden">Selecteer een buurt om verder te gaan.</p>
 
             <button type="button" onclick="goToStep(1)" class="mt-6 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
-              <i class="ph ph-arrow-left"></i> Back
+              <i class="ph ph-arrow-left"></i> Terug
             </button>
           </div>
 
           <!-- ===== STEP 3: Contact Details ===== -->
           <div id="step-3" class="form-step">
-            <h3 class="text-xl font-bold mb-2">How can we reach you?</h3>
-            <p class="text-brand-gray text-sm mb-6">We'll get back to you within 24 hours.</p>
+            <h3 class="text-xl font-bold mb-2">Hoe kunnen we u bereiken?</h3>
+            <p class="text-brand-gray text-sm mb-6">Wij nemen binnen 24 uur contact op.</p>
 
             <div class="space-y-4">
               <div class="grid grid-cols-2 gap-4">
                 <div>
-                  <label for="firstname" class="block text-sm font-medium text-brand-dark mb-1.5">First name *</label>
-                  <input type="text" id="firstname" name="firstname" required placeholder="Your first name"
+                  <label for="firstname" class="block text-sm font-medium text-brand-dark mb-1.5">Voornaam *</label>
+                  <input type="text" id="firstname" name="firstname" required placeholder="Uw voornaam"
                          class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
-                  <p class="text-red-500 text-xs mt-1 hidden" data-error="firstname">First name is required.</p>
+                  <p class="text-red-500 text-xs mt-1 hidden" data-error="firstname">Voornaam is verplicht.</p>
                 </div>
                 <div>
-                  <label for="lastname" class="block text-sm font-medium text-brand-dark mb-1.5">Last name *</label>
-                  <input type="text" id="lastname" name="lastname" required placeholder="Your last name"
+                  <label for="lastname" class="block text-sm font-medium text-brand-dark mb-1.5">Achternaam *</label>
+                  <input type="text" id="lastname" name="lastname" required placeholder="Uw achternaam"
                          class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
-                  <p class="text-red-500 text-xs mt-1 hidden" data-error="lastname">Last name is required.</p>
+                  <p class="text-red-500 text-xs mt-1 hidden" data-error="lastname">Achternaam is verplicht.</p>
                 </div>
               </div>
               <div>
-                <label for="email" class="block text-sm font-medium text-brand-dark mb-1.5">Email address *</label>
-                <input type="email" id="email" name="email" required placeholder="your@email.com"
+                <label for="email" class="block text-sm font-medium text-brand-dark mb-1.5">E-mailadres *</label>
+                <input type="email" id="email" name="email" required placeholder="uw@email.nl"
                        class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
-                <p class="text-red-500 text-xs mt-1 hidden" data-error="email">Please enter a valid email address.</p>
+                <p class="text-red-500 text-xs mt-1 hidden" data-error="email">Vul een geldig e-mailadres in.</p>
               </div>
               <div>
-                <label for="phone" class="block text-sm font-medium text-brand-dark mb-1.5">Phone number *</label>
-                <input type="tel" id="phone" name="phone" required placeholder="+31 6 1234 5678"
+                <label for="phone" class="block text-sm font-medium text-brand-dark mb-1.5">Telefoonnummer *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="06 1234 5678"
                        class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
-                <p class="text-red-500 text-xs mt-1 hidden" data-error="phone">Please enter a valid phone number.</p>
+                <p class="text-red-500 text-xs mt-1 hidden" data-error="phone">Vul een geldig telefoonnummer in.</p>
               </div>
               <div>
-                <label for="details" class="block text-sm font-medium text-brand-dark mb-1.5">Additional details <span class="text-brand-gray font-normal">(optional)</span></label>
-                <textarea id="details" name="details" rows="3" placeholder="Briefly describe your project..."
+                <label for="details" class="block text-sm font-medium text-brand-dark mb-1.5">Toelichting <span class="text-brand-gray font-normal">(optioneel)</span></label>
+                <textarea id="details" name="details" rows="3" placeholder="Beschrijf kort uw project..."
                           class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all resize-none"></textarea>
               </div>
             </div>
 
+            <!-- Submit button -->
             <button type="submit" id="submit-btn"
                     class="w-full mt-6 bg-brand-orange hover:bg-brand-orange-hover text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25 flex items-center justify-center gap-2">
-              <span id="submit-text">Get a response within 24h</span>
+              <span id="submit-text">Ontvang binnen 24u reactie</span>
               <i id="submit-icon" class="ph ph-paper-plane-tilt text-xl"></i>
             </button>
 
             <button type="button" onclick="goToStep(2)" class="mt-4 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
-              <i class="ph ph-arrow-left"></i> Back
+              <i class="ph ph-arrow-left"></i> Terug
             </button>
 
+            <!-- Feedback -->
             <div id="form-feedback" class="hidden mt-4 p-4 rounded-lg text-sm"></div>
           </div>
         </form>
 
-        <!-- Success state -->
+        <!-- Success state (hidden by default) -->
         <div id="form-success" class="hidden text-center py-8">
           <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <i class="ph ph-check-circle text-4xl text-green-600"></i>
           </div>
-          <h3 class="text-xl font-bold mb-2">Request received!</h3>
-          <p class="text-brand-gray">We'll get back to you within 24 hours. You can also reach us directly via WhatsApp.</p>
+          <h3 class="text-xl font-bold mb-2">Aanvraag ontvangen!</h3>
+          <p class="text-brand-gray">Wij nemen binnen 24 uur contact met u op. U kunt ons ook direct bereiken via WhatsApp.</p>
           <a href="https://wa.me/31618922134" target="_blank" rel="noopener"
              class="inline-flex items-center gap-2 mt-4 text-green-600 font-semibold hover:text-green-700 transition-colors">
             <i class="ph ph-whatsapp-logo text-xl"></i> Open WhatsApp
           </a>
         </div>
 
+        <!-- Trust signals under form -->
         <div class="flex flex-wrap justify-center gap-4 mt-6 pt-6 border-t border-gray-100 text-xs text-brand-gray">
-          <span class="flex items-center gap-1"><i class="ph ph-lock-simple text-sm"></i> Data secured</span>
-          <span class="flex items-center gap-1"><i class="ph ph-shield-check text-sm"></i> Fully insured</span>
-          <span class="flex items-center gap-1"><i class="ph ph-clock text-sm"></i> Response within 24h</span>
+          <span class="flex items-center gap-1"><i class="ph ph-lock-simple text-sm"></i> Gegevens beveiligd</span>
+          <span class="flex items-center gap-1"><i class="ph ph-shield-check text-sm"></i> Volledig verzekerd</span>
+          <span class="flex items-center gap-1"><i class="ph ph-clock text-sm"></i> Reactie binnen 24u</span>
         </div>
       </div>
     </div>
@@ -544,37 +574,37 @@
           <p class="text-sm mt-1">Pieter Baststraat 29 H, 1071TV Amsterdam &middot; KVK 99333074</p>
         </div>
         <div class="flex items-center gap-4 text-sm">
-          <a href="https://4builders-amsterdam.nl/en/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="https://4builders-amsterdam.nl/privacy/" class="hover:text-white transition-colors">Privacybeleid</a>
           <span>&middot;</span>
           <a href="tel:+31618922134" class="hover:text-white transition-colors">+31 6 18 92 21 34</a>
           <span>&middot;</span>
           <a href="mailto:info@4builders-amsterdam.nl" class="hover:text-white transition-colors">info@4builders-amsterdam.nl</a>
         </div>
       </div>
-      <p class="text-center text-xs text-gray-600 mt-6">&copy; 2025 4Builders Amsterdam. All rights reserved.</p>
+      <p class="text-center text-xs text-gray-600 mt-6">&copy; 2025 4Builders Amsterdam. Alle rechten voorbehouden.</p>
     </div>
   </footer>
 
   <!-- ============ STICKY WHATSAPP BUTTON ============ -->
-  <a href="https://wa.me/31618922134?text=Hi%2C%20I'm%20interested%20in%20your%20services%20via%20the%20landing%20page."
+  <a href="https://wa.me/31618922134?text=Hallo%2C%20ik%20heb%20interesse%20in%20jullie%20diensten%20via%20de%20landingspagina."
      target="_blank" rel="noopener"
      id="wa-float"
      class="wa-pulse fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition-colors"
-     aria-label="Send us a WhatsApp message">
+     aria-label="Stuur ons een WhatsApp bericht">
     <i class="ph-fill ph-whatsapp-logo text-white text-3xl"></i>
   </a>
 
   <!-- ============ MOBILE STICKY CTA BAR ============ -->
   <div class="mobile-cta-bar gap-2 items-center justify-between">
     <a href="tel:+31618922134" class="flex-1 flex items-center justify-center gap-1.5 bg-white/10 text-white font-semibold py-3 rounded-lg text-sm">
-      <i class="ph ph-phone text-lg"></i> Call
+      <i class="ph ph-phone text-lg"></i> Bellen
     </a>
-    <a href="https://wa.me/31618922134?text=Hi%2C%20I'm%20interested%20in%20your%20services." target="_blank" rel="noopener"
+    <a href="https://wa.me/31618922134?text=Hallo%2C%20ik%20heb%20interesse%20in%20jullie%20diensten." target="_blank" rel="noopener"
        class="flex-1 flex items-center justify-center gap-1.5 bg-green-500 text-white font-semibold py-3 rounded-lg text-sm">
       <i class="ph ph-whatsapp-logo text-lg"></i> WhatsApp
     </a>
-    <a href="#quote" class="flex-1 flex items-center justify-center gap-1.5 bg-brand-orange text-white font-semibold py-3 rounded-lg text-sm">
-      <i class="ph ph-paper-plane-tilt text-lg"></i> Quote
+    <a href="#offerte" class="flex-1 flex items-center justify-center gap-1.5 bg-brand-orange text-white font-semibold py-3 rounded-lg text-sm">
+      <i class="ph ph-paper-plane-tilt text-lg"></i> Offerte
     </a>
   </div>
 
@@ -598,21 +628,27 @@
     var totalSteps = 3;
 
     window.goToStep = function(step) {
+      // Validate before advancing
       if (step > currentStep && !validateCurrentStep()) return;
 
+      // Hide current step
       var currentEl = document.getElementById('step-' + currentStep);
       if (currentEl) currentEl.classList.remove('active');
 
       currentStep = step;
 
+      // Show target step
       var targetEl = document.getElementById('step-' + step);
       if (targetEl) {
+        // Brief delay for animation
         setTimeout(function() { targetEl.classList.add('active'); }, 50);
       }
 
+      // Update progress bar
       var progress = (step / totalSteps) * 100;
       document.getElementById('progress-bar').style.width = progress + '%';
 
+      // Update step labels
       for (var i = 1; i <= totalSteps; i++) {
         var label = document.getElementById('step-label-' + i);
         if (i <= step) {
@@ -624,7 +660,8 @@
         }
       }
 
-      var formSection = document.getElementById('quote');
+      // Scroll form into view on mobile
+      var formSection = document.getElementById('offerte');
       if (formSection && window.innerWidth < 640) {
         formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -651,10 +688,12 @@
     // --- Card Selection with Auto-Advance ---
     document.querySelectorAll('#service-cards .selection-card').forEach(function(card) {
       card.addEventListener('click', function() {
+        // Deselect siblings
         card.closest('.grid').querySelectorAll('.selection-card').forEach(function(c) { c.classList.remove('selected'); });
         card.classList.add('selected');
         card.querySelector('input').checked = true;
         document.getElementById('error-step1').classList.add('hidden');
+        // Auto-advance after brief delay
         setTimeout(function() { goToStep(2); }, 300);
       });
     });
@@ -677,15 +716,15 @@
     function validateStep3() {
       var valid = true;
       var fields = {
-        firstname: function(v) { return v.trim() ? '' : 'First name is required.'; },
-        lastname: function(v) { return v.trim() ? '' : 'Last name is required.'; },
+        firstname: function(v) { return v.trim() ? '' : 'Voornaam is verplicht.'; },
+        lastname: function(v) { return v.trim() ? '' : 'Achternaam is verplicht.'; },
         email: function(v) {
-          if (!v.trim()) return 'Email address is required.';
-          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? '' : 'Please enter a valid email address.';
+          if (!v.trim()) return 'E-mailadres is verplicht.';
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? '' : 'Vul een geldig e-mailadres in.';
         },
         phone: function(v) {
-          if (!v.trim()) return 'Phone number is required.';
-          return /^[\d\s\-+().]{7,}$/.test(v) ? '' : 'Please enter a valid phone number.';
+          if (!v.trim()) return 'Telefoonnummer is verplicht.';
+          return /^[\d\s\-+().]{7,}$/.test(v) ? '' : 'Vul een geldig telefoonnummer in.';
         }
       };
 
@@ -707,16 +746,21 @@
       return valid;
     }
 
+    // Live validation on blur
     form.querySelectorAll('#step-3 input').forEach(function(input) {
-      input.addEventListener('blur', function() { validateStep3(); });
+      input.addEventListener('blur', function() {
+        validateStep3();
+      });
     });
 
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
 
+      // Honeypot check
       var honeypot = form.querySelector('input[name="honeypot"]');
       if (honeypot && honeypot.value) return;
 
+      // Validate step 3
       if (!validateStep3()) return;
 
       var submitBtn = document.getElementById('submit-btn');
@@ -724,20 +768,23 @@
       var submitIcon = document.getElementById('submit-icon');
       var feedback = document.getElementById('form-feedback');
 
+      // Loading state
       submitBtn.disabled = true;
-      submitText.textContent = 'Submitting...';
+      submitText.textContent = 'Bezig met verzenden...';
       submitIcon.className = 'ph ph-circle-notch text-xl animate-spin';
       feedback.classList.add('hidden');
 
       var fd = new FormData(form);
 
+      // Build uw_bericht from service + neighborhood + details
       var service = fd.get('service') || '';
       var neighborhood = fd.get('neighborhood') || '';
       var details = (fd.get('details') || '').trim();
-      var bericht = 'Service: ' + service + '\nNeighbourhood: ' + neighborhood;
-      if (details) bericht += '\n\nDetails: ' + details;
-      bericht += '\n\n[Via landing page: /landing/en/]';
+      var bericht = 'Dienst: ' + service + '\nBuurt: ' + neighborhood;
+      if (details) bericht += '\n\nToelichting: ' + details;
+      bericht += '\n\n[Via landing page: /renovatie/offerte/]';
 
+      // UTM params
       var utmSource = sessionStorage.getItem('utm_source') || '';
       var utmMedium = sessionStorage.getItem('utm_medium') || '';
       var utmCampaign = sessionStorage.getItem('utm_campaign') || '';
@@ -761,9 +808,10 @@
         context: { pageUri: window.location.href, pageName: document.title }
       };
 
-      var redirectUrl = '/landing/en/thank-you/?service=' + encodeURIComponent(service);
+      var redirectUrl = '/renovatie/bedankt/?dienst=' + encodeURIComponent(service);
 
       function showSuccess() {
+        // Fire GA4 generate_lead event, then redirect to thank-you page
         if (typeof gtag === 'function') {
           var redirected = false;
           gtag('event', 'generate_lead', {
@@ -778,6 +826,7 @@
               if (!redirected) { redirected = true; window.location.href = redirectUrl; }
             }
           });
+          // Fallback: redirect after 1s if callback doesn't fire (e.g. ad blocker)
           setTimeout(function() {
             if (!redirected) { redirected = true; window.location.href = redirectUrl; }
           }, 1000);
@@ -788,19 +837,24 @@
 
       function showError(msg) {
         submitBtn.disabled = false;
-        submitText.textContent = 'Get a response within 24h';
+        submitText.textContent = 'Ontvang binnen 24u reactie';
         submitIcon.className = 'ph ph-paper-plane-tilt text-xl';
         feedback.classList.remove('hidden');
         feedback.className = 'mt-4 p-4 rounded-lg text-sm bg-red-50 text-red-700 border border-red-200';
-        feedback.innerHTML = msg || 'Something went wrong. Please try again or contact us via <a href="https://wa.me/31618922134" class="underline font-semibold">WhatsApp</a>.';
+        feedback.innerHTML = msg || 'Er ging iets mis. Probeer het opnieuw of neem contact op via <a href="https://wa.me/31618922134" class="underline font-semibold">WhatsApp</a>.';
       }
 
+      // Submit to HubSpot
       try {
         var response = await fetch(
           'https://api.hsforms.com/submissions/v3/integration/submit/' + PORTAL_ID + '/' + FORM_ID,
           { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(subData) }
         );
-        if (response.ok || response.status === 200) { showSuccess(); return; }
+        if (response.ok || response.status === 200) {
+          showSuccess();
+          return;
+        }
+        // Non-OK response — try sendBeacon fallback
         throw new Error('HTTP ' + response.status);
       } catch (err) {
         console.warn('Primary submit failed, trying fallback:', err);
@@ -819,25 +873,27 @@
           if (sent) { showSuccess(); return; }
         } catch (e) { console.error('Beacon fallback failed:', e); }
 
-        showError('Submission failed. Please contact us directly via <a href="https://wa.me/31618922134?text=' +
-          encodeURIComponent('Hi, I would like a quote for ' + service + ' in ' + neighborhood + '.') +
+        // Final fallback — show WhatsApp link
+        showError('Verzending mislukt. Neem direct contact op via <a href="https://wa.me/31618922134?text=' +
+          encodeURIComponent('Hallo, ik wil graag een prijsindicatie voor ' + service + ' in ' + neighborhood + '.') +
           '" target="_blank" rel="noopener" class="underline font-semibold">WhatsApp</a>.');
       }
     });
 
-    // --- Smooth scroll ---
+    // --- Smooth scroll for CTA links ---
     document.querySelectorAll('a[href^="#"]').forEach(function(link) {
       link.addEventListener('click', function(e) {
         var target = document.querySelector(link.getAttribute('href'));
         if (target) {
           e.preventDefault();
-          var top = target.getBoundingClientRect().top + window.scrollY - 80;
+          var offset = 80;
+          var top = target.getBoundingClientRect().top + window.scrollY - offset;
           window.scrollTo({ top: top, behavior: 'smooth' });
         }
       });
     });
 
-    // --- Scroll animations ---
+    // --- Scroll animations (fade-in) ---
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -849,11 +905,11 @@
 
     document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
 
-    // --- WhatsApp tracking ---
+    // --- WhatsApp click tracking ---
     document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
       link.addEventListener('click', function() {
         if (typeof gtag === 'function') {
-          gtag('event', 'whatsapp_click', { event_category: 'engagement', event_label: 'landing_en' });
+          gtag('event', 'whatsapp_click', { event_category: 'engagement', event_label: 'landing_nl' });
         }
       });
     });
