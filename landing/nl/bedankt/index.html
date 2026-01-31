@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bedankt voor uw aanvraag | 4Builders Amsterdam</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0XLK96R0P8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0XLK96R0P8');
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { dark: '#111111', orange: '#FF5722', 'orange-hover': '#E64A19', light: '#F8F9FA', gray: '#6B7280' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['"Playfair Display"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    a, button { touch-action: manipulation; }
+    @keyframes check-pop {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .check-pop { animation: check-pop 0.5s ease-out 0.2s both; }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fade-up 0.5s ease-out both; }
+    .fade-up-1 { animation-delay: 0.3s; }
+    .fade-up-2 { animation-delay: 0.5s; }
+    .fade-up-3 { animation-delay: 0.7s; }
+    .fade-up-4 { animation-delay: 0.9s; }
+  </style>
+</head>
+
+<body class="bg-white text-brand-dark font-sans antialiased">
+
+  <!-- ============ HEADER ============ -->
+  <header class="bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="https://4builders-amsterdam.nl" class="flex items-center gap-2" aria-label="4Builders Amsterdam">
+        <span class="text-xl font-bold tracking-tight">
+          <span class="text-brand-orange">4</span><span class="text-brand-dark">Builders</span>
+        </span>
+        <span class="hidden sm:inline text-xs text-brand-gray font-medium tracking-wide uppercase">Amsterdam</span>
+      </a>
+      <a href="tel:+31618922134" class="flex items-center gap-2 text-sm font-medium text-brand-dark hover:text-brand-orange transition-colors">
+        <i class="ph ph-phone text-brand-orange text-lg"></i>
+        <span class="hidden sm:inline">+31 6 18 92 21 34</span>
+        <span class="sm:hidden">Bel ons</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ============ CONFIRMATION ============ -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+      <!-- Animated checkmark -->
+      <div class="check-pop w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <i class="ph-fill ph-check-circle text-5xl text-green-600"></i>
+      </div>
+
+      <h1 class="fade-up font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-4">
+        Uw aanvraag is ontvangen!
+      </h1>
+      <p class="fade-up fade-up-1 text-lg text-brand-gray max-w-lg mx-auto" id="confirmation-text">
+        Bedankt voor uw vertrouwen. Wij gaan direct voor u aan de slag.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT TO EXPECT ============ -->
+  <section class="py-16 sm:py-20 bg-brand-light">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="fade-up fade-up-1 font-display text-2xl sm:text-3xl font-bold text-center mb-12">
+        Wat kunt u verwachten?
+      </h2>
+
+      <div class="space-y-6 fade-up fade-up-2">
+        <!-- Step 1 -->
+        <div class="flex gap-4 items-start">
+          <div class="flex-shrink-0 w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+          <div>
+            <h3 class="font-semibold text-brand-dark text-lg">Persoonlijk contact binnen 24 uur</h3>
+            <p class="text-brand-gray mt-1">Een van onze projectleiders neemt telefonisch of per e-mail contact met u op om uw wensen te bespreken.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex gap-4 items-start">
+          <div class="flex-shrink-0 w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+          <div>
+            <h3 class="font-semibold text-brand-dark text-lg">Vrijblijvende inspectie ter plaatse</h3>
+            <p class="text-brand-gray mt-1">Wij komen graag bij u langs om het project te bekijken en de mogelijkheden te bespreken. Geen verplichtingen.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex gap-4 items-start">
+          <div class="flex-shrink-0 w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+          <div>
+            <h3 class="font-semibold text-brand-dark text-lg">Heldere offerte op maat</h3>
+            <p class="text-brand-gray mt-1">U ontvangt een gedetailleerde offerte met een duidelijke planning en vaste prijs. Geen verrassingen achteraf.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ YOUR TEAM ============ -->
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="fade-up fade-up-2 font-display text-2xl sm:text-3xl font-bold text-center mb-4">
+        Uw aanspreekpunten
+      </h2>
+      <p class="fade-up fade-up-2 text-brand-gray text-center mb-12 max-w-lg mx-auto">
+        Bij 4Builders heeft u altijd een vast contactpersoon. Geen callcenter, maar direct contact met de mensen die uw project uitvoeren.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 fade-up fade-up-3">
+        <!-- Mark -->
+        <div class="bg-brand-light rounded-2xl p-6 text-center">
+          <img src="../../../img/markmaathuis_eigenaar.jpg" alt="Mark Maathuis"
+               class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-white shadow-md">
+          <h3 class="font-bold text-lg">Mark Maathuis</h3>
+          <p class="text-brand-orange text-sm font-medium mb-3">Eigenaar & Uitvoerder</p>
+          <p class="text-brand-gray text-sm mb-4">Achterhoekse nuchterheid, Amsterdamse kwaliteit. Mark staat garant voor vakmanschap en eerlijke communicatie.</p>
+          <a href="tel:+31618922134" class="text-sm font-medium text-brand-dark hover:text-brand-orange transition-colors inline-flex items-center gap-1.5">
+            <i class="ph ph-phone text-brand-orange"></i> +31 6 18 92 21 34
+          </a>
+        </div>
+
+        <!-- Dennis -->
+        <div class="bg-brand-light rounded-2xl p-6 text-center">
+          <img src="../../../img/dennis_berendsen_projectleider.jpg" alt="Dennis Berendsen"
+               class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-white shadow-md">
+          <h3 class="font-bold text-lg">Dennis Berendsen</h3>
+          <p class="text-brand-orange text-sm font-medium mb-3">Projectleider</p>
+          <p class="text-brand-gray text-sm mb-4">Dennis coördineert uw project van A tot Z en houdt u op de hoogte van elke stap in het proces.</p>
+          <a href="tel:+31653469665" class="text-sm font-medium text-brand-dark hover:text-brand-orange transition-colors inline-flex items-center gap-1.5">
+            <i class="ph ph-phone text-brand-orange"></i> +31 6 53 46 96 65
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST SIGNALS ============ -->
+  <section class="py-12 sm:py-16 bg-brand-dark">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center fade-up fade-up-3">
+        <div>
+          <div class="flex justify-center gap-0.5 mb-2">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+          </div>
+          <p class="text-white font-bold text-lg">5.0</p>
+          <p class="text-gray-400 text-xs">Google Reviews</p>
+        </div>
+        <div>
+          <i class="ph ph-shield-check text-3xl text-green-400 mb-2 block"></i>
+          <p class="text-white font-bold text-lg">Verzekerd</p>
+          <p class="text-gray-400 text-xs">Aansprakelijkheid & CAR</p>
+        </div>
+        <div>
+          <i class="ph ph-buildings text-3xl text-brand-orange mb-2 block"></i>
+          <p class="text-white font-bold text-lg">KVK</p>
+          <p class="text-gray-400 text-xs">99333074</p>
+        </div>
+        <div>
+          <i class="ph ph-clock text-3xl text-brand-orange mb-2 block"></i>
+          <p class="text-white font-bold text-lg">&lt; 24 uur</p>
+          <p class="text-gray-400 text-xs">Reactietijd</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIRECT CONTACT ============ -->
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-xl mx-auto px-4 sm:px-6 text-center fade-up fade-up-4">
+      <h2 class="font-display text-2xl font-bold mb-3">Liever direct contact?</h2>
+      <p class="text-brand-gray mb-6">Wij staan voor u klaar via WhatsApp of telefoon.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://wa.me/31618922134?text=Hallo%2C%20ik%20heb%20zojuist%20een%20aanvraag%20ingediend%20en%20heb%20een%20vraag."
+           target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3.5 rounded-lg transition-colors">
+          <i class="ph ph-whatsapp-logo text-xl"></i> WhatsApp ons
+        </a>
+        <a href="tel:+31618922134"
+           class="inline-flex items-center justify-center gap-2 bg-brand-dark hover:bg-gray-800 text-white font-semibold px-6 py-3.5 rounded-lg transition-colors">
+          <i class="ph ph-phone text-xl"></i> +31 6 18 92 21 34
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-brand-dark text-gray-400 py-8 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-3 text-sm">
+        <span class="text-white font-bold"><span class="text-brand-orange">4</span>Builders Amsterdam</span>
+        <div class="flex items-center gap-4">
+          <a href="https://4builders-amsterdam.nl/privacy/" class="hover:text-white transition-colors">Privacybeleid</a>
+          <span>&middot;</span>
+          <span>Pieter Baststraat 29 H, Amsterdam</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    // Personalize based on service param
+    var params = new URLSearchParams(window.location.search);
+    var service = params.get('dienst');
+    if (service) {
+      var el = document.getElementById('confirmation-text');
+      if (el) {
+        el.textContent = 'Bedankt voor uw aanvraag voor ' + service.toLowerCase() + '. Wij gaan direct voor u aan de slag.';
+      }
+    }
+
+    // Scroll animations
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) { entry.target.style.opacity = '1'; observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+  })();
+  </script>
+
+</body>
+</html>

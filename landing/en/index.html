@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Renovation & Property Maintenance Amsterdam | 4Builders</title>
+  <meta name="description" content="High-end renovation and maintenance for Amsterdam canal houses. Expert craftsmanship with reliable, transparent communication in English. Request a free quote.">
+  <meta name="robots" content="noindex">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Premium Renovation & Maintenance Amsterdam | 4Builders">
+  <meta property="og:description" content="Your Amsterdam property in top condition. High-end renovation and maintenance with reliable Dutch craftsmanship.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://4builders-amsterdam.nl/landing/en/">
+  <meta property="og:image" content="https://4builders-amsterdam.nl/img/renovatie/keuken-en-woonkamer-woning-amsterdam-centrum_1_gebruiken.png">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0XLK96R0P8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0XLK96R0P8');
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#111111',
+              orange: '#FF5722',
+              'orange-hover': '#E64A19',
+              light: '#F8F9FA',
+              gray: '#6B7280',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['"Playfair Display"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .form-step { display: none; opacity: 0; transform: translateX(20px); transition: opacity 0.3s ease, transform 0.3s ease; }
+    .form-step.active { display: block; opacity: 1; transform: translateX(0); }
+    .selection-card { transition: all 0.2s ease; cursor: pointer; }
+    .selection-card:hover { border-color: #FF5722; background-color: #FFF7F5; }
+    .selection-card.selected { border-color: #FF5722; background-color: #FFF7F5; box-shadow: 0 0 0 2px #FF5722; }
+    .progress-fill { transition: width 0.4s ease; }
+    .hero-gradient { background: linear-gradient(135deg, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.5) 50%, rgba(17,17,17,0.3) 100%); }
+    @keyframes wa-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); } 50% { box-shadow: 0 0 0 12px rgba(37,211,102,0); } }
+    .wa-pulse { animation: wa-pulse 2.5s infinite; }
+    .form-input:focus { outline: none; border-color: #FF5722; box-shadow: 0 0 0 3px rgba(255,87,34,0.15); }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .portfolio-img { transition: transform 0.4s ease; }
+    .portfolio-img:hover { transform: scale(1.03); }
+
+    a, button, label, input, textarea { touch-action: manipulation; }
+
+    @media (max-width: 639px) {
+      .selection-card { min-height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .form-input { font-size: 16px; }
+      #wa-float { bottom: 80px; }
+    }
+
+    .mobile-cta-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+      background: #111111; border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 10px 16px; padding-bottom: max(10px, env(safe-area-inset-bottom));
+      display: none;
+    }
+    @media (max-width: 639px) { .mobile-cta-bar { display: flex; } }
+  </style>
+</head>
+
+<body class="bg-white text-brand-dark font-sans antialiased">
+
+  <!-- ============ MINIMAL HEADER ============ -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="https://4builders-amsterdam.nl/en/" class="flex items-center gap-2" aria-label="4Builders Amsterdam">
+        <span class="text-xl font-bold tracking-tight">
+          <span class="text-brand-orange">4</span><span class="text-brand-dark">Builders</span>
+        </span>
+        <span class="hidden sm:inline text-xs text-brand-gray font-medium tracking-wide uppercase">Amsterdam</span>
+      </a>
+      <a href="tel:+31618922134" class="flex items-center gap-2 text-sm font-medium text-brand-dark hover:text-brand-orange transition-colors">
+        <i class="ph ph-phone text-brand-orange text-lg"></i>
+        <span class="hidden sm:inline">+31 6 18 92 21 34</span>
+        <span class="sm:hidden">Call us</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="relative min-h-[90vh] flex items-center pt-16" id="hero">
+    <div class="absolute inset-0">
+      <img src="../../img/renovatie/keuken-en-woonkamer-woning-amsterdam-centrum_1_gebruiken.png"
+           alt="Luxury renovated apartment in Amsterdam Centrum"
+           class="w-full h-full object-cover">
+      <div class="hero-gradient absolute inset-0"></div>
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32">
+      <div class="max-w-2xl">
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          Your Amsterdam property in top condition. <span class="text-brand-orange">Without the hassle.</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-200 leading-relaxed mb-8 max-w-xl">
+          High-end renovation and maintenance with reliable Dutch craftsmanship. We speak fluent English, Dutch, and quality workmanship.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25">
+            Request a free quote
+            <i class="ph ph-arrow-right text-xl"></i>
+          </a>
+          <a href="https://wa.me/31618922134?text=Hi%2C%20I'm%20interested%20in%20your%20services%20via%20the%20landing%20page."
+             target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-medium px-6 py-4 rounded-lg border border-white/20 transition-colors backdrop-blur-sm">
+            <i class="ph ph-whatsapp-logo text-xl text-green-400"></i>
+            WhatsApp us directly
+          </a>
+        </div>
+        <div class="flex flex-wrap items-center gap-6 mt-10 text-sm text-gray-300">
+          <span class="flex items-center gap-1.5">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <span class="ml-1 font-medium text-white">5.0</span> Google Reviews
+          </span>
+          <span class="flex items-center gap-1.5">
+            <i class="ph ph-shield-check text-green-400"></i>
+            Fully insured
+          </span>
+          <span class="flex items-center gap-1.5">
+            <i class="ph ph-clock text-brand-orange"></i>
+            Response within 24 hours
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AMSTERDAM-SPECIFIC TRUST BAR ============ -->
+  <section class="bg-brand-dark text-white py-8" id="trust">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center">
+            <i class="ph ph-car text-2xl text-brand-orange"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-1">Parking permits arranged</h3>
+            <p class="text-sm text-gray-400">We handle all permits for materials and crew in the city centre.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center">
+            <i class="ph ph-ruler text-2xl text-brand-orange"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-1">Interior finishing specialists</h3>
+            <p class="text-sm text-gray-400">From plastering to painting, flooring and kitchen fitting. We deliver a move-in ready result.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center">
+            <i class="ph ph-translate text-2xl text-brand-orange"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-1">Expat-friendly communication</h3>
+            <p class="text-sm text-gray-400">Fluent English and Dutch. Transparent updates and clear project timelines.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE GRID ============ -->
+  <section class="py-20 sm:py-28 bg-white" id="services">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Our Services</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
+          Expert craftsmanship for every project
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+        <!-- Full Renovation -->
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-house text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Full Renovation</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Complete renovations of canal houses and apartments. From design to handover, managed end-to-end.</p>
+          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Get a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Painting -->
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-paint-roller text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Premium Painting</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Interior and exterior painting with premium materials. Protection and aesthetics for your property.</p>
+          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Get a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Flooring -->
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-square-split-horizontal text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Flooring</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Herringbone, parquet, tiles and more. Expert floor finishing for a stylish interior.</p>
+          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Get a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Periodic Maintenance -->
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-wrench text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Periodic Maintenance</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Scheduled maintenance and repairs. Preserve the value of your real estate, hassle-free.</p>
+          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Get a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO ============ -->
+  <section class="py-20 sm:py-28 bg-brand-light" id="portfolio">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Recent Work</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
+          Amsterdam Centrum renovation
+        </h2>
+        <p class="text-brand-gray mt-4 max-w-xl mx-auto">Complete transformation of a home in the heart of Amsterdam. From kitchen to patio, every detail finished with care.</p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 fade-in">
+        <div class="overflow-hidden rounded-xl aspect-[4/3]">
+          <img src="../../img/renovatie/woonkamer-voorkant-woning-amsterdam-centrum_visgraat.png"
+               alt="Living room with herringbone floor Amsterdam Centrum"
+               class="portfolio-img w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="overflow-hidden rounded-xl aspect-[4/3]">
+          <img src="../../img/renovatie/keuken-woning-amsterdam-centrum_gebruiken.png"
+               alt="Modern kitchen renovation Amsterdam"
+               class="portfolio-img w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="overflow-hidden rounded-xl aspect-[4/3]">
+          <img src="../../img/renovatie/bad-douche-woning-amsterdam-centrum_gebruiken.jpg"
+               alt="Bathroom renovation Amsterdam Centrum"
+               class="portfolio-img w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="overflow-hidden rounded-xl aspect-[4/3]">
+          <img src="../../img/renovatie/patio-woning-amsterdam-centrum_gebruiken.png"
+               alt="Patio and outdoor space Amsterdam canal house"
+               class="portfolio-img w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="overflow-hidden rounded-xl aspect-[4/3]">
+          <img src="../../img/renovatie/bedroom-woning-amsterdam-centrum_gebruiken.png"
+               alt="Bedroom renovation Amsterdam"
+               class="portfolio-img w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="overflow-hidden rounded-xl aspect-[4/3]">
+          <img src="../../img/renovatie/schuifdeur-toilet-grachtenwoning-amsterdam-centrum_gebruiken.png"
+               alt="Custom sliding door canal house Amsterdam"
+               class="portfolio-img w-full h-full object-cover" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="py-20 sm:py-28 bg-brand-dark" id="reviews">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Testimonials</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
+          What our clients say
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
+        <!-- Testimonial 1 -->
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
+          <div class="flex gap-1 mb-4">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 leading-relaxed mb-6">"We had our entire floor renovated by 4Builders. Excellent communication, clean worksite, and delivered on time. The result exceeded our expectations."</p>
+          <div>
+            <p class="font-semibold text-white">Thomas & Lieke V.</p>
+            <p class="text-sm text-brand-orange">Keizersgracht — Full renovation</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
+          <div class="flex gap-1 mb-4">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 leading-relaxed mb-6">"As expats, we were nervous about renovation in Amsterdam. Mark and his team made the whole process smooth. They communicated clearly in English and delivered beautiful work."</p>
+          <div>
+            <p class="font-semibold text-white">James & Sarah W.</p>
+            <p class="text-sm text-brand-orange">Oud-Zuid — Apartment renovation</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
+          <div class="flex gap-1 mb-4">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 leading-relaxed mb-6">"The entire exterior of our building was painted. Professional, fast, and a fair price. Dutch reliability combined with Amsterdam quality. Highly recommended!"</p>
+          <div>
+            <p class="font-semibold text-white">Marieke de B.</p>
+            <p class="text-sm text-brand-orange">Jordaan — Exterior painting</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MULTI-STEP LEAD FORM ============ -->
+  <section class="py-20 sm:py-28 bg-white" id="quote">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">No Obligation</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-3">
+          Get your free quote
+        </h2>
+        <p class="text-brand-gray">Three simple steps. Response within 24 hours.</p>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-2xl shadow-xl shadow-gray-200/50 p-6 sm:p-10 fade-in">
+        <!-- Progress bar -->
+        <div class="mb-8">
+          <div class="flex justify-between text-sm font-medium mb-3">
+            <span id="step-label-1" class="text-brand-orange">1. Project</span>
+            <span id="step-label-2" class="text-gray-400">2. Location</span>
+            <span id="step-label-3" class="text-gray-400">3. Contact</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-1.5">
+            <div id="progress-bar" class="progress-fill bg-brand-orange h-1.5 rounded-full" style="width: 33%"></div>
+          </div>
+        </div>
+
+        <form id="leadForm" novalidate>
+          <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off">
+
+          <!-- ===== STEP 1: Project Type ===== -->
+          <div id="step-1" class="form-step active">
+            <h3 class="text-xl font-bold mb-2">What type of project is it?</h3>
+            <p class="text-brand-gray text-sm mb-6">Select the type of work you need.</p>
+
+            <div class="grid grid-cols-2 gap-3" id="service-cards">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+                <input type="radio" name="service" value="Renovation" class="hidden">
+                <i class="ph ph-house text-3xl text-brand-orange mb-2 block"></i>
+                <span class="font-semibold text-sm block">Renovation</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+                <input type="radio" name="service" value="Painting" class="hidden">
+                <i class="ph ph-paint-roller text-3xl text-brand-orange mb-2 block"></i>
+                <span class="font-semibold text-sm block">Painting</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+                <input type="radio" name="service" value="Maintenance" class="hidden">
+                <i class="ph ph-wrench text-3xl text-brand-orange mb-2 block"></i>
+                <span class="font-semibold text-sm block">Maintenance</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+                <input type="radio" name="service" value="Other" class="hidden">
+                <i class="ph ph-dots-three-outline text-3xl text-brand-orange mb-2 block"></i>
+                <span class="font-semibold text-sm block">Other</span>
+              </label>
+            </div>
+            <p id="error-step1" class="text-red-500 text-sm mt-3 hidden">Please select an option to continue.</p>
+          </div>
+
+          <!-- ===== STEP 2: Neighborhood ===== -->
+          <div id="step-2" class="form-step">
+            <h3 class="text-xl font-bold mb-2">Which neighbourhood is the property in?</h3>
+            <p class="text-brand-gray text-sm mb-6">This helps us plan efficiently.</p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="neighborhood-cards">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
+                <input type="radio" name="neighborhood" value="Centrum" class="hidden">
+                <span class="font-semibold text-sm block">Centrum</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
+                <input type="radio" name="neighborhood" value="Canal Belt" class="hidden">
+                <span class="font-semibold text-sm block">Canal Belt</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
+                <input type="radio" name="neighborhood" value="Jordaan" class="hidden">
+                <span class="font-semibold text-sm block">Jordaan</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
+                <input type="radio" name="neighborhood" value="De Pijp" class="hidden">
+                <span class="font-semibold text-sm block">De Pijp</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
+                <input type="radio" name="neighborhood" value="Oud-Zuid" class="hidden">
+                <span class="font-semibold text-sm block">Oud-Zuid</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
+                <input type="radio" name="neighborhood" value="Other" class="hidden">
+                <span class="font-semibold text-sm block">Other</span>
+              </label>
+            </div>
+            <p id="error-step2" class="text-red-500 text-sm mt-3 hidden">Please select a neighbourhood to continue.</p>
+
+            <button type="button" onclick="goToStep(1)" class="mt-6 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
+              <i class="ph ph-arrow-left"></i> Back
+            </button>
+          </div>
+
+          <!-- ===== STEP 3: Contact Details ===== -->
+          <div id="step-3" class="form-step">
+            <h3 class="text-xl font-bold mb-2">How can we reach you?</h3>
+            <p class="text-brand-gray text-sm mb-6">We'll get back to you within 24 hours.</p>
+
+            <div class="space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label for="firstname" class="block text-sm font-medium text-brand-dark mb-1.5">First name *</label>
+                  <input type="text" id="firstname" name="firstname" required placeholder="Your first name"
+                         class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
+                  <p class="text-red-500 text-xs mt-1 hidden" data-error="firstname">First name is required.</p>
+                </div>
+                <div>
+                  <label for="lastname" class="block text-sm font-medium text-brand-dark mb-1.5">Last name *</label>
+                  <input type="text" id="lastname" name="lastname" required placeholder="Your last name"
+                         class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
+                  <p class="text-red-500 text-xs mt-1 hidden" data-error="lastname">Last name is required.</p>
+                </div>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-brand-dark mb-1.5">Email address *</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com"
+                       class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
+                <p class="text-red-500 text-xs mt-1 hidden" data-error="email">Please enter a valid email address.</p>
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-brand-dark mb-1.5">Phone number *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+31 6 1234 5678"
+                       class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
+                <p class="text-red-500 text-xs mt-1 hidden" data-error="phone">Please enter a valid phone number.</p>
+              </div>
+              <div>
+                <label for="details" class="block text-sm font-medium text-brand-dark mb-1.5">Additional details <span class="text-brand-gray font-normal">(optional)</span></label>
+                <textarea id="details" name="details" rows="3" placeholder="Briefly describe your project..."
+                          class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all resize-none"></textarea>
+              </div>
+            </div>
+
+            <button type="submit" id="submit-btn"
+                    class="w-full mt-6 bg-brand-orange hover:bg-brand-orange-hover text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25 flex items-center justify-center gap-2">
+              <span id="submit-text">Get a response within 24h</span>
+              <i id="submit-icon" class="ph ph-paper-plane-tilt text-xl"></i>
+            </button>
+
+            <button type="button" onclick="goToStep(2)" class="mt-4 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
+              <i class="ph ph-arrow-left"></i> Back
+            </button>
+
+            <div id="form-feedback" class="hidden mt-4 p-4 rounded-lg text-sm"></div>
+          </div>
+        </form>
+
+        <!-- Success state -->
+        <div id="form-success" class="hidden text-center py-8">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="ph ph-check-circle text-4xl text-green-600"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Request received!</h3>
+          <p class="text-brand-gray">We'll get back to you within 24 hours. You can also reach us directly via WhatsApp.</p>
+          <a href="https://wa.me/31618922134" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 mt-4 text-green-600 font-semibold hover:text-green-700 transition-colors">
+            <i class="ph ph-whatsapp-logo text-xl"></i> Open WhatsApp
+          </a>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4 mt-6 pt-6 border-t border-gray-100 text-xs text-brand-gray">
+          <span class="flex items-center gap-1"><i class="ph ph-lock-simple text-sm"></i> Data secured</span>
+          <span class="flex items-center gap-1"><i class="ph ph-shield-check text-sm"></i> Fully insured</span>
+          <span class="flex items-center gap-1"><i class="ph ph-clock text-sm"></i> Response within 24h</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MINIMAL FOOTER ============ -->
+  <footer class="bg-brand-dark text-gray-400 py-10 pb-24 sm:pb-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="text-center sm:text-left">
+          <span class="text-white font-bold text-lg"><span class="text-brand-orange">4</span>Builders Amsterdam</span>
+          <p class="text-sm mt-1">Pieter Baststraat 29 H, 1071TV Amsterdam &middot; KVK 99333074</p>
+        </div>
+        <div class="flex items-center gap-4 text-sm">
+          <a href="https://4builders-amsterdam.nl/en/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+          <span>&middot;</span>
+          <a href="tel:+31618922134" class="hover:text-white transition-colors">+31 6 18 92 21 34</a>
+          <span>&middot;</span>
+          <a href="mailto:info@4builders-amsterdam.nl" class="hover:text-white transition-colors">info@4builders-amsterdam.nl</a>
+        </div>
+      </div>
+      <p class="text-center text-xs text-gray-600 mt-6">&copy; 2025 4Builders Amsterdam. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============ STICKY WHATSAPP BUTTON ============ -->
+  <a href="https://wa.me/31618922134?text=Hi%2C%20I'm%20interested%20in%20your%20services%20via%20the%20landing%20page."
+     target="_blank" rel="noopener"
+     id="wa-float"
+     class="wa-pulse fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition-colors"
+     aria-label="Send us a WhatsApp message">
+    <i class="ph-fill ph-whatsapp-logo text-white text-3xl"></i>
+  </a>
+
+  <!-- ============ MOBILE STICKY CTA BAR ============ -->
+  <div class="mobile-cta-bar gap-2 items-center justify-between">
+    <a href="tel:+31618922134" class="flex-1 flex items-center justify-center gap-1.5 bg-white/10 text-white font-semibold py-3 rounded-lg text-sm">
+      <i class="ph ph-phone text-lg"></i> Call
+    </a>
+    <a href="https://wa.me/31618922134?text=Hi%2C%20I'm%20interested%20in%20your%20services." target="_blank" rel="noopener"
+       class="flex-1 flex items-center justify-center gap-1.5 bg-green-500 text-white font-semibold py-3 rounded-lg text-sm">
+      <i class="ph ph-whatsapp-logo text-lg"></i> WhatsApp
+    </a>
+    <a href="#quote" class="flex-1 flex items-center justify-center gap-1.5 bg-brand-orange text-white font-semibold py-3 rounded-lg text-sm">
+      <i class="ph ph-paper-plane-tilt text-lg"></i> Quote
+    </a>
+  </div>
+
+  <!-- ============ JAVASCRIPT ============ -->
+  <script>
+  (function() {
+    'use strict';
+
+    // --- UTM Capture ---
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+      var hasUtm = utmKeys.some(function(k) { return params.has(k); });
+      if (hasUtm) {
+        utmKeys.forEach(function(k) { sessionStorage.setItem(k, params.get(k) || ''); });
+      }
+    })();
+
+    // --- Multi-Step Form Logic ---
+    var currentStep = 1;
+    var totalSteps = 3;
+
+    window.goToStep = function(step) {
+      if (step > currentStep && !validateCurrentStep()) return;
+
+      var currentEl = document.getElementById('step-' + currentStep);
+      if (currentEl) currentEl.classList.remove('active');
+
+      currentStep = step;
+
+      var targetEl = document.getElementById('step-' + step);
+      if (targetEl) {
+        setTimeout(function() { targetEl.classList.add('active'); }, 50);
+      }
+
+      var progress = (step / totalSteps) * 100;
+      document.getElementById('progress-bar').style.width = progress + '%';
+
+      for (var i = 1; i <= totalSteps; i++) {
+        var label = document.getElementById('step-label-' + i);
+        if (i <= step) {
+          label.classList.remove('text-gray-400');
+          label.classList.add('text-brand-orange');
+        } else {
+          label.classList.remove('text-brand-orange');
+          label.classList.add('text-gray-400');
+        }
+      }
+
+      var formSection = document.getElementById('quote');
+      if (formSection && window.innerWidth < 640) {
+        formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    function validateCurrentStep() {
+      if (currentStep === 1) {
+        var checked = document.querySelector('input[name="service"]:checked');
+        var err = document.getElementById('error-step1');
+        if (!checked) { err.classList.remove('hidden'); return false; }
+        err.classList.add('hidden');
+        return true;
+      }
+      if (currentStep === 2) {
+        var checked = document.querySelector('input[name="neighborhood"]:checked');
+        var err = document.getElementById('error-step2');
+        if (!checked) { err.classList.remove('hidden'); return false; }
+        err.classList.add('hidden');
+        return true;
+      }
+      return true;
+    }
+
+    // --- Card Selection with Auto-Advance ---
+    document.querySelectorAll('#service-cards .selection-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        card.closest('.grid').querySelectorAll('.selection-card').forEach(function(c) { c.classList.remove('selected'); });
+        card.classList.add('selected');
+        card.querySelector('input').checked = true;
+        document.getElementById('error-step1').classList.add('hidden');
+        setTimeout(function() { goToStep(2); }, 300);
+      });
+    });
+
+    document.querySelectorAll('#neighborhood-cards .selection-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        card.closest('.grid').querySelectorAll('.selection-card').forEach(function(c) { c.classList.remove('selected'); });
+        card.classList.add('selected');
+        card.querySelector('input').checked = true;
+        document.getElementById('error-step2').classList.add('hidden');
+        setTimeout(function() { goToStep(3); }, 300);
+      });
+    });
+
+    // --- Form Validation & Submission ---
+    var form = document.getElementById('leadForm');
+    var PORTAL_ID = '147527077';
+    var FORM_ID = 'c7133bc0-7e37-4a0a-8c2a-419f2d7eeb8f';
+
+    function validateStep3() {
+      var valid = true;
+      var fields = {
+        firstname: function(v) { return v.trim() ? '' : 'First name is required.'; },
+        lastname: function(v) { return v.trim() ? '' : 'Last name is required.'; },
+        email: function(v) {
+          if (!v.trim()) return 'Email address is required.';
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? '' : 'Please enter a valid email address.';
+        },
+        phone: function(v) {
+          if (!v.trim()) return 'Phone number is required.';
+          return /^[\d\s\-+().]{7,}$/.test(v) ? '' : 'Please enter a valid phone number.';
+        }
+      };
+
+      Object.keys(fields).forEach(function(name) {
+        var input = form.querySelector('[name="' + name + '"]');
+        var errEl = form.querySelector('[data-error="' + name + '"]');
+        var msg = fields[name](input.value);
+        if (msg) {
+          input.classList.add('border-red-400');
+          input.classList.remove('border-gray-300');
+          if (errEl) { errEl.textContent = msg; errEl.classList.remove('hidden'); }
+          valid = false;
+        } else {
+          input.classList.remove('border-red-400');
+          input.classList.add('border-gray-300');
+          if (errEl) errEl.classList.add('hidden');
+        }
+      });
+      return valid;
+    }
+
+    form.querySelectorAll('#step-3 input').forEach(function(input) {
+      input.addEventListener('blur', function() { validateStep3(); });
+    });
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      var honeypot = form.querySelector('input[name="honeypot"]');
+      if (honeypot && honeypot.value) return;
+
+      if (!validateStep3()) return;
+
+      var submitBtn = document.getElementById('submit-btn');
+      var submitText = document.getElementById('submit-text');
+      var submitIcon = document.getElementById('submit-icon');
+      var feedback = document.getElementById('form-feedback');
+
+      submitBtn.disabled = true;
+      submitText.textContent = 'Submitting...';
+      submitIcon.className = 'ph ph-circle-notch text-xl animate-spin';
+      feedback.classList.add('hidden');
+
+      var fd = new FormData(form);
+
+      var service = fd.get('service') || '';
+      var neighborhood = fd.get('neighborhood') || '';
+      var details = (fd.get('details') || '').trim();
+      var bericht = 'Service: ' + service + '\nNeighbourhood: ' + neighborhood;
+      if (details) bericht += '\n\nDetails: ' + details;
+      bericht += '\n\n[Via landing page: /landing/en/]';
+
+      var utmSource = sessionStorage.getItem('utm_source') || '';
+      var utmMedium = sessionStorage.getItem('utm_medium') || '';
+      var utmCampaign = sessionStorage.getItem('utm_campaign') || '';
+      var utmContent = sessionStorage.getItem('utm_content') || '';
+      var utmTerm = sessionStorage.getItem('utm_term') || '';
+
+      var subData = {
+        fields: [
+          { name: 'firstname', value: fd.get('firstname') || '' },
+          { name: 'lastname', value: fd.get('lastname') || '' },
+          { name: 'email', value: fd.get('email') || '' },
+          { name: 'phone', value: fd.get('phone') || '' },
+          { name: 'zip', value: '' },
+          { name: 'uw_bericht', value: bericht },
+          { name: 'utm_source', value: utmSource },
+          { name: 'utm_medium', value: utmMedium },
+          { name: 'utm_campaign', value: utmCampaign },
+          { name: 'utm_content', value: utmContent },
+          { name: 'utm_term', value: utmTerm }
+        ],
+        context: { pageUri: window.location.href, pageName: document.title }
+      };
+
+      var redirectUrl = '/landing/en/thank-you/?service=' + encodeURIComponent(service);
+
+      function showSuccess() {
+        if (typeof gtag === 'function') {
+          var redirected = false;
+          gtag('event', 'generate_lead', {
+            currency: 'EUR',
+            value: 0,
+            event_category: 'form',
+            event_label: service,
+            utm_source: utmSource,
+            utm_medium: utmMedium,
+            utm_campaign: utmCampaign,
+            event_callback: function() {
+              if (!redirected) { redirected = true; window.location.href = redirectUrl; }
+            }
+          });
+          setTimeout(function() {
+            if (!redirected) { redirected = true; window.location.href = redirectUrl; }
+          }, 1000);
+        } else {
+          window.location.href = redirectUrl;
+        }
+      }
+
+      function showError(msg) {
+        submitBtn.disabled = false;
+        submitText.textContent = 'Get a response within 24h';
+        submitIcon.className = 'ph ph-paper-plane-tilt text-xl';
+        feedback.classList.remove('hidden');
+        feedback.className = 'mt-4 p-4 rounded-lg text-sm bg-red-50 text-red-700 border border-red-200';
+        feedback.innerHTML = msg || 'Something went wrong. Please try again or contact us via <a href="https://wa.me/31618922134" class="underline font-semibold">WhatsApp</a>.';
+      }
+
+      try {
+        var response = await fetch(
+          'https://api.hsforms.com/submissions/v3/integration/submit/' + PORTAL_ID + '/' + FORM_ID,
+          { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(subData) }
+        );
+        if (response.ok || response.status === 200) { showSuccess(); return; }
+        throw new Error('HTTP ' + response.status);
+      } catch (err) {
+        console.warn('Primary submit failed, trying fallback:', err);
+        try {
+          var beaconParams = new URLSearchParams();
+          beaconParams.append('firstname', fd.get('firstname') || '');
+          beaconParams.append('lastname', fd.get('lastname') || '');
+          beaconParams.append('email', fd.get('email') || '');
+          beaconParams.append('phone', fd.get('phone') || '');
+          beaconParams.append('uw_bericht', bericht);
+
+          var sent = navigator.sendBeacon(
+            'https://forms.hubspot.com/uploads/form/v2/' + PORTAL_ID + '/' + FORM_ID,
+            beaconParams
+          );
+          if (sent) { showSuccess(); return; }
+        } catch (e) { console.error('Beacon fallback failed:', e); }
+
+        showError('Submission failed. Please contact us directly via <a href="https://wa.me/31618922134?text=' +
+          encodeURIComponent('Hi, I would like a quote for ' + service + ' in ' + neighborhood + '.') +
+          '" target="_blank" rel="noopener" class="underline font-semibold">WhatsApp</a>.');
+      }
+    });
+
+    // --- Smooth scroll ---
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          var top = target.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // --- Scroll animations ---
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+
+    // --- WhatsApp tracking ---
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'whatsapp_click', { event_category: 'engagement', event_label: 'landing_en' });
+        }
+      });
+    });
+
+  })();
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "4Builders Amsterdam",
+    "url": "https://4builders-amsterdam.nl",
+    "telephone": "+31618922134",
+    "email": "info@4builders-amsterdam.nl",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Pieter Baststraat 29 H",
+      "addressLocality": "Amsterdam",
+      "postalCode": "1071TV",
+      "addressCountry": "NL"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Amsterdam"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "12"
+    }
+  }
+  </script>
+
+</body>
+</html>
