@@ -380,10 +380,10 @@
         <!-- Progress bar -->
         <div class="mb-8">
           <div class="flex justify-between text-sm font-medium mb-3">
-            <span id="step-label-1" class="text-brand-orange">1. Project</span>
-            <span id="step-label-2" class="text-gray-400">2. Location</span>
-            <span id="step-label-3" class="text-gray-400">3. Planning</span>
-            <span id="step-label-4" class="text-gray-400">4. Contact</span>
+            <span id="step-label-1" class="text-brand-orange cursor-pointer hover:underline" onclick="goToStepDirect(1)">1. Project</span>
+            <span id="step-label-2" class="text-gray-400" onclick="goToStepDirect(2)">2. Location</span>
+            <span id="step-label-3" class="text-gray-400" onclick="goToStepDirect(3)">3. Planning</span>
+            <span id="step-label-4" class="text-gray-400" onclick="goToStepDirect(4)">4. Contact</span>
           </div>
           <div class="w-full bg-gray-200 rounded-full h-1.5">
             <div id="progress-bar" class="progress-fill bg-brand-orange h-1.5 rounded-full" style="width: 25%"></div>
@@ -679,7 +679,24 @@
 
     // --- Multi-Step Form Logic ---
     var currentStep = 1;
+    var highestStep = 1;
     var totalSteps = 4;
+
+    function updateStepLabels() {
+      for (var i = 1; i <= totalSteps; i++) {
+        var label = document.getElementById('step-label-' + i);
+        if (!label) continue;
+        if (i <= highestStep) {
+          label.classList.remove('text-gray-400');
+          label.classList.add('text-brand-orange', 'cursor-pointer', 'hover:underline');
+        } else {
+          label.classList.remove('text-brand-orange', 'cursor-pointer', 'hover:underline');
+          label.classList.add('text-gray-400');
+        }
+        if (i === currentStep) { label.classList.add('font-bold'); }
+        else { label.classList.remove('font-bold'); }
+      }
+    }
 
     window.goToStep = function(step) {
       if (step > currentStep && !validateCurrentStep()) return;
@@ -688,28 +705,44 @@
       if (currentEl) currentEl.classList.remove('active');
 
       currentStep = step;
+      if (step > highestStep) highestStep = step;
 
       var targetEl = document.getElementById('step-' + step);
       if (targetEl) {
         setTimeout(function() { targetEl.classList.add('active'); }, 50);
       }
 
-      var progress = (step / totalSteps) * 100;
-      document.getElementById('progress-bar').style.width = progress + '%';
-
-      for (var i = 1; i <= totalSteps; i++) {
-        var label = document.getElementById('step-label-' + i);
-        if (label) {
-          if (i <= step) { label.classList.remove('text-gray-400'); label.classList.add('text-brand-orange'); }
-          else { label.classList.remove('text-brand-orange'); label.classList.add('text-gray-400'); }
-        }
-      }
+      document.getElementById('progress-bar').style.width = (step / totalSteps) * 100 + '%';
+      updateStepLabels();
 
       var formSection = document.getElementById('quote');
       if (formSection && window.innerWidth < 640) {
         formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     };
+
+    window.goToStepDirect = function(step) {
+      if (step < currentStep) {
+        var currentEl = document.getElementById('step-' + currentStep);
+        if (currentEl) currentEl.classList.remove('active');
+        currentStep = step;
+        var targetEl = document.getElementById('step-' + step);
+        if (targetEl) setTimeout(function() { targetEl.classList.add('active'); }, 50);
+        document.getElementById('progress-bar').style.width = (step / totalSteps) * 100 + '%';
+        updateStepLabels();
+      } else if (step > currentStep && step <= highestStep) {
+        if (!validateCurrentStep()) return;
+        var currentEl = document.getElementById('step-' + currentStep);
+        if (currentEl) currentEl.classList.remove('active');
+        currentStep = step;
+        var targetEl = document.getElementById('step-' + step);
+        if (targetEl) setTimeout(function() { targetEl.classList.add('active'); }, 50);
+        document.getElementById('progress-bar').style.width = (step / totalSteps) * 100 + '%';
+        updateStepLabels();
+      }
+    };
+
+    updateStepLabels();
 
     function validateCurrentStep() {
       if (currentStep === 1) {
