@@ -482,6 +482,10 @@
               <p class="text-sm font-medium text-brand-dark mb-3">Indicative budget *</p>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="budget-cards">
                 <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
+                  <input type="radio" name="budget" value="€ 0 – € 5,000" class="hidden">
+                  <span class="font-semibold text-sm block">€ 0 – € 5k</span>
+                </label>
+                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
                   <input type="radio" name="budget" value="€ 5,000 – € 15,000" class="hidden">
                   <span class="font-semibold text-sm block">€ 5k – € 15k</span>
                 </label>
@@ -490,12 +494,8 @@
                   <span class="font-semibold text-sm block">€ 15k – € 50k</span>
                 </label>
                 <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="budget" value="€ 50,000 – € 100,000" class="hidden">
-                  <span class="font-semibold text-sm block">€ 50k – € 100k</span>
-                </label>
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="budget" value="€ 100,000+" class="hidden">
-                  <span class="font-semibold text-sm block">€ 100k+</span>
+                  <input type="radio" name="budget" value="€ 50,000+" class="hidden">
+                  <span class="font-semibold text-sm block">€ 50k+</span>
                 </label>
                 <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
                   <input type="radio" name="budget" value="Not sure yet" class="hidden">
