@@ -42,7 +42,7 @@
     @media(min-width:1024px){.lg\:text-6xl{font-size:3.75rem;line-height:1}}
 
     /* === PAGE-SPECIFIC STYLES === */
-    html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
     .form-step { display: none; opacity: 0; transform: translateX(20px); transition: opacity 0.3s ease, transform 0.3s ease; }
     .form-step.active { display: block; opacity: 1; transform: translateX(0); }
     .selection-card { transition: all 0.2s ease; cursor: pointer; }
@@ -50,8 +50,6 @@
     .selection-card.selected { border-color: #FF5722; background-color: #FFF7F5; box-shadow: 0 0 0 2px #FF5722; }
     .progress-fill { transition: width 0.4s ease; }
     .hero-gradient { background: linear-gradient(135deg, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.5) 50%, rgba(17,17,17,0.3) 100%); }
-    @keyframes wa-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); } 50% { box-shadow: 0 0 0 12px rgba(37,211,102,0); } }
-    .wa-pulse { animation: wa-pulse 2.5s infinite; }
     .form-input:focus { outline: none; border-color: #FF5722; box-shadow: 0 0 0 3px rgba(255,87,34,0.15); }
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -61,15 +59,7 @@
     @media (max-width: 639px) {
       .selection-card { min-height: 68px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .form-input { font-size: 16px; }
-      #wa-float { display: none; }
     }
-    .mobile-cta-bar {
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
-      background: #111111; border-top: 1px solid rgba(255,255,255,0.1);
-      padding: 10px 16px; padding-bottom: max(10px, env(safe-area-inset-bottom));
-      display: none;
-    }
-    @media (max-width: 639px) { .mobile-cta-bar { display: flex; } }
   </style>
 </head>
 
@@ -644,46 +634,10 @@
     </div>
   </section>
 
-  <!-- ============ MINIMAL FOOTER ============ -->
-  <footer class="bg-brand-dark text-gray-400 py-10 pb-28 sm:pb-10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-      <span class="text-white font-bold text-lg block mb-3"><span class="text-brand-orange">4</span>Builders Amsterdam</span>
-      <p class="text-sm mb-4">Pieter Baststraat 29 H, 1071TV Amsterdam</p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-sm mb-4">
-        <a href="tel:+31618922134" class="hover:text-white transition-colors">+31 6 18 92 21 34</a>
-        <a href="mailto:info@4builders-amsterdam.nl" class="hover:text-white transition-colors">info@4builders-amsterdam.nl</a>
-      </div>
-      <div class="flex items-center justify-center gap-4 text-xs">
-        <a href="https://4builders-amsterdam.nl/en/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
-        <span>&middot;</span>
-        <span>KVK 99333074</span>
-      </div>
-      <p class="text-xs text-gray-600 mt-4">&copy; 2025 4Builders Amsterdam</p>
-    </div>
-  </footer>
+  <!-- ============ FOOTER (shared component) ============ -->
+  <div id="footer-placeholder"></div>
 
-  <!-- ============ STICKY WHATSAPP BUTTON ============ -->
-  <a href="https://wa.me/31618922134?text=Hi%2C%20I'm%20interested%20in%20your%20services%20via%20the%20landing%20page."
-     target="_blank" rel="noopener"
-     id="wa-float"
-     class="wa-pulse fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition-colors"
-     aria-label="Send us a WhatsApp message">
-    <i class="ph-fill ph-whatsapp-logo text-white text-3xl"></i>
-  </a>
-
-  <!-- ============ MOBILE STICKY CTA BAR ============ -->
-  <div class="mobile-cta-bar gap-2 items-center justify-between">
-    <a href="tel:+31618922134" class="flex-1 flex items-center justify-center gap-1.5 bg-white/10 text-white font-semibold py-3 rounded-lg text-sm">
-      <i class="ph ph-phone text-lg"></i> Call
-    </a>
-    <a href="https://wa.me/31618922134?text=Hi%2C%20I'm%20interested%20in%20your%20services." target="_blank" rel="noopener"
-       class="flex-1 flex items-center justify-center gap-1.5 bg-green-500 text-white font-semibold py-3 rounded-lg text-sm">
-      <i class="ph ph-whatsapp-logo text-lg"></i> WhatsApp
-    </a>
-    <a href="#quote" class="flex-1 flex items-center justify-center gap-1.5 bg-brand-orange text-white font-semibold py-3 rounded-lg text-sm">
-      <i class="ph ph-paper-plane-tilt text-lg"></i> Quote
-    </a>
-  </div>
+  <script src="/js/includes.js" defer></script>
 
   <!-- ============ JAVASCRIPT ============ -->
   <script>
