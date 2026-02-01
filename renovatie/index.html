@@ -65,143 +65,15 @@
 <link rel="stylesheet" href="/css/style.min.css">
 <link rel="stylesheet" href="/fonts/phosphor/regular/style.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="/fonts/phosphor/fill/style.css" media="print" onload="this.media='all'">
+<script src="/js/includes.js" defer></script>
 <script src="/js/main.js" defer></script>
 </head>
 
 <body class="antialiased bg-white text-gray-900">
 
-<!-- TOP BAR -->
-<div class="hidden md:block bg-brand-dark text-white py-2 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        <div class="flex items-center gap-6">
-            <span class="flex items-center gap-2">
-                <i class="ph ph-map-pin text-brand-orange"></i>
-                Amsterdam & Omgeving
-            </span>
-            <span class="flex items-center gap-2">
-                <i class="ph ph-clock text-brand-orange"></i>
-                Ma-Vr: 07:00 - 18:00
-            </span>
-        </div>
-        <div class="flex items-center gap-6">
-            <a href="tel:+31618922134" class="flex items-center gap-2 hover:text-brand-orange transition">
-                <i class="ph ph-phone text-brand-orange"></i>
-                +31 6 18 92 21 34
-            </a>
-            <a href="mailto:info@4builders-amsterdam.nl" class="flex items-center gap-2 hover:text-brand-orange transition">
-                <i class="ph ph-envelope text-brand-orange"></i>
-                info@4builders-amsterdam.nl
-            </a>
-            <div class="flex items-center gap-2 border-l border-white/20 pl-6">
-                <span class="flex items-center gap-1.5 opacity-100 border-b-2 border-brand-orange pb-0.5" title="Nederlands (actief)">
-                    <svg width="20" height="14" viewBox="0 0 9 6" style="border-radius:2px" xmlns="http://www.w3.org/2000/svg"><rect width="9" height="2" fill="#AE1C28"/><rect y="2" width="9" height="2" fill="#FFF"/><rect y="4" width="9" height="2" fill="#21468B"/></svg>
-                    NL
-                </span>
-                <a href="/en/" class="flex items-center gap-1.5 opacity-50 hover:opacity-100 transition pb-0.5" title="Switch to English">
-                    <svg width="24" height="15" viewBox="0 0 60 30" style="border-radius:2px" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="30" fill="#012169"/><path d="m0,0 60,30m0,-30-60,30" stroke="#fff" stroke-width="6"/><path d="m0,0 60,30m0,-30-60,30" stroke="#C8102E" stroke-width="2"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>
-                    EN
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+<div id="header-placeholder"></div>
 
-<!-- NAVIGATION -->
-<nav class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-            <a href="/" class="flex-shrink-0">
-                <span class="font-header text-2xl font-bold tracking-wider text-gray-900">4<span class="text-brand-orange">BUILDERS</span></span>
-            </a>
-
-            <div class="hidden md:block">
-                <div class="ml-10 flex items-baseline space-x-8">
-                    <!-- DIENSTEN dropdown -->
-                    <div class="relative group">
-                        <a href="/#diensten" class="text-gray-700 hover:text-brand-orange transition px-3 py-2 text-sm font-medium inline-flex items-center gap-2">
-                            Diensten
-                            <i class="ph ph-caret-down text-base opacity-70 group-hover:opacity-100 transition"></i>
-                        </a>
-                        <div class="absolute left-0 top-full pt-3 hidden group-hover:block">
-                            <div class="w-64 bg-white border border-gray-100 shadow-xl rounded-lg overflow-hidden">
-                                <a href="/schilderwerk/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-orange transition">
-                                    Schilderwerk
-                                    <span class="block text-xs text-gray-400 mt-1">Binnen & buiten, strak lakwerk</span>
-                                </a>
-                                <a href="/vloeren/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-orange transition border-t border-gray-50">
-                                    Vloeren
-                                    <span class="block text-xs text-gray-400 mt-1">PVC, laminaat, hout, plinten</span>
-                                </a>
-                                <a href="/timmerwerk/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-orange transition border-t border-gray-50">
-                                    Timmerwerk
-                                    <span class="block text-xs text-gray-400 mt-1">Maatwerk, herstel, afbouw</span>
-                                </a>
-                                <a href="/bestrating/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-orange transition border-t border-gray-50">
-                                    Bestrating
-                                    <span class="block text-xs text-gray-400 mt-1">Terras, pad, binnentuin</span>
-                                </a>
-                                <a href="/renovatie/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-orange transition border-t border-gray-50">
-                                    Renovatie
-                                    <span class="block text-xs text-gray-400 mt-1">Totaalrenovatie, turn-key</span>
-                                </a>
-                                <a href="/vve/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-orange transition border-t border-gray-50">
-                                    VvE Beheer
-                                    <span class="block text-xs text-gray-400 mt-1">Meerjarenplan, onderhoud</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="/#portfolio" class="text-gray-700 hover:text-brand-orange transition px-3 py-2 text-sm font-medium">Ons Werk</a>
-                    <a href="/over-ons/" class="text-gray-700 hover:text-brand-orange transition px-3 py-2 text-sm font-medium">Over Ons</a>
-                    <a href="/renovatie/offerte/#offerte" class="bg-brand-orange text-white hover:bg-orange-600 px-5 py-2.5 rounded text-sm font-bold uppercase tracking-wide transition shadow-lg shadow-orange-200">Offerte Aanvragen</a>
-                    <div class="flex items-center gap-1.5 px-3 py-2">
-                        <span class="flex items-center gap-1 border-b-2 border-brand-orange pb-0.5 text-sm font-medium text-gray-900" title="Nederlands (actief)">
-                            <svg width="20" height="14" viewBox="0 0 9 6" style="border-radius:2px" xmlns="http://www.w3.org/2000/svg"><rect width="9" height="2" fill="#AE1C28"/><rect y="2" width="9" height="2" fill="#FFF"/><rect y="4" width="9" height="2" fill="#21468B"/></svg>
-                        </span>
-                        <a href="/en/" class="flex items-center gap-1 opacity-40 hover:opacity-100 transition pb-0.5 text-sm font-medium text-gray-500 hover:text-gray-900" title="Switch to English">
-                            <svg width="24" height="15" viewBox="0 0 60 30" style="border-radius:2px" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="30" fill="#012169"/><path d="m0,0 60,30m0,-30-60,30" stroke="#fff" stroke-width="6"/><path d="m0,0 60,30m0,-30-60,30" stroke="#C8102E" stroke-width="2"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="md:hidden flex items-center gap-3">
-                <div class="flex items-center gap-1.5 border border-gray-200 rounded px-2 py-1">
-                    <span class="flex items-center border-b-2 border-brand-orange" title="Nederlands (actief)">
-                        <svg width="18" height="12" viewBox="0 0 9 6" style="border-radius:2px" xmlns="http://www.w3.org/2000/svg"><rect width="9" height="2" fill="#AE1C28"/><rect y="2" width="9" height="2" fill="#FFF"/><rect y="4" width="9" height="2" fill="#21468B"/></svg>
-                    </span>
-                    <a href="/en/" class="flex items-center opacity-40" title="Switch to English">
-                        <svg width="21" height="13" viewBox="0 0 60 30" style="border-radius:2px" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="30" fill="#012169"/><path d="m0,0 60,30m0,-30-60,30" stroke="#fff" stroke-width="6"/><path d="m0,0 60,30m0,-30-60,30" stroke="#C8102E" stroke-width="2"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>
-                    </a>
-                </div>
-                <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-brand-orange p-2">
-                    <i class="ph ph-list text-3xl"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="md:hidden bg-white border-b border-gray-100">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="/#diensten" onclick="toggleMobileMenu()" class="text-gray-700 hover:text-brand-orange block px-3 py-2 rounded-md text-base font-medium">Diensten</a>
-            <div class="px-3 pb-2">
-                <a href="/schilderwerk/" class="block text-sm text-gray-500 hover:text-brand-orange py-2 transition">Schilderwerk</a>
-                <a href="/vloeren/" class="block text-sm text-gray-500 hover:text-brand-orange py-2 transition">Vloeren</a>
-                <a href="/timmerwerk/" class="block text-sm text-gray-500 hover:text-brand-orange py-2 transition">Timmerwerk</a>
-                <a href="/bestrating/" class="block text-sm text-gray-500 hover:text-brand-orange py-2 transition">Bestrating</a>
-                <a href="/renovatie/" class="block text-sm text-gray-500 hover:text-brand-orange py-2 transition">Renovatie</a>
-                <a href="/vve/" class="block text-sm text-gray-500 hover:text-brand-orange py-2 transition">VvE Beheer</a>
-            </div>
-            <a href="/#portfolio" onclick="toggleMobileMenu()" class="text-gray-700 hover:text-brand-orange block px-3 py-2 rounded-md text-base font-medium">Ons Werk</a>
-            <a href="/over-ons/" onclick="toggleMobileMenu()" class="text-gray-700 hover:text-brand-orange block px-3 py-2 rounded-md text-base font-medium">Over Ons</a>
-            <a href="/renovatie/offerte/#offerte" onclick="toggleMobileMenu()" class="text-brand-orange font-bold block px-3 py-2 rounded-md text-base">Offerte Aanvragen</a>
-        </div>
-    </div>
-</nav>
-
-  <!-- HERO SECTION -->
+<!-- HERO SECTION -->
   <section class="service-hero relative min-h-[70vh] flex items-end">
     <div class="absolute inset-0 z-0">
       <img src="/img/renovatie_amsterdam_centrum_woonkamer.webp" alt="Totaalrenovatie Amsterdam grachtenpand" class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async">
@@ -366,7 +238,7 @@
         </div>
 
         <div class="portfolio-item">
-          <img src="/img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp" alt="Vloer en shutters renovatie Amsterdam" loading="lazy" srcset="img/responsive/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement-480w.webp 480w, /img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp 1008w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+          <img src="/img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp" alt="Vloer en shutters renovatie Amsterdam" loading="lazy" srcset="/img/responsive/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement-480w.webp 480w, /img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp 1008w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
           <div class="overlay">
             <span class="project-type">Interieur</span>
             <h3 class="project-title">Visgraat & Shutters</h3>
@@ -378,7 +250,7 @@
         </div>
 
         <div class="portfolio-item">
-          <img src="/img/parket-visgraat_amsterdam_centrum.webp" alt="Parket visgraat vloer Amsterdam Centrum" loading="lazy" srcset="img/responsive/parket-visgraat_amsterdam_centrum-480w.webp 480w, /img/parket-visgraat_amsterdam_centrum.webp 2048w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+          <img src="/img/parket-visgraat_amsterdam_centrum.webp" alt="Parket visgraat vloer Amsterdam Centrum" loading="lazy" srcset="/img/responsive/parket-visgraat_amsterdam_centrum-480w.webp 480w, /img/parket-visgraat_amsterdam_centrum.webp 2048w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
           <div class="overlay">
             <span class="project-type">Vloeren</span>
             <h3 class="project-title">Parket Visgraat</h3>
@@ -626,7 +498,7 @@
   </section>
 
   <!-- CONTACT SECTION -->
-  <section id="contact" class="contact-section pt-2 lg:pt-8 pb-24">
+  <section id="contact" class="contact-section pt-2 lg:pt-8 pb-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12">
         <!-- Heading (hidden on mobile - user already clicked CTA) -->
@@ -641,130 +513,7 @@
         </div>
 
         <!-- Form (spans 2 rows on desktop: next to heading + contact info) -->
-        <div class="contact-card form-light lg:row-span-2">
-    <h3 class="form-premium-header text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-6">Vertel Over Uw Project</h3>
-
-    <form id="custom4BuildersForm" class="space-y-3 md:space-y-5">
-        <!-- Honeypot (spam protection) -->
-        <div class="hidden" aria-hidden="true">
-            <input type="text" name="honeypot" tabindex="-1" autocomplete="off" value="">
-        </div>
-
-        <div class="grid grid-cols-2 gap-2 md:gap-4">
-            <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Voornaam*</label>
-                <div class="relative">
-                    <input type="text" name="firstname" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
-                    <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
-                </div>
-                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
-            </div>
-            <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Achternaam*</label>
-                <div class="relative">
-                    <input type="text" name="lastname" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
-                    <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
-                </div>
-                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-2 md:gap-4">
-            <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">E-mail*</label>
-                <div class="relative">
-                    <input type="email" name="email" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
-                    <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
-                </div>
-                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
-            </div>
-            <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Telefoon*</label>
-                <div class="relative">
-                    <input type="tel" name="phone" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
-                    <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
-                </div>
-                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
-            </div>
-        </div>
-
-        <div class="relative">
-            <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Postcode klus*</label>
-            <div class="relative">
-                <input type="text" name="zip" required placeholder="1234 AB" class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
-                <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
-            </div>
-            <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
-        </div>
-
-        <!-- SERVICE SELECTOR (Radio Cards) -->
-        <div class="relative" id="serviceSelector">
-            <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-2 md:mb-3">Waar kunnen we mee helpen?*</label>
-            <div class="service-radio-grid">
-                <label class="service-radio-card">
-                    <input type="radio" name="service" value="Schilderwerk" class="sr-only">
-                    <i class="ph ph-paint-brush"></i>
-                    <span>Schilderwerk</span>
-                </label>
-                <label class="service-radio-card">
-                    <input type="radio" name="service" value="Vloeren" class="sr-only">
-                    <i class="ph ph-squares-four"></i>
-                    <span>Vloeren</span>
-                </label>
-                <label class="service-radio-card">
-                    <input type="radio" name="service" value="Timmerwerk" class="sr-only">
-                    <i class="ph ph-hammer"></i>
-                    <span>Timmerwerk</span>
-                </label>
-                <label class="service-radio-card">
-                    <input type="radio" name="service" value="Bestrating" class="sr-only">
-                    <i class="ph ph-grid-four"></i>
-                    <span>Bestrating</span>
-                </label>
-                <label class="service-radio-card">
-                    <input type="radio" name="service" value="VvE Onderhoud" class="sr-only">
-                    <i class="ph ph-buildings"></i>
-                    <span>VvE Onderhoud</span>
-                </label>
-                <label class="service-radio-card">
-                    <input type="radio" name="service" value="Renovatie" class="sr-only">
-                    <i class="ph ph-house-line"></i>
-                    <span>Renovatie</span>
-                </label>
-            </div>
-            <p class="error-text text-red-500 text-xs mt-1 hidden" id="serviceError"></p>
-        </div>
-
-        <!-- DETAILS TEXTAREA (conditional, shown after service selection) -->
-        <div class="relative hidden" id="detailsWrapper">
-            <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Extra details <span class="font-normal text-gray-400">(optioneel)</span></label>
-            <textarea name="details" rows="2" placeholder="Bijv. aantal kamers, oppervlakte, gewenste startdatum..." class="w-full bg-white border border-gray-200 p-2 md:p-3 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition resize-none"></textarea>
-        </div>
-
-        <button type="submit" id="submitBtn" class="form-submit-btn flex items-center justify-center gap-2 w-full text-white font-bold py-3 md:py-4 rounded uppercase text-sm md:text-base tracking-widest transition">
-            <span id="btnText">Verstuur aanvraag</span>
-            <i id="btnIcon" class="ph ph-paper-plane-tilt text-lg md:text-xl"></i>
-        </button>
-
-        <!-- WhatsApp ghost button -->
-        <a href="https://wa.me/31618922134" target="_blank" class="whatsapp-ghost-btn flex items-center justify-center gap-2 w-full py-3 rounded text-sm transition">
-            <i class="ph ph-whatsapp-logo"></i>
-            <span>Liever direct foto's sturen?</span>
-        </a>
-
-        <!-- Trust signals (hidden on mobile to save space) -->
-        <div class="hidden md:flex justify-center gap-4 mt-2 text-xs text-gray-500">
-            <span class="flex items-center gap-1">
-                <i class="ph ph-shield-check text-green-500"></i> Volledig verzekerd
-            </span>
-            <span class="flex items-center gap-1">
-                <i class="ph ph-clock text-brand-orange"></i> 24u reactie garantie
-            </span>
-        </div>
-
-        <p id="formFeedback" class="hidden text-center mt-2 md:mt-4 font-bold"></p>
-    </form>
-</div>
+        <div id="form-placeholder" class="lg:row-span-2"></div>
 
         <!-- Contact info + map -->
         <div class="flex flex-col">
@@ -829,121 +578,7 @@
     </div>
   </section>
 
-<footer class="footer-dark py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-            <!-- Company Info -->
-            <div class="lg:col-span-2">
-                <span class="font-header text-2xl font-bold text-white">4<span class="text-brand-orange">BUILDERS</span></span>
-                <p class="text-gray-400 mt-4 max-w-md">
-                    Vakmanschap en betrouwbaarheid voor vastgoedonderhoud in Amsterdam. Achterhoekse nuchterheid, Amsterdamse kwaliteit.
-                </p>
-                <div class="flex gap-4 mt-6">
-                    <a href="https://wa.me/31618922134" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#25D366] transition" title="WhatsApp">
-                        <i class="ph ph-whatsapp-logo text-white"></i>
-                    </a>
-                    <a href="mailto:info@4builders-amsterdam.nl" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-orange transition" title="E-mail">
-                        <i class="ph ph-envelope text-white"></i>
-                    </a>
-                    <a href="tel:+31618922134" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-orange transition" title="Bellen">
-                        <i class="ph ph-phone text-white"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Diensten -->
-            <div>
-                <h4 class="font-header text-lg font-bold mb-4 text-white">Diensten</h4>
-                <ul class="space-y-3">
-                    <li><a href="/schilderwerk/" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2"><i class="ph ph-caret-right text-brand-orange text-sm"></i>Schilderwerk</a></li>
-                    <li><a href="/vloeren/" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2"><i class="ph ph-caret-right text-brand-orange text-sm"></i>Vloeren</a></li>
-                    <li><a href="/timmerwerk/" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2"><i class="ph ph-caret-right text-brand-orange text-sm"></i>Timmerwerk</a></li>
-                    <li><a href="/bestrating/" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2"><i class="ph ph-caret-right text-brand-orange text-sm"></i>Bestrating</a></li>
-                    <li><a href="/renovatie/" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2"><i class="ph ph-caret-right text-brand-orange text-sm"></i>Renovatie</a></li>
-                    <li><a href="/vve/" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2"><i class="ph ph-caret-right text-brand-orange text-sm"></i>VvE Beheer</a></li>
-                </ul>
-            </div>
-
-            <!-- Werkgebied -->
-            <div>
-                <h4 class="font-header text-lg font-bold mb-4 text-white">Werkgebied</h4>
-                <ul class="space-y-3 text-gray-400">
-                    <li class="flex items-start gap-2"><i class="ph ph-map-pin text-brand-orange mt-1"></i>Amsterdam Centrum</li>
-                    <li class="flex items-start gap-2"><i class="ph ph-map-pin text-brand-orange mt-1"></i>Grachtengordel</li>
-                    <li class="flex items-start gap-2"><i class="ph ph-map-pin text-brand-orange mt-1"></i>Jordaan</li>
-                    <li class="flex items-start gap-2"><i class="ph ph-map-pin text-brand-orange mt-1"></i>De Pijp</li>
-                    <li class="flex items-start gap-2"><i class="ph ph-map-pin text-brand-orange mt-1"></i>Oud-Zuid</li>
-                </ul>
-            </div>
-
-            <!-- Contact -->
-            <div>
-                <h4 class="font-header text-lg font-bold mb-4 text-white">Contact</h4>
-                <ul class="space-y-3 text-gray-400">
-                    <li class="flex items-start gap-2">
-                        <i class="ph ph-phone text-brand-orange mt-1"></i>
-                        <div>
-                            <div class="text-white font-medium">Mark Maathuis</div>
-                            <a href="tel:+31618922134" class="hover:text-brand-orange transition">+31 6 18 92 21 34</a>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <i class="ph ph-phone text-brand-orange mt-1"></i>
-                        <div>
-                            <div class="text-white font-medium">Dennis Berendsen</div>
-                            <a href="tel:+31653469665" class="hover:text-brand-orange transition">+31 6 53 46 96 65</a>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <i class="ph ph-envelope text-brand-orange mt-1"></i>
-                        <a href="mailto:info@4builders-amsterdam.nl" class="hover:text-brand-orange transition">info@4builders-amsterdam.nl</a>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <i class="ph ph-clock text-brand-orange mt-1"></i>
-                        <span>Ma-Vr: 07:00 - 18:00</span>
-                    </li>
-                    <li class="pt-2">
-                        <a href="/privacy/" class="text-sm hover:text-brand-orange transition">Privacy Policy</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Bottom Bar -->
-        <div class="border-t border-white/10 mt-12 pt-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-sm">&copy; 2025 4Builders Vastgoedonderhoud B.V. Alle rechten voorbehouden.</p>
-                <div class="flex items-center gap-6 text-gray-500 text-sm">
-                    <span class="flex items-center gap-2"><i class="ph ph-identification-badge text-brand-orange"></i>KVK: 99333074</span>
-                    <span class="flex items-center gap-2"><i class="ph ph-shield-check text-brand-orange"></i>Volledig Verzekerd</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- MOBILE STICKY CTA BAR -->
-<div class="mobile-sticky-cta md:hidden">
-    <div class="grid grid-cols-3 gap-2">
-        <a href="tel:+31618922134" class="flex flex-col items-center justify-center py-3 bg-gray-100 rounded hover:bg-gray-200 transition">
-            <i class="ph ph-phone text-brand-orange text-xl"></i>
-            <span class="text-xs text-gray-700 mt-1">Bellen</span>
-        </a>
-        <a href="https://wa.me/31618922134" target="_blank" class="flex flex-col items-center justify-center py-3 bg-[#25D366] rounded hover:bg-[#20bd5a] transition">
-            <i class="ph ph-whatsapp-logo text-white text-xl"></i>
-            <span class="text-xs text-white mt-1">WhatsApp</span>
-        </a>
-        <a href="/renovatie/offerte/#offerte" class="flex flex-col items-center justify-center py-3 bg-brand-orange rounded hover:bg-orange-600 transition">
-            <i class="ph ph-envelope-simple text-white text-xl"></i>
-            <span class="text-xs text-white mt-1">Offerte</span>
-        </a>
-    </div>
-</div>
-
-  <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/31618922134" target="_blank" class="whatsapp-float hidden md:flex">
-    <i class="ph ph-whatsapp-logo"></i>
-  </a>
+<div id="footer-placeholder"></div>
 
 </body>
 </html>

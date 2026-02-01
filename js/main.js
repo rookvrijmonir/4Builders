@@ -615,13 +615,37 @@
     });
   }
 
-  // Components are now inlined — init on DOMContentLoaded
-  document.addEventListener("DOMContentLoaded", () => {
+  // Highlight active nav link based on current path
+  function setActiveNavByPath() {
+    var path = window.location.pathname.replace(/\/$/, '');
+    document.querySelectorAll('nav a[href]').forEach(function(link) {
+      var href = link.getAttribute('href').replace(/\/$/, '');
+      if (href && href !== '/' && href !== '/en' && path.startsWith(href)) {
+        link.classList.add('text-brand-orange');
+      }
+    });
+  }
+
+  // Init all features that depend on header/footer/form DOM
+  function initComponents() {
     setupCustomForm();
     setupWhatsAppLinks();
-
+    setActiveNavByPath();
     if (window.location.hash) {
       scrollToHash(window.location.hash);
+    }
+  }
+
+  // Support both dynamic (includes.js) and inline components
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById('header-placeholder') ||
+        document.getElementById('footer-placeholder') ||
+        document.getElementById('form-placeholder')) {
+      // Dynamic loading — wait for includes.js to finish
+      document.addEventListener('components-loaded', initComponents, { once: true });
+    } else {
+      // Inline components — init immediately
+      initComponents();
     }
   });
 })();
