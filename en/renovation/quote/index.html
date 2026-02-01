@@ -810,6 +810,17 @@
 
     setupCardGroup('service-cards', 'error-step1', 2);
     setupCardGroup('neighborhood-cards', 'error-step2', null);
+    // Scroll to postal code field on mobile after neighbourhood selection
+    document.querySelectorAll('#neighborhood-cards .selection-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        if (window.innerWidth < 640) {
+          setTimeout(function() {
+            var zipField = document.getElementById('zip');
+            if (zipField) zipField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 150);
+        }
+      });
+    });
     setupCardGroup('budget-cards', 'error-budget', null);
     setupCardGroup('timeline-cards', 'error-timeline', null);
 
