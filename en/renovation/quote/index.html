@@ -351,7 +351,7 @@
   </section>
 
   <!-- ============ MULTI-STEP LEAD FORM ============ -->
-  <section class="pt-6 sm:pt-10 pb-20 sm:pb-28 bg-white" id="quote" style="scroll-margin-top:80px">
+  <section class="pt-6 sm:pt-10 pb-20 sm:pb-44 bg-white" id="quote" style="scroll-margin-top:80px">
     <div class="max-w-2xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-6 fade-in">
         <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-2 block">No Obligation</span>
@@ -822,6 +822,17 @@
       });
     });
     setupCardGroup('budget-cards', 'error-budget', null);
+    // Scroll to timeline section on mobile after budget selection
+    document.querySelectorAll('#budget-cards .selection-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        if (window.innerWidth < 640) {
+          setTimeout(function() {
+            var timelineCards = document.getElementById('timeline-cards');
+            if (timelineCards) timelineCards.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 150);
+        }
+      });
+    });
     setupCardGroup('timeline-cards', 'error-timeline', null);
 
     // --- Prefill service from URL param ---
