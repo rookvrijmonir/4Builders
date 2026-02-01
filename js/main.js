@@ -25,14 +25,14 @@
   function scrollToHash(hash) {
     const target = document.querySelector(hash);
     if (!target) return;
-    // Wait for layout to settle (menu closing, reflow)
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const navHeight = 80;
-        const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
-        window.scrollTo({ top: top, behavior: "smooth" });
-      });
-    });
+    // On mobile, wait 350ms for the menu close transition (300ms) to finish
+    // before calculating scroll position. On desktop, scroll immediately.
+    const delay = window.innerWidth < 768 ? 350 : 16;
+    setTimeout(() => {
+      const navHeight = 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top: top, behavior: "smooth" });
+    }, delay);
   }
 
   document.addEventListener("click", function (e) {
