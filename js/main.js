@@ -407,12 +407,16 @@
         context: { pageUri: window.location.href, pageName: document.title },
       };
 
-      // Helper: show success and reset form
+      // Helper: show success — fire GA4 event then redirect to thank-you page
       var isEN = window.location.pathname.startsWith("/en");
+      var selectedService = formData.get("service") || "";
+      var redirectUrl = isEN
+        ? "/en/renovation/thank-you/?service=" + encodeURIComponent(selectedService)
+        : "/renovatie/bedankt/?dienst=" + encodeURIComponent(selectedService);
+
       const showSuccess = () => {
-        // Fire GA4 generate_lead conversion event
         if (typeof gtag === "function") {
-          var selectedService = formData.get("service") || "";
+          var redirected = false;
           gtag("event", "generate_lead", {
             currency: "EUR",
             value: 0,
@@ -421,36 +425,17 @@
             utm_source: utmSource,
             utm_medium: utmMedium,
             utm_campaign: utmCampaign,
+            event_callback: function () {
+              if (!redirected) { redirected = true; window.location.href = redirectUrl; }
+            },
           });
+          // Fallback: redirect after 1s if callback doesn't fire (e.g. ad blocker)
+          setTimeout(function () {
+            if (!redirected) { redirected = true; window.location.href = redirectUrl; }
+          }, 1000);
+        } else {
+          window.location.href = redirectUrl;
         }
-
-        if (feedback) {
-          feedback.innerText = isEN ? "Form submitted successfully!" : "Formulier succesvol verzonden!";
-          feedback.className = "text-green-500 mt-4 block font-bold text-center";
-          feedback.classList.remove("hidden");
-        }
-        try {
-          form.reset();
-          form.querySelectorAll("input, textarea").forEach((el) => {
-            if (el.name === "honeypot") return;
-            setNeutral(el);
-          });
-          // Reset service card visuals
-          form.querySelectorAll(".service-radio-card").forEach(function (card) {
-            card.classList.remove("selected");
-          });
-          // Hide details wrapper
-          var dw = document.getElementById("detailsWrapper");
-          if (dw) { dw.classList.add("hidden"); dw.classList.remove("visible"); }
-          // Clear service error
-          var se = document.getElementById("serviceError");
-          if (se) { se.textContent = ""; se.classList.add("hidden"); }
-          var sg = form.querySelector(".service-radio-grid");
-          if (sg) sg.classList.remove("has-error");
-        } catch (_) { /* ignore reset errors */ }
-        if (submitBtn) submitBtn.disabled = false;
-        if (btnText) btnText.innerText = isEN ? "Submit Request" : "Verstuur aanvraag";
-        if (btnIcon) btnIcon.className = "ph ph-paper-plane-tilt text-xl";
       };
 
       // Helper: show error
