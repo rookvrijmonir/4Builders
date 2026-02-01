@@ -70,7 +70,7 @@
 
     /* Mobile: larger tap targets */
     @media (max-width: 639px) {
-      .selection-card { min-height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .selection-card { min-height: 68px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .form-input { font-size: 16px; } /* Prevent iOS zoom on focus */
       /* Hide floating WA on mobile — sticky CTA bar has WhatsApp */
       #wa-float { display: none; }
@@ -376,19 +376,19 @@
   </section>
 
   <!-- ============ MULTI-STEP LEAD FORM ============ -->
-  <section class="py-20 sm:py-28 bg-white" id="offerte" style="scroll-margin-top:80px">
+  <section class="pt-6 sm:pt-10 pb-20 sm:pb-28 bg-white" id="offerte" style="scroll-margin-top:80px">
     <div class="max-w-2xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-10 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Vrijblijvend</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-3">
+      <div class="text-center mb-6 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-2 block">Vrijblijvend</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-2">
           Ontvang uw prijsindicatie
         </h2>
         <p class="text-brand-gray">Vier simpele stappen. Reactie binnen 24 uur.</p>
       </div>
 
-      <div class="bg-white border border-gray-200 rounded-2xl shadow-xl shadow-gray-200/50 p-6 sm:p-10 fade-in">
+      <div class="bg-white border border-gray-200 rounded-2xl shadow-xl shadow-gray-200/50 p-5 sm:p-8 fade-in">
         <!-- Progress bar -->
-        <div class="mb-8">
+        <div class="mb-6">
           <div class="flex justify-between text-sm font-medium mb-3">
             <span id="step-label-1" class="text-brand-orange cursor-pointer hover:underline" onclick="goToStepDirect(1)">1. Project</span>
             <span id="step-label-2" class="text-gray-400" onclick="goToStepDirect(2)">2. Locatie</span>
@@ -407,48 +407,48 @@
           <!-- ===== STEP 1: Project Type ===== -->
           <div id="step-1" class="form-step active">
             <h3 class="text-xl font-bold mb-2">Wat voor project betreft het?</h3>
-            <p class="text-brand-gray text-sm mb-6">Selecteer het type werkzaamheden.</p>
+            <p class="text-brand-gray text-sm mb-4">Selecteer het type werkzaamheden.</p>
 
-            <div class="grid grid-cols-2 gap-3" id="service-cards">
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3" id="service-cards">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Renovatie" class="hidden" data-slug="renovatie">
-                <i class="ph ph-house text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Renovatie</span>
+                <i class="ph ph-house text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Renovatie</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Schilderwerk" class="hidden" data-slug="schilderwerk">
-                <i class="ph ph-paint-roller text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Schilderwerk</span>
+                <i class="ph ph-paint-roller text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Schilderwerk</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Vloeren" class="hidden" data-slug="vloeren">
-                <i class="ph ph-square-split-horizontal text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Vloeren</span>
+                <i class="ph ph-square-split-horizontal text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Vloeren</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Timmerwerk" class="hidden" data-slug="timmerwerk">
-                <i class="ph ph-hammer text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Timmerwerk</span>
+                <i class="ph ph-hammer text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Timmerwerk</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Bestrating" class="hidden" data-slug="bestrating">
-                <i class="ph ph-wall text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Bestrating</span>
+                <i class="ph ph-wall text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Bestrating</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="VvE Beheer" class="hidden" data-slug="vve">
-                <i class="ph ph-buildings text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">VvE Beheer</span>
+                <i class="ph ph-buildings text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">VvE Beheer</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Onderhoud" class="hidden" data-slug="onderhoud">
-                <i class="ph ph-wrench text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Onderhoud</span>
+                <i class="ph ph-wrench text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Onderhoud</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Anders" class="hidden" data-slug="anders">
-                <i class="ph ph-dots-three-outline text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Anders</span>
+                <i class="ph ph-dots-three-outline text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Anders</span>
               </label>
             </div>
             <p id="error-step1" class="text-red-500 text-sm mt-3 hidden">Selecteer een optie om verder te gaan.</p>

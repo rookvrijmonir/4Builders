@@ -51,7 +51,7 @@
     a, button, label, input, textarea { touch-action: manipulation; }
 
     @media (max-width: 639px) {
-      .selection-card { min-height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .selection-card { min-height: 68px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .form-input { font-size: 16px; }
       #wa-float { display: none; }
     }
@@ -351,19 +351,19 @@
   </section>
 
   <!-- ============ MULTI-STEP LEAD FORM ============ -->
-  <section class="py-20 sm:py-28 bg-white" id="quote" style="scroll-margin-top:80px">
+  <section class="pt-6 sm:pt-10 pb-20 sm:pb-28 bg-white" id="quote" style="scroll-margin-top:80px">
     <div class="max-w-2xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-10 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">No Obligation</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-3">
+      <div class="text-center mb-6 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-2 block">No Obligation</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-2">
           Get your free quote
         </h2>
         <p class="text-brand-gray">Four simple steps. Response within 24 hours.</p>
       </div>
 
-      <div class="bg-white border border-gray-200 rounded-2xl shadow-xl shadow-gray-200/50 p-6 sm:p-10 fade-in">
+      <div class="bg-white border border-gray-200 rounded-2xl shadow-xl shadow-gray-200/50 p-5 sm:p-8 fade-in">
         <!-- Progress bar -->
-        <div class="mb-8">
+        <div class="mb-6">
           <div class="flex justify-between text-sm font-medium mb-3">
             <span id="step-label-1" class="text-brand-orange cursor-pointer hover:underline" onclick="goToStepDirect(1)">1. Project</span>
             <span id="step-label-2" class="text-gray-400" onclick="goToStepDirect(2)">2. Location</span>
@@ -381,48 +381,48 @@
           <!-- ===== STEP 1: Project Type ===== -->
           <div id="step-1" class="form-step active">
             <h3 class="text-xl font-bold mb-2">What type of project is it?</h3>
-            <p class="text-brand-gray text-sm mb-6">Select the type of work you need.</p>
+            <p class="text-brand-gray text-sm mb-4">Select the type of work you need.</p>
 
-            <div class="grid grid-cols-2 gap-3" id="service-cards">
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3" id="service-cards">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Renovation" class="hidden" data-slug="renovation">
-                <i class="ph ph-house text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Renovation</span>
+                <i class="ph ph-house text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Renovation</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Painting" class="hidden" data-slug="painting">
-                <i class="ph ph-paint-roller text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Painting</span>
+                <i class="ph ph-paint-roller text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Painting</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Flooring" class="hidden" data-slug="flooring">
-                <i class="ph ph-square-split-horizontal text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Flooring</span>
+                <i class="ph ph-square-split-horizontal text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Flooring</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Carpentry" class="hidden" data-slug="carpentry">
-                <i class="ph ph-hammer text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Carpentry</span>
+                <i class="ph ph-hammer text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Carpentry</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Paving" class="hidden" data-slug="paving">
-                <i class="ph ph-wall text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Paving</span>
+                <i class="ph ph-wall text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Paving</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Property management / VvE" class="hidden" data-slug="property-management">
-                <i class="ph ph-buildings text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Property Mgmt / VvE</span>
+                <i class="ph ph-buildings text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Property Mgmt</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Maintenance" class="hidden" data-slug="maintenance">
-                <i class="ph ph-wrench text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Maintenance</span>
+                <i class="ph ph-wrench text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Maintenance</span>
               </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-3 sm:p-4 text-center">
                 <input type="radio" name="service" value="Other" class="hidden" data-slug="other">
-                <i class="ph ph-dots-three-outline text-3xl text-brand-orange mb-2 block"></i>
-                <span class="font-semibold text-sm block">Other</span>
+                <i class="ph ph-dots-three-outline text-2xl sm:text-3xl text-brand-orange mb-1 sm:mb-2 block"></i>
+                <span class="font-semibold text-xs sm:text-sm block">Other</span>
               </label>
             </div>
             <p id="error-step1" class="text-red-500 text-sm mt-3 hidden">Please select an option to continue.</p>
