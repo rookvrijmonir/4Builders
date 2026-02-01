@@ -41,7 +41,8 @@
         await Promise.all([
             loadComponent(`header-${lang}`, 'header-placeholder'),
             loadComponent(`footer-${lang}`, 'footer-placeholder'),
-            loadComponent(`form-${lang}`, 'form-placeholder')
+            loadComponent(`form-${lang}`, 'form-placeholder'),
+            loadComponent(`reviews-${lang}`, 'reviews-placeholder')
         ]);
 
         // Signal that all components are in the DOM
