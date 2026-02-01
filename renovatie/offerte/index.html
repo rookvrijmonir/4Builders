@@ -213,7 +213,7 @@
           </div>
           <div>
             <h3 class="font-semibold text-white mb-1">Specialisten in afbouw</h3>
-            <p class="text-sm text-gray-400">Van stucwerk tot schilderwerk, vloeren en keukenmontage. Wij leveren een instapklaar resultaat.</p>
+            <p class="text-sm text-gray-400">Van schilderwerk en vloeren tot timmerwerk en bestrating. Wij leveren een instapklaar resultaat.</p>
           </div>
         </div>
         <div class="flex items-start gap-4">
@@ -299,7 +299,7 @@
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
           Amsterdam Centrum renovatie
         </h2>
-        <p class="text-brand-gray mt-4 max-w-xl mx-auto">Complete transformatie van een woning in het hart van Amsterdam. Van keuken tot patio, elk detail met zorg afgewerkt.</p>
+        <p class="text-brand-gray mt-4 max-w-xl mx-auto">Van vloeren en timmerwerk tot schilderwerk en afwerking — elk detail met zorg.</p>
       </div>
 
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 fade-in">
@@ -310,12 +310,12 @@
         </div>
         <div class="overflow-hidden rounded-xl aspect-[4/3]">
           <img src="../../img/renovatie/keuken-woning-amsterdam-centrum_gebruiken.webp"
-               alt="Moderne keuken renovatie Amsterdam"
+               alt="Renovatie interieur Amsterdam Centrum"
                class="portfolio-img w-full h-full object-cover" loading="lazy">
         </div>
         <div class="overflow-hidden rounded-xl aspect-[4/3]">
           <img src="../../img/renovatie/bad-douche-woning-amsterdam-centrum_gebruiken.webp"
-               alt="Badkamer renovatie Amsterdam Centrum"
+               alt="Interieur detail Amsterdam Centrum"
                class="portfolio-img w-full h-full object-cover" loading="lazy">
         </div>
         <div class="overflow-hidden rounded-xl aspect-[4/3]">
@@ -325,7 +325,7 @@
         </div>
         <div class="overflow-hidden rounded-xl aspect-[4/3]">
           <img src="../../img/renovatie/bedroom-woning-amsterdam-centrum_gebruiken.webp"
-               alt="Slaapkamer renovatie Amsterdam"
+               alt="Slaapkamer afwerking Amsterdam Centrum"
                class="portfolio-img w-full h-full object-cover" loading="lazy">
         </div>
         <div class="overflow-hidden rounded-xl aspect-[4/3]">
@@ -435,22 +435,42 @@
 
             <div class="grid grid-cols-2 gap-3" id="service-cards">
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
-                <input type="radio" name="service" value="Renovatie" class="hidden">
+                <input type="radio" name="service" value="Renovatie" class="hidden" data-slug="renovatie">
                 <i class="ph ph-house text-3xl text-brand-orange mb-2 block"></i>
                 <span class="font-semibold text-sm block">Renovatie</span>
               </label>
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
-                <input type="radio" name="service" value="Schilderwerk" class="hidden">
+                <input type="radio" name="service" value="Schilderwerk" class="hidden" data-slug="schilderwerk">
                 <i class="ph ph-paint-roller text-3xl text-brand-orange mb-2 block"></i>
                 <span class="font-semibold text-sm block">Schilderwerk</span>
               </label>
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
-                <input type="radio" name="service" value="Onderhoud" class="hidden">
+                <input type="radio" name="service" value="Vloeren" class="hidden" data-slug="vloeren">
+                <i class="ph ph-square-split-horizontal text-3xl text-brand-orange mb-2 block"></i>
+                <span class="font-semibold text-sm block">Vloeren</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+                <input type="radio" name="service" value="Timmerwerk" class="hidden" data-slug="timmerwerk">
+                <i class="ph ph-hammer text-3xl text-brand-orange mb-2 block"></i>
+                <span class="font-semibold text-sm block">Timmerwerk</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+                <input type="radio" name="service" value="Bestrating" class="hidden" data-slug="bestrating">
+                <i class="ph ph-wall text-3xl text-brand-orange mb-2 block"></i>
+                <span class="font-semibold text-sm block">Bestrating</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+                <input type="radio" name="service" value="VvE Beheer" class="hidden" data-slug="vve">
+                <i class="ph ph-buildings text-3xl text-brand-orange mb-2 block"></i>
+                <span class="font-semibold text-sm block">VvE Beheer</span>
+              </label>
+              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
+                <input type="radio" name="service" value="Onderhoud" class="hidden" data-slug="onderhoud">
                 <i class="ph ph-wrench text-3xl text-brand-orange mb-2 block"></i>
                 <span class="font-semibold text-sm block">Onderhoud</span>
               </label>
               <label class="selection-card border-2 border-gray-200 rounded-xl p-4 sm:p-5 text-center">
-                <input type="radio" name="service" value="Anders" class="hidden">
+                <input type="radio" name="service" value="Anders" class="hidden" data-slug="anders">
                 <i class="ph ph-dots-three-outline text-3xl text-brand-orange mb-2 block"></i>
                 <span class="font-semibold text-sm block">Anders</span>
               </label>
@@ -830,6 +850,18 @@
     setupCardGroup('neighborhood-cards', 'error-step2', 3);
     setupCardGroup('budget-cards', 'error-budget', null);
     setupCardGroup('timeline-cards', 'error-timeline', null);
+
+    // --- Prefill service from URL param ---
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var serviceSlug = params.get('service');
+      if (!serviceSlug) return;
+      var radio = document.querySelector('#service-cards input[data-slug="' + serviceSlug + '"]');
+      if (!radio) return;
+      radio.checked = true;
+      var card = radio.closest('.selection-card');
+      if (card) card.classList.add('selected');
+    })();
 
     // --- Form Validation & Submission ---
     var form = document.getElementById('leadForm');
