@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 40" width="280" height="40">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&amp;display=swap');
+    .logo-text { font-family: 'Inter', 'Arial Black', sans-serif; font-weight: 700; font-size: 28px; }
+  </style>
+  <text y="30" class="logo-text">
+    <tspan fill="#FF5722">4</tspan><tspan fill="#111111">Builders</tspan>
+  </text>
+</svg>
