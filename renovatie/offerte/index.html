@@ -376,7 +376,7 @@
   </section>
 
   <!-- ============ MULTI-STEP LEAD FORM ============ -->
-  <section class="py-20 sm:py-28 bg-white" id="offerte">
+  <section class="py-20 sm:py-28 bg-white" id="offerte" style="scroll-margin-top:80px">
     <div class="max-w-2xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-10 fade-in">
         <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Vrijblijvend</span>
@@ -751,7 +751,8 @@
 
       var formSection = document.getElementById('offerte');
       if (formSection && window.innerWidth < 640) {
-        formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var top = formSection.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: top, behavior: 'smooth' });
       }
     };
 
@@ -1016,6 +1017,17 @@
           '" target="_blank" rel="noopener" class="underline font-semibold">WhatsApp</a>.');
       }
     });
+
+    // --- Handle cross-page hash navigation (e.g. from homepage to #offerte) ---
+    if (window.location.hash) {
+      setTimeout(function() {
+        var target = document.querySelector(window.location.hash);
+        if (target) {
+          var top = target.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      }, 150);
+    }
 
     // --- Smooth scroll for CTA links ---
     document.querySelectorAll('a[href^="#"]').forEach(function(link) {
