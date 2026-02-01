@@ -95,7 +95,7 @@
 
 <style>
 /* Critical CSS: inlined for instant FCP, eliminates render-blocking stylesheet */
-*,*::before,*::after{box-sizing:border-box;border:0 solid #e5e7eb}body{margin:0;line-height:1.5;font-family:Inter,sans-serif;color:#111827;background:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}h1,h2,h3,h4,p{margin:0}img{display:block;max-width:100%;height:auto}.card-image{aspect-ratio:4/3}.card-image img{height:100%;object-fit:cover}a{color:inherit;text-decoration:inherit}button,input,textarea{font-family:inherit;font-size:100%;margin:0;padding:0}
+*,*::before,*::after{box-sizing:border-box;border:0 solid #e5e7eb}body{margin:0;line-height:1.5;font-family:Inter,sans-serif;color:#111827;background:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}h1,h2,h3,h4,p{margin:0}img{display:block;max-width:100%;height:auto}.card-image img{height:100%;object-fit:cover}a{color:inherit;text-decoration:inherit}button,input,textarea{font-family:inherit;font-size:100%;margin:0;padding:0}
 @font-face{font-family:Inter;src:url(/fonts/inter/inter-var-latin.woff2) format('woff2');font-weight:100 900;font-display:swap}
 @font-face{font-family:Oswald;src:url(/fonts/oswald/oswald-var-latin.woff2) format('woff2');font-weight:200 700;font-display:swap}
 @font-face{font-family:'Playfair Display';src:url(/fonts/playfair/playfair-display-var-latin.woff2) format('woff2');font-weight:400 900;font-display:swap}
@@ -658,6 +658,89 @@
                     <i class="ph ph-envelope-simple"></i>
                     Request a Free Quote
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section pt-2 lg:pt-8 pb-8 lg:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
+                <!-- CTA + heading -->
+                <div>
+                    <span class="badge">Contact</span>
+                    <h2 class="font-header text-2xl md:text-5xl font-bold text-gray-900 mb-3 mt-3">
+                        Ready To Get Started?
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Request a free quote. We respond within 24 hours.
+                    </p>
+                    <a href="/en/renovation/quote/#offerte" class="btn-primary inline-flex items-center">
+                        <i class="ph ph-envelope-simple"></i>
+                        Request a Free Quote
+                    </a>
+                </div>
+
+                <!-- Contact info + map -->
+                <div class="flex flex-col gap-6">
+                    <div class="contact-details-card space-y-5">
+                        <h3 class="font-header text-lg font-bold text-gray-900 lg:hidden">Contact Details</h3>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
+                                <i class="ph ph-phone text-brand-orange text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Phone</div>
+                                <a href="tel:+31618922134" class="text-gray-900 font-semibold hover:text-brand-orange transition">+31 6 18 92 21 34</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
+                                <i class="ph ph-envelope text-brand-orange text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Email</div>
+                                <a href="mailto:info@4builders-amsterdam.nl" class="text-gray-900 font-semibold hover:text-brand-orange transition">info@4builders-amsterdam.nl</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-[#25D366]/10 flex items-center justify-center flex-shrink-0">
+                                <i class="ph ph-whatsapp-logo text-[#25D366] text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">WhatsApp</div>
+                                <a href="https://wa.me/31618922134" target="_blank" class="text-gray-900 font-semibold hover:text-[#25D366] transition">Send a message</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
+                                <i class="ph ph-map-pin text-brand-orange text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Address</div>
+                                <span class="text-gray-900 font-semibold">Pieter Baststraat 29</span>
+                                <span class="block text-gray-600 text-sm">1071 TV Amsterdam</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps -->
+                    <div class="h-[220px] lg:h-auto lg:flex-1 lg:min-h-[280px] rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.5076854889844!2d4.8821!3d52.3534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609e8a1c7c8f7%3A0x6c5c3b8c2d8e9b4a!2sPieter%20Baststraat%2029%2C%201071%20TV%20Amsterdam!5e0!3m2!1snl!2snl!4v1705750000000!5m2!1snl!2snl"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="4Builders location - Pieter Baststraat 29, Amsterdam">
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
