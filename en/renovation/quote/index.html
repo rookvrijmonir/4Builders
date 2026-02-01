@@ -473,9 +473,22 @@
             </div>
             <p id="error-step2" class="text-red-500 text-sm mt-3 hidden">Please select a neighbourhood to continue.</p>
 
-            <button type="button" onclick="goToStep(1)" class="mt-6 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
-              <i class="ph ph-arrow-left"></i> Back
-            </button>
+            <div class="mt-6">
+              <label for="zip" class="block text-sm font-medium text-brand-dark mb-1.5">Postal code *</label>
+              <input type="text" id="zip" name="zip" required placeholder="1234 AB" maxlength="7"
+                     class="form-input w-full max-w-[200px] border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all uppercase">
+              <p id="error-zip" class="text-red-500 text-xs mt-1 hidden">Please enter a valid postal code (e.g. 1234 AB).</p>
+            </div>
+
+            <div class="flex items-center justify-between mt-6">
+              <button type="button" onclick="goToStep(1)" class="text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
+                <i class="ph ph-arrow-left"></i> Back
+              </button>
+              <button type="button" onclick="goToStep(3)" id="step2-next"
+                      class="bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center gap-2 text-sm">
+                Next <i class="ph ph-arrow-right"></i>
+              </button>
+            </div>
           </div>
 
           <!-- ===== STEP 3: Budget & Planning ===== -->
@@ -757,11 +770,18 @@
         return true;
       }
       if (currentStep === 2) {
+        var valid = true;
         var checked = document.querySelector('input[name="neighborhood"]:checked');
         var err = document.getElementById('error-step2');
-        if (!checked) { err.classList.remove('hidden'); return false; }
-        err.classList.add('hidden');
-        return true;
+        if (!checked) { err.classList.remove('hidden'); valid = false; }
+        else { err.classList.add('hidden'); }
+        var zipVal = (document.getElementById('zip').value || '').trim().toUpperCase();
+        var zipErr = document.getElementById('error-zip');
+        var zipInput = document.getElementById('zip');
+        if (!zipVal || !/^\d{4}\s?[A-Z]{2}$/.test(zipVal)) {
+          zipErr.classList.remove('hidden'); zipInput.classList.add('border-red-400'); zipInput.classList.remove('border-gray-300'); valid = false;
+        } else { zipErr.classList.add('hidden'); zipInput.classList.remove('border-red-400'); zipInput.classList.add('border-gray-300'); }
+        return valid;
       }
       if (currentStep === 3) {
         var valid = true;
@@ -789,7 +809,7 @@
     }
 
     setupCardGroup('service-cards', 'error-step1', 2);
-    setupCardGroup('neighborhood-cards', 'error-step2', 3);
+    setupCardGroup('neighborhood-cards', 'error-step2', null);
     setupCardGroup('budget-cards', 'error-budget', null);
     setupCardGroup('timeline-cards', 'error-timeline', null);
 
@@ -877,7 +897,8 @@
       var budget = fd.get('budget') || '';
       var timeline = fd.get('timeline') || '';
       var details = (fd.get('details') || '').trim();
-      var bericht = 'Service: ' + service + '\nNeighbourhood: ' + neighborhood + '\nBudget: ' + budget + '\nDesired start: ' + timeline;
+      var zip = (fd.get('zip') || '').trim().toUpperCase();
+      var bericht = 'Service: ' + service + '\nNeighbourhood: ' + neighborhood + '\nPostal code: ' + zip + '\nBudget: ' + budget + '\nDesired start: ' + timeline;
       if (details) bericht += '\n\nDetails: ' + details;
       bericht += '\n\n[Via landing page: /en/renovation/quote/]';
 
@@ -893,7 +914,7 @@
           { name: 'lastname', value: fd.get('lastname') || '' },
           { name: 'email', value: fd.get('email') || '' },
           { name: 'phone', value: fd.get('phone') || '' },
-          { name: 'zip', value: '' },
+          { name: 'zip', value: zip },
           { name: 'uw_bericht', value: bericht },
           { name: 'utm_source', value: utmSource },
           { name: 'utm_medium', value: utmMedium },
