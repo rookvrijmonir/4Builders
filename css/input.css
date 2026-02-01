@@ -397,8 +397,7 @@ html {
 }
 
 .service-card .card-image {
-    height: 200px;
-    min-height: 200px;
+    aspect-ratio: 4/3;
     overflow: hidden;
     position: relative;
     background-color: var(--bg-light);

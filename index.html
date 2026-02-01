@@ -95,7 +95,7 @@
 
 <style>
 /* Critical CSS: inlined for instant FCP, eliminates render-blocking stylesheet */
-*,*::before,*::after{box-sizing:border-box;border:0 solid #e5e7eb}body{margin:0;line-height:1.5;font-family:Inter,sans-serif;color:#111827;background:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}h1,h2,h3,h4,p{margin:0}img{display:block;max-width:100%;height:auto}.card-image img{height:100%;object-fit:cover}a{color:inherit;text-decoration:inherit}button,input,textarea{font-family:inherit;font-size:100%;margin:0;padding:0}
+*,*::before,*::after{box-sizing:border-box;border:0 solid #e5e7eb}body{margin:0;line-height:1.5;font-family:Inter,sans-serif;color:#111827;background:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}h1,h2,h3,h4,p{margin:0}img{display:block;max-width:100%;height:auto}.card-image{aspect-ratio:4/3}.card-image img{height:100%;object-fit:cover}a{color:inherit;text-decoration:inherit}button,input,textarea{font-family:inherit;font-size:100%;margin:0;padding:0}
 @font-face{font-family:Inter;src:url(/fonts/inter/inter-var-latin.woff2) format('woff2');font-weight:100 900;font-display:swap}
 @font-face{font-family:Oswald;src:url(/fonts/oswald/oswald-var-latin.woff2) format('woff2');font-weight:200 700;font-display:swap}
 @font-face{font-family:'Playfair Display';src:url(/fonts/playfair/playfair-display-var-latin.woff2) format('woff2');font-weight:400 900;font-display:swap}
@@ -362,7 +362,7 @@
                 <p>Van schilderwerk tot bestrating — wij leveren kwaliteit waar u op kunt bouwen.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Schilderwerk -->
                 <a href="/schilderwerk/" class="service-card group">
                     <div class="card-image">
@@ -413,6 +413,34 @@
                     <div class="card-content">
                         <h3 class="font-header">Bestrating</h3>
                         <p>Terras, tuinpad, binnentuin en verzakkingen herstellen.</p>
+                        <span class="card-link">
+                            Bekijk dienst <i class="ph ph-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Renovaties -->
+                <a href="/renovatie/" class="service-card group">
+                    <div class="card-image">
+                        <img src="/img/renovatie_amsterdam_centrum_woonkamer.webp" alt="Renovatie woonkamer Amsterdam Centrum" width="906" height="683" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="font-header">Renovaties</h3>
+                        <p>Complete woning- en appartementrenovaties in Amsterdam.</p>
+                        <span class="card-link">
+                            Bekijk dienst <i class="ph ph-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- VvE Onderhoud -->
+                <a href="/vve/" class="service-card group">
+                    <div class="card-image">
+                        <img src="/img/vve_amsterdam_centrum_grachtengordel.webp" alt="VvE onderhoud grachtengordel Amsterdam" width="1024" height="936" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="font-header">VvE Onderhoud</h3>
+                        <p>Planmatig onderhoud en renovatie voor VvE's en beheerders.</p>
                         <span class="card-link">
                             Bekijk dienst <i class="ph ph-arrow-right"></i>
                         </span>
@@ -565,165 +593,27 @@
         </div>
     </section>
 
-    <!-- VvE SPOTLIGHT SECTION -->
-    <section class="vve-section py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <span class="inline-block bg-brand-orange/20 text-brand-orange px-4 py-2 rounded text-xs font-bold uppercase tracking-wider mb-6">Voor VvE's</span>
-                    <h2 class="font-header text-4xl md:text-5xl font-bold text-white mb-6">
-                        Uw VvE Verdient Een<br>Betrouwbare Partner
-                    </h2>
-                    <p class="text-gray-300 text-lg mb-8">
-                        Wij begrijpen de uitdagingen van VvE-besturen. Geen aannemers die niet komen opdagen of facturen die niet kloppen.
-                    </p>
-
-                    <div class="space-y-4">
-                        <div class="vve-benefit">
-                            <i class="ph ph-file-text"></i>
-                            <div>
-                                <div class="label">Duidelijke Offertes</div>
-                                <div class="sublabel">Specificaties die u direct kunt delen met leden</div>
-                            </div>
-                        </div>
-                        <div class="vve-benefit">
-                            <i class="ph ph-user-circle"></i>
-                            <div>
-                                <div class="label">Vast Aanspreekpunt</div>
-                                <div class="sublabel">Eén contactpersoon voor het hele project</div>
-                            </div>
-                        </div>
-                        <div class="vve-benefit">
-                            <i class="ph ph-calendar-check"></i>
-                            <div>
-                                <div class="label">Planning Die Klopt</div>
-                                <div class="sublabel">Bewoners weten precies wanneer we komen</div>
-                            </div>
-                        </div>
-                        <div class="vve-benefit">
-                            <i class="ph ph-shield-check"></i>
-                            <div>
-                                <div class="label">Volledig Verzekerd</div>
-                                <div class="sublabel">Aansprakelijkheid en CAR-verzekering</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-10">
-                        <a href="/renovatie/offerte/?service=vve#offerte" class="inline-flex items-center px-8 py-4 bg-brand-orange text-white font-bold rounded uppercase tracking-wider hover:bg-orange-600 transition shadow-xl">
-                            <i class="ph ph-buildings mr-2"></i>
-                            VvE Offerte Aanvragen
-                        </a>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <img src="/img/renovatie_amsterdam_centrum_woonkamer.webp" alt="Renovatie woonkamer Amsterdam Centrum" width="906" height="683" class="rounded-lg shadow-2xl" loading="lazy">
-                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl">
-                        <div class="text-brand-orange font-header text-4xl font-bold">50+</div>
-                        <div class="text-gray-600 text-sm">VvE-projecten afgerond</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- REAL PROJECTS SECTION -->
-    <section class="py-24 bg-brand-light">
+    <!-- UW AANSPREEKPUNT SECTION -->
+    <section class="py-12 md:py-24 bg-brand-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="section-header">
-                <span class="badge">Projecten</span>
-                <h2 class="font-header">Echt Werk, Echte Resultaten</h2>
-                <p>Recente projecten in Amsterdam — met de woorden van onze opdrachtgevers.</p>
+                <span class="badge">Uw Aanspreekpunt</span>
+                <h2 class="font-header">Twee Managers, Één Vaste Ploeg</h2>
+                <p>U spreekt altijd direct met de eigenaar of projectleider.</p>
             </div>
-
-            <!-- Stats Bar -->
-            <div class="stats-bar mb-16">
-                <div class="stat-item">
-                    <div class="number">5.0</div>
-                    <div class="label">Google Reviews</div>
-                    <div class="sublabel">⭐⭐⭐⭐⭐</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                <div class="bg-white p-6 md:p-8 rounded-lg border border-gray-100 shadow-sm text-center">
+                    <img src="/img/markmaathuis_eigenaar.webp" alt="Mark Maathuis — Eigenaar 4Builders" width="400" height="400" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-2 border-brand-orange" loading="lazy">
+                    <h4 class="font-header text-lg font-bold text-gray-900">Mark Maathuis</h4>
+                    <p class="text-brand-orange text-sm font-semibold mb-3">Eigenaar</p>
+                    <p class="text-gray-600 text-sm italic">"Achterhoeker in Amsterdam. Ik sta persoonlijk achter elk project en werk met een vaste groep vakmensen die ik al meer dan 10 jaar ken."</p>
                 </div>
-                <div class="stat-item">
-                    <div class="number">50+</div>
-                    <div class="label">Projecten Afgerond</div>
-                    <div class="sublabel">In Amsterdam en omgeving</div>
+                <div class="bg-white p-6 md:p-8 rounded-lg border border-gray-100 shadow-sm text-center">
+                    <img src="/img/dennis_berendsen_projectleider.webp" alt="Dennis Berendsen — Projectleider 4Builders" width="800" height="800" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-2 border-brand-orange" loading="lazy" srcset="img/responsive/dennis_berendsen_projectleider-480w.webp 480w, /img/dennis_berendsen_projectleider.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                    <h4 class="font-header text-lg font-bold text-gray-900">Dennis Berendsen</h4>
+                    <p class="text-brand-orange text-sm font-semibold mb-3">Projectleider</p>
+                    <p class="text-gray-600 text-sm italic">"Van planning tot oplevering: ik houd de lijnen kort en onze vaste ploeg scherp. U heeft altijd één direct aanspreekpunt."</p>
                 </div>
-                <div class="stat-item">
-                    <div class="number">100%</div>
-                    <div class="label">Afspraak = Afspraak</div>
-                    <div class="sublabel">Wij komen wanneer we zeggen</div>
-                </div>
-            </div>
-
-            <!-- Project Cards Grid -->
-            <div class="project-cards-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-card-image">
-                        <img src="/img/renovatie_amsterdam_centrum_woonkamer.webp" alt="Totaalrenovatie woonkamer Keizersgracht Amsterdam" width="906" height="683" loading="lazy">
-                        <span class="project-card-tag">Totaalrenovatie</span>
-                    </div>
-                    <div class="project-card-body">
-                        <div class="project-card-location">
-                            <i class="ph ph-map-pin"></i> Amsterdam Centrum
-                        </div>
-                        <p class="project-card-quote">"Op tijd en binnen budget opgeleverd. Eindelijk een aannemer die doet wat hij zegt."</p>
-                        <div class="project-card-author">— J. Vermeer, VvE Bestuur</div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-card-image">
-                        <img src="/img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp" alt="Visgraat vloer appartement De Pijp" width="1008" height="922" loading="lazy" srcset="img/responsive/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement-480w.webp 480w, /img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp 1008w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-                        <span class="project-card-tag">Visgraat Vloer</span>
-                    </div>
-                    <div class="project-card-body">
-                        <div class="project-card-location">
-                            <i class="ph ph-map-pin"></i> Oud-Zuid
-                        </div>
-                        <p class="project-card-quote">"De vloer is perfect gelegd. Geen rommel, goede communicatie en een eerlijke prijs."</p>
-                        <div class="project-card-author">— M. de Boer, Particulier</div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-card-image">
-                        <img src="/img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp" alt="Kozijnen schilderwerk Herengracht Amsterdam" width="1003" height="924" loading="lazy" srcset="img/responsive/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag-480w.webp 480w, /img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp 1003w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-                        <span class="project-card-tag">Kozijnen & Schilderwerk</span>
-                    </div>
-                    <div class="project-card-body">
-                        <div class="project-card-location">
-                            <i class="ph ph-map-pin"></i> Amsterdam Centrum
-                        </div>
-                        <p class="project-card-quote">"Ons trappenhuis is prachtig geworden. Nette afwerking, precies zoals afgesproken."</p>
-                        <div class="project-card-author">— P. Koning, Particulier</div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-card-image">
-                        <img src="/img/dubbele_witte_schuifdeur_amsterdam.webp" alt="Maatwerk schuifdeuren Prinsengracht Amsterdam" width="1024" height="927" loading="lazy" srcset="img/responsive/dubbele_witte_schuifdeur_amsterdam-480w.webp 480w, /img/dubbele_witte_schuifdeur_amsterdam.webp 1024w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-                        <span class="project-card-tag">Maatwerk Timmerwerk</span>
-                    </div>
-                    <div class="project-card-body">
-                        <div class="project-card-location">
-                            <i class="ph ph-map-pin"></i> Amsterdam Centrum
-                        </div>
-                        <p class="project-card-quote">"Perfecte vakmanschap, precies wat we zochten. Communicatie was uitstekend."</p>
-                        <div class="project-card-author">— L. Hendriks, Particulier</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="/renovatie/offerte/#offerte" class="btn-primary">
-                    <i class="ph ph-envelope-simple"></i>
-                    Plan een Gesprek
-                </a>
             </div>
         </div>
     </section>
@@ -762,343 +652,16 @@
                     <p>Wij voeren het werk uit volgens planning en houden u op de hoogte.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- OVER ONS SECTION -->
-    <section id="over-ons" class="pt-8 md:pt-12 pb-12 md:pb-24 bg-brand-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Header met foto -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-8 md:mb-16">
-                <div>
-                    <span class="badge">Over Ons</span>
-                    <h2 class="font-header text-2xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6 mt-3 md:mt-4">
-                        Achterhoeks Vakmanschap in het Hart van Amsterdam
-                    </h2>
-                    <p class="text-brand-orange text-base md:text-xl font-semibold mb-4 md:mb-6 italic">
-                        Vertrouwen is het fundament van elk goed pand.
-                    </p>
-                    <p class="text-gray-600 text-sm md:text-lg mb-4 md:mb-6">
-                        4Builders combineert Achterhoekse nuchterheid met Amsterdams vakmanschap. Ons verhaal begon met vier vakmensen uit een regio die bekend staat om eerlijkheid en betrouwbaarheid. Die mentaliteit brengen we dagelijks naar de grachtenpanden en luxe appartementen van Amsterdam.
-                    </p>
-                    <p class="text-gray-600 text-sm md:text-base mb-6 md:mb-8">
-                        Uw woning is uw belangrijkste bezit. Daarom behandelen wij elk project met dezelfde zorg: strakke afwerking, heldere communicatie en een prijs die klopt.
-                    </p>
-
-                    <div class="flex flex-wrap gap-8">
-                        <div>
-                            <div class="text-brand-orange font-header text-3xl font-bold">5+</div>
-                            <div class="text-gray-500 text-sm">Jaar ervaring</div>
-                        </div>
-                        <div>
-                            <div class="text-brand-orange font-header text-3xl font-bold">50+</div>
-                            <div class="text-gray-500 text-sm">Tevreden klanten</div>
-                        </div>
-                        <div>
-                            <div class="text-brand-orange font-header text-3xl font-bold">100%</div>
-                            <div class="text-gray-500 text-sm">Op tijd opgeleverd</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <img src="/img/foto_4builders_bus_amsterdam_centrum.webp" alt="4Builders bus Amsterdam Centrum" width="921" height="663" class="rounded-lg shadow-xl" loading="lazy" srcset="img/responsive/foto_4builders_bus_amsterdam_centrum-480w.webp 480w, /img/foto_4builders_bus_amsterdam_centrum.webp 921w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-                </div>
-            </div>
-
-            <!-- Uw Aanspreekpunt -->
-            <div class="mb-16">
-                <h3 class="font-header text-2xl md:text-3xl font-bold text-gray-900 mb-2 text-center">
-                    Uw Aanspreekpunt
-                </h3>
-                <p class="text-gray-500 text-center mb-8 text-sm md:text-base">Twee managers, één vaste ploeg. U spreekt altijd direct met de eigenaar of projectleider.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                    <div class="bg-white p-6 md:p-8 rounded-lg border border-gray-100 shadow-sm text-center">
-                        <img src="/img/markmaathuis_eigenaar.webp" alt="Mark Maathuis — Eigenaar 4Builders" width="400" height="400" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-2 border-brand-orange" loading="lazy">
-                        <h4 class="font-header text-lg font-bold text-gray-900">Mark Maathuis</h4>
-                        <p class="text-brand-orange text-sm font-semibold mb-3">Eigenaar</p>
-                        <p class="text-gray-600 text-sm italic">"Achterhoeker in Amsterdam. Ik sta persoonlijk achter elk project en werk met een vaste groep vakmensen die ik al meer dan 10 jaar ken."</p>
-                    </div>
-                    <div class="bg-white p-6 md:p-8 rounded-lg border border-gray-100 shadow-sm text-center">
-                        <img src="/img/dennis_berendsen_projectleider.webp" alt="Dennis Berendsen — Projectleider 4Builders" width="800" height="800" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-2 border-brand-orange" loading="lazy" srcset="img/responsive/dennis_berendsen_projectleider-480w.webp 480w, /img/dennis_berendsen_projectleider.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-                        <h4 class="font-header text-lg font-bold text-gray-900">Dennis Berendsen</h4>
-                        <p class="text-brand-orange text-sm font-semibold mb-3">Projectleider</p>
-                        <p class="text-gray-600 text-sm italic">"Van planning tot oplevering: ik houd de lijnen kort en onze vaste ploeg scherp. U heeft altijd één direct aanspreekpunt."</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Waarom kiezen voor ons -->
-            <div class="mb-16">
-                <h3 class="font-header text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-                    Waarom Veeleisende Opdrachtgevers Voor Ons Kiezen
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                                <i class="ph ph-handshake text-brand-orange text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-header text-lg font-bold text-gray-900 mb-2">Integriteit als Fundament</h4>
-                                <p class="text-gray-600 text-sm">Eerlijke prijzen, transparante communicatie. Geen verborgen kosten, geen smoesjes — rechttoe-rechtaan afspraken.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                                <i class="ph ph-star text-brand-orange text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-header text-lg font-bold text-gray-900 mb-2">Oog voor Perfectie</h4>
-                                <p class="text-gray-600 text-sm">Van hang- en sluitwerk in monumentale panden tot moderne interieurs: wij leveren afwerking waar u geen concessies op doet.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                                <i class="ph ph-globe text-brand-orange text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-header text-lg font-bold text-gray-900 mb-2">Premium Service voor Expats</h4>
-                                <p class="text-gray-600 text-sm">Lastig navigeren in de Amsterdamse renovatiemarkt? Wij bieden een compleet Engelstalig traject, van planning tot facturatie.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                                <i class="ph ph-users-four text-brand-orange text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-header text-lg font-bold text-gray-900 mb-2">De Kracht van Vier</h4>
-                                <p class="text-gray-600 text-sm">Ons kernteam van vier gespecialiseerde vakmensen deelt één doel: uw visie omzetten in realiteit, met respect voor uw tijd en eigendom.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Onze Belofte -->
-            <div class="bg-brand-dark rounded-xl p-8 md:p-12 text-center">
-                <h3 class="font-header text-2xl md:text-3xl font-bold text-white mb-6">Onze Belofte</h3>
-                <p class="text-gray-300 text-lg max-w-3xl mx-auto mb-6">
-                    Of het nu gaat om authentiek houtwerk, valbeveiliging op balkons of complete interieurrenovaties — wij leveren rust en zekerheid. Moderne service, ouderwetse betrouwbaarheid.
-                </p>
-                <p class="text-brand-orange text-xl font-semibold italic">
-                    Welkom bij 4Builders.
-                </p>
+            <div class="text-center mt-12">
+                <a href="/renovatie/offerte/#offerte" class="btn-primary">
+                    <i class="ph ph-envelope-simple"></i>
+                    Gratis Offerte Aanvragen
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact-section pt-2 lg:pt-8 pb-8 lg:pb-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
-                <!-- Heading (hidden on mobile - user already clicked "Offerte") -->
-                <div class="hidden lg:block">
-                    <span class="badge">Contact</span>
-                    <h2 class="font-header text-4xl md:text-5xl font-bold text-gray-900 mb-3 mt-3">
-                        Klaar Om Te Starten?
-                    </h2>
-                    <p class="text-gray-600 text-lg">
-                        Vraag vrijblijvend een offerte aan. We reageren binnen 24 uur.
-                    </p>
-                </div>
-
-                <!-- Form (spans 2 rows on desktop: next to heading + contact info) -->
-                <div class="contact-card form-light lg:row-span-2">
-    <h3 class="form-premium-header text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-6">Vertel Over Uw Project</h3>
-
-    <form id="custom4BuildersForm" class="space-y-3 md:space-y-5">
-        <!-- Honeypot (spam protection) -->
-        <div class="hidden" aria-hidden="true">
-            <input type="text" name="honeypot" tabindex="-1" autocomplete="off" value="">
-        </div>
-
-        <div class="grid grid-cols-2 gap-2 md:gap-4">
-            <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Voornaam*</label>
-                <div class="relative">
-                    <input type="text" name="firstname" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
-                    <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
-                </div>
-                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
-            </div>
-            <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Achternaam*</label>
-                <div class="relative">
-                    <input type="text" name="lastname" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
-                    <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
-                </div>
-                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-2 md:gap-4">
-            <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">E-mail*</label>
-                <div class="relative">
-                    <input type="email" name="email" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
-                    <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
-                </div>
-                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
-            </div>
-            <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Telefoon*</label>
-                <div class="relative">
-                    <input type="tel" name="phone" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
-                    <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
-                </div>
-                <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
-            </div>
-        </div>
-
-        <div class="relative">
-            <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Postcode klus*</label>
-            <div class="relative">
-                <input type="text" name="zip" required placeholder="1234 AB" class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
-                <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
-            </div>
-            <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
-        </div>
-
-        <!-- SERVICE SELECTOR (Radio Cards) -->
-        <div class="relative" id="serviceSelector">
-            <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-2 md:mb-3">Waar kunnen we mee helpen?*</label>
-            <div class="service-radio-grid">
-                <label class="service-radio-card">
-                    <input type="radio" name="service" value="Schilderwerk" class="sr-only">
-                    <i class="ph ph-paint-brush"></i>
-                    <span>Schilderwerk</span>
-                </label>
-                <label class="service-radio-card">
-                    <input type="radio" name="service" value="Vloeren" class="sr-only">
-                    <i class="ph ph-squares-four"></i>
-                    <span>Vloeren</span>
-                </label>
-                <label class="service-radio-card">
-                    <input type="radio" name="service" value="Timmerwerk" class="sr-only">
-                    <i class="ph ph-hammer"></i>
-                    <span>Timmerwerk</span>
-                </label>
-                <label class="service-radio-card">
-                    <input type="radio" name="service" value="Bestrating" class="sr-only">
-                    <i class="ph ph-grid-four"></i>
-                    <span>Bestrating</span>
-                </label>
-                <label class="service-radio-card">
-                    <input type="radio" name="service" value="VvE Onderhoud" class="sr-only">
-                    <i class="ph ph-buildings"></i>
-                    <span>VvE Onderhoud</span>
-                </label>
-                <label class="service-radio-card">
-                    <input type="radio" name="service" value="Renovatie" class="sr-only">
-                    <i class="ph ph-house-line"></i>
-                    <span>Renovatie</span>
-                </label>
-            </div>
-            <p class="error-text text-red-500 text-xs mt-1 hidden" id="serviceError"></p>
-        </div>
-
-        <!-- DETAILS TEXTAREA (conditional, shown after service selection) -->
-        <div class="relative hidden" id="detailsWrapper">
-            <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Extra details <span class="font-normal text-gray-400">(optioneel)</span></label>
-            <textarea name="details" rows="2" placeholder="Bijv. aantal kamers, oppervlakte, gewenste startdatum..." class="w-full bg-white border border-gray-200 p-2 md:p-3 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition resize-none"></textarea>
-        </div>
-
-        <button type="submit" id="submitBtn" class="form-submit-btn flex items-center justify-center gap-2 w-full text-white font-bold py-3 md:py-4 rounded uppercase text-sm md:text-base tracking-widest transition">
-            <span id="btnText">Verstuur aanvraag</span>
-            <i id="btnIcon" class="ph ph-paper-plane-tilt text-lg md:text-xl"></i>
-        </button>
-
-        <!-- WhatsApp ghost button -->
-        <a href="https://wa.me/31618922134" target="_blank" class="whatsapp-ghost-btn flex items-center justify-center gap-2 w-full py-3 rounded text-sm transition">
-            <i class="ph ph-whatsapp-logo"></i>
-            <span>Liever direct foto's sturen?</span>
-        </a>
-
-        <!-- Trust signals (hidden on mobile to save space) -->
-        <div class="hidden md:flex justify-center gap-4 mt-2 text-xs text-gray-500">
-            <span class="flex items-center gap-1">
-                <i class="ph ph-shield-check text-green-500"></i> Volledig verzekerd
-            </span>
-            <span class="flex items-center gap-1">
-                <i class="ph ph-clock text-brand-orange"></i> 24u reactie garantie
-            </span>
-        </div>
-
-        <p id="formFeedback" class="hidden text-center mt-2 md:mt-4 font-bold"></p>
-    </form>
-</div>
-
-                <!-- Contact info + map -->
-                <div class="flex flex-col gap-6">
-                    <!-- Contact details card (mobile gets its own card styling) -->
-                    <div class="contact-details-card space-y-5">
-                        <h3 class="font-header text-lg font-bold text-gray-900 lg:hidden">Contactgegevens</h3>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                                <i class="ph ph-phone text-brand-orange text-xl"></i>
-                            </div>
-                            <div>
-                                <div class="text-sm text-gray-500">Telefoon</div>
-                                <a href="tel:+31618922134" class="text-gray-900 font-semibold hover:text-brand-orange transition">+31 6 18 92 21 34</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                                <i class="ph ph-envelope text-brand-orange text-xl"></i>
-                            </div>
-                            <div>
-                                <div class="text-sm text-gray-500">E-mail</div>
-                                <a href="mailto:info@4builders-amsterdam.nl" class="text-gray-900 font-semibold hover:text-brand-orange transition">info@4builders-amsterdam.nl</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-[#25D366]/10 flex items-center justify-center flex-shrink-0">
-                                <i class="ph ph-whatsapp-logo text-[#25D366] text-xl"></i>
-                            </div>
-                            <div>
-                                <div class="text-sm text-gray-500">WhatsApp</div>
-                                <a href="https://wa.me/31618922134" target="_blank" class="text-gray-900 font-semibold hover:text-[#25D366] transition">Direct appen</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                                <i class="ph ph-map-pin text-brand-orange text-xl"></i>
-                            </div>
-                            <div>
-                                <div class="text-sm text-gray-500">Adres</div>
-                                <span class="text-gray-900 font-semibold">Pieter Baststraat 29</span>
-                                <span class="block text-gray-600 text-sm">1071 TV Amsterdam</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Google Maps -->
-                    <div class="h-[220px] lg:h-auto lg:flex-1 lg:min-h-[280px] rounded-xl overflow-hidden shadow-lg border border-gray-100">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.5076854889844!2d4.8821!3d52.3534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609e8a1c7c8f7%3A0x6c5c3b8c2d8e9b4a!2sPieter%20Baststraat%2029%2C%201071%20TV%20Amsterdam!5e0!3m2!1snl!2snl!4v1705750000000!5m2!1snl!2snl"
-                            width="100%"
-                            height="100%"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="4Builders locatie - Pieter Baststraat 29, Amsterdam">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 <footer class="footer-dark py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
