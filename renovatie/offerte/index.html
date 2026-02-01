@@ -376,7 +376,7 @@
   </section>
 
   <!-- ============ MULTI-STEP LEAD FORM ============ -->
-  <section class="pt-6 sm:pt-10 pb-20 sm:pb-28 bg-white" id="offerte" style="scroll-margin-top:80px">
+  <section class="pt-6 sm:pt-10 pb-20 sm:pb-44 bg-white" id="offerte" style="scroll-margin-top:64px">
     <div class="max-w-2xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-6 fade-in">
         <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-2 block">Vrijblijvend</span>
@@ -745,6 +745,16 @@
       }
     }
 
+    function scrollFormIntoView() {
+      setTimeout(function() {
+        var el = document.getElementById('offerte');
+        if (el) {
+          var top = el.getBoundingClientRect().top + window.scrollY - 64;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      }, 100);
+    }
+
     window.goToStep = function(step) {
       if (step > currentStep && !validateCurrentStep()) return;
 
@@ -761,12 +771,7 @@
 
       document.getElementById('progress-bar').style.width = (step / totalSteps) * 100 + '%';
       updateStepLabels();
-
-      var formSection = document.getElementById('offerte');
-      if (formSection && window.innerWidth < 640) {
-        var top = formSection.getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-      }
+      scrollFormIntoView();
     };
 
     // Click on step label — only go back to already-visited steps
@@ -780,6 +785,7 @@
         if (targetEl) setTimeout(function() { targetEl.classList.add('active'); }, 50);
         document.getElementById('progress-bar').style.width = (step / totalSteps) * 100 + '%';
         updateStepLabels();
+        scrollFormIntoView();
       } else if (step > currentStep && step <= highestStep) {
         // Going forward to a previously visited step — validate current first
         if (!validateCurrentStep()) return;
@@ -790,6 +796,7 @@
         if (targetEl) setTimeout(function() { targetEl.classList.add('active'); }, 50);
         document.getElementById('progress-bar').style.width = (step / totalSteps) * 100 + '%';
         updateStepLabels();
+        scrollFormIntoView();
       }
     };
 
