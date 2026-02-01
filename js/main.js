@@ -615,13 +615,11 @@
     });
   }
 
-  // Form is loaded async via includes.js — wait for components-loaded event
-  document.addEventListener("components-loaded", () => {
+  // Components are now inlined — init on DOMContentLoaded
+  document.addEventListener("DOMContentLoaded", () => {
     setupCustomForm();
     setupWhatsAppLinks();
 
-    // Scroll to hash target after async components are loaded
-    // Fixes: browser tries to scroll before form/header are in DOM
     if (window.location.hash) {
       scrollToHash(window.location.hash);
     }
