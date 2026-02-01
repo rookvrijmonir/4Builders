@@ -19,14 +19,17 @@ module.exports = {
       colors: {
         brand: {
           dark: '#111111',
-          gray: '#1A1A1A',
+          'dark-alt': '#1A1A1A',
+          gray: '#6B7280',
           orange: '#FF5722',
+          'orange-hover': '#E64A19',
           light: '#F8F9FA'
         }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         header: ['Oswald', 'sans-serif'],
+        display: ['"Playfair Display"', 'serif'],
       },
       animation: {
         'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite',

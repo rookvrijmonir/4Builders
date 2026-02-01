@@ -15,23 +15,8 @@
     gtag('config', 'G-0XLK96R0P8');
   </script>
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { dark: '#111111', orange: '#FF5722', 'orange-hover': '#E64A19', light: '#F8F9FA', gray: '#6B7280' }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['"Playfair Display"', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Tailwind CSS (built) -->
+  <link rel="stylesheet" href="/css/style.min.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +24,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Phosphor Icons -->
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="/fonts/phosphor/regular/style.css">
+  <link rel="stylesheet" href="/fonts/phosphor/fill/style.css">
 
   <style>
     html { scroll-behavior: smooth; }
@@ -159,7 +145,7 @@
         <!-- Mark -->
         <div class="bg-brand-light rounded-2xl p-6 text-center">
           <img src="../../img/markmaathuis_eigenaar.webp" alt="Mark Maathuis"
-               class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-white shadow-md">
+               class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-white shadow-md" loading="lazy">
           <h3 class="font-bold text-lg">Mark Maathuis</h3>
           <p class="text-brand-orange text-sm font-medium mb-3">Eigenaar & Uitvoerder</p>
           <p class="text-brand-gray text-sm mb-4">Achterhoekse nuchterheid, Amsterdamse kwaliteit. Mark staat garant voor vakmanschap en eerlijke communicatie.</p>
@@ -171,7 +157,7 @@
         <!-- Dennis -->
         <div class="bg-brand-light rounded-2xl p-6 text-center">
           <img src="../../img/dennis_berendsen_projectleider.webp" alt="Dennis Berendsen"
-               class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-white shadow-md">
+               class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-white shadow-md" loading="lazy">
           <h3 class="font-bold text-lg">Dennis Berendsen</h3>
           <p class="text-brand-orange text-sm font-medium mb-3">Projectleider</p>
           <p class="text-brand-gray text-sm mb-4">Dennis coördineert uw project van A tot Z en houdt u op de hoogte van elke stap in het proces.</p>

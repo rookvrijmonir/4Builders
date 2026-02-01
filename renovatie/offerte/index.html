@@ -23,29 +23,8 @@
     gtag('config', 'G-0XLK96R0P8');
   </script>
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              dark: '#111111',
-              orange: '#FF5722',
-              'orange-hover': '#E64A19',
-              light: '#F8F9FA',
-              gray: '#6B7280',
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['"Playfair Display"', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Tailwind CSS (built) -->
+  <link rel="stylesheet" href="/css/style.min.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +32,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Phosphor Icons -->
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="/fonts/phosphor/regular/style.css">
+  <link rel="stylesheet" href="/fonts/phosphor/fill/style.css">
 
   <style>
     /* Smooth scroll */
@@ -146,7 +126,7 @@
     <div class="absolute inset-0">
       <img src="../../img/renovatie/keuken-en-woonkamer-woning-amsterdam-centrum_1_gebruiken.webp"
            alt="Luxe gerenoveerde woning Amsterdam Centrum"
-           class="w-full h-full object-cover">
+           class="w-full h-full object-cover" loading="eager" fetchpriority="high">
       <div class="hero-gradient absolute inset-0"></div>
     </div>
 
