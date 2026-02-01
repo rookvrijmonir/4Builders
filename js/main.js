@@ -22,16 +22,16 @@
 
 
   // --- 1b. Smooth scroll for same-page hash links (e.g. /#contact on homepage) ---
-  function scrollToHash(hash) {
+  function scrollToHash(hash, smooth) {
     const target = document.querySelector(hash);
     if (!target) return;
     // On mobile, wait 350ms for the menu close transition (300ms) to finish
     // before calculating scroll position. On desktop, scroll immediately.
-    const delay = window.innerWidth < 768 ? 350 : 16;
+    const delay = smooth && window.innerWidth < 768 ? 350 : 16;
     setTimeout(() => {
       const navHeight = 80;
       const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
-      window.scrollTo({ top: top, behavior: "smooth" });
+      window.scrollTo({ top: top, behavior: smooth ? "smooth" : "auto" });
     }, delay);
   }
 
@@ -54,7 +54,7 @@
       if (menu && menu.classList.contains("open")) {
         menu.classList.remove("open");
       }
-      scrollToHash(url.hash);
+      scrollToHash(url.hash, true);
       history.pushState(null, "", url.hash);
     }
   });
@@ -632,7 +632,7 @@
     setupWhatsAppLinks();
     setActiveNavByPath();
     if (window.location.hash) {
-      scrollToHash(window.location.hash);
+      scrollToHash(window.location.hash, false);
     }
   }
 
