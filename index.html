@@ -78,7 +78,14 @@
 }
 </script>
 
-<!-- Preconnect for faster loading -->
+<!-- Preload critical fonts (prevents font-swap CLS in hero) -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/inter/inter-var-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/oswald/oswald-var-latin.woff2" crossorigin>
+
+<!-- Preload hero image (LCP element) -->
+<link rel="preload" as="image" fetchpriority="high" imagesrcset="/img/responsive/hero-amsterdam-grachtenpanden-480w.webp 480w, /img/responsive/hero-amsterdam-grachtenpanden-1024w.webp 1024w, /img/hero-amsterdam-grachtenpanden.webp 2000w" imagesizes="100vw">
+
+<!-- Deferred stylesheets -->
 <link rel="stylesheet" href="/fonts/phosphor/regular/style.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="/fonts/phosphor/fill/style.css" media="print" onload="this.media='all'">
 
@@ -93,7 +100,7 @@
 @font-face{font-family:Oswald;src:url(/fonts/oswald/oswald-var-latin.woff2) format('woff2');font-weight:200 700;font-display:swap}
 @font-face{font-family:'Playfair Display';src:url(/fonts/playfair/playfair-display-var-latin.woff2) format('woff2');font-weight:400 900;font-display:swap}
 .hidden{display:none}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.sticky{position:sticky}.relative{position:relative}.absolute{position:absolute}.top-0{top:0}.left-0{left:0}.right-0{right:0}.inset-0{inset:0}.z-0{z-index:0}.z-10{z-index:10}.z-50{z-index:50}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.flex-shrink-0{flex-shrink:0}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.overflow-hidden{overflow:hidden}
-.w-full{width:100%}.h-full{height:100%}.h-20{height:5rem}.max-w-7xl{max-width:80rem}.max-w-2xl{max-width:42rem}.min-h-\[85vh\]{min-height:85vh}
+.w-full{width:100%}.h-full{height:100%}.h-20{height:5rem}.max-w-7xl{max-width:80rem}.max-w-2xl{max-width:42rem}.min-h-\[85vh\]{min-height:85vh;min-height:85svh}
 .mx-auto{margin-left:auto;margin-right:auto}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-2{margin-top:.5rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-12{margin-top:3rem}.ml-10{margin-left:2.5rem}.mr-2{margin-right:.5rem}
 .px-2{padding-left:.5rem;padding-right:.5rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-3\.5{padding-top:.875rem;padding-bottom:.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pt-0{padding-top:0}.pb-0\.5{padding-bottom:.125rem}.pb-12{padding-bottom:3rem}.p-2{padding:.5rem}.pl-6{padding-left:1.5rem}
 .gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-x-8>:not([hidden])~:not([hidden]){margin-left:2rem}
@@ -104,7 +111,7 @@
 .rounded{border-radius:.25rem}.rounded-lg{border-radius:.5rem}.rounded-full{border-radius:9999px}.shadow-sm{box-shadow:0 1px 2px 0 rgba(0,0,0,.05)}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}.backdrop-blur-md{backdrop-filter:blur(12px)}.backdrop-blur-sm{backdrop-filter:blur(4px)}.object-cover{object-fit:cover}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.grid{display:grid}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.gap-12{gap:3rem}.col-span-2{grid-column:span 2/span 2}.space-y-5>:not([hidden])~:not([hidden]){margin-top:1.25rem}.space-y-3>:not([hidden])~:not([hidden]){margin-top:.75rem}
 .hero-overlay-bottom{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,17,17,.8) 0%,rgba(17,17,17,.5) 25%,rgba(17,17,17,.15) 50%,transparent 70%),rgba(17,17,17,.2)}.hero-text-shadow{text-shadow:0 2px 8px rgba(0,0,0,.6),0 0 30px rgba(0,0,0,.3)}
 @media(min-width:640px){.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:flex-row{flex-direction:row}.sm\:inline-flex{display:inline-flex}}
-@media(min-width:768px){.md\:block{display:block}.md\:hidden{display:none}.md\:flex{display:flex}.md\:inline-flex{display:inline-flex}.md\:min-h-screen{min-height:100vh}.md\:text-7xl{font-size:4.5rem;line-height:1}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-sm{font-size:.875rem;line-height:1.25rem}.md\:mb-6{margin-bottom:1.5rem}.md\:mt-4{margin-top:1rem}.md\:mt-8{margin-top:2rem}.md\:mt-10{margin-top:2.5rem}.md\:pb-16{padding-bottom:4rem}.md\:px-9{padding-left:2.25rem;padding-right:2.25rem}.md\:py-4{padding-top:1rem;padding-bottom:1rem}.md\:px-8{padding-left:2rem;padding-right:2rem}.md\:gap-4{gap:1rem}.md\:gap-10{gap:2.5rem}.md\:bg-transparent{background-color:transparent}}
+@media(min-width:768px){.md\:block{display:block}.md\:hidden{display:none}.md\:flex{display:flex}.md\:inline-flex{display:inline-flex}.md\:min-h-screen{min-height:100vh;min-height:100svh}.md\:text-7xl{font-size:4.5rem;line-height:1}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-sm{font-size:.875rem;line-height:1.25rem}.md\:mb-6{margin-bottom:1.5rem}.md\:mt-4{margin-top:1rem}.md\:mt-8{margin-top:2rem}.md\:mt-10{margin-top:2.5rem}.md\:pb-16{padding-bottom:4rem}.md\:px-9{padding-left:2.25rem;padding-right:2.25rem}.md\:py-4{padding-top:1rem;padding-bottom:1rem}.md\:px-8{padding-left:2rem;padding-right:2rem}.md\:gap-4{gap:1rem}.md\:gap-10{gap:2.5rem}.md\:bg-transparent{background-color:transparent}}
 @media(min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\:row-span-2{grid-row:span 2/span 2}.lg\:col-span-2{grid-column:span 2/span 2}.lg\:gap-12{gap:3rem}.lg\:block{display:block}.lg\:hidden{display:none}.lg\:pt-8{padding-top:2rem}.lg\:pb-24{padding-bottom:6rem}.lg\:flex-1{flex:1 1 0%}.lg\:min-h-\[280px\]{min-height:280px}.lg\:h-auto{height:auto}}
 </style>
 </head>
@@ -245,7 +252,7 @@
     <!-- HERO SECTION (Dark for impact) -->
     <section class="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark">
         <div class="absolute inset-0 z-0">
-            <img src="/img/hero-amsterdam-grachtenpanden.webp" alt="Amsterdam grachtenpanden" class="w-full h-full object-cover opacity-75" fetchpriority="high" decoding="async" srcset="img/responsive/hero-amsterdam-grachtenpanden-480w.webp 480w, /img/hero-amsterdam-grachtenpanden.webp 2000w" sizes="100vw">
+            <img src="/img/hero-amsterdam-grachtenpanden.webp" alt="Amsterdam grachtenpanden" class="w-full h-full object-cover opacity-75" fetchpriority="high" decoding="async" width="2000" height="1333" srcset="/img/responsive/hero-amsterdam-grachtenpanden-480w.webp 480w, /img/responsive/hero-amsterdam-grachtenpanden-1024w.webp 1024w, /img/hero-amsterdam-grachtenpanden.webp 2000w" sizes="100vw">
             <div class="hero-overlay-bottom"></div>
         </div>
 
@@ -359,7 +366,7 @@
                 <!-- Schilderwerk -->
                 <a href="/schilderwerk/" class="service-card group">
                     <div class="card-image">
-                        <img src="/img/schilderwerk_deuren_grachtenpand_amsterdam.webp" alt="Schilderwerk deuren grachtenpand Amsterdam" loading="lazy" srcset="img/responsive/schilderwerk_deuren_grachtenpand_amsterdam-480w.webp 480w, /img/schilderwerk_deuren_grachtenpand_amsterdam.webp 999w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <img src="/img/schilderwerk_deuren_grachtenpand_amsterdam.webp" alt="Schilderwerk deuren grachtenpand Amsterdam" width="999" height="664" loading="lazy" srcset="img/responsive/schilderwerk_deuren_grachtenpand_amsterdam-480w.webp 480w, /img/schilderwerk_deuren_grachtenpand_amsterdam.webp 999w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
                     </div>
                     <div class="card-content">
                         <h3 class="font-header">Schilderwerk</h3>
@@ -373,7 +380,7 @@
                 <!-- Vloeren -->
                 <a href="/vloeren/" class="service-card group">
                     <div class="card-image">
-                        <img src="/img/visgraat_amsterdam_centrum_grachten.webp" alt="Visgraat vloer Amsterdam Centrum" loading="lazy">
+                        <img src="/img/visgraat_amsterdam_centrum_grachten.webp" alt="Visgraat vloer Amsterdam Centrum" width="928" height="563" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3 class="font-header">Vloeren</h3>
@@ -387,7 +394,7 @@
                 <!-- Timmerwerk -->
                 <a href="/timmerwerk/" class="service-card group">
                     <div class="card-image">
-                        <img src="/img/getimmerde_kast_houtenvloer_visgraat.webp" alt="Maatwerk kast timmerwerk Amsterdam" loading="lazy">
+                        <img src="/img/getimmerde_kast_houtenvloer_visgraat.webp" alt="Maatwerk kast timmerwerk Amsterdam" width="961" height="921" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3 class="font-header">Timmerwerk</h3>
@@ -401,7 +408,7 @@
                 <!-- Bestrating -->
                 <a href="/bestrating/" class="service-card group">
                     <div class="card-image">
-                        <img src="/img/bestrating_tuin_amsterdam_centrumjpg.webp" alt="Bestrating tuin Amsterdam Centrum" loading="lazy" srcset="img/responsive/bestrating_tuin_amsterdam_centrumjpg-480w.webp 480w, /img/bestrating_tuin_amsterdam_centrumjpg.webp 943w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <img src="/img/bestrating_tuin_amsterdam_centrumjpg.webp" alt="Bestrating tuin Amsterdam Centrum" width="943" height="581" loading="lazy" srcset="img/responsive/bestrating_tuin_amsterdam_centrumjpg-480w.webp 480w, /img/bestrating_tuin_amsterdam_centrumjpg.webp 943w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
                     </div>
                     <div class="card-content">
                         <h3 class="font-header">Bestrating</h3>
@@ -427,7 +434,7 @@
             <div class="portfolio-grid">
                 <!-- Project 1 - Schilderwerk Herengracht -->
                 <a href="/schilderwerk/" class="portfolio-item">
-                    <img src="/img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp" alt="Houtrot reparatie kozijn Amsterdam" loading="lazy" srcset="img/responsive/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag-480w.webp 480w, /img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp 1003w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                    <img src="/img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp" alt="Houtrot reparatie kozijn Amsterdam" width="1003" height="924" loading="lazy" srcset="img/responsive/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag-480w.webp 480w, /img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp 1003w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
                     <div class="overlay">
                         <span class="project-type">Schilderwerk</span>
                         <h3 class="project-title">Houtrot Reparatie Kozijn</h3>
@@ -440,7 +447,7 @@
 
                 <!-- Project 2 - Vloeren Jordaan -->
                 <a href="/vloeren/" class="portfolio-item">
-                    <img src="/img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp" alt="Visgraat vloer Amsterdam appartement" loading="lazy" srcset="img/responsive/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement-480w.webp 480w, /img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp 1008w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                    <img src="/img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp" alt="Visgraat vloer Amsterdam appartement" width="1008" height="922" loading="lazy" srcset="img/responsive/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement-480w.webp 480w, /img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp 1008w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
                     <div class="overlay">
                         <span class="project-type">Vloeren</span>
                         <h3 class="project-title">Visgraat Vloer Appartement</h3>
@@ -453,7 +460,7 @@
 
                 <!-- Project 3 - Timmerwerk Prinsengracht -->
                 <a href="/timmerwerk/" class="portfolio-item">
-                    <img src="/img/dubbele_witte_schuifdeur_amsterdam.webp" alt="Dubbele schuifdeur Amsterdam" loading="lazy" srcset="img/responsive/dubbele_witte_schuifdeur_amsterdam-480w.webp 480w, /img/dubbele_witte_schuifdeur_amsterdam.webp 1024w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                    <img src="/img/dubbele_witte_schuifdeur_amsterdam.webp" alt="Dubbele schuifdeur Amsterdam" width="1024" height="927" loading="lazy" srcset="img/responsive/dubbele_witte_schuifdeur_amsterdam-480w.webp 480w, /img/dubbele_witte_schuifdeur_amsterdam.webp 1024w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
                     <div class="overlay">
                         <span class="project-type">Timmerwerk</span>
                         <h3 class="project-title">Dubbele Schuifdeuren</h3>
@@ -466,7 +473,7 @@
 
                 <!-- Project 4 - Bestrating Keizersgracht -->
                 <a href="/bestrating/" class="portfolio-item">
-                    <img src="/img/bestrating_tuin_amsterdam_centrumjpg.webp" alt="Bestrating tuin Amsterdam" loading="lazy" srcset="img/responsive/bestrating_tuin_amsterdam_centrumjpg-480w.webp 480w, /img/bestrating_tuin_amsterdam_centrumjpg.webp 943w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                    <img src="/img/bestrating_tuin_amsterdam_centrumjpg.webp" alt="Bestrating tuin Amsterdam" width="943" height="581" loading="lazy" srcset="img/responsive/bestrating_tuin_amsterdam_centrumjpg-480w.webp 480w, /img/bestrating_tuin_amsterdam_centrumjpg.webp 943w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
                     <div class="overlay">
                         <span class="project-type">Bestrating</span>
                         <h3 class="project-title">Tuinbestrating</h3>
@@ -479,7 +486,7 @@
 
                 <!-- Project 5 - Timmerwerk Vlonders -->
                 <a href="/timmerwerk/" class="portfolio-item">
-                    <img src="/img/vlonders_dakterras_amsterdam_centrum.webp" alt="Vlonders dakterras Amsterdam" loading="lazy">
+                    <img src="/img/vlonders_dakterras_amsterdam_centrum.webp" alt="Vlonders dakterras Amsterdam" width="904" height="730" loading="lazy">
                     <div class="overlay">
                         <span class="project-type">Timmerwerk</span>
                         <h3 class="project-title">Vlonders Dakterras</h3>
@@ -492,7 +499,7 @@
 
                 <!-- Project 6 - Vloeren Woonkamer -->
                 <a href="/vloeren/" class="portfolio-item">
-                    <img src="/img/woonkamer_amsterdam_houtenvloer_ouderwets.webp" alt="Houten vloer woonkamer Amsterdam" loading="lazy" srcset="img/responsive/woonkamer_amsterdam_houtenvloer_ouderwets-480w.webp 480w, /img/woonkamer_amsterdam_houtenvloer_ouderwets.webp 1019w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                    <img src="/img/woonkamer_amsterdam_houtenvloer_ouderwets.webp" alt="Houten vloer woonkamer Amsterdam" width="1019" height="924" loading="lazy" srcset="img/responsive/woonkamer_amsterdam_houtenvloer_ouderwets-480w.webp 480w, /img/woonkamer_amsterdam_houtenvloer_ouderwets.webp 1019w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
                     <div class="overlay">
                         <span class="project-type">Vloeren</span>
                         <h3 class="project-title">Houten Vloer Woonkamer</h3>
@@ -611,7 +618,7 @@
                 </div>
 
                 <div class="relative">
-                    <img src="/img/renovatie_amsterdam_centrum_woonkamer.webp" alt="Renovatie woonkamer Amsterdam Centrum" class="rounded-lg shadow-2xl" loading="lazy">
+                    <img src="/img/renovatie_amsterdam_centrum_woonkamer.webp" alt="Renovatie woonkamer Amsterdam Centrum" width="906" height="683" class="rounded-lg shadow-2xl" loading="lazy">
                     <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl">
                         <div class="text-brand-orange font-header text-4xl font-bold">50+</div>
                         <div class="text-gray-600 text-sm">VvE-projecten afgerond</div>
@@ -654,7 +661,7 @@
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-card-image">
-                        <img src="/img/renovatie_amsterdam_centrum_woonkamer.webp" alt="Totaalrenovatie woonkamer Keizersgracht Amsterdam" loading="lazy">
+                        <img src="/img/renovatie_amsterdam_centrum_woonkamer.webp" alt="Totaalrenovatie woonkamer Keizersgracht Amsterdam" width="906" height="683" loading="lazy">
                         <span class="project-card-tag">Totaalrenovatie</span>
                     </div>
                     <div class="project-card-body">
@@ -669,7 +676,7 @@
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-card-image">
-                        <img src="/img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp" alt="Visgraat vloer appartement De Pijp" loading="lazy" srcset="img/responsive/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement-480w.webp 480w, /img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp 1008w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <img src="/img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp" alt="Visgraat vloer appartement De Pijp" width="1008" height="922" loading="lazy" srcset="img/responsive/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement-480w.webp 480w, /img/visgraat_vloer_en_houten_shutters_amsterdam_centrum_appartement.webp 1008w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
                         <span class="project-card-tag">Visgraat Vloer</span>
                     </div>
                     <div class="project-card-body">
@@ -684,7 +691,7 @@
                 <!-- Project 3 -->
                 <div class="project-card">
                     <div class="project-card-image">
-                        <img src="/img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp" alt="Kozijnen schilderwerk Herengracht Amsterdam" loading="lazy" srcset="img/responsive/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag-480w.webp 480w, /img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp 1003w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <img src="/img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp" alt="Kozijnen schilderwerk Herengracht Amsterdam" width="1003" height="924" loading="lazy" srcset="img/responsive/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag-480w.webp 480w, /img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp 1003w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
                         <span class="project-card-tag">Kozijnen & Schilderwerk</span>
                     </div>
                     <div class="project-card-body">
@@ -699,7 +706,7 @@
                 <!-- Project 4 -->
                 <div class="project-card">
                     <div class="project-card-image">
-                        <img src="/img/dubbele_witte_schuifdeur_amsterdam.webp" alt="Maatwerk schuifdeuren Prinsengracht Amsterdam" loading="lazy" srcset="img/responsive/dubbele_witte_schuifdeur_amsterdam-480w.webp 480w, /img/dubbele_witte_schuifdeur_amsterdam.webp 1024w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <img src="/img/dubbele_witte_schuifdeur_amsterdam.webp" alt="Maatwerk schuifdeuren Prinsengracht Amsterdam" width="1024" height="927" loading="lazy" srcset="img/responsive/dubbele_witte_schuifdeur_amsterdam-480w.webp 480w, /img/dubbele_witte_schuifdeur_amsterdam.webp 1024w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
                         <span class="project-card-tag">Maatwerk Timmerwerk</span>
                     </div>
                     <div class="project-card-body">
@@ -795,7 +802,7 @@
                 </div>
 
                 <div class="relative">
-                    <img src="/img/foto_4builders_bus_amsterdam_centrum.webp" alt="4Builders bus Amsterdam Centrum" class="rounded-lg shadow-xl" loading="lazy" srcset="img/responsive/foto_4builders_bus_amsterdam_centrum-480w.webp 480w, /img/foto_4builders_bus_amsterdam_centrum.webp 921w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                    <img src="/img/foto_4builders_bus_amsterdam_centrum.webp" alt="4Builders bus Amsterdam Centrum" width="921" height="663" class="rounded-lg shadow-xl" loading="lazy" srcset="img/responsive/foto_4builders_bus_amsterdam_centrum-480w.webp 480w, /img/foto_4builders_bus_amsterdam_centrum.webp 921w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
                 </div>
             </div>
 
@@ -807,13 +814,13 @@
                 <p class="text-gray-500 text-center mb-8 text-sm md:text-base">Twee managers, één vaste ploeg. U spreekt altijd direct met de eigenaar of projectleider.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                     <div class="bg-white p-6 md:p-8 rounded-lg border border-gray-100 shadow-sm text-center">
-                        <img src="/img/markmaathuis_eigenaar.webp" alt="Mark Maathuis — Eigenaar 4Builders" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-2 border-brand-orange" loading="lazy">
+                        <img src="/img/markmaathuis_eigenaar.webp" alt="Mark Maathuis — Eigenaar 4Builders" width="400" height="400" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-2 border-brand-orange" loading="lazy">
                         <h4 class="font-header text-lg font-bold text-gray-900">Mark Maathuis</h4>
                         <p class="text-brand-orange text-sm font-semibold mb-3">Eigenaar</p>
                         <p class="text-gray-600 text-sm italic">"Achterhoeker in Amsterdam. Ik sta persoonlijk achter elk project en werk met een vaste groep vakmensen die ik al meer dan 10 jaar ken."</p>
                     </div>
                     <div class="bg-white p-6 md:p-8 rounded-lg border border-gray-100 shadow-sm text-center">
-                        <img src="/img/dennis_berendsen_projectleider.webp" alt="Dennis Berendsen — Projectleider 4Builders" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-2 border-brand-orange" loading="lazy" srcset="img/responsive/dennis_berendsen_projectleider-480w.webp 480w, /img/dennis_berendsen_projectleider.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <img src="/img/dennis_berendsen_projectleider.webp" alt="Dennis Berendsen — Projectleider 4Builders" width="800" height="800" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover border-2 border-brand-orange" loading="lazy" srcset="img/responsive/dennis_berendsen_projectleider-480w.webp 480w, /img/dennis_berendsen_projectleider.webp 800w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
                         <h4 class="font-header text-lg font-bold text-gray-900">Dennis Berendsen</h4>
                         <p class="text-brand-orange text-sm font-semibold mb-3">Projectleider</p>
                         <p class="text-gray-600 text-sm italic">"Van planning tot oplevering: ik houd de lijnen kort en onze vaste ploeg scherp. U heeft altijd één direct aanspreekpunt."</p>
