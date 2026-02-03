@@ -60,6 +60,8 @@
       .selection-card { min-height: 68px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .form-input { font-size: 16px; }
     }
+    .pricing-text { display: none; }
+    @media (min-width: 1024px) { .pricing-text { display: block; } }
   </style>
 </head>
 
@@ -183,7 +185,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <!-- Text as accordion (desktop only — on mobile the infographic covers this) -->
-        <div class="hidden lg:block">
+        <div class="pricing-text">
           <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Kosten</span>
           <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-6">
             Wat kost schilderwerk in Amsterdam?
