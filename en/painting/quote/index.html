@@ -178,59 +178,51 @@
     </div>
   </section>
 
-  <!-- ============ SERVICE GRID ============ -->
-  <section class="py-20 sm:py-28 bg-white" id="services">
+  <!-- ============ PRICING INFOGRAPHIC ============ -->
+  <section class="py-20 sm:py-28 bg-brand-light" id="pricing">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-14 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Our Specialities</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
-          Painting services for every project
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
-        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
-            <i class="ph ph-paint-brush text-3xl text-brand-orange"></i>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <!-- Text as accordion (desktop only — on mobile the infographic covers this) -->
+        <div class="fade-in hidden lg:block">
+          <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Pricing</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-6">
+            How much does painting cost in Amsterdam?
+          </h2>
+          <p class="text-brand-gray leading-relaxed mb-6">
+            Transparent pricing, no surprises. Below you'll find an indication of common painting projects in Amsterdam.
+          </p>
+          <div class="space-y-3 mb-8">
+            <details class="faq-item">
+              <summary>Guide price: &plusmn; &euro;12 per m&sup2;</summary>
+              <div class="answer">Depending on condition, surface and desired finish.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Room (walls + ceiling): from &euro;350</summary>
+              <div class="answer">Living room from &euro;450. Complete apartment from &euro;2,000.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Benefit from 9% VAT</summary>
+              <div class="answer">Properties over 2 years old qualify for 9% instead of 21% VAT.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Free on-site inspection</summary>
+              <div class="answer">We visit your property at no cost for an accurate quote.</div>
+            </details>
           </div>
-          <h3 class="text-lg font-bold mb-2">Interior Painting</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Walls, ceilings and precise lacquer work for doors and window frames.</p>
-          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
-            Get a quote <i class="ph ph-arrow-right"></i>
+          <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25">
+            Get your personalised price estimate
+            <i class="ph ph-arrow-right text-xl"></i>
           </a>
         </div>
-
-        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
-            <i class="ph ph-house text-3xl text-brand-orange"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Exterior Painting</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Thorough preparation and durable protection against the elements.</p>
-          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
-            Get a quote <i class="ph ph-arrow-right"></i>
-          </a>
-        </div>
-
-        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
-            <i class="ph ph-wrench text-3xl text-brand-orange"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Wood Rot Repair</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Specialist restoration of window frames and monumental details.</p>
-          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
-            Get a quote <i class="ph ph-arrow-right"></i>
-          </a>
-        </div>
-
-        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
-            <i class="ph ph-palette text-3xl text-brand-orange"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Colour Consultation</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Expert advice on the perfect look for your property.</p>
-          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
-            Get a quote <i class="ph ph-arrow-right"></i>
-          </a>
+        <!-- Infographic -->
+        <div class="fade-in relative max-w-md mx-auto">
+          <img src="../../../img/cost_picture-schilderwerk_landingspagina_amsterdam-centrum.webp"
+               alt="Painting cost guide Amsterdam — example prices for interior painting per room and per m²"
+               class="w-full rounded-2xl shadow-xl" loading="lazy"
+               width="1024" height="1536">
+          <!-- Clickable overlays on infographic buttons → both go to quote form -->
+          <a href="#quote" class="absolute cursor-pointer" style="bottom:2.5%;left:5%;width:43%;height:5.5%" aria-label="Request a quote"></a>
+          <a href="#quote" class="absolute cursor-pointer" style="bottom:2.5%;right:5%;width:43%;height:5.5%" aria-label="WhatsApp — go to quote"></a>
         </div>
       </div>
     </div>
@@ -335,68 +327,6 @@
     </div>
   </section>
 
-  <!-- ============ PRICING INFOGRAPHIC ============ -->
-  <section class="py-20 sm:py-28 bg-brand-light" id="pricing">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        <!-- Text -->
-        <div class="fade-in">
-          <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Pricing</span>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-6">
-            How much does painting cost in Amsterdam?
-          </h2>
-          <p class="text-brand-gray leading-relaxed mb-6">
-            Transparent pricing, no surprises. Below you'll find an indication of common painting projects in Amsterdam.
-          </p>
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-start gap-3">
-              <i class="ph ph-paint-bucket text-brand-orange text-xl mt-0.5 flex-shrink-0"></i>
-              <div>
-                <span class="font-semibold text-brand-dark">Guide price: &plusmn; &euro;12 per m&sup2;</span>
-                <p class="text-sm text-brand-gray">Depending on condition, surface and desired finish.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <i class="ph ph-house text-brand-orange text-xl mt-0.5 flex-shrink-0"></i>
-              <div>
-                <span class="font-semibold text-brand-dark">Room (walls + ceiling): from &euro;350</span>
-                <p class="text-sm text-brand-gray">Living room from &euro;450. Complete apartment from &euro;2,000.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <i class="ph ph-percent text-brand-orange text-xl mt-0.5 flex-shrink-0"></i>
-              <div>
-                <span class="font-semibold text-brand-dark">Benefit from 9% VAT</span>
-                <p class="text-sm text-brand-gray">Properties over 2 years old qualify for 9% instead of 21% VAT.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <i class="ph ph-magnifying-glass text-brand-orange text-xl mt-0.5 flex-shrink-0"></i>
-              <div>
-                <span class="font-semibold text-brand-dark">Free on-site inspection</span>
-                <p class="text-sm text-brand-gray">We visit your property at no cost for an accurate quote.</p>
-              </div>
-            </li>
-          </ul>
-          <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25">
-            Get your personalised price estimate
-            <i class="ph ph-arrow-right text-xl"></i>
-          </a>
-        </div>
-        <!-- Infographic -->
-        <div class="fade-in relative max-w-md mx-auto">
-          <img src="../../../img/cost_picture-schilderwerk_landingspagina_amsterdam-centrum.webp"
-               alt="Painting cost guide Amsterdam — example prices for interior painting per room and per m²"
-               class="w-full rounded-2xl shadow-xl" loading="lazy"
-               width="1024" height="1536">
-          <!-- Clickable overlays on infographic buttons → both go to quote form -->
-          <a href="#quote" class="absolute cursor-pointer" style="bottom:2.5%;left:5%;width:43%;height:5.5%" aria-label="Request a quote"></a>
-          <a href="#quote" class="absolute cursor-pointer" style="bottom:2.5%;right:5%;width:43%;height:5.5%" aria-label="WhatsApp — go to quote"></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ TESTIMONIALS ============ -->
   <section class="py-20 sm:py-28 bg-brand-dark" id="reviews">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -452,6 +382,98 @@
             <p class="text-sm text-brand-orange">Oud-Zuid — Painting with colour advice</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE GRID ============ -->
+  <section class="py-20 sm:py-28 bg-white" id="services">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Our Specialities</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
+          Painting services for every project
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-paint-brush text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Interior Painting</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Walls, ceilings and precise lacquer work for doors and window frames.</p>
+          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Get a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-house text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Exterior Painting</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Thorough preparation and durable protection against the elements.</p>
+          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Get a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-wrench text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Wood Rot Repair</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Specialist restoration of window frames and monumental details.</p>
+          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Get a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-palette text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Colour Consultation</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Expert advice on the perfect look for your property.</p>
+          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Get a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="py-20 sm:py-28 bg-brand-light" id="faq">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">FAQ</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
+          Frequently asked questions
+        </h2>
+      </div>
+
+      <div class="fade-in">
+        <details class="faq-item">
+          <summary>How soon can you start?</summary>
+          <div class="answer">This depends on our schedule and the scope of the project. We can usually start within 1 to 3 weeks. For urgent requests we do our best to begin sooner.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How long does a painting project typically take?</summary>
+          <div class="answer">An average room is completed in 1&ndash;2 days. A full apartment usually takes 3&ndash;5 working days. We always provide a realistic timeline during the on-site inspection.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Which paints and brands do you use?</summary>
+          <div class="answer">We work exclusively with premium brands such as Sigma and Sikkens. These offer superior coverage, colour retention and durability. We always recommend the optimal solution for your specific situation.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is your service area?</summary>
+          <div class="answer">We work across Amsterdam and its immediate surroundings. From the city centre and canal belt to Oud-Zuid, De Pijp, Jordaan and beyond.</div>
+        </details>
       </div>
     </div>
   </section>
