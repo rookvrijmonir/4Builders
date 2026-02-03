@@ -23,6 +23,9 @@
     gtag('config', 'G-0XLK96R0P8');
   </script>
 
+  <!-- Font preload -->
+  <link rel="preload" href="/fonts/inter/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+
   <!-- Tailwind CSS (deferred) -->
   <link rel="stylesheet" href="/css/style.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="/css/style.min.css"></noscript>
@@ -63,6 +66,8 @@
     .pricing-text { display: none; }
     @media (min-width: 1024px) { .pricing-text { display: block; } }
     .aspect-\[3\/4\] { aspect-ratio: 3/4; }
+    @media (max-width: 767px) { .infographic-cta { height: 10% !important; bottom: 0 !important; } }
+    @media (min-width: 768px) { .md\:grid-cols-2 { grid-template-columns: repeat(2,minmax(0,1fr)); } .md\:grid-cols-3 { grid-template-columns: repeat(3,minmax(0,1fr)); } }
   </style>
 </head>
 
@@ -189,8 +194,8 @@
                class="w-full rounded-2xl shadow-xl" loading="lazy"
                width="1024" height="1536">
           <!-- Clickable overlays on infographic buttons → both go to quote form -->
-          <a href="#quote" class="absolute cursor-pointer" style="bottom:2.5%;left:5%;width:43%;height:5.5%" aria-label="Request a quote"></a>
-          <a href="#quote" class="absolute cursor-pointer" style="bottom:2.5%;right:5%;width:43%;height:5.5%" aria-label="WhatsApp — go to quote"></a>
+          <a href="#quote" class="absolute cursor-pointer infographic-cta" style="bottom:2.5%;left:5%;width:43%;height:5.5%" aria-label="Request a quote"></a>
+          <a href="#quote" class="absolute cursor-pointer infographic-cta" style="bottom:2.5%;right:5%;width:43%;height:5.5%" aria-label="WhatsApp — go to quote"></a>
         </div>
       </div>
     </div>
