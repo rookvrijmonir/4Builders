@@ -483,9 +483,9 @@
 
   <!-- ============ MULTI-STEP LEAD FORM ============ -->
   <section class="pt-6 sm:pt-10 pb-20 sm:pb-44 bg-white" id="quote">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:grid lg:grid-cols-[1fr_320px] lg:gap-10">
+    <div id="form-image-grid" class="max-w-6xl mx-auto px-4 sm:px-6 lg:grid lg:grid-cols-[1fr_320px] lg:gap-10">
       <!-- LEFT: Form column -->
-      <div>
+      <div id="form-col">
       <div class="text-center mb-6 fade-in">
         <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-2 block">No Obligation</span>
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-2">
@@ -769,10 +769,10 @@
     </div><!-- /LEFT form column -->
 
       <!-- RIGHT: USP image (desktop only, scales with form height) -->
-      <div class="hidden lg:block overflow-hidden rounded-2xl shadow-xl">
+      <div class="hidden lg:block">
         <img src="../../../img/usp_block_schilderwerk_english-amsterdam-centrum.webp"
              alt="Fast and professional painting, from small to large projects, personal guidance"
-             class="w-full h-full object-cover" loading="lazy"
+             class="w-full rounded-2xl shadow-xl" loading="lazy"
              width="600" height="900">
       </div>
     </div>
@@ -835,7 +835,7 @@
       currentStep = step;
       if (step > highestStep) highestStep = step;
       var targetEl = document.getElementById('step-' + step);
-      if (targetEl) { setTimeout(function() { targetEl.classList.add('active'); }, 50); }
+      if (targetEl) { setTimeout(function() { targetEl.classList.add('active'); requestAnimationFrame(syncImageWidth); }, 50); }
       document.getElementById('progress-bar').style.width = (step / totalSteps) * 100 + '%';
       updateStepLabels();
       scrollFormIntoView();
@@ -847,7 +847,7 @@
         if (currentEl) currentEl.classList.remove('active');
         currentStep = step;
         var targetEl = document.getElementById('step-' + step);
-        if (targetEl) setTimeout(function() { targetEl.classList.add('active'); }, 50);
+        if (targetEl) setTimeout(function() { targetEl.classList.add('active'); requestAnimationFrame(syncImageWidth); }, 50);
         document.getElementById('progress-bar').style.width = (step / totalSteps) * 100 + '%';
         updateStepLabels();
         scrollFormIntoView();
@@ -857,7 +857,7 @@
         if (currentEl) currentEl.classList.remove('active');
         currentStep = step;
         var targetEl = document.getElementById('step-' + step);
-        if (targetEl) setTimeout(function() { targetEl.classList.add('active'); }, 50);
+        if (targetEl) setTimeout(function() { targetEl.classList.add('active'); requestAnimationFrame(syncImageWidth); }, 50);
         document.getElementById('progress-bar').style.width = (step / totalSteps) * 100 + '%';
         updateStepLabels();
         scrollFormIntoView();
@@ -1133,6 +1133,21 @@
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+
+    // --- Sync USP image column width with form height ---
+    function syncImageWidth() {
+      var grid = document.getElementById('form-image-grid');
+      var formCol = document.getElementById('form-col');
+      if (!grid || !formCol) return;
+      if (window.innerWidth < 1024) { grid.style.gridTemplateColumns = ''; return; }
+      var h = formCol.offsetHeight;
+      var w = Math.round(h * (2 / 3));
+      if (w < 280) w = 280;
+      if (w > 480) w = 480;
+      grid.style.gridTemplateColumns = '1fr ' + w + 'px';
+    }
+    syncImageWidth();
+    window.addEventListener('resize', syncImageWidth);
 
     document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
       link.addEventListener('click', function() {
