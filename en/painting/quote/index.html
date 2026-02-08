@@ -728,8 +728,13 @@
       }, 100);
     }
 
+    var stepNames = ['', 'service', 'location', 'planning', 'contact'];
+
     window.goToStep = function(step) {
       if (step > currentStep && !validateCurrentStep()) return;
+      if (step > currentStep && typeof gtag === 'function') {
+        gtag('event', 'form_step_complete', { event_category: 'form', step_number: currentStep, step_name: stepNames[currentStep] });
+      }
       var currentEl = document.getElementById('step-' + currentStep);
       if (currentEl) currentEl.classList.remove('active');
       currentStep = step;
@@ -1041,6 +1046,24 @@
         }
       });
     });
+
+    // --- Scroll depth tracking ---
+    (function() {
+      var thresholds = [25, 50, 75, 100];
+      var fired = {};
+      window.addEventListener('scroll', function() {
+        if (typeof gtag !== 'function') return;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight <= 0) return;
+        var percent = Math.round((window.scrollY / docHeight) * 100);
+        thresholds.forEach(function(t) {
+          if (percent >= t && !fired[t]) {
+            fired[t] = true;
+            gtag('event', 'scroll_depth', { event_category: 'engagement', percent_scrolled: t });
+          }
+        });
+      });
+    })();
 
   })();
   </script>
