@@ -38,7 +38,7 @@
     @font-face{font-family:'Playfair Display';src:url(/fonts/playfair/playfair-display-var-latin.woff2) format('woff2');font-weight:400 900;font-display:swap}
     .fixed{position:fixed}.relative{position:relative}.absolute{position:absolute}.top-0{top:0}.right-0{right:0}.left-0{left:0}.inset-0{inset:0}.z-10{z-index:10}.z-50{z-index:50}.flex{display:flex}.inline-flex{display:inline-flex}.hidden{display:none}.block{display:block}.h-16{height:4rem}.h-full{height:100%}.w-full{width:100%}.min-h-\[90vh\]{min-height:90vh}.max-w-6xl{max-width:72rem}.max-w-2xl{max-width:42rem}.max-w-xl{max-width:36rem}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-10{margin-top:2.5rem}.ml-1{margin-left:.25rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-20{padding-top:5rem;padding-bottom:5rem}.pt-16{padding-top:4rem}.text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.font-medium{font-weight:500}.font-sans{font-family:Inter,sans-serif}.font-display{font-family:'Playfair Display',serif}.leading-tight{line-height:1.25}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-.025em}.tracking-wide{letter-spacing:.025em}.uppercase{text-transform:uppercase}.text-white{color:#fff}.text-brand-orange{color:#FF5722}.text-brand-dark{color:#111}.text-brand-gray{color:#6B7280}.text-gray-200{color:#e5e7eb}.text-gray-300{color:#d1d5db}.text-yellow-400{color:#facc15}.text-green-400{color:#4ade80}.bg-white{background-color:#fff}.bg-brand-orange{background-color:#FF5722}.bg-white\/95{background-color:rgba(255,255,255,.95)}.bg-white\/10{background-color:rgba(255,255,255,.1)}.object-cover{object-fit:cover}.overflow-hidden{overflow:hidden}.rounded-lg{border-radius:.5rem}.border-b{border-bottom-width:1px}.border{border-width:1px}.border-gray-100{border-color:#f3f4f6}.border-white\/20{border-color:rgba(255,255,255,.2)}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}.shadow-brand-orange\/25{--tw-shadow-color:rgba(255,87,34,.25)}.backdrop-blur-sm{backdrop-filter:blur(4px)}.transition-colors{transition-property:color,background-color,border-color;transition-duration:150ms}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
     @media(min-width:640px){.sm\:inline{display:inline}.sm\:hidden{display:none}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-32{padding-top:8rem;padding-bottom:8rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}.sm\:flex-row{flex-direction:row}.sm\:gap-4{gap:1rem}}
-    @media(min-width:1024px){.lg\:text-6xl{font-size:3.75rem;line-height:1}.lg\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\:grid{display:grid}.lg\:grid-cols-\[1fr_320px\]{grid-template-columns:1fr 320px}.lg\:gap-10{gap:2.5rem}}
+    @media(min-width:1024px){.lg\:text-6xl{font-size:3.75rem;line-height:1}}
 
     /* === PAGE-SPECIFIC STYLES === */
     html { scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -55,14 +55,11 @@
     .portfolio-img { transition: transform 0.4s ease; }
     .portfolio-img:hover { transform: scale(1.03); }
     a, button, label, input, textarea { touch-action: manipulation; }
+    .aspect-\[3\/4\] { aspect-ratio: 3/4; }
     @media (max-width: 639px) {
       .selection-card { min-height: 68px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .form-input { font-size: 16px; }
     }
-    .pricing-text { display: none; }
-    @media (min-width: 1024px) { .pricing-text { display: block; } }
-    .aspect-\[3\/4\] { aspect-ratio: 3/4; }
-    @media (max-width: 767px) { .infographic-cta { height: 10% !important; bottom: 0 !important; } }
     @media (min-width: 768px) { .md\:grid-cols-2 { grid-template-columns: repeat(2,minmax(0,1fr)); } .md\:grid-cols-3 { grid-template-columns: repeat(3,minmax(0,1fr)); } .md\:flex{display:flex} .md\:hidden{display:none} .md\:flex-row{flex-direction:row} }
   </style>
 
@@ -108,15 +105,18 @@
       <div class="hero-gradient absolute inset-0"></div>
     </div>
 
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32 text-center">
-      <div class="max-w-3xl mx-auto">
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32">
+      <div class="max-w-2xl">
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-          High-End Painting Services in Amsterdam. <span class="text-brand-orange">Reliability You Can Count On.</span>
+          Painting that makes your Amsterdam property shine. <span class="text-brand-orange">Craftsmanship without the hassle.</span>
         </h1>
-        <p class="text-lg sm:text-xl text-gray-200 leading-relaxed mb-8 max-w-xl mx-auto">
-          Looking for a painter who actually shows up? 4Builders combines premium finish with Dutch down-to-earth reliability.
+        <p class="text-lg sm:text-xl text-gray-200 leading-relaxed mb-4 max-w-xl">
+          Looking for a painter who actually keeps their promises? 4Builders combines premium finishing with Dutch down-to-earth reliability.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <p class="text-base sm:text-lg text-gray-300 leading-relaxed mb-8 max-w-xl">
+          From colour advice and preparation to a flawless handover &mdash; we take care of everything. One point of contact and clear communication, from start to finish.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
           <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25">
             Request a free quote
             <i class="ph ph-arrow-right text-xl"></i>
@@ -129,7 +129,7 @@
           </a>
         </div>
         <!-- Trust signals -->
-        <div class="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm text-gray-300">
+        <div class="flex flex-wrap items-center gap-6 mt-10 text-sm text-gray-300">
           <span class="flex items-center gap-1.5">
             <i class="ph-fill ph-star text-yellow-400"></i>
             <i class="ph-fill ph-star text-yellow-400"></i>
@@ -144,58 +144,8 @@
           </span>
           <span class="flex items-center gap-1.5">
             <i class="ph ph-clock text-brand-orange"></i>
-            Response within 48 hours
+            Response within 24 hours
           </span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PRICING INFOGRAPHIC ============ -->
-  <section class="py-20 sm:py-28 bg-brand-light" id="pricing">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        <!-- Text as accordion (desktop only — on mobile the infographic covers this) -->
-        <div class="pricing-text">
-          <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Pricing</span>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-6">
-            How much does painting cost in Amsterdam?
-          </h2>
-          <p class="text-brand-gray leading-relaxed mb-6">
-            Transparent pricing, no surprises. Below you'll find an indication of common painting projects in Amsterdam.
-          </p>
-          <div class="space-y-3 mb-8">
-            <details class="faq-item">
-              <summary>Guide price: &plusmn; &euro;12 per m&sup2;</summary>
-              <div class="answer">Depending on condition, surface and desired finish.</div>
-            </details>
-            <details class="faq-item">
-              <summary>Room (walls + ceiling): &euro;350 – &euro;750</summary>
-              <div class="answer">Living room: &euro;450 – &euro;1,200. Complete apartment (&plusmn;100 m&sup2;): &euro;2,000 – &euro;4,000.</div>
-            </details>
-            <details class="faq-item">
-              <summary>Benefit from 9% VAT</summary>
-              <div class="answer">9% VAT on labour costs for properties over 2 years old (conditions apply).</div>
-            </details>
-            <details class="faq-item">
-              <summary>Free on-site inspection</summary>
-              <div class="answer">We visit your property at no cost for an accurate quote.</div>
-            </details>
-          </div>
-          <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25">
-            Get your personalised price estimate
-            <i class="ph ph-arrow-right text-xl"></i>
-          </a>
-        </div>
-        <!-- Infographic -->
-        <div class="fade-in relative max-w-md mx-auto">
-          <img src="../../../img/cost_picture-schilderwerk_landingspagina_amsterdam-centrum.webp"
-               alt="Painting cost guide Amsterdam — example prices for interior painting per room and per m²"
-               class="w-full rounded-2xl shadow-xl" loading="lazy"
-               width="1024" height="1536">
-          <!-- Clickable overlays on infographic buttons → both go to quote form -->
-          <a href="#quote" class="absolute cursor-pointer infographic-cta" style="bottom:2.5%;left:5%;width:43%;height:5.5%" aria-label="Request a quote"></a>
-          <a href="#quote" class="absolute cursor-pointer infographic-cta" style="bottom:2.5%;right:5%;width:43%;height:5.5%" aria-label="WhatsApp — go to quote"></a>
         </div>
       </div>
     </div>
@@ -207,11 +157,11 @@
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
         <div class="flex items-start gap-4">
           <div class="flex-shrink-0 w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center">
-            <i class="ph ph-paint-bucket text-2xl text-brand-orange"></i>
+            <i class="ph ph-bank text-2xl text-brand-orange"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-white mb-1">Expert preparation</h3>
-            <p class="text-sm text-gray-400">Sanding, degreasing and priming. Thorough groundwork for a result that lasts for years.</p>
+            <h3 class="font-semibold text-white mb-1">Canal house specialists</h3>
+            <p class="text-sm text-gray-400">Experienced with monumental details, ornamental mouldings and historic surfaces. We know Amsterdam&rsquo;s architectural styles.</p>
           </div>
         </div>
         <div class="flex items-start gap-4">
@@ -219,8 +169,8 @@
             <i class="ph ph-shield-check text-2xl text-brand-orange"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-white mb-1">Premium materials</h3>
-            <p class="text-sm text-gray-400">We exclusively use Sigma and Sikkens. Premium paints for durable, professional results.</p>
+            <h3 class="font-semibold text-white mb-1">Sigma &amp; Sikkens partner</h3>
+            <p class="text-sm text-gray-400">We work exclusively with premium paints for durable, professional results.</p>
           </div>
         </div>
         <div class="flex items-start gap-4">
@@ -228,9 +178,67 @@
             <i class="ph ph-translate text-2xl text-brand-orange"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-white mb-1">Expat-friendly communication</h3>
-            <p class="text-sm text-gray-400">Fluent English and Dutch. Transparent updates and clear project timelines.</p>
+            <h3 class="font-semibold text-white mb-1">Fluent English &amp; Dutch</h3>
+            <p class="text-sm text-gray-400">Transparent communication and clear planning. Perfect for expats in Amsterdam.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE GRID ============ -->
+  <section class="py-20 sm:py-28 bg-white" id="services">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Our Specialities</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
+          Painting services for every project
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-paint-brush text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Interior Painting</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Walls, ceilings and precise lacquer work for doors and window frames.</p>
+          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Request a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-house text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Exterior Painting</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Thorough preparation and durable protection against the elements.</p>
+          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Request a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-wrench text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Wood Rot Repair</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Specialist restoration of window frames and monumental details.</p>
+          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Request a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-palette text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Colour Consultation</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Expert advice on the perfect look for your property.</p>
+          <a href="#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Request a quote <i class="ph ph-arrow-right"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -248,8 +256,7 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
-        <!-- Living room with mouldings -->
-        <div class="bg-black rounded-xl overflow-hidden">
+<div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
               <img src="../../../img/ba_woonkamer_sierlijsten_before.webp" alt="Before: living room with ornamental mouldings Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
@@ -262,8 +269,7 @@
           </div>
         </div>
 
-        <!-- Wall painting and door -->
-        <div class="bg-black rounded-xl overflow-hidden">
+<div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
               <img src="../../../img/ba_wandschilder_deur_before.webp" alt="Before: wall and door painting Amsterdam Centre" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
@@ -276,8 +282,7 @@
           </div>
         </div>
 
-        <!-- Apartment space -->
-        <div class="bg-black rounded-xl overflow-hidden">
+<div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
               <img src="../../../img/ba_appartement_ruimte_before.webp" alt="Before: apartment space Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
@@ -290,8 +295,7 @@
           </div>
         </div>
 
-        <!-- Kitchen -->
-        <div class="bg-black rounded-xl overflow-hidden">
+<div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
               <img src="../../../img/ba_keuken_before.webp" alt="Before: kitchen painting Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
@@ -304,8 +308,7 @@
           </div>
         </div>
 
-        <!-- Apartment living room -->
-        <div class="bg-black rounded-xl overflow-hidden">
+<div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
               <img src="../../../img/ba_appartement_woonkamer_before.webp" alt="Before: apartment living room Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
@@ -318,8 +321,7 @@
           </div>
         </div>
 
-        <!-- Living room with sliding doors -->
-        <div class="bg-black rounded-xl overflow-hidden">
+<div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
               <img src="../../../img/ba_woonkamer_schuifdeuren_before.webp" alt="Before: living room with sliding doors Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
@@ -357,7 +359,7 @@
           <p class="text-gray-300 leading-relaxed mb-6">"Had our entire apartment painted: living room, bedrooms and ceilings. Flawless finish, tidy work and everything cleaned up afterwards. Completed within a week. True craftsmanship!"</p>
           <div>
             <p class="font-semibold text-white">Marieke de B.</p>
-            <p class="text-sm text-brand-orange">Jordaan — Interior apartment painting</p>
+            <p class="text-sm text-brand-orange">Jordaan &mdash; Interior apartment painting</p>
           </div>
         </div>
 
@@ -369,10 +371,10 @@
             <i class="ph-fill ph-star text-yellow-400"></i>
             <i class="ph-fill ph-star text-yellow-400"></i>
           </div>
-          <p class="text-gray-300 leading-relaxed mb-6">"All window frames and doors in our canal house lacquered. Tricky work due to the old decorative mouldings, but the result is beautiful. Great value for money and clear communication upfront."</p>
+          <p class="text-gray-300 leading-relaxed mb-6">"We had our entire apartment painted &mdash; walls, ceilings and all the woodwork. The team was punctual, tidy and delivered a beautiful finish. Exactly what we needed as expats navigating renovations in Amsterdam."</p>
           <div>
-            <p class="font-semibold text-white">Robert &amp; Anne K.</p>
-            <p class="text-sm text-brand-orange">Herengracht — Lacquer work frames &amp; doors</p>
+            <p class="font-semibold text-white">James &amp; Sarah W.</p>
+            <p class="text-sm text-brand-orange">Oud-Zuid &mdash; Full apartment painting</p>
           </div>
         </div>
 
@@ -387,109 +389,22 @@
           <p class="text-gray-300 leading-relaxed mb-6">"Had the living room and kitchen painted including colour advice. They really thought along with us about the right colours for our interior. Neat painters who arrived on time and left the place spotless."</p>
           <div>
             <p class="font-semibold text-white">Thomas &amp; Lieke V.</p>
-            <p class="text-sm text-brand-orange">Oud-Zuid — Painting with colour advice</p>
+            <p class="text-sm text-brand-orange">Oud-Zuid &mdash; Painting with colour advice</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SERVICE GRID ============ -->
-  <section class="py-20 sm:py-28 bg-white" id="services">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-14 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Our Specialities</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
-          Painting services for every project
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
-        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
-            <i class="ph ph-paint-brush text-3xl text-brand-orange"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Interior Painting</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Walls, ceilings and precise lacquer work for doors and window frames.</p>
-        </div>
-
-        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
-            <i class="ph ph-house text-3xl text-brand-orange"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Exterior Painting</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Thorough preparation and durable protection against the elements.</p>
-        </div>
-
-        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
-            <i class="ph ph-wrench text-3xl text-brand-orange"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Wood Rot Repair</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Specialist restoration of window frames and monumental details.</p>
-        </div>
-
-        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
-            <i class="ph ph-palette text-3xl text-brand-orange"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Colour Consultation</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Expert advice on the perfect look for your property.</p>
-        </div>
-      </div>
-
-      <div class="text-center mt-10 fade-in">
-        <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25">
-          Request a free quote
-          <i class="ph ph-arrow-right text-xl"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section class="py-20 sm:py-28 bg-brand-light" id="faq">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-14 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">FAQ</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
-          Frequently asked questions
-        </h2>
-      </div>
-
-      <div class="fade-in">
-        <details class="faq-item">
-          <summary>How soon can you start?</summary>
-          <div class="answer">This depends on our schedule and the scope of the project. We can usually start within 1 to 3 weeks. For urgent requests we do our best to begin sooner.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How long does a painting project typically take?</summary>
-          <div class="answer">An average room is completed in 1&ndash;2 days. A full apartment usually takes 3&ndash;5 working days. We always provide a realistic timeline during the on-site inspection.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Which paints and brands do you use?</summary>
-          <div class="answer">We work exclusively with premium brands such as Sigma and Sikkens. These offer superior coverage, colour retention and durability. We always recommend the optimal solution for your specific situation.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is your service area?</summary>
-          <div class="answer">We work across Amsterdam and its immediate surroundings. From the city centre and canal belt to Oud-Zuid, De Pijp, Jordaan and beyond.</div>
-        </details>
       </div>
     </div>
   </section>
 
   <!-- ============ MULTI-STEP LEAD FORM ============ -->
   <section class="pt-6 sm:pt-10 pb-20 sm:pb-44 bg-white" id="quote">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-6 fade-in">
         <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-2 block">No Obligation</span>
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-2">
           Get your free quote
         </h2>
-        <p class="text-brand-gray">Four simple steps. Response within 48 hours.</p>
+        <p class="text-brand-gray">Four simple steps. Response within 24 hours.</p>
       </div>
 
       <div class="bg-white border border-gray-200 rounded-2xl shadow-xl shadow-gray-200/50 p-5 sm:p-8 fade-in">
@@ -621,12 +536,8 @@
               <p class="text-sm font-medium text-brand-dark mb-3">Indicative budget *</p>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="budget-cards">
                 <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="budget" value="€ 0 – € 1,000" class="hidden">
-                  <span class="font-semibold text-sm block">€ 0 – € 1k</span>
-                </label>
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="budget" value="€ 1,000 – € 2,500" class="hidden">
-                  <span class="font-semibold text-sm block">€ 1k – € 2.5k</span>
+                  <input type="radio" name="budget" value="€ 0 – € 2,500" class="hidden">
+                  <span class="font-semibold text-sm block">€ 0 – € 2.5k</span>
                 </label>
                 <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
                   <input type="radio" name="budget" value="€ 2,500 – € 5,000" class="hidden">
@@ -689,7 +600,7 @@
           <!-- ===== STEP 4: Contact Details ===== -->
           <div id="step-4" class="form-step">
             <h3 class="text-xl font-bold mb-2">How can we reach you?</h3>
-            <p class="text-brand-gray text-sm mb-6">Provide your email or phone number (or both). We'll respond within 48 hours.</p>
+            <p class="text-brand-gray text-sm mb-6">Provide your email or phone number (or both). We'll respond within 24 hours.</p>
 
             <div class="space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -728,13 +639,13 @@
 
             <button type="submit" id="submit-btn"
                     class="w-full mt-6 bg-brand-orange hover:bg-brand-orange-hover text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25 flex items-center justify-center gap-2">
-              <span id="submit-text">Submit request</span>
+              <span id="submit-text">Get a response within 24h</span>
               <i id="submit-icon" class="ph ph-paper-plane-tilt text-xl"></i>
             </button>
 
             <p class="text-center text-sm text-brand-gray mt-3 flex items-center justify-center gap-1.5">
               <i class="ph ph-clock text-brand-orange"></i>
-              Response within 48 hours
+              Response within 24 hours
             </p>
 
             <button type="button" onclick="goToStep(3)" class="mt-4 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
@@ -751,7 +662,7 @@
             <i class="ph ph-check-circle text-4xl text-green-600"></i>
           </div>
           <h3 class="text-xl font-bold mb-2">Request received!</h3>
-          <p class="text-brand-gray">We'll get back to you within 48 hours. You can also reach us directly via WhatsApp.</p>
+          <p class="text-brand-gray">We'll get back to you within 24 hours. You can also reach us directly via WhatsApp.</p>
           <a href="https://wa.me/31618922134" target="_blank" rel="noopener"
              class="inline-flex items-center gap-2 mt-4 text-green-600 font-semibold hover:text-green-700 transition-colors">
             <i class="ph ph-whatsapp-logo text-xl"></i> Open WhatsApp
@@ -761,10 +672,9 @@
         <div class="flex flex-wrap justify-center gap-4 mt-6 pt-6 border-t border-gray-100 text-xs text-brand-gray">
           <span class="flex items-center gap-1"><i class="ph ph-lock-simple text-sm"></i> Data secured</span>
           <span class="flex items-center gap-1"><i class="ph ph-shield-check text-sm"></i> Fully insured</span>
-          <span class="flex items-center gap-1"><i class="ph ph-clock text-sm"></i> Response within 48h</span>
+          <span class="flex items-center gap-1"><i class="ph ph-clock text-sm"></i> Response within 24h</span>
         </div>
       </div>
-    </div>
     </div>
   </section>
 
@@ -1057,7 +967,7 @@
 
       function showError(msg) {
         submitBtn.disabled = false;
-        submitText.textContent = 'Submit request';
+        submitText.textContent = 'Get a response within 24h';
         submitIcon.className = 'ph ph-paper-plane-tilt text-xl';
         feedback.classList.remove('hidden');
         feedback.className = 'mt-4 p-4 rounded-lg text-sm bg-red-50 text-red-700 border border-red-200';

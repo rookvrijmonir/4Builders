@@ -38,7 +38,7 @@
     @font-face{font-family:'Playfair Display';src:url(/fonts/playfair/playfair-display-var-latin.woff2) format('woff2');font-weight:400 900;font-display:swap}
     .fixed{position:fixed}.relative{position:relative}.absolute{position:absolute}.top-0{top:0}.right-0{right:0}.left-0{left:0}.inset-0{inset:0}.z-10{z-index:10}.z-50{z-index:50}.flex{display:flex}.inline-flex{display:inline-flex}.hidden{display:none}.block{display:block}.h-16{height:4rem}.h-full{height:100%}.w-full{width:100%}.min-h-\[90vh\]{min-height:90vh}.max-w-6xl{max-width:72rem}.max-w-2xl{max-width:42rem}.max-w-xl{max-width:36rem}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-10{margin-top:2.5rem}.ml-1{margin-left:.25rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-20{padding-top:5rem;padding-bottom:5rem}.pt-16{padding-top:4rem}.text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.font-medium{font-weight:500}.font-sans{font-family:Inter,sans-serif}.font-display{font-family:'Playfair Display',serif}.leading-tight{line-height:1.25}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-.025em}.tracking-wide{letter-spacing:.025em}.uppercase{text-transform:uppercase}.text-white{color:#fff}.text-brand-orange{color:#FF5722}.text-brand-dark{color:#111}.text-brand-gray{color:#6B7280}.text-gray-200{color:#e5e7eb}.text-gray-300{color:#d1d5db}.text-yellow-400{color:#facc15}.text-green-400{color:#4ade80}.bg-white{background-color:#fff}.bg-brand-orange{background-color:#FF5722}.bg-white\/95{background-color:rgba(255,255,255,.95)}.bg-white\/10{background-color:rgba(255,255,255,.1)}.object-cover{object-fit:cover}.overflow-hidden{overflow:hidden}.rounded-lg{border-radius:.5rem}.border-b{border-bottom-width:1px}.border{border-width:1px}.border-gray-100{border-color:#f3f4f6}.border-white\/20{border-color:rgba(255,255,255,.2)}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}.shadow-brand-orange\/25{--tw-shadow-color:rgba(255,87,34,.25)}.backdrop-blur-sm{backdrop-filter:blur(4px)}.transition-colors{transition-property:color,background-color,border-color;transition-duration:150ms}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
     @media(min-width:640px){.sm\:inline{display:inline}.sm\:hidden{display:none}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-32{padding-top:8rem;padding-bottom:8rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}.sm\:flex-row{flex-direction:row}.sm\:gap-4{gap:1rem}}
-    @media(min-width:1024px){.lg\:text-6xl{font-size:3.75rem;line-height:1}.lg\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\:grid{display:grid}.lg\:grid-cols-\[1fr_320px\]{grid-template-columns:1fr 320px}.lg\:gap-10{gap:2.5rem}}
+    @media(min-width:1024px){.lg\:text-6xl{font-size:3.75rem;line-height:1}}
 
     /* === PAGE-SPECIFIC STYLES === */
     html { scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -55,14 +55,11 @@
     .portfolio-img { transition: transform 0.4s ease; }
     .portfolio-img:hover { transform: scale(1.03); }
     a, button, label, input, textarea { touch-action: manipulation; }
+    .aspect-\[3\/4\] { aspect-ratio: 3/4; }
     @media (max-width: 639px) {
       .selection-card { min-height: 68px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .form-input { font-size: 16px; }
     }
-    .pricing-text { display: none; }
-    @media (min-width: 1024px) { .pricing-text { display: block; } }
-    .aspect-\[3\/4\] { aspect-ratio: 3/4; }
-    @media (max-width: 767px) { .infographic-cta { height: 10% !important; bottom: 0 !important; } }
     @media (min-width: 768px) { .md\:grid-cols-2 { grid-template-columns: repeat(2,minmax(0,1fr)); } .md\:grid-cols-3 { grid-template-columns: repeat(3,minmax(0,1fr)); } .md\:flex{display:flex} .md\:hidden{display:none} .md\:flex-row{flex-direction:row} }
   </style>
 
@@ -108,15 +105,18 @@
       <div class="hero-gradient absolute inset-0"></div>
     </div>
 
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32 text-center">
-      <div class="max-w-3xl mx-auto">
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32">
+      <div class="max-w-2xl">
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-          Hoogwaardig Schilderwerk in Amsterdam. <span class="text-brand-orange">Vakmanschap met Achterhoekse Mentaliteit.</span>
+          Schilderwerk dat uw Amsterdams pand laat stralen. <span class="text-brand-orange">Vakmanschap zonder gedoe.</span>
         </h1>
-        <p class="text-lg sm:text-xl text-gray-200 leading-relaxed mb-8 max-w-xl mx-auto">
-          Bent u op zoek naar een schilder die w&eacute;l zijn afspraken nakomt? 4Builders combineert de hoogste kwaliteit afwerking met de nuchtere betrouwbaarheid die u zoekt.
+        <p class="text-lg sm:text-xl text-gray-200 leading-relaxed mb-4 max-w-xl">
+          Op zoek naar een schilder die w&eacute;l zijn afspraken nakomt? 4Builders combineert premium afwerking met nuchtere Achterhoekse betrouwbaarheid.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <p class="text-base sm:text-lg text-gray-300 leading-relaxed mb-8 max-w-xl">
+          Van kleuradvies en voorbereiding tot een strakke oplevering &mdash; wij verzorgen alles. E&eacute;n aanspreekpunt en heldere communicatie, van begin tot eind.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
           <a href="#offerte" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25">
             Vraag een prijsindicatie aan
             <i class="ph ph-arrow-right text-xl"></i>
@@ -129,7 +129,7 @@
           </a>
         </div>
         <!-- Trust signals -->
-        <div class="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm text-gray-300">
+        <div class="flex flex-wrap items-center gap-6 mt-10 text-sm text-gray-300">
           <span class="flex items-center gap-1.5">
             <i class="ph-fill ph-star text-yellow-400"></i>
             <i class="ph-fill ph-star text-yellow-400"></i>
@@ -144,58 +144,8 @@
           </span>
           <span class="flex items-center gap-1.5">
             <i class="ph ph-clock text-brand-orange"></i>
-            Reactie binnen 48 uur
+            Reactie binnen 24 uur
           </span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PRICING INFOGRAPHIC ============ -->
-  <section class="py-20 sm:py-28 bg-brand-light" id="kosten">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        <!-- Text as accordion (desktop only — on mobile the infographic covers this) -->
-        <div class="pricing-text">
-          <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Kosten</span>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-6">
-            Wat kost schilderwerk in Amsterdam?
-          </h2>
-          <p class="text-brand-gray leading-relaxed mb-6">
-            Transparante prijzen, geen verrassingen. Hieronder een indicatie van veelvoorkomende schilderprojecten in Amsterdam.
-          </p>
-          <div class="space-y-3 mb-8">
-            <details class="faq-item">
-              <summary>Richtprijs: &plusmn; &euro;12 per m&sup2;</summary>
-              <div class="answer">Afhankelijk van staat, ondergrond en gewenste afwerking.</div>
-            </details>
-            <details class="faq-item">
-              <summary>Kamer (muren + plafond): &euro;350 – &euro;750</summary>
-              <div class="answer">Woonkamer: &euro;450 – &euro;1.200. Compleet appartement (&plusmn;100 m&sup2;): &euro;2.000 – &euro;4.000.</div>
-            </details>
-            <details class="faq-item">
-              <summary>Profiteer van 9% BTW</summary>
-              <div class="answer">9% btw op arbeidskosten bij woningen ouder dan 2 jaar (voorwaarden van toepassing).</div>
-            </details>
-            <details class="faq-item">
-              <summary>Gratis inspectie op locatie</summary>
-              <div class="answer">Wij komen vrijblijvend langs voor een nauwkeurige prijsopgave.</div>
-            </details>
-          </div>
-          <a href="#offerte" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25">
-            Ontvang uw persoonlijke prijsindicatie
-            <i class="ph ph-arrow-right text-xl"></i>
-          </a>
-        </div>
-        <!-- Infographic -->
-        <div class="fade-in relative max-w-md mx-auto">
-          <img src="../../img/prijs_afbeelding-schilderwerk_landingspagina_amsterdam-centrum.webp"
-               alt="Prijsindicatie schilderwerk Amsterdam — voorbeeldprijzen binnenschilderwerk per kamer en per m²"
-               class="w-full rounded-2xl shadow-xl" loading="lazy"
-               width="1024" height="1536">
-          <!-- Clickable overlays on infographic buttons → both go to quote form -->
-          <a href="#offerte" class="absolute cursor-pointer infographic-cta" style="bottom:2.5%;left:5%;width:43%;height:5.5%" aria-label="Offerte aanvragen"></a>
-          <a href="#offerte" class="absolute cursor-pointer infographic-cta" style="bottom:2.5%;right:5%;width:43%;height:5.5%" aria-label="WhatsApp — naar offerte"></a>
         </div>
       </div>
     </div>
@@ -207,11 +157,11 @@
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
         <div class="flex items-start gap-4">
           <div class="flex-shrink-0 w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center">
-            <i class="ph ph-paint-bucket text-2xl text-brand-orange"></i>
+            <i class="ph ph-bank text-2xl text-brand-orange"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-white mb-1">Vakkundige voorbereiding</h3>
-            <p class="text-sm text-gray-400">Schuren, ontvetten en gronden. Gedegen voorwerk voor een resultaat dat jarenlang mooi blijft.</p>
+            <h3 class="font-semibold text-white mb-1">Specialist in grachtenpanden</h3>
+            <p class="text-sm text-gray-400">Ervaring met monumentale details, sierlijsten en oude ondergronden. Wij kennen de Amsterdamse bouwstijlen.</p>
           </div>
         </div>
         <div class="flex items-start gap-4">
@@ -219,8 +169,8 @@
             <i class="ph ph-shield-check text-2xl text-brand-orange"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-white mb-1">A-merk materialen</h3>
-            <p class="text-sm text-gray-400">Wij werken uitsluitend met Sigma en Sikkens. Premium verven voor duurzaam, professioneel resultaat.</p>
+            <h3 class="font-semibold text-white mb-1">Sigma &amp; Sikkens vakpartner</h3>
+            <p class="text-sm text-gray-400">Wij werken uitsluitend met premium verven voor duurzaam, professioneel resultaat.</p>
           </div>
         </div>
         <div class="flex items-start gap-4">
@@ -228,9 +178,67 @@
             <i class="ph ph-translate text-2xl text-brand-orange"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-white mb-1">Tweetalige communicatie</h3>
-            <p class="text-sm text-gray-400">Vloeiend Engels en Nederlands. Transparante updates en heldere planning.</p>
+            <h3 class="font-semibold text-white mb-1">Vloeiend Engels &amp; Nederlands</h3>
+            <p class="text-sm text-gray-400">Transparante communicatie en heldere planning. Ook voor expats in Amsterdam.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE GRID ============ -->
+  <section class="py-20 sm:py-28 bg-white" id="diensten">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Onze Specialisaties</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
+          Schilderwerk voor elk project
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-paint-brush text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Binnenschilderwerk</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Muren, plafonds en strak lakwerk voor deuren en kozijnen.</p>
+          <a href="#offerte" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Offerte aanvragen <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-house text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Buitenschilderwerk</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Grondige voorbehandeling en duurzame bescherming tegen weer en wind.</p>
+          <a href="#offerte" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Offerte aanvragen <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-wrench text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Houtrot Reparatie</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Specialistisch herstel van kozijnen en monumentale details.</p>
+          <a href="#offerte" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Offerte aanvragen <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-palette text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Kleuradvies</h3>
+          <p class="text-brand-gray text-sm leading-relaxed mb-4">Meedenken over de juiste uitstraling voor uw woning.</p>
+          <a href="#offerte" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Offerte aanvragen <i class="ph ph-arrow-right"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -248,7 +256,6 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
-        <!-- Woonkamer met sierlijsten -->
         <div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
@@ -262,7 +269,6 @@
           </div>
         </div>
 
-        <!-- Wandschilderwerk en deur -->
         <div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
@@ -276,7 +282,6 @@
           </div>
         </div>
 
-        <!-- Appartement ruimte -->
         <div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
@@ -290,7 +295,6 @@
           </div>
         </div>
 
-        <!-- Keuken -->
         <div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
@@ -304,7 +308,6 @@
           </div>
         </div>
 
-        <!-- Appartement woonkamer -->
         <div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
@@ -318,7 +321,6 @@
           </div>
         </div>
 
-        <!-- Woonkamer schuifdeuren -->
         <div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
@@ -357,7 +359,7 @@
           <p class="text-gray-300 leading-relaxed mb-6">"Ons hele appartement laten schilderen: woonkamer, slaapkamers en het plafond. Strak resultaat, keurige afwerking en netjes opgeruimd na afloop. Binnen een week klaar. Echt vakwerk!"</p>
           <div>
             <p class="font-semibold text-white">Marieke de B.</p>
-            <p class="text-sm text-brand-orange">Jordaan — Binnenschilderwerk appartement</p>
+            <p class="text-sm text-brand-orange">Jordaan &mdash; Binnenschilderwerk appartement</p>
           </div>
         </div>
 
@@ -369,10 +371,10 @@
             <i class="ph-fill ph-star text-yellow-400"></i>
             <i class="ph-fill ph-star text-yellow-400"></i>
           </div>
-          <p class="text-gray-300 leading-relaxed mb-6">"Alle kozijnen en deuren in ons grachtenpand gelakt. Lastig werk door de oude sierlijsten, maar het resultaat is prachtig. Goede prijs-kwaliteitverhouding en duidelijke communicatie vooraf."</p>
+          <p class="text-gray-300 leading-relaxed mb-6">"We had our entire apartment painted &mdash; walls, ceilings and all the woodwork. The team was punctual, tidy and delivered a beautiful finish. Exactly what we needed as expats navigating renovations in Amsterdam."</p>
           <div>
-            <p class="font-semibold text-white">Robert &amp; Anne K.</p>
-            <p class="text-sm text-brand-orange">Herengracht — Lakwerk kozijnen &amp; deuren</p>
+            <p class="font-semibold text-white">James &amp; Sarah W.</p>
+            <p class="text-sm text-brand-orange">Oud-Zuid &mdash; Full apartment painting</p>
           </div>
         </div>
 
@@ -387,109 +389,22 @@
           <p class="text-gray-300 leading-relaxed mb-6">"Woonkamer en keuken laten schilderen inclusief kleuradvies. Ze dachten goed mee over de juiste kleuren bij ons interieur. Nette schilders die op tijd kwamen en de boel schoon achterlieten."</p>
           <div>
             <p class="font-semibold text-white">Thomas &amp; Lieke V.</p>
-            <p class="text-sm text-brand-orange">Oud-Zuid — Schilderwerk met kleuradvies</p>
+            <p class="text-sm text-brand-orange">Oud-Zuid &mdash; Schilderwerk met kleuradvies</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SERVICE GRID ============ -->
-  <section class="py-20 sm:py-28 bg-white" id="diensten">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-14 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Onze Specialisaties</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
-          Schilderwerk voor elk project
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
-        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
-            <i class="ph ph-paint-brush text-3xl text-brand-orange"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Binnenschilderwerk</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Muren, plafonds en strak lakwerk voor deuren en kozijnen.</p>
-        </div>
-
-        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
-            <i class="ph ph-house text-3xl text-brand-orange"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Buitenschilderwerk</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Grondige voorbehandeling en duurzame bescherming tegen weer en wind.</p>
-        </div>
-
-        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
-            <i class="ph ph-wrench text-3xl text-brand-orange"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Houtrot Reparatie</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Specialistisch herstel van kozijnen en monumentale details.</p>
-        </div>
-
-        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
-            <i class="ph ph-palette text-3xl text-brand-orange"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Kleuradvies</h3>
-          <p class="text-brand-gray text-sm leading-relaxed mb-4">Meedenken over de juiste uitstraling voor uw woning.</p>
-        </div>
-      </div>
-
-      <div class="text-center mt-10 fade-in">
-        <a href="#offerte" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25">
-          Vraag een prijsindicatie aan
-          <i class="ph ph-arrow-right text-xl"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section class="py-20 sm:py-28 bg-brand-light" id="faq">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-14 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">FAQ</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark">
-          Veelgestelde vragen
-        </h2>
-      </div>
-
-      <div class="fade-in">
-        <details class="faq-item">
-          <summary>Hoe snel kunnen jullie starten?</summary>
-          <div class="answer">Dat hangt af van onze planning en de omvang van het project. Meestal kunnen we binnen 1 tot 3 weken starten. Bij spoed doen we ons best om eerder te beginnen.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Hoe lang duurt een schilderproject gemiddeld?</summary>
-          <div class="answer">Een gemiddelde kamer is in 1&ndash;2 dagen klaar. Een compleet appartement duurt doorgaans 3&ndash;5 werkdagen. Bij de inspectie geven we altijd een realistische planning.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Welke verf en merken gebruiken jullie?</summary>
-          <div class="answer">Wij werken uitsluitend met A-merk verven van Sigma en Sikkens. Deze bieden de beste dekking, kleurvastheid en duurzaamheid. We adviseren altijd de optimale optie voor uw situatie.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Wat is jullie werkgebied?</summary>
-          <div class="answer">Wij werken in heel Amsterdam en directe omgeving. Van het centrum en de grachtengordel tot Oud-Zuid, De Pijp, Jordaan en daarbuiten.</div>
-        </details>
       </div>
     </div>
   </section>
 
   <!-- ============ MULTI-STEP LEAD FORM ============ -->
   <section class="pt-6 sm:pt-10 pb-20 sm:pb-44 bg-white" id="offerte">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-6 fade-in">
         <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-2 block">Vrijblijvend</span>
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-2">
           Ontvang uw prijsindicatie
         </h2>
-        <p class="text-brand-gray">Vier simpele stappen. Reactie binnen 48 uur.</p>
+        <p class="text-brand-gray">Vier simpele stappen. Reactie binnen 24 uur.</p>
       </div>
 
       <div class="bg-white border border-gray-200 rounded-2xl shadow-xl shadow-gray-200/50 p-5 sm:p-8 fade-in">
@@ -507,7 +422,6 @@
         </div>
 
         <form id="leadForm" novalidate>
-          <!-- Honeypot -->
           <input type="text" name="honeypot" class="hidden" tabindex="-1" autocomplete="off">
 
           <!-- ===== STEP 1: Painting Type ===== -->
@@ -622,12 +536,8 @@
               <p class="text-sm font-medium text-brand-dark mb-3">Indicatief budget *</p>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="budget-cards">
                 <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="budget" value="€ 0 – € 1.000" class="hidden">
-                  <span class="font-semibold text-sm block">€ 0 – € 1k</span>
-                </label>
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="budget" value="€ 1.000 – € 2.500" class="hidden">
-                  <span class="font-semibold text-sm block">€ 1k – € 2,5k</span>
+                  <input type="radio" name="budget" value="€ 0 – € 2.500" class="hidden">
+                  <span class="font-semibold text-sm block">€ 0 – € 2,5k</span>
                 </label>
                 <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
                   <input type="radio" name="budget" value="€ 2.500 – € 5.000" class="hidden">
@@ -690,7 +600,7 @@
           <!-- ===== STEP 4: Contact Details ===== -->
           <div id="step-4" class="form-step">
             <h3 class="text-xl font-bold mb-2">Hoe kunnen we u bereiken?</h3>
-            <p class="text-brand-gray text-sm mb-6">Vul e-mail of telefoon in (of beide). Wij nemen binnen 48 uur contact op.</p>
+            <p class="text-brand-gray text-sm mb-6">Vul e-mail of telefoon in (of beide). Wij nemen binnen 24 uur contact op.</p>
 
             <div class="space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -730,20 +640,19 @@
             <!-- Submit button -->
             <button type="submit" id="submit-btn"
                     class="w-full mt-6 bg-brand-orange hover:bg-brand-orange-hover text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25 flex items-center justify-center gap-2">
-              <span id="submit-text">Verstuur aanvraag</span>
+              <span id="submit-text">Ontvang binnen 24u reactie</span>
               <i id="submit-icon" class="ph ph-paper-plane-tilt text-xl"></i>
             </button>
 
             <p class="text-center text-sm text-brand-gray mt-3 flex items-center justify-center gap-1.5">
               <i class="ph ph-clock text-brand-orange"></i>
-              Binnen 48 uur een reactie
+              Binnen 24 uur een reactie
             </p>
 
             <button type="button" onclick="goToStep(3)" class="mt-4 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
               <i class="ph ph-arrow-left"></i> Terug
             </button>
 
-            <!-- Feedback -->
             <div id="form-feedback" class="hidden mt-4 p-4 rounded-lg text-sm"></div>
           </div>
         </form>
@@ -754,7 +663,7 @@
             <i class="ph ph-check-circle text-4xl text-green-600"></i>
           </div>
           <h3 class="text-xl font-bold mb-2">Aanvraag ontvangen!</h3>
-          <p class="text-brand-gray">Wij nemen binnen 48 uur contact met u op. U kunt ons ook direct bereiken via WhatsApp.</p>
+          <p class="text-brand-gray">Wij nemen binnen 24 uur contact met u op. U kunt ons ook direct bereiken via WhatsApp.</p>
           <a href="https://wa.me/31618922134" target="_blank" rel="noopener"
              class="inline-flex items-center gap-2 mt-4 text-green-600 font-semibold hover:text-green-700 transition-colors">
             <i class="ph ph-whatsapp-logo text-xl"></i> Open WhatsApp
@@ -765,9 +674,8 @@
         <div class="flex flex-wrap justify-center gap-4 mt-6 pt-6 border-t border-gray-100 text-xs text-brand-gray">
           <span class="flex items-center gap-1"><i class="ph ph-lock-simple text-sm"></i> Gegevens beveiligd</span>
           <span class="flex items-center gap-1"><i class="ph ph-shield-check text-sm"></i> Volledig verzekerd</span>
-          <span class="flex items-center gap-1"><i class="ph ph-clock text-sm"></i> Binnen 48 uur reactie</span>
+          <span class="flex items-center gap-1"><i class="ph ph-clock text-sm"></i> Reactie binnen 24u</span>
         </div>
-      </div>
       </div>
     </div>
   </section>
@@ -1066,7 +974,7 @@
 
       function showError(msg) {
         submitBtn.disabled = false;
-        submitText.textContent = 'Verstuur aanvraag';
+        submitText.textContent = 'Ontvang binnen 24u reactie';
         submitIcon.className = 'ph ph-paper-plane-tilt text-xl';
         feedback.classList.remove('hidden');
         feedback.className = 'mt-4 p-4 rounded-lg text-sm bg-red-50 text-red-700 border border-red-200';
