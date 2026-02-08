@@ -16,3 +16,6 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Session files
+vastgelopen_hier_ben_je_gebleven.docx
