@@ -662,6 +662,12 @@
   <div id="footer-placeholder"></div>
 
   <script src="/js/includes.js" defer></script>
+  <script>
+  document.addEventListener('components-loaded', function() {
+    var link = document.querySelector('.mobile-sticky-cta a[href*="offerte"]');
+    if (link) link.href = '#offerte';
+  });
+  </script>
 
   <!-- ============ JAVASCRIPT ============ -->
   <script>
