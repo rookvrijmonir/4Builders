@@ -56,6 +56,10 @@
     .portfolio-img { transition: transform 0.4s ease; }
     .portfolio-img:hover { transform: scale(1.03); }
     a, button, label, input, textarea { touch-action: manipulation; }
+    .review-carousel { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 0.5rem; }
+    .review-carousel::-webkit-scrollbar { display: none; }
+    .review-carousel > div { scroll-snap-align: start; flex-shrink: 0; width: 85%; }
+    @media (min-width: 768px) { .review-carousel { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; } .review-carousel > div { width: auto; } }
     .aspect-\[3\/4\] { aspect-ratio: 3/4; }
     @media (max-width: 639px) {
       .selection-card { min-height: 68px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
@@ -114,7 +118,7 @@
   </header>
 
   <!-- ============ HERO SECTION ============ -->
-  <section class="relative min-h-[90vh] flex items-center pt-16" id="hero">
+  <section class="relative min-h-[80vh] sm:min-h-[90vh] flex items-center pt-16" id="hero">
     <div class="absolute inset-0">
       <img src="../../img/schilderwerk_amsterdam_centrum_grachtenpand_hero.webp"
            alt="Professioneel schilderwerk Amsterdam — geschilderde muur met sierlijsten en gelakte paneeldeur"
@@ -124,7 +128,7 @@
       <div class="hero-gradient absolute inset-0"></div>
     </div>
 
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32 text-center sm:text-left">
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-32 text-center sm:text-left">
       <div class="max-w-2xl mx-auto sm:mx-0">
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
           Schilder nodig in Amsterdam? <span class="text-brand-orange">Gratis offerte binnen 24 uur.</span>
@@ -142,7 +146,7 @@
           </a>
           <a href="https://wa.me/31618922134?text=Hallo%2C%20ik%20heb%20interesse%20in%20schilderwerk%20via%20de%20landingspagina."
              target="_blank" rel="noopener"
-             class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-medium px-6 py-4 rounded-lg border border-white/20 transition-colors backdrop-blur-sm">
+             class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg text-lg border border-white/20 transition-colors backdrop-blur-sm">
             <i class="ph ph-whatsapp-logo text-xl text-green-400"></i>
             WhatsApp ons direct
           </a>
@@ -366,7 +370,7 @@
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
+      <div class="review-carousel fade-in">
         <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
           <div class="flex gap-1 mb-4">
             <i class="ph-fill ph-star text-yellow-400"></i>
