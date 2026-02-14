@@ -21,6 +21,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-0XLK96R0P8');
+    gtag('config', 'AW-17920851706');
   </script>
 
   <!-- Font preload -->
@@ -108,17 +109,17 @@
     <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32 text-center sm:text-left">
       <div class="max-w-2xl mx-auto sm:mx-0">
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-          Uw schilder in Amsterdam. <span class="text-brand-orange">Vakwerk van muur tot kozijn.</span>
+          Schilder nodig in Amsterdam? <span class="text-brand-orange">Gratis offerte binnen 24 uur.</span>
         </h1>
         <p class="text-lg sm:text-xl text-gray-200 leading-relaxed mb-4 max-w-xl mx-auto sm:mx-0">
-          Binnenschilderwerk, buitenschilderwerk, sauswerk en strak lakwerk op kozijnen en deuren. 4Builders is uw allround schilder met oog voor kwaliteit.
+          Binnen- en buitenschilderwerk, sauswerk en strak lakwerk. 4Builders is uw vakkundige schilder met oog voor kwaliteit.
         </p>
         <p class="text-base sm:text-lg text-gray-300 leading-relaxed mb-8 max-w-xl mx-auto sm:mx-0">
-          Premium Sigma en Sikkens materialen, vakkundige voorbereiding en een resultaat dat jarenlang mooi blijft. E&eacute;n aanspreekpunt, geen gedoe.
+          Premium Sigma &amp; Sikkens materialen, grondige voorbereiding en een resultaat dat jarenlang mooi blijft. E&eacute;n aanspreekpunt, geen gedoe.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
           <a href="#offerte" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25">
-            Vraag een prijsindicatie aan
+            Vraag gratis offerte aan
             <i class="ph ph-arrow-right text-xl"></i>
           </a>
           <a href="https://wa.me/31618922134?text=Hallo%2C%20ik%20heb%20interesse%20in%20schilderwerk%20via%20de%20landingspagina."
@@ -400,11 +401,15 @@
   <section class="pt-6 sm:pt-10 pb-20 sm:pb-44 bg-white" id="offerte">
     <div class="max-w-2xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-6 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-2 block">Vrijblijvend</span>
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-2 block">Vrijblijvend &amp; gratis</span>
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-2">
-          Ontvang uw prijsindicatie
+          Ontvang uw gratis offerte
         </h2>
-        <p class="text-brand-gray">Vier simpele stappen. Reactie binnen 24 uur.</p>
+        <p class="text-brand-gray">Drie simpele stappen. Reactie binnen 24 uur.</p>
+        <div class="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mt-3 text-sm text-amber-800">
+          <i class="ph ph-fire-simple text-amber-600"></i>
+          <span>Beperkte beschikbaarheid — plan uw project op tijd in</span>
+        </div>
       </div>
 
       <div class="bg-white border border-gray-200 rounded-2xl shadow-xl shadow-gray-200/50 p-5 sm:p-8 fade-in">
@@ -413,11 +418,10 @@
           <div class="flex justify-between text-sm font-medium mb-3">
             <span id="step-label-1" class="text-brand-orange cursor-pointer hover:underline" onclick="goToStepDirect(1)">1. Schilderwerk</span>
             <span id="step-label-2" class="text-gray-400" onclick="goToStepDirect(2)">2. Locatie</span>
-            <span id="step-label-3" class="text-gray-400" onclick="goToStepDirect(3)">3. Planning</span>
-            <span id="step-label-4" class="text-gray-400" onclick="goToStepDirect(4)">4. Contact</span>
+            <span id="step-label-3" class="text-gray-400" onclick="goToStepDirect(3)">3. Contact</span>
           </div>
           <div class="w-full bg-gray-200 rounded-full h-1.5">
-            <div id="progress-bar" class="progress-fill bg-brand-orange h-1.5 rounded-full" style="width: 25%"></div>
+            <div id="progress-bar" class="progress-fill bg-brand-orange h-1.5 rounded-full" style="width: 33.3%"></div>
           </div>
         </div>
 
@@ -516,51 +520,8 @@
               <p id="error-zip" class="text-red-500 text-xs mt-1 hidden">Vul een geldige postcode in (bijv. 1234 AB).</p>
             </div>
 
-            <div class="flex items-center justify-between mt-6">
-              <button type="button" onclick="goToStep(1)" class="text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
-                <i class="ph ph-arrow-left"></i> Terug
-              </button>
-              <button type="button" onclick="goToStep(3)" id="step2-next"
-                      class="bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center gap-2 text-sm">
-                Volgende <i class="ph ph-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- ===== STEP 3: Budget & Planning ===== -->
-          <div id="step-3" class="form-step">
-            <h3 class="text-xl font-bold mb-2">Budget en planning</h3>
-            <p class="text-brand-gray text-sm mb-6">Helpt ons om snel een passend voorstel te maken.</p>
-
-            <div class="mb-6">
-              <p class="text-sm font-medium text-brand-dark mb-3">Indicatief budget *</p>
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="budget-cards">
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="budget" value="€ 0 – € 2.500" class="hidden">
-                  <span class="font-semibold text-sm block">€ 0 – € 2,5k</span>
-                </label>
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="budget" value="€ 2.500 – € 5.000" class="hidden">
-                  <span class="font-semibold text-sm block">€ 2,5k – € 5k</span>
-                </label>
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="budget" value="€ 5.000 – € 10.000" class="hidden">
-                  <span class="font-semibold text-sm block">€ 5k – € 10k</span>
-                </label>
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="budget" value="€ 10.000+" class="hidden">
-                  <span class="font-semibold text-sm block">€ 10k+</span>
-                </label>
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="budget" value="Nog onbekend" class="hidden">
-                  <span class="font-semibold text-sm block">Nog onbekend</span>
-                </label>
-              </div>
-              <p id="error-budget" class="text-red-500 text-sm mt-2 hidden">Selecteer een budgetrange.</p>
-            </div>
-
-            <div>
-              <p class="text-sm font-medium text-brand-dark mb-3">Gewenste startdatum *</p>
+            <div class="mt-6">
+              <p class="text-sm font-medium text-brand-dark mb-3">Wanneer wilt u starten? <span class="text-brand-gray font-normal">(optioneel)</span></p>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="timeline-cards">
                 <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
                   <input type="radio" name="timeline" value="Zo snel mogelijk" class="hidden">
@@ -575,30 +536,25 @@
                   <span class="font-semibold text-sm block">1 – 3 maanden</span>
                 </label>
                 <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="timeline" value="3 – 6 maanden" class="hidden">
-                  <span class="font-semibold text-sm block">3 – 6 maanden</span>
-                </label>
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
                   <input type="radio" name="timeline" value="Flexibel" class="hidden">
                   <span class="font-semibold text-sm block">Flexibel</span>
                 </label>
               </div>
-              <p id="error-timeline" class="text-red-500 text-sm mt-2 hidden">Selecteer een gewenste startdatum.</p>
             </div>
 
             <div class="flex items-center justify-between mt-6">
-              <button type="button" onclick="goToStep(2)" class="text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
+              <button type="button" onclick="goToStep(1)" class="text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
                 <i class="ph ph-arrow-left"></i> Terug
               </button>
-              <button type="button" onclick="goToStep(4)" id="step3-next"
+              <button type="button" onclick="goToStep(3)" id="step2-next"
                       class="bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center gap-2 text-sm">
                 Volgende <i class="ph ph-arrow-right"></i>
               </button>
             </div>
           </div>
 
-          <!-- ===== STEP 4: Contact Details ===== -->
-          <div id="step-4" class="form-step">
+          <!-- ===== STEP 3: Contact Details ===== -->
+          <div id="step-3" class="form-step">
             <h3 class="text-xl font-bold mb-2">Hoe kunnen we u bereiken?</h3>
             <p class="text-brand-gray text-sm mb-6">Vul e-mail of telefoon in (of beide). Wij nemen binnen 24 uur contact op.</p>
 
@@ -640,7 +596,7 @@
             <!-- Submit button -->
             <button type="submit" id="submit-btn"
                     class="w-full mt-6 bg-brand-orange hover:bg-brand-orange-hover text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-brand-orange/25 flex items-center justify-center gap-2">
-              <span id="submit-text">Ontvang binnen 24u reactie</span>
+              <span id="submit-text">Verstuur — gratis en vrijblijvend</span>
               <i id="submit-icon" class="ph ph-paper-plane-tilt text-xl"></i>
             </button>
 
@@ -649,7 +605,7 @@
               Binnen 24 uur een reactie
             </p>
 
-            <button type="button" onclick="goToStep(3)" class="mt-4 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
+            <button type="button" onclick="goToStep(2)" class="mt-4 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
               <i class="ph ph-arrow-left"></i> Terug
             </button>
 
@@ -703,7 +659,7 @@
     // --- Multi-Step Form Logic ---
     var currentStep = 1;
     var highestStep = 1;
-    var totalSteps = 4;
+    var totalSteps = 3;
 
     function updateStepLabels() {
       for (var i = 1; i <= totalSteps; i++) {
@@ -731,7 +687,7 @@
       }, 100);
     }
 
-    var stepNames = ['', 'service', 'location', 'planning', 'contact'];
+    var stepNames = ['', 'service', 'location', 'contact'];
 
     window.goToStep = function(step) {
       if (step > currentStep && !validateCurrentStep()) return;
@@ -798,16 +754,6 @@
         } else { zipErr.classList.add('hidden'); zipInput.classList.remove('border-red-400'); zipInput.classList.add('border-gray-300'); }
         return valid;
       }
-      if (currentStep === 3) {
-        var valid = true;
-        if (!document.querySelector('input[name="budget"]:checked')) {
-          document.getElementById('error-budget').classList.remove('hidden'); valid = false;
-        } else { document.getElementById('error-budget').classList.add('hidden'); }
-        if (!document.querySelector('input[name="timeline"]:checked')) {
-          document.getElementById('error-timeline').classList.remove('hidden'); valid = false;
-        } else { document.getElementById('error-timeline').classList.add('hidden'); }
-        return valid;
-      }
       return true;
     }
 
@@ -834,16 +780,7 @@
         }, 150);
       });
     });
-    setupCardGroup('budget-cards', 'error-budget', null);
-    document.querySelectorAll('#budget-cards .selection-card').forEach(function(card) {
-      card.addEventListener('click', function() {
-        setTimeout(function() {
-          var timelineCards = document.getElementById('timeline-cards');
-          if (timelineCards) timelineCards.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 150);
-      });
-    });
-    setupCardGroup('timeline-cards', 'error-timeline', null);
+    setupCardGroup('timeline-cards', null, null);
 
     // --- Prefill from URL param ---
     (function() {
@@ -898,7 +835,7 @@
       return valid;
     }
 
-    form.querySelectorAll('#step-4 input').forEach(function(input) {
+    form.querySelectorAll('#step-3 input:not([name="timeline"])').forEach(function(input) {
       input.addEventListener('blur', function() { validateContactStep(); });
     });
 
@@ -921,11 +858,11 @@
       var fd = new FormData(form);
       var service = fd.get('service') || '';
       var neighborhood = fd.get('neighborhood') || '';
-      var budget = fd.get('budget') || '';
       var timeline = fd.get('timeline') || '';
       var details = (fd.get('details') || '').trim();
       var zip = (fd.get('zip') || '').trim().toUpperCase();
-      var bericht = 'Dienst: Schilderwerk (' + service + ')\nBuurt: ' + neighborhood + '\nPostcode: ' + zip + '\nBudget: ' + budget + '\nGewenste start: ' + timeline;
+      var bericht = 'Dienst: Schilderwerk (' + service + ')\nBuurt: ' + neighborhood + '\nPostcode: ' + zip;
+      if (timeline) bericht += '\nGewenste start: ' + timeline;
       if (details) bericht += '\n\nToelichting: ' + details;
       bericht += '\n\n[Via landing page: /schilderwerk/offerte/]';
 
@@ -979,7 +916,7 @@
 
       function showError(msg) {
         submitBtn.disabled = false;
-        submitText.textContent = 'Ontvang binnen 24u reactie';
+        submitText.textContent = 'Verstuur — gratis en vrijblijvend';
         submitIcon.className = 'ph ph-paper-plane-tilt text-xl';
         feedback.classList.remove('hidden');
         feedback.className = 'mt-4 p-4 rounded-lg text-sm bg-red-50 text-red-700 border border-red-200';
