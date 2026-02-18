@@ -21,6 +21,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-0XLK96R0P8');
+    gtag('config', 'AW-17920851706');
   </script>
 
   <!-- Tailwind CSS (deferred – eliminates render-blocking) -->
@@ -564,7 +565,7 @@
           <!-- ===== STEP 4: Contact Details ===== -->
           <div id="step-4" class="form-step">
             <h3 class="text-xl font-bold mb-2">How can we reach you?</h3>
-            <p class="text-brand-gray text-sm mb-6">Provide your email or phone number (or both). We'll respond within 24 hours.</p>
+            <p class="text-brand-gray text-sm mb-6">Fill in your details. We'll respond within 24 hours.</p>
 
             <div class="space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -609,7 +610,7 @@
 
             <p class="text-center text-sm text-brand-gray mt-3 flex items-center justify-center gap-1.5">
               <i class="ph ph-clock text-brand-orange"></i>
-              Response within 48 hours
+              Response within 24 hours
             </p>
 
             <button type="button" onclick="goToStep(3)" class="mt-4 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
@@ -646,6 +647,12 @@
   <div id="footer-placeholder"></div>
 
   <script src="/js/includes.js" defer></script>
+  <script>
+  document.addEventListener('components-loaded', function() {
+    var link = document.querySelector('.mobile-sticky-cta a[href*="quote"]');
+    if (link) link.href = '#quote';
+  });
+  </script>
 
   <!-- ============ JAVASCRIPT ============ -->
   <script>
@@ -695,6 +702,9 @@
 
     window.goToStep = function(step) {
       if (step > currentStep && !validateCurrentStep()) return;
+      if (step > currentStep && typeof gtag === 'function') {
+        gtag('event', 'form_step_complete', { event_category: 'form', step_number: currentStep, step_name: ['', 'project', 'location', 'planning', 'contact'][currentStep] });
+      }
 
       var currentEl = document.getElementById('step-' + currentStep);
       if (currentEl) currentEl.classList.remove('active');
