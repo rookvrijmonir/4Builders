@@ -16,7 +16,7 @@
 ## Conversion Tracking
 - `generate_lead` GA4 event op form submit
 - `form_step_complete` trackt funnel steps (service → location → contact)
-- **Direct Google Ads conversion tag:** LIVE op bedankt-pagina's (AW-17920851706/3-n6CKWb0fgbEPr9qeFC)
+- **Direct Google Ads conversion tag:** LIVE op bedankt-pagina's (AW-17920851706/h1X3CN6GiPsbEPr9qeFC) — type WEBPAGE, actie ID 7505838942
 - GA4 → Google Ads import: optioneel, niet meer blocker
 
 ## Google Ads
