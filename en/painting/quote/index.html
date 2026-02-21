@@ -12,7 +12,7 @@
   <meta property="og:description" content="High-end painting with Dutch down-to-earth reliability. Premium finishing for your Amsterdam property.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://4builders-amsterdam.nl/en/painting/quote/">
-  <meta property="og:image" content="https://4builders-amsterdam.nl/img/schilderwerk_amsterdam_centrum_grachtenpand_hero.webp">
+  <meta property="og:image" content="https://4builders-amsterdam.nl/img/hero-schilderwerk-landing-amsterdam-centrum.webp">
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0XLK96R0P8"></script>
@@ -120,10 +120,10 @@
   <!-- ============ HERO SECTION ============ -->
   <section class="relative min-h-screen sm:min-h-[90vh] flex items-center pt-16" id="hero">
     <div class="absolute inset-0">
-      <img src="../../../img/schilderwerk_amsterdam_centrum_grachtenpand_hero.webp"
-           alt="Professional painting Amsterdam — painted wall with ornamental mouldings and lacquered panelled door"
+      <img src="../../../img/hero-schilderwerk-landing-amsterdam-centrum.webp"
+           alt="Professional painting Amsterdam Centre — painter on scaffolding at canal house window frames"
            class="w-full h-full object-cover" loading="eager" fetchpriority="high"
-           srcset="../../../img/responsive/schilderwerk_amsterdam_centrum_grachtenpand_hero-480w.webp 480w, ../../../img/schilderwerk_amsterdam_centrum_grachtenpand_hero.webp 1024w"
+           srcset="../../../img/responsive/hero-schilderwerk-landing-amsterdam-centrum-480w.webp 480w, ../../../img/hero-schilderwerk-landing-amsterdam-centrum.webp 1024w"
            sizes="100vw">
       <div class="hero-gradient absolute inset-0"></div>
     </div>
@@ -435,7 +435,7 @@
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-dark mb-2">
           Get your free quote
         </h2>
-        <p class="text-brand-gray">Three simple steps. Response within 24 hours.</p>
+        <p class="text-brand-gray">Two simple steps. Response within 24 hours.</p>
         <div class="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mt-3 text-sm text-amber-800">
           <i class="ph ph-fire-simple text-amber-600"></i>
           <span>Limited availability — schedule your project in time</span>
@@ -447,11 +447,10 @@
         <div class="mb-6">
           <div class="flex justify-between text-sm font-medium mb-3">
             <span id="step-label-1" class="text-brand-orange cursor-pointer hover:underline" onclick="goToStepDirect(1)">1. Painting</span>
-            <span id="step-label-2" class="text-gray-400" onclick="goToStepDirect(2)">2. Location</span>
-            <span id="step-label-3" class="text-gray-400" onclick="goToStepDirect(3)">3. Contact</span>
+            <span id="step-label-2" class="text-gray-400" onclick="goToStepDirect(2)">2. Your details</span>
           </div>
           <div class="w-full bg-gray-200 rounded-full h-1.5">
-            <div id="progress-bar" class="progress-fill bg-brand-orange h-1.5 rounded-full" style="width: 33.3%"></div>
+            <div id="progress-bar" class="progress-fill bg-brand-orange h-1.5 rounded-full" style="width: 50%"></div>
           </div>
         </div>
 
@@ -498,110 +497,17 @@
             <p id="error-step1" class="text-red-500 text-sm mt-3 hidden">Please select an option to continue.</p>
           </div>
 
-          <!-- ===== STEP 2: Neighbourhood ===== -->
+          <!-- ===== STEP 2: Contact Details ===== -->
           <div id="step-2" class="form-step">
-            <h3 class="text-xl font-bold mb-2">Which neighbourhood is the property in?</h3>
-            <p class="text-brand-gray text-sm mb-6">This helps us plan efficiently.</p>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="neighborhood-cards">
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
-                <input type="radio" name="neighborhood" value="Centrum" class="hidden">
-                <span class="font-semibold text-sm block">Centrum</span>
-              </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
-                <input type="radio" name="neighborhood" value="Canal Belt" class="hidden">
-                <span class="font-semibold text-sm block">Canal Belt</span>
-              </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
-                <input type="radio" name="neighborhood" value="Jordaan" class="hidden">
-                <span class="font-semibold text-sm block">Jordaan</span>
-              </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
-                <input type="radio" name="neighborhood" value="Oud-Zuid" class="hidden">
-                <span class="font-semibold text-sm block">Oud-Zuid</span>
-              </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
-                <input type="radio" name="neighborhood" value="De Pijp" class="hidden">
-                <span class="font-semibold text-sm block">De Pijp</span>
-              </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
-                <input type="radio" name="neighborhood" value="Oud-West" class="hidden">
-                <span class="font-semibold text-sm block">Oud-West</span>
-              </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
-                <input type="radio" name="neighborhood" value="Rivierenbuurt" class="hidden">
-                <span class="font-semibold text-sm block">Rivierenbuurt</span>
-              </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
-                <input type="radio" name="neighborhood" value="Plantage" class="hidden">
-                <span class="font-semibold text-sm block">Plantage</span>
-              </label>
-              <label class="selection-card border-2 border-gray-200 rounded-xl p-4 text-center">
-                <input type="radio" name="neighborhood" value="Other" class="hidden">
-                <span class="font-semibold text-sm block">Other</span>
-              </label>
-            </div>
-            <p id="error-step2" class="text-red-500 text-sm mt-3 hidden">Please select a neighbourhood to continue.</p>
-
-            <div class="mt-6">
-              <label for="zip" class="block text-sm font-medium text-brand-dark mb-1.5">Postal code *</label>
-              <input type="text" id="zip" name="zip" required placeholder="1234 AB" maxlength="7"
-                     class="form-input w-full max-w-[200px] border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all uppercase">
-              <p id="error-zip" class="text-red-500 text-xs mt-1 hidden">Please enter a valid postal code (e.g. 1234 AB).</p>
-            </div>
-
-            <div class="mt-6">
-              <p class="text-sm font-medium text-brand-dark mb-3">When would you like to start? <span class="text-brand-gray font-normal">(optional)</span></p>
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="timeline-cards">
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="timeline" value="As soon as possible" class="hidden">
-                  <span class="font-semibold text-sm block">ASAP</span>
-                </label>
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="timeline" value="Within 1 month" class="hidden">
-                  <span class="font-semibold text-sm block">Within 1 month</span>
-                </label>
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="timeline" value="1 – 3 months" class="hidden">
-                  <span class="font-semibold text-sm block">1 – 3 months</span>
-                </label>
-                <label class="selection-card border-2 border-gray-200 rounded-xl p-3 text-center">
-                  <input type="radio" name="timeline" value="Flexible" class="hidden">
-                  <span class="font-semibold text-sm block">Flexible</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between mt-6">
-              <button type="button" onclick="goToStep(1)" class="text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
-                <i class="ph ph-arrow-left"></i> Back
-              </button>
-              <button type="button" onclick="goToStep(3)" id="step2-next"
-                      class="bg-brand-orange hover:bg-brand-orange-hover text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center gap-2 text-sm">
-                Next <i class="ph ph-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- ===== STEP 3: Contact Details ===== -->
-          <div id="step-3" class="form-step">
             <h3 class="text-xl font-bold mb-2">How can we reach you?</h3>
             <p class="text-brand-gray text-sm mb-6">Fill in your details. We'll respond within 24 hours.</p>
 
             <div class="space-y-4">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label for="firstname" class="block text-sm font-medium text-brand-dark mb-1.5">First name *</label>
-                  <input type="text" id="firstname" name="firstname" required placeholder="Your first name"
-                         class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
-                  <p class="text-red-500 text-xs mt-1 hidden" data-error="firstname">First name is required.</p>
-                </div>
-                <div>
-                  <label for="lastname" class="block text-sm font-medium text-brand-dark mb-1.5">Last name *</label>
-                  <input type="text" id="lastname" name="lastname" required placeholder="Your last name"
-                         class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
-                  <p class="text-red-500 text-xs mt-1 hidden" data-error="lastname">Last name is required.</p>
-                </div>
+              <div>
+                <label for="firstname" class="block text-sm font-medium text-brand-dark mb-1.5">First name *</label>
+                <input type="text" id="firstname" name="firstname" required placeholder="Your first name"
+                       class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
+                <p class="text-red-500 text-xs mt-1 hidden" data-error="firstname">First name is required.</p>
               </div>
               <div>
                 <label for="email" class="block text-sm font-medium text-brand-dark mb-1.5">Email address *</label>
@@ -615,7 +521,11 @@
                        class="form-input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all">
                 <p class="text-red-500 text-xs mt-1 hidden" data-error="phone">Please enter a valid phone number.</p>
               </div>
-              <p id="error-contact" class="text-red-500 text-sm hidden">Please provide at least an email address or phone number.</p>
+              <div>
+                <label for="zip" class="block text-sm font-medium text-brand-dark mb-1.5">Postal code <span class="text-brand-gray font-normal">(for faster price estimate)</span></label>
+                <input type="text" id="zip" name="zip" placeholder="1234 AB" maxlength="7"
+                       class="form-input w-full max-w-[200px] border border-gray-300 rounded-lg px-4 py-3 text-sm transition-all uppercase">
+              </div>
               <div>
                 <label for="details" class="block text-sm font-medium text-brand-dark mb-1.5">Additional details <span class="text-brand-gray font-normal">(optional)</span></label>
                 <textarea id="details" name="details" rows="3" placeholder="Briefly describe your painting project..."
@@ -634,7 +544,7 @@
               Response within 24 hours
             </p>
 
-            <button type="button" onclick="goToStep(2)" class="mt-4 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
+            <button type="button" onclick="goToStep(1)" class="mt-4 text-brand-gray hover:text-brand-dark text-sm font-medium inline-flex items-center gap-1 transition-colors">
               <i class="ph ph-arrow-left"></i> Back
             </button>
 
@@ -690,9 +600,10 @@
       }
     })();
 
+    // --- Multi-Step Form Logic (2 steps) ---
     var currentStep = 1;
     var highestStep = 1;
-    var totalSteps = 3;
+    var totalSteps = 2;
 
     function updateStepLabels() {
       for (var i = 1; i <= totalSteps; i++) {
@@ -720,7 +631,7 @@
       }, 100);
     }
 
-    var stepNames = ['', 'service', 'location', 'contact'];
+    var stepNames = ['', 'service', 'contact'];
 
     window.goToStep = function(step) {
       if (step > currentStep && !validateCurrentStep()) return;
@@ -771,20 +682,6 @@
         err.classList.add('hidden');
         return true;
       }
-      if (currentStep === 2) {
-        var valid = true;
-        var checked = document.querySelector('input[name="neighborhood"]:checked');
-        var err = document.getElementById('error-step2');
-        if (!checked) { err.classList.remove('hidden'); valid = false; }
-        else { err.classList.add('hidden'); }
-        var zipVal = (document.getElementById('zip').value || '').trim().toUpperCase();
-        var zipErr = document.getElementById('error-zip');
-        var zipInput = document.getElementById('zip');
-        if (!zipVal || !/^\d{4}\s?[A-Z]{2}$/.test(zipVal)) {
-          zipErr.classList.remove('hidden'); zipInput.classList.add('border-red-400'); zipInput.classList.remove('border-gray-300'); valid = false;
-        } else { zipErr.classList.add('hidden'); zipInput.classList.remove('border-red-400'); zipInput.classList.add('border-gray-300'); }
-        return valid;
-      }
       return true;
     }
 
@@ -801,16 +698,6 @@
     }
 
     setupCardGroup('service-cards', 'error-step1', 2);
-    setupCardGroup('neighborhood-cards', 'error-step2', null);
-    document.querySelectorAll('#neighborhood-cards .selection-card').forEach(function(card) {
-      card.addEventListener('click', function() {
-        setTimeout(function() {
-          var zipField = document.getElementById('zip');
-          if (zipField) zipField.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 150);
-      });
-    });
-    setupCardGroup('timeline-cards', null, null);
 
     // --- Prefill from URL param ---
     (function() {
@@ -837,13 +724,6 @@
         fnErr.classList.remove('hidden'); valid = false;
       } else { fn.classList.remove('border-red-400'); fn.classList.add('border-gray-300'); fnErr.classList.add('hidden'); }
 
-      var ln = form.querySelector('[name="lastname"]');
-      var lnErr = form.querySelector('[data-error="lastname"]');
-      if (!ln.value.trim()) {
-        ln.classList.add('border-red-400'); ln.classList.remove('border-gray-300');
-        lnErr.classList.remove('hidden'); valid = false;
-      } else { ln.classList.remove('border-red-400'); ln.classList.add('border-gray-300'); lnErr.classList.add('hidden'); }
-
       var email = form.querySelector('[name="email"]');
       var emailErr = form.querySelector('[data-error="email"]');
       if (!email.value.trim()) {
@@ -864,7 +744,7 @@
       return valid;
     }
 
-    form.querySelectorAll('#step-3 input:not([name="timeline"])').forEach(function(input) {
+    form.querySelectorAll('#step-2 input').forEach(function(input) {
       input.addEventListener('blur', function() { validateContactStep(); });
     });
 
@@ -886,12 +766,10 @@
 
       var fd = new FormData(form);
       var service = fd.get('service') || '';
-      var neighborhood = fd.get('neighborhood') || '';
-      var timeline = fd.get('timeline') || '';
       var details = (fd.get('details') || '').trim();
       var zip = (fd.get('zip') || '').trim().toUpperCase();
-      var bericht = 'Service: Painting (' + service + ')\nNeighbourhood: ' + neighborhood + '\nPostal code: ' + zip;
-      if (timeline) bericht += '\nDesired start: ' + timeline;
+      var bericht = 'Service: Painting (' + service + ')';
+      if (zip) bericht += '\nPostal code: ' + zip;
       if (details) bericht += '\n\nDetails: ' + details;
       bericht += '\n\n[Via landing page: /en/painting/quote/]';
 
@@ -904,7 +782,6 @@
       var subData = {
         fields: [
           { name: 'firstname', value: fd.get('firstname') || '' },
-          { name: 'lastname', value: fd.get('lastname') || '' },
           { name: 'email', value: fd.get('email') || '' },
           { name: 'phone', value: fd.get('phone') || '' },
           { name: 'zip', value: zip },
@@ -964,7 +841,6 @@
         try {
           var beaconParams = new URLSearchParams();
           beaconParams.append('firstname', fd.get('firstname') || '');
-          beaconParams.append('lastname', fd.get('lastname') || '');
           beaconParams.append('email', fd.get('email') || '');
           beaconParams.append('phone', fd.get('phone') || '');
           beaconParams.append('uw_bericht', bericht);
