@@ -5,7 +5,9 @@
   "scripts": {
     "build:css": "tailwindcss -i ./css/input.css -o ./css/style.min.css --minify",
     "watch:css": "tailwindcss -i ./css/input.css -o ./css/style.min.css --watch",
-    "build": "npm run build:css"
+    "build": "npm run build:css",
+    "lighthouse:mobile": "bash ./scripts/lighthouse-mobile.sh",
+    "lighthouse:mobile:3x": "bash ./scripts/lighthouse-mobile.sh && bash ./scripts/lighthouse-mobile.sh && bash ./scripts/lighthouse-mobile.sh"
   },
   "devDependencies": {
     "@phosphor-icons/web": "^2.1.2",
