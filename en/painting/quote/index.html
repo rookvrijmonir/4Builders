@@ -61,6 +61,8 @@
     .review-carousel > div { scroll-snap-align: start; flex-shrink: 0; width: 85%; }
     @media (min-width: 768px) { .review-carousel { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; } .review-carousel > div { width: auto; } }
     .aspect-\[3\/4\] { aspect-ratio: 3/4; }
+    .aspect-\[4\/3\] { aspect-ratio: 4/3; }
+    .work-photo-caption { background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%); }
     @media (max-width: 639px) {
       .selection-card { min-height: 68px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .form-input { font-size: 16px; }
@@ -279,15 +281,30 @@
   <section class="py-20 sm:py-28 bg-brand-dark" id="before-after">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-14 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Results</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
-          Before &amp; after
-        </h2>
-        <p class="text-gray-400 mt-4 max-w-xl mx-auto">From bare walls to a flawless finish. See the transformation of recent painting projects in Amsterdam.</p>
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Our Craftsmanship</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">Our work in Amsterdam</h2>
+        <p class="text-gray-400 mt-4 max-w-xl mx-auto">Craftsmanship in action and the end result. See our painters at work and the transformations we deliver.</p>
       </div>
-
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 fade-in">
+        <div class="relative rounded-xl overflow-hidden">
+          <div class="aspect-[4/3]">
+            <img src="../../../img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum.webp" alt="Painter on scaffolding painting window frames at Amsterdam canal house" class="w-full h-full object-cover portfolio-img" loading="lazy" width="1024" height="1024">
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 work-photo-caption p-4 pt-10">
+            <span class="text-white font-semibold text-sm flex items-center gap-2"><i class="ph ph-house text-brand-orange"></i> Exterior Painting</span>
+          </div>
+        </div>
+        <div class="relative rounded-xl overflow-hidden">
+          <div class="aspect-[4/3]">
+            <img src="../../../img/schilderwerk/schilderwerk-binnenkant-kozijnen-steigers-amsterdam-centrum.webp" alt="Painter working on window frames inside Amsterdam apartment" class="w-full h-full object-cover portfolio-img" loading="lazy" width="1024" height="1024">
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 work-photo-caption p-4 pt-10">
+            <span class="text-white font-semibold text-sm flex items-center gap-2"><i class="ph ph-paint-brush text-brand-orange"></i> Interior Painting</span>
+          </div>
+        </div>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
-<div class="bg-black rounded-xl overflow-hidden">
+        <div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
               <img src="../../../img/ba_woonkamer_sierlijsten_before.webp" alt="Before: living room with ornamental mouldings Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
@@ -299,8 +316,7 @@
             </div>
           </div>
         </div>
-
-<div class="bg-black rounded-xl overflow-hidden">
+        <div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
               <img src="../../../img/ba_wandschilder_deur_before.webp" alt="Before: wall and door painting Amsterdam Centre" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
@@ -308,58 +324,6 @@
             </div>
             <div class="relative aspect-[3/4]">
               <img src="../../../img/ba_wandschilder_deur_after.webp" alt="After: wall and door painting Amsterdam Centre" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">After</span>
-            </div>
-          </div>
-        </div>
-
-<div class="bg-black rounded-xl overflow-hidden">
-          <div class="grid grid-cols-2 gap-0.5">
-            <div class="relative aspect-[3/4]">
-              <img src="../../../img/ba_appartement_ruimte_before.webp" alt="Before: apartment space Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded">Before</span>
-            </div>
-            <div class="relative aspect-[3/4]">
-              <img src="../../../img/ba_appartement_ruimte_after.webp" alt="After: apartment space Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">After</span>
-            </div>
-          </div>
-        </div>
-
-<div class="bg-black rounded-xl overflow-hidden">
-          <div class="grid grid-cols-2 gap-0.5">
-            <div class="relative aspect-[3/4]">
-              <img src="../../../img/ba_keuken_before.webp" alt="Before: kitchen painting Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded">Before</span>
-            </div>
-            <div class="relative aspect-[3/4]">
-              <img src="../../../img/ba_keuken_after.webp" alt="After: kitchen painting Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">After</span>
-            </div>
-          </div>
-        </div>
-
-<div class="bg-black rounded-xl overflow-hidden">
-          <div class="grid grid-cols-2 gap-0.5">
-            <div class="relative aspect-[3/4]">
-              <img src="../../../img/ba_appartement_woonkamer_before.webp" alt="Before: apartment living room Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded">Before</span>
-            </div>
-            <div class="relative aspect-[3/4]">
-              <img src="../../../img/ba_appartement_woonkamer_after.webp" alt="After: apartment living room Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">After</span>
-            </div>
-          </div>
-        </div>
-
-<div class="bg-black rounded-xl overflow-hidden">
-          <div class="grid grid-cols-2 gap-0.5">
-            <div class="relative aspect-[3/4]">
-              <img src="../../../img/ba_woonkamer_schuifdeuren_before.webp" alt="Before: living room with sliding doors Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded">Before</span>
-            </div>
-            <div class="relative aspect-[3/4]">
-              <img src="../../../img/ba_woonkamer_schuifdeuren_after.webp" alt="After: living room with sliding doors Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
               <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">After</span>
             </div>
           </div>

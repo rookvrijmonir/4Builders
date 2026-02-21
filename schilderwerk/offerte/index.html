@@ -61,6 +61,8 @@
     .review-carousel > div { scroll-snap-align: start; flex-shrink: 0; width: 85%; }
     @media (min-width: 768px) { .review-carousel { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; } .review-carousel > div { width: auto; } }
     .aspect-\[3\/4\] { aspect-ratio: 3/4; }
+    .aspect-\[4\/3\] { aspect-ratio: 4/3; }
+    .work-photo-caption { background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%); }
     @media (max-width: 639px) {
       .selection-card { min-height: 68px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
       .form-input { font-size: 16px; }
@@ -279,13 +281,28 @@
   <section class="py-20 sm:py-28 bg-brand-dark" id="before-after">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-14 fade-in">
-        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Resultaat</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
-          Voor &amp; na schilderwerk
-        </h2>
-        <p class="text-gray-400 mt-4 max-w-xl mx-auto">Van kale muren tot een strakke afwerking. Bekijk de transformatie van recente projecten in Amsterdam.</p>
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Ons Vakmanschap</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">Ons werk in Amsterdam</h2>
+        <p class="text-gray-400 mt-4 max-w-xl mx-auto">Vakmanschap in actie en het eindresultaat. Bekijk onze schilders aan het werk en de transformaties die we realiseren.</p>
       </div>
-
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 fade-in">
+        <div class="relative rounded-xl overflow-hidden">
+          <div class="aspect-[4/3]">
+            <img src="../../img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum.webp" alt="Schilder op steiger schildert kozijnen bij Amsterdams grachtenpand" class="w-full h-full object-cover portfolio-img" loading="lazy" width="1024" height="1024">
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 work-photo-caption p-4 pt-10">
+            <span class="text-white font-semibold text-sm flex items-center gap-2"><i class="ph ph-house text-brand-orange"></i> Buitenschilderwerk</span>
+          </div>
+        </div>
+        <div class="relative rounded-xl overflow-hidden">
+          <div class="aspect-[4/3]">
+            <img src="../../img/schilderwerk/schilderwerk-binnenkant-kozijnen-steigers-amsterdam-centrum.webp" alt="Schilder aan het werk bij kozijnen in Amsterdams appartement" class="w-full h-full object-cover portfolio-img" loading="lazy" width="1024" height="1024">
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 work-photo-caption p-4 pt-10">
+            <span class="text-white font-semibold text-sm flex items-center gap-2"><i class="ph ph-paint-brush text-brand-orange"></i> Binnenschilderwerk</span>
+          </div>
+        </div>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
         <div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
@@ -299,7 +316,6 @@
             </div>
           </div>
         </div>
-
         <div class="bg-black rounded-xl overflow-hidden">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-[3/4]">
@@ -308,58 +324,6 @@
             </div>
             <div class="relative aspect-[3/4]">
               <img src="../../img/ba_wandschilder_deur_after.webp" alt="Na: wand en deur Amsterdam Centrum" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">Na</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-black rounded-xl overflow-hidden">
-          <div class="grid grid-cols-2 gap-0.5">
-            <div class="relative aspect-[3/4]">
-              <img src="../../img/ba_appartement_ruimte_before.webp" alt="Voor: appartement ruimte Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded">Voor</span>
-            </div>
-            <div class="relative aspect-[3/4]">
-              <img src="../../img/ba_appartement_ruimte_after.webp" alt="Na: appartement ruimte Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">Na</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-black rounded-xl overflow-hidden">
-          <div class="grid grid-cols-2 gap-0.5">
-            <div class="relative aspect-[3/4]">
-              <img src="../../img/ba_keuken_before.webp" alt="Voor: keuken schilderwerk Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded">Voor</span>
-            </div>
-            <div class="relative aspect-[3/4]">
-              <img src="../../img/ba_keuken_after.webp" alt="Na: keuken schilderwerk Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">Na</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-black rounded-xl overflow-hidden">
-          <div class="grid grid-cols-2 gap-0.5">
-            <div class="relative aspect-[3/4]">
-              <img src="../../img/ba_appartement_woonkamer_before.webp" alt="Voor: appartement woonkamer Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded">Voor</span>
-            </div>
-            <div class="relative aspect-[3/4]">
-              <img src="../../img/ba_appartement_woonkamer_after.webp" alt="Na: appartement woonkamer Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">Na</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-black rounded-xl overflow-hidden">
-          <div class="grid grid-cols-2 gap-0.5">
-            <div class="relative aspect-[3/4]">
-              <img src="../../img/ba_woonkamer_schuifdeuren_before.webp" alt="Voor: woonkamer met schuifdeuren Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
-              <span class="absolute top-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded">Voor</span>
-            </div>
-            <div class="relative aspect-[3/4]">
-              <img src="../../img/ba_woonkamer_schuifdeuren_after.webp" alt="Na: woonkamer met schuifdeuren Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
               <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">Na</span>
             </div>
           </div>
