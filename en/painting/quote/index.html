@@ -208,7 +208,21 @@
       box-shadow: 0 14px 50px rgba(0,0,0,.08);
       background: #f1f1f1;
     }
+    .hero-image-wrap { position: relative; }
     .hero-image img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; }
+    .floating-badge {
+      position: absolute;
+      bottom: -18px;
+      left: -20px;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .stars { color: #fbbf24; font-size: 1.2rem; }
 
     .proof-strip {
       margin-top: .95rem;
@@ -546,6 +560,8 @@
 
     @media (max-width: 980px) {
       .hero-grid { grid-template-columns: 1fr; }
+      .hero-grid > *:first-child { order: 2; }
+      .hero-grid > *:last-child { order: 1; }
       .hero { padding-top: 1.4rem; }
       .quote-grid { grid-template-columns: 1fr; }
       .form-card { order: 1; }
@@ -557,16 +573,44 @@
       .container { width: min(1120px, calc(100% - 1rem)); }
       .quick-actions .phone-link span { display: none; }
       .lang-link .txt { display: none; }
-      .topbar-inner { min-height: 68px; }
-      .usp-strip { grid-template-columns: 1fr; padding-bottom: .65rem; }
-      .hero { padding-top: 1rem; padding-bottom: 1.1rem; }
+      .topbar-inner { min-height: 60px; }
+      .usp-strip { display: none; }
+      .hero { padding-top: .6rem; padding-bottom: .8rem; }
+      .hero h1 { font-size: 1.5rem; margin-bottom: .4rem; }
+      .hero p { font-size: .9rem; margin-bottom: .5rem; }
+      .hero-list { gap: .25rem; font-size: .85rem; }
+      .hero-list li { padding: .25rem .4rem; border-radius: 8px; }
+      .hero-buttons { display: flex; }
+      .hero-btn.ghost { display: none; }
+      .hero-btn.primary { font-size: .84rem; padding: .55rem .75rem; border-radius: 8px; }
+      .proof-strip { gap: .4rem; margin-top: .55rem; }
+      .proof-chip { font-size: .72rem; padding: .22rem .5rem; }
+      .hero-image-wrap { margin-bottom: .8rem; }
+      .floating-badge {
+        left: .75rem;
+        bottom: -.5rem;
+        padding: .5rem .6rem;
+        border-radius: 12px;
+        gap: .5rem;
+      }
+      .floating-badge strong { font-size: .85rem; }
+      .stars { font-size: .95rem; }
       .hero-image img { aspect-ratio: 16/10; }
-      .hero-buttons { display: none; }
-      .form-card { padding: 1rem .85rem; border-radius: 14px; }
-      .service-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .choice-row { grid-template-columns: 1fr; }
-      input, textarea { font-size: 16px; }
-      .wa-badge-wrap { justify-content: center; }
+      .form-card { padding: .9rem .75rem; border-radius: 14px; }
+      .step h3 { font-size: 1.2rem; }
+      .step p.meta { font-size: .85rem; margin-bottom: .6rem; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: .5rem; margin-bottom: .55rem; }
+      .service-card { padding: .55rem .4rem; font-size: .82rem; min-height: 50px; overflow-wrap: anywhere; }
+      .form-row { margin-bottom: .55rem; }
+      label { font-size: .82rem; }
+      input, textarea { padding: .65rem .75rem; font-size: 16px; }
+      .choice-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .choice-card { padding: .45rem .35rem; font-size: .78rem; min-height: 40px; }
+      .btn-row { margin-top: .55rem; }
+      button { padding: .68rem .85rem; font-size: .9rem; min-height: 44px; }
+      .wa-badge-wrap { justify-content: center; margin-top: .35rem; }
+      .final-note { font-size: .78rem; margin-top: .5rem; }
+      .hint { font-size: .72rem; }
       .mobile-sticky-cta { display: flex; }
     }
     #footer-placeholder .mobile-sticky-cta { display: none !important; }
@@ -608,6 +652,7 @@
           <li><i class="ph ph-check-circle" style="color: var(--ok)"></i> Specialist in Amsterdam canal-house properties</li>
           <li><i class="ph ph-check-circle" style="color: var(--ok)"></i>Sigma and Sikkens paints, fixed-price option</li>
           <li><i class="ph ph-check-circle" style="color: var(--ok)"></i>Direct contact with the project lead</li>
+          <li><i class="ph ph-check-circle" style="color: var(--ok)"></i>Free, no-obligation quote</li>
         </ul>
         <div class="hero-buttons">
           <a class="hero-btn primary" href="#quote"><i class="ph ph-arrow-right"></i>Request free quote</a>
@@ -619,22 +664,33 @@
           <span class="proof-chip dark"><i class="ph ph-clock" style="color:#fb923c"></i> Response within 24h</span>
         </div>
       </div>
-      <div class="hero-image">
-        <picture>
-          <source
-            srcset="/img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads-480w.webp 480w, /img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads-768w.webp 768w, /img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads.webp 981w"
-            sizes="(max-width: 980px) 100vw, 46vw"
-            type="image/webp">
-          <img
-            src="/img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads.jpg"
-            srcset="/img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads-480w.jpg 480w, /img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads-768w.jpg 768w, /img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads.jpg 981w"
-            sizes="(max-width: 980px) 100vw, 46vw"
-            alt="4Builders painter working on exterior window frames in Amsterdam"
-            width="981"
-            height="878"
-            fetchpriority="high"
-            decoding="async">
-        </picture>
+      <div class="hero-image-wrap">
+        <div class="hero-image">
+          <picture>
+            <source
+              srcset="/img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads-480w.webp 480w, /img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads-768w.webp 768w, /img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads.webp 981w"
+              sizes="(max-width: 980px) 100vw, 46vw"
+              type="image/webp">
+            <img
+              src="/img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads.jpg"
+              srcset="/img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads-480w.jpg 480w, /img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads-768w.jpg 768w, /img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads.jpg 981w"
+              sizes="(max-width: 980px) 100vw, 46vw"
+              alt="4Builders painter working on exterior window frames in Amsterdam"
+              width="981"
+              height="878"
+              fetchpriority="high"
+              decoding="async">
+          </picture>
+        </div>
+        <div class="floating-badge">
+          <div class="stars">
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+          </div>
+          <div>
+            <strong>5.0 Google Score</strong>
+            <div style="font-size: 0.8rem; color: var(--brand-gray);">Google Reviews</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
