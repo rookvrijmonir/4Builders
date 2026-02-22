@@ -29,6 +29,23 @@
   gtag('config', 'G-0XLK96R0P8');
 </script>
 
+<!-- Font preload -->
+<link rel="preload" href="/fonts/inter/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+  .font-display { font-family: 'Playfair Display', serif; }
+  .hero-gradient { background: linear-gradient(135deg, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.5) 50%, rgba(17,17,17,0.3) 100%); }
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .portfolio-img { transition: transform 0.4s ease; }
+  .portfolio-img:hover { transform: scale(1.03); }
+  .work-photo-caption { background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%); }
+  .review-carousel { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 0.5rem; }
+  .review-carousel::-webkit-scrollbar { display: none; }
+  .review-carousel > div { scroll-snap-align: start; flex-shrink: 0; width: 85%; }
+  @media (min-width: 768px) { .review-carousel { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; } .review-carousel > div { width: auto; } }
+</style>
+
 <link rel="stylesheet" href="/css/style.min.css">
 <link rel="stylesheet" href="/fonts/phosphor/regular/style.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="/fonts/phosphor/fill/style.css" media="print" onload="this.media='all'">
@@ -40,69 +57,271 @@
 
 <div id="header-placeholder"></div>
 
-<!-- HERO SECTION -->
-  <section class="service-hero relative min-h-[70vh] flex items-end">
-    <div class="absolute inset-0 z-0">
-      <img src="/img/schilderwerk_deuren_grachtenpand_amsterdam.webp" alt="Professional painting Amsterdam — lacquered doors canal house" class="w-full h-full object-cover" fetchpriority="high" decoding="async">
-      <div class="overlay"></div>
+  <!-- ============ HERO ============ -->
+  <section class="relative min-h-[80vh] flex items-center pt-16">
+    <div class="absolute inset-0">
+      <img src="/img/hero-schilderwerk-landing-amsterdam-centrum.webp"
+           alt="Professional painting Amsterdam Centre — painter on scaffolding at canal house window frames"
+           class="w-full h-full object-cover" loading="eager" fetchpriority="high"
+           srcset="/img/responsive/hero-schilderwerk-landing-amsterdam-centrum-480w.webp 480w, /img/hero-schilderwerk-landing-amsterdam-centrum.webp 1024w"
+           sizes="100vw">
+      <div class="hero-gradient absolute inset-0"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full pb-4 md:pb-8 hero-text-shadow">
-      <!-- Urgency Strip -->
-      <div class="flex flex-wrap justify-center gap-3 md:gap-6 text-xs md:text-sm text-gray-300 mb-5 md:mb-8">
-        <div class="flex items-center gap-2">
-          <i class="ph ph-clock text-brand-orange"></i>
-          <span>Response within 24 hours</span>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-7 pb-16 sm:py-24 text-center sm:text-left">
+      <div class="max-w-2xl mx-auto sm:mx-0">
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6">
+          Need a painter in Amsterdam? <span class="text-brand-orange">Free quote within 24 hours.</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-200 leading-relaxed mb-4 max-w-xl mx-auto sm:mx-0">
+          Interior and exterior painting, plastering and precise lacquer work. 4Builders is your expert painter with an eye for quality.
+        </p>
+        <p class="text-base sm:text-lg text-gray-300 leading-relaxed mb-5 sm:mb-8 max-w-xl mx-auto sm:mx-0">
+          Premium Sigma &amp; Sikkens materials, thorough preparation and a finish that lasts for years. One point of contact, no hassle.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+          <a href="/en/painting/quote/#quote" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg">
+            Request a free quote
+            <i class="ph ph-arrow-right text-xl"></i>
+          </a>
+          <a href="https://wa.me/31618922134?text=Hi%2C%20I'm%20interested%20in%20painting%20services."
+             target="_blank" rel="noopener"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg text-lg border border-white/20 transition-colors backdrop-blur-sm">
+            <i class="ph ph-whatsapp-logo text-xl text-green-400"></i>
+            WhatsApp us directly
+          </a>
         </div>
-        <div class="flex items-center gap-2">
-          <i class="ph ph-calendar-check text-brand-orange"></i>
-          <span>Flexible scheduling</span>
+        <!-- Trust signals -->
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-6 mt-6 sm:mt-10 text-sm text-gray-300">
+          <span class="flex items-center gap-1.5">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <span class="ml-1 font-medium text-white">5.0</span> Google Reviews
+          </span>
+          <span class="flex items-center gap-1.5">
+            <i class="ph ph-shield-check text-green-400"></i>
+            Fully insured
+          </span>
+          <span class="flex items-center gap-1.5">
+            <i class="ph ph-clock text-brand-orange"></i>
+            Response within 24 hours
+          </span>
         </div>
-        <div class="flex items-center gap-2">
-          <i class="ph ph-shield-check text-brand-orange"></i>
-          <span>Fully insured</span>
-        </div>
-      </div>
-
-      <h1 class="font-header text-3xl md:text-6xl lg:text-7xl font-bold text-white uppercase mb-4 md:mb-6">
-        Expert Painting Services
-      </h1>
-      <p class="text-sm md:text-base text-brand-orange font-semibold uppercase tracking-wider mb-3">Native Dutch Craftsmanship — Fluent English Communication</p>
-
-      <ul class="flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-6 text-sm md:text-base text-white mb-5 md:mb-8 max-w-2xl mx-auto">
-        <li class="flex items-center gap-2">
-          <i class="ph ph-check-circle text-brand-orange"></i>
-          Experienced with monumental buildings &amp; wood rot repair
-        </li>
-        <li class="flex items-center gap-2">
-          <i class="ph ph-check-circle text-brand-orange"></i>
-          Available in Amsterdam Centre &amp; South
-        </li>
-        <li class="flex items-center gap-2">
-          <i class="ph ph-check-circle text-brand-orange"></i>
-          Free on-site inspection
-        </li>
-      </ul>
-
-      <p class="text-base md:text-xl text-gray-300 max-w-2xl mx-auto mb-6 md:mb-10">
-        Premium interior and exterior painting in Amsterdam. Expert craftsmanship with meticulous attention to detail.
-      </p>
-
-      <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
-        <a href="/en/painting/quote/#quote" class="px-6 py-3 md:px-8 md:py-4 text-sm md:text-base bg-brand-orange text-white font-bold rounded uppercase tracking-wider hover:bg-orange-600 transition shadow-xl inline-flex items-center justify-center gap-2">
-          <i class="ph ph-envelope-simple"></i>
-          Get a Painting Price Estimate
-        </a>
-        <a href="https://wa.me/31618922134" target="_blank" rel="noopener"
-           class="px-5 py-2.5 md:px-8 md:py-4 text-sm md:text-base border-2 border-[#25D366] bg-[#25D366] md:border-white/30 md:bg-white/5 backdrop-blur-sm text-white font-bold rounded uppercase tracking-wider hover:bg-[#20bd5a] md:hover:bg-white/10 transition inline-flex items-center justify-center gap-2">
-          <i class="ph ph-whatsapp-logo"></i>
-          WhatsApp
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- EXPAT TRUST BAR -->
+  <!-- ============ TRUST BAR ============ -->
+  <section class="bg-brand-dark text-white py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center">
+            <i class="ph ph-bank text-2xl text-brand-orange"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-1">Canal house specialists</h3>
+            <p class="text-sm text-gray-400">Experienced with monumental details, ornamental mouldings and historic surfaces. We know Amsterdam&rsquo;s architectural styles.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center">
+            <i class="ph ph-shield-check text-2xl text-brand-orange"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-1">Sigma &amp; Sikkens partner</h3>
+            <p class="text-sm text-gray-400">We work exclusively with premium paints for durable, professional results.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center">
+            <i class="ph ph-translate text-2xl text-brand-orange"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-1">Fluent English &amp; Dutch</h3>
+            <p class="text-sm text-gray-400">Transparent communication and clear planning. Perfect for expats in Amsterdam.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE GRID ============ -->
+  <section class="py-20 bg-white" id="services">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Our Specialities</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900">
+          Painting services for every project
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-paint-brush text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Interior Painting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Walls, ceilings and precise lacquer work for doors and window frames.</p>
+          <a href="/en/painting/quote/#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Request a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-house text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Exterior Painting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Thorough preparation and durable protection against the elements.</p>
+          <a href="/en/painting/quote/#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Request a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-wrench text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Wood Rot Repair</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Expert restoration of window frames and monumental details.</p>
+          <a href="/en/painting/quote/#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Request a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-paint-roller text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Wall Coating</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Smooth, flawless plastered walls and ceilings, ready for finishing.</p>
+          <a href="/en/painting/quote/#quote" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Request a quote <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEFORE & AFTER ============ -->
+  <section class="py-20 bg-brand-dark" id="portfolio">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Our Craftsmanship</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">Our work in Amsterdam</h2>
+        <p class="text-gray-400 mt-4 max-w-xl mx-auto">Craftsmanship in action and the end result. See our painters at work and the transformations we deliver.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 fade-in">
+        <div class="relative rounded-xl overflow-hidden">
+          <div class="aspect-square">
+            <img src="/img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads.jpg" alt="Painter on scaffolding painting window frames at Amsterdam canal house" class="w-full h-full object-cover portfolio-img" loading="lazy" width="981" height="878">
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 work-photo-caption p-4 pt-10">
+            <span class="text-white font-semibold text-sm flex items-center gap-2"><i class="ph ph-house text-brand-orange"></i> Exterior Painting</span>
+          </div>
+        </div>
+        <div class="relative rounded-xl overflow-hidden">
+          <div class="aspect-square">
+            <img src="/img/schilderwerk/sauzen-spuiten-schilderen-schuren-amsterdam-centrum.png" alt="Painter at work: wall coating, spraying, painting and sanding in Amsterdam" class="w-full h-full object-cover portfolio-img" loading="lazy" width="1024" height="1024">
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 work-photo-caption p-4 pt-10">
+            <span class="text-white font-semibold text-sm flex items-center gap-2"><i class="ph ph-paint-brush text-brand-orange"></i> Interior Painting</span>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+        <div class="bg-black rounded-xl overflow-hidden">
+          <div class="grid grid-cols-2 gap-0.5">
+            <div class="relative aspect-[3/4]">
+              <img src="/img/ba_woonkamer_sierlijsten_before.webp" alt="Before: living room with ornamental mouldings Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
+              <span class="absolute top-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded">Before</span>
+            </div>
+            <div class="relative aspect-[3/4]">
+              <img src="/img/ba_woonkamer_sierlijsten_after.webp" alt="After: living room with ornamental mouldings Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
+              <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">After</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-black rounded-xl overflow-hidden">
+          <div class="grid grid-cols-2 gap-0.5">
+            <div class="relative aspect-[3/4]">
+              <img src="/img/ba_wandschilder_deur_before.webp" alt="Before: wall and door painting Amsterdam Centre" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
+              <span class="absolute top-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded">Before</span>
+            </div>
+            <div class="relative aspect-[3/4]">
+              <img src="/img/ba_wandschilder_deur_after.webp" alt="After: wall and door painting Amsterdam Centre" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
+              <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">After</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="py-20 bg-brand-dark" id="reviews">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Testimonials</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
+          What our clients say
+        </h2>
+      </div>
+
+      <div class="review-carousel fade-in">
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
+          <div class="flex gap-1 mb-4">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 leading-relaxed mb-6">"Had our entire apartment painted: living room, bedrooms and ceilings. Flawless finish, tidy work and everything cleaned up afterwards. Completed within a week. True craftsmanship!"</p>
+          <div>
+            <p class="font-semibold text-white">Marieke de B.</p>
+            <p class="text-sm text-brand-orange">Jordaan &mdash; Interior apartment painting</p>
+          </div>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
+          <div class="flex gap-1 mb-4">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 leading-relaxed mb-6">"We had our entire apartment painted &mdash; walls, ceilings and all the woodwork. The team was punctual, tidy and delivered a beautiful finish. Exactly what we needed as expats navigating renovations in Amsterdam."</p>
+          <div>
+            <p class="font-semibold text-white">James &amp; Sarah W.</p>
+            <p class="text-sm text-brand-orange">Oud-Zuid &mdash; Full apartment painting</p>
+          </div>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
+          <div class="flex gap-1 mb-4">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 leading-relaxed mb-6">"Had the living room and kitchen painted including colour advice. They really thought along with us about the right colours for our interior. Neat painters who arrived on time and left the place spotless."</p>
+          <div>
+            <p class="font-semibold text-white">Thomas &amp; Lieke V.</p>
+            <p class="text-sm text-brand-orange">Oud-Zuid &mdash; Painting with colour advice</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPAT TRUST BAR ============ -->
   <section class="trust-bar">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -137,230 +356,7 @@
     </div>
   </section>
 
-  <!-- INTRO SECTION -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <span class="badge">Painting Services Amsterdam</span>
-          <h2 class="font-header text-4xl md:text-5xl font-bold text-gray-900 mb-6 mt-4">
-            Expert Craftsmanship You Can See
-          </h2>
-          <p class="text-gray-600 text-lg mb-6">
-            Professional painting for canal houses, apartments and Homeowners' Associations (VvE) in Amsterdam. We use quality materials and thorough preparation — so the finish looks good for years.
-          </p>
-
-          <div class="grid grid-cols-2 gap-6">
-            <div class="flex items-start gap-3">
-              <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                <i class="ph ph-paint-brush text-brand-orange text-xl"></i>
-              </div>
-              <div>
-                <div class="font-semibold text-gray-900">Interior Painting</div>
-                <div class="text-sm text-gray-500">Walls, ceilings, frames</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                <i class="ph ph-house text-brand-orange text-xl"></i>
-              </div>
-              <div>
-                <div class="font-semibold text-gray-900">Exterior Painting</div>
-                <div class="text-sm text-gray-500">Facades, frames, doors</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                <i class="ph ph-wrench text-brand-orange text-xl"></i>
-              </div>
-              <div>
-                <div class="font-semibold text-gray-900">Wood Rot Repair</div>
-                <div class="text-sm text-gray-500">Restoration before painting</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                <i class="ph ph-sparkle text-brand-orange text-xl"></i>
-              </div>
-              <div>
-                <div class="font-semibold text-gray-900">Lacquer Work</div>
-                <div class="text-sm text-gray-500">Bespoke finishes, lasting quality</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative">
-          <img src="/img/schilderwerk_deuren_grachtenpand_amsterdam.webp" alt="Professional door painting canal house Amsterdam" class="rounded-lg shadow-xl" loading="lazy" srcset="/img/responsive/schilderwerk_deuren_grachtenpand_amsterdam-480w.webp 480w, /img/schilderwerk_deuren_grachtenpand_amsterdam.webp 999w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-          <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-lg shadow-xl border border-gray-100">
-            <div class="rating-badge">
-              <div class="rating-score">5.0</div>
-              <div class="rating-stars">
-                <i class="ph-fill ph-star"></i>
-                <i class="ph-fill ph-star"></i>
-                <i class="ph-fill ph-star"></i>
-                <i class="ph-fill ph-star"></i>
-                <i class="ph-fill ph-star"></i>
-              </div>
-              <div class="rating-source">Google Reviews</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO SECTION -->
-  <section class="py-20 bg-brand-light">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="section-header">
-        <span class="badge">Our Work</span>
-        <h2 class="font-header">Recent Painting Projects</h2>
-        <p>Explore our recently completed painting projects across Amsterdam.</p>
-      </div>
-
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="/img/schilderwerk_deuren_grachtenpand_amsterdam.webp" alt="Door painting canal house Amsterdam" loading="lazy" srcset="/img/responsive/schilderwerk_deuren_grachtenpand_amsterdam-480w.webp 480w, /img/schilderwerk_deuren_grachtenpand_amsterdam.webp 999w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-          <div class="overlay">
-            <span class="project-type">Interior Painting</span>
-            <h3 class="project-title">Canal House Doors</h3>
-            <div class="project-location">
-              <i class="ph ph-map-pin"></i>
-              Amsterdam Centre
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/img/houtrot_reparatie_amsterdam_centrum_logo_handschoen.webp" alt="Wood rot repair Amsterdam" loading="lazy" srcset="/img/responsive/houtrot_reparatie_amsterdam_centrum_logo_handschoen-480w.webp 480w, /img/houtrot_reparatie_amsterdam_centrum_logo_handschoen.webp 905w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-          <div class="overlay">
-            <span class="project-type">Wood Rot Repair</span>
-            <h3 class="project-title">Wood Rot Restoration</h3>
-            <div class="project-location">
-              <i class="ph ph-map-pin"></i>
-              Amsterdam Centre
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp" alt="Window frame wood rot repair Amsterdam" loading="lazy" srcset="/img/responsive/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag-480w.webp 480w, /img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp 1003w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-          <div class="overlay">
-            <span class="project-type">Wood Rot Repair</span>
-            <h3 class="project-title">Window Frame Restoration</h3>
-            <div class="project-location">
-              <i class="ph ph-map-pin"></i>
-              Amsterdam Centre
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/img/schilderwerk_hal_appartementencomplex_amsterdam_grachtengordel.webp" alt="Hallway painting apartment complex Amsterdam" loading="lazy">
-          <div class="overlay">
-            <span class="project-type">Interior Painting</span>
-            <h3 class="project-title">Apartment Complex Hallway</h3>
-            <div class="project-location">
-              <i class="ph ph-map-pin"></i>
-              Amsterdam Canal Belt
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/img/schilderwerk_badkamer_appartement_amsterdam_oudzuid.webp" alt="Bathroom painting apartment Amsterdam" loading="lazy">
-          <div class="overlay">
-            <span class="project-type">Interior Painting</span>
-            <h3 class="project-title">Apartment Bathroom</h3>
-            <div class="project-location">
-              <i class="ph ph-map-pin"></i>
-              Amsterdam Oud-Zuid
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/img/schilderwerk_entree_woning_amsterdam_jordaan.webp" alt="Entryway painting Amsterdam Jordaan" loading="lazy" srcset="/img/responsive/schilderwerk_entree_woning_amsterdam_jordaan-480w.webp 480w, /img/schilderwerk_entree_woning_amsterdam_jordaan.webp 768w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-          <div class="overlay">
-            <span class="project-type">Interior Painting</span>
-            <h3 class="project-title">Home Entryway</h3>
-            <div class="project-location">
-              <i class="ph ph-map-pin"></i>
-              Amsterdam Jordaan
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUB-SERVICES SECTION -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="section-header">
-        <span class="badge">Our Services</span>
-        <h2 class="font-header">Premium Painting Solutions</h2>
-        <p>From minor touch-ups to complete renovations - we deliver excellence at every scale.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="sub-service-card">
-          <div class="icon">
-            <i class="ph ph-paint-brush"></i>
-          </div>
-          <h3>Interior Painting</h3>
-          <ul>
-            <li>Walls and ceilings</li>
-            <li>Window frames and doors</li>
-            <li>Staircases and skirting boards</li>
-            <li>Radiators</li>
-          </ul>
-        </div>
-
-        <div class="sub-service-card">
-          <div class="icon">
-            <i class="ph ph-house"></i>
-          </div>
-          <h3>Exterior Painting</h3>
-          <ul>
-            <li>Window frames and windows</li>
-            <li>Doors and shutters</li>
-            <li>Facade cladding</li>
-            <li>Gutters and fascia boards</li>
-          </ul>
-        </div>
-
-        <div class="sub-service-card">
-          <div class="icon">
-            <i class="ph ph-wrench"></i>
-          </div>
-          <h3>Wood Rot & Repair</h3>
-          <ul>
-            <li>Wood rot restoration</li>
-            <li>Caulking renewal</li>
-            <li>Minor carpentry</li>
-            <li>Maintenance consultation</li>
-          </ul>
-        </div>
-
-        <div class="sub-service-card">
-          <div class="icon">
-            <i class="ph ph-buildings"></i>
-          </div>
-          <h3>Property Management</h3>
-          <ul>
-            <li>Multi-year maintenance plans</li>
-            <li>Stairwell painting</li>
-            <li>Shared facades</li>
-            <li>Scheduled maintenance</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- USP SECTION -->
+  <!-- ============ USP SECTION ============ -->
   <section class="py-20 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="section-header">
@@ -404,9 +400,7 @@
     </div>
   </section>
 
-    <div id="reviews-placeholder"></div>
-
-  <!-- FAQ SECTION -->
+  <!-- ============ FAQ ============ -->
   <section class="py-20 bg-brand-light">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="section-header">
@@ -444,7 +438,7 @@
     </div>
   </section>
 
-  <!-- RELATED SERVICES -->
+  <!-- ============ RELATED SERVICES ============ -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="section-header">
@@ -486,11 +480,10 @@
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="contact-section pt-2 lg:pt-8 pb-12">
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="contact-section pt-8 lg:pt-12 pb-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
-        <!-- Heading (hidden on mobile - user already clicked quote button) -->
         <div class="hidden lg:block">
           <span class="badge">Contact</span>
           <h2 class="font-header text-4xl md:text-5xl font-bold text-gray-900 mb-3 mt-3">
@@ -501,10 +494,8 @@
           </p>
         </div>
 
-        <!-- Form (spans 2 rows on desktop: next to heading + contact info) -->
         <div id="form-placeholder" class="lg:row-span-2"></div>
 
-        <!-- Contact info + map -->
         <div class="flex flex-col">
           <div class="space-y-5">
             <div class="flex items-center gap-4">
@@ -549,7 +540,6 @@
             </div>
           </div>
 
-          <!-- Google Maps (grows to fill remaining height, bottom-aligned with form) -->
           <div class="mt-6 flex-1 min-h-[280px] rounded-xl overflow-hidden shadow-lg border border-gray-100">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.5076854889844!2d4.8821!3d52.3534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609e8a1c7c8f7%3A0x6c5c3b8c2d8e9b4a!2sPieter%20Baststraat%2029%2C%201071%20TV%20Amsterdam!5e0!3m2!1sen!2snl!4v1705750000000!5m2!1sen!2snl"
@@ -568,6 +558,50 @@
   </section>
 
 <div id="footer-placeholder"></div>
+
+<!-- Fade-in animations -->
+<script>
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+})();
+</script>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "4Builders Amsterdam",
+  "url": "https://4builders-amsterdam.nl/en/painting/",
+  "telephone": "+31618922134",
+  "email": "info@4builders-amsterdam.nl",
+  "description": "Professional painting services in Amsterdam. Interior and exterior painting, lacquer work, wood rot repair.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Pieter Baststraat 29 H",
+    "addressLocality": "Amsterdam",
+    "postalCode": "1071TV",
+    "addressCountry": "NL"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Amsterdam"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "12"
+  }
+}
+</script>
 
 </body>
 </html>

@@ -29,6 +29,23 @@
   gtag('config', 'G-0XLK96R0P8');
 </script>
 
+<!-- Font preload -->
+<link rel="preload" href="/fonts/inter/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+  .font-display { font-family: 'Playfair Display', serif; }
+  .hero-gradient { background: linear-gradient(135deg, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.5) 50%, rgba(17,17,17,0.3) 100%); }
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .portfolio-img { transition: transform 0.4s ease; }
+  .portfolio-img:hover { transform: scale(1.03); }
+  .work-photo-caption { background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%); }
+  .review-carousel { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 0.5rem; }
+  .review-carousel::-webkit-scrollbar { display: none; }
+  .review-carousel > div { scroll-snap-align: start; flex-shrink: 0; width: 85%; }
+  @media (min-width: 768px) { .review-carousel { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; } .review-carousel > div { width: auto; } }
+</style>
+
 <link rel="stylesheet" href="/css/style.min.css">
 <link rel="stylesheet" href="/fonts/phosphor/regular/style.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="/fonts/phosphor/fill/style.css" media="print" onload="this.media='all'">
@@ -40,218 +57,204 @@
 
 <div id="header-placeholder"></div>
 
-<!-- HERO SECTION -->
-  <section class="service-hero relative min-h-[70vh] flex items-end">
-    <div class="absolute inset-0 z-0">
-      <img src="/img/schilderwerk_deuren_grachtenpand_amsterdam.webp" alt="Professioneel schilderwerk Amsterdam — gelakte deuren grachtenpand" class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async">
-      <div class="overlay"></div>
+  <!-- ============ HERO ============ -->
+  <section class="relative min-h-[80vh] flex items-center pt-16">
+    <div class="absolute inset-0">
+      <img src="/img/hero-schilderwerk-landing-amsterdam-centrum.webp"
+           alt="Professioneel schilderwerk Amsterdam Centrum — schilder op steiger bij grachtenpand kozijnen"
+           class="w-full h-full object-cover" loading="eager" fetchpriority="high"
+           srcset="/img/responsive/hero-schilderwerk-landing-amsterdam-centrum-480w.webp 480w, /img/hero-schilderwerk-landing-amsterdam-centrum.webp 1024w"
+           sizes="100vw">
+      <div class="hero-gradient absolute inset-0"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full pb-4 md:pb-8 hero-text-shadow">
-      <!-- Urgency Strip -->
-      <div class="flex flex-wrap justify-center gap-3 md:gap-6 text-xs md:text-sm text-gray-300 mb-5 md:mb-8">
-        <div class="flex items-center gap-2">
-          <i class="ph ph-clock text-brand-orange"></i>
-          <span>Binnen 24 uur reactie</span>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-7 pb-16 sm:py-24 text-center sm:text-left">
+      <div class="max-w-2xl mx-auto sm:mx-0">
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6">
+          Schilder nodig in Amsterdam? <span class="text-brand-orange">Gratis offerte binnen 24 uur.</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-200 leading-relaxed mb-4 max-w-xl mx-auto sm:mx-0">
+          Binnen- en buitenschilderwerk, sauswerk en strak lakwerk. 4Builders is uw vakkundige schilder met oog voor kwaliteit.
+        </p>
+        <p class="text-base sm:text-lg text-gray-300 leading-relaxed mb-5 sm:mb-8 max-w-xl mx-auto sm:mx-0">
+          Premium Sigma &amp; Sikkens materialen, grondige voorbereiding en een resultaat dat jarenlang mooi blijft. E&eacute;n aanspreekpunt, geen gedoe.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+          <a href="/schilderwerk/offerte/#offerte" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg">
+            Vraag gratis offerte aan
+            <i class="ph ph-arrow-right text-xl"></i>
+          </a>
+          <a href="https://wa.me/31618922134?text=Hallo%2C%20ik%20heb%20interesse%20in%20schilderwerk."
+             target="_blank" rel="noopener"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg text-lg border border-white/20 transition-colors backdrop-blur-sm">
+            <i class="ph ph-whatsapp-logo text-xl text-green-400"></i>
+            WhatsApp ons direct
+          </a>
         </div>
-        <div class="flex items-center gap-2">
-          <i class="ph ph-calendar-check text-brand-orange"></i>
-          <span>Snelle startdatum</span>
+        <!-- Trust signals -->
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-6 mt-6 sm:mt-10 text-sm text-gray-300">
+          <span class="flex items-center gap-1.5">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <span class="ml-1 font-medium text-white">5.0</span> Google Reviews
+          </span>
+          <span class="flex items-center gap-1.5">
+            <i class="ph ph-shield-check text-green-400"></i>
+            Volledig verzekerd
+          </span>
+          <span class="flex items-center gap-1.5">
+            <i class="ph ph-clock text-brand-orange"></i>
+            Reactie binnen 24 uur
+          </span>
         </div>
-        <div class="flex items-center gap-2">
-          <i class="ph ph-shield-check text-brand-orange"></i>
-          <span>Volledig verzekerd</span>
-        </div>
-      </div>
-
-      <h1 class="font-header text-3xl md:text-6xl lg:text-7xl font-bold text-white uppercase mb-4 md:mb-6">
-        Schilderwerk
-      </h1>
-
-      <ul class="flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-6 text-sm md:text-base text-white mb-5 md:mb-8 max-w-2xl mx-auto">
-        <li class="flex items-center gap-2">
-          <i class="ph ph-check-circle text-brand-orange"></i>
-          Ervaring met monumentale panden &amp; houtrot herstel
-        </li>
-        <li class="flex items-center gap-2">
-          <i class="ph ph-check-circle text-brand-orange"></i>
-          Snel beschikbaar in Amsterdam Centrum &amp; Zuid
-        </li>
-        <li class="flex items-center gap-2">
-          <i class="ph ph-check-circle text-brand-orange"></i>
-          Vrijblijvende inspectie op locatie
-        </li>
-      </ul>
-
-      <p class="text-base md:text-xl text-gray-300 max-w-2xl mx-auto mb-6 md:mb-10">
-        Professioneel binnen- en buitenschilderwerk in Amsterdam. Vakkundig uitgevoerd met oog voor detail.
-      </p>
-
-      <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
-        <a href="/schilderwerk/offerte/#offerte" class="px-6 py-3 md:px-8 md:py-4 text-sm md:text-base bg-brand-orange text-white font-bold rounded uppercase tracking-wider hover:bg-orange-600 transition shadow-xl inline-flex items-center justify-center gap-2">
-          <i class="ph ph-envelope-simple"></i>
-          Direct een prijsindicatie voor schilderwerk
-        </a>
-        <a href="https://wa.me/31618922134" target="_blank" rel="noopener"
-           class="px-5 py-2.5 md:px-8 md:py-4 text-sm md:text-base border-2 border-[#25D366] bg-[#25D366] md:border-white/30 md:bg-white/5 backdrop-blur-sm text-white font-bold rounded uppercase tracking-wider hover:bg-[#20bd5a] md:hover:bg-white/10 transition inline-flex items-center justify-center gap-2">
-          <i class="ph ph-whatsapp-logo"></i>
-          WhatsApp
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- INTRO SECTION -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <span class="badge">Schilderwerk Amsterdam</span>
-          <h2 class="font-header text-4xl md:text-5xl font-bold text-gray-900 mb-6 mt-4">
-            Vakmanschap Dat U Ziet
-          </h2>
-          <p class="text-gray-600 text-lg mb-6">
-            Professioneel schilderwerk voor grachtenpanden, appartementen en VvE's in Amsterdam. Wij werken met kwalitatieve materialen en een grondige voorbereiding — zodat het resultaat er jaren goed uitziet.
-          </p>
-
-          <div class="grid grid-cols-2 gap-6">
-            <div class="flex items-start gap-3">
-              <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                <i class="ph ph-paint-brush text-brand-orange text-xl"></i>
-              </div>
-              <div>
-                <div class="font-semibold text-gray-900">Binnenschilderwerk</div>
-                <div class="text-sm text-gray-500">Muren, plafonds, kozijnen</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                <i class="ph ph-house text-brand-orange text-xl"></i>
-              </div>
-              <div>
-                <div class="font-semibold text-gray-900">Buitenschilderwerk</div>
-                <div class="text-sm text-gray-500">Gevels, kozijnen, deuren</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                <i class="ph ph-wrench text-brand-orange text-xl"></i>
-              </div>
-              <div>
-                <div class="font-semibold text-gray-900">Houtrot Herstel</div>
-                <div class="text-sm text-gray-500">Reparatie voor schilderen</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                <i class="ph ph-sparkle text-brand-orange text-xl"></i>
-              </div>
-              <div>
-                <div class="font-semibold text-gray-900">Lakwerk</div>
-                <div class="text-sm text-gray-500">Strak en duurzaam</div>
-              </div>
-            </div>
+  <!-- ============ TRUST BAR ============ -->
+  <section class="bg-brand-dark text-white py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center">
+            <i class="ph ph-bank text-2xl text-brand-orange"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-1">Specialist in grachtenpanden</h3>
+            <p class="text-sm text-gray-400">Ervaring met monumentale details, sierlijsten en oude ondergronden. Wij kennen de Amsterdamse bouwstijlen.</p>
           </div>
         </div>
-
-        <div class="relative">
-          <img src="/img/schilderwerk_deuren_grachtenpand_amsterdam.webp" alt="Schilderwerk deuren grachtenpand Amsterdam" class="rounded-lg shadow-xl" loading="lazy" srcset="/img/responsive/schilderwerk_deuren_grachtenpand_amsterdam-480w.webp 480w, /img/schilderwerk_deuren_grachtenpand_amsterdam.webp 999w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-          <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-lg shadow-xl border border-gray-100">
-            <div class="rating-badge">
-              <div class="rating-score">5.0</div>
-              <div class="rating-stars">
-                <i class="ph-fill ph-star"></i>
-                <i class="ph-fill ph-star"></i>
-                <i class="ph-fill ph-star"></i>
-                <i class="ph-fill ph-star"></i>
-                <i class="ph-fill ph-star"></i>
-              </div>
-              <div class="rating-source">Google Reviews</div>
-            </div>
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center">
+            <i class="ph ph-shield-check text-2xl text-brand-orange"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-1">Sigma &amp; Sikkens vakpartner</h3>
+            <p class="text-sm text-gray-400">Wij werken uitsluitend met premium verven voor duurzaam, professioneel resultaat.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center">
+            <i class="ph ph-translate text-2xl text-brand-orange"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-1">Vloeiend Engels &amp; Nederlands</h3>
+            <p class="text-sm text-gray-400">Transparante communicatie en heldere planning. Ook voor expats in Amsterdam.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLIO SECTION -->
-  <section class="py-20 bg-brand-light">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="section-header">
-        <span class="badge">Ons Werk</span>
-        <h2 class="font-header">Recent Schilderwerk</h2>
-        <p>Bekijk onze recent afgeronde schilderprojecten in Amsterdam.</p>
+  <!-- ============ SERVICE GRID ============ -->
+  <section class="py-20 bg-white" id="diensten">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Onze Specialisaties</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900">
+          Schilderwerk voor elk project
+        </h2>
       </div>
 
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="/img/schilderwerk_deuren_grachtenpand_amsterdam.webp" alt="Schilderwerk deuren grachtenpand Amsterdam" loading="lazy" srcset="/img/responsive/schilderwerk_deuren_grachtenpand_amsterdam-480w.webp 480w, /img/schilderwerk_deuren_grachtenpand_amsterdam.webp 999w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-          <div class="overlay">
-            <span class="project-type">Binnenschilderwerk</span>
-            <h3 class="project-title">Deuren Grachtenpand</h3>
-            <div class="project-location">
-              <i class="ph ph-map-pin"></i>
-              Amsterdam Centrum
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-paint-brush text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Binnenschilderwerk</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Muren, plafonds en strak lakwerk voor deuren en kozijnen.</p>
+          <a href="/schilderwerk/offerte/#offerte" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Offerte aanvragen <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-house text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Buitenschilderwerk</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Grondige voorbehandeling en duurzame bescherming tegen weer en wind.</p>
+          <a href="/schilderwerk/offerte/#offerte" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Offerte aanvragen <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-wrench text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Houtrot Reparatie</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Vakkundig herstel van kozijnen en monumentale details.</p>
+          <a href="/schilderwerk/offerte/#offerte" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Offerte aanvragen <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange hover:shadow-xl hover:shadow-brand-orange/5 transition-all">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-orange/20 transition-colors">
+            <i class="ph ph-paint-roller text-3xl text-brand-orange"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Sauswerk</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Glad en strak gestucte muren en plafonds, klaar voor afwerking.</p>
+          <a href="/schilderwerk/offerte/#offerte" class="text-brand-orange font-semibold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+            Offerte aanvragen <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEFORE & AFTER ============ -->
+  <section class="py-20 bg-brand-dark" id="portfolio">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Ons Vakmanschap</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">Ons werk in Amsterdam</h2>
+        <p class="text-gray-400 mt-4 max-w-xl mx-auto">Vakmanschap in actie en het eindresultaat. Bekijk onze schilders aan het werk en de transformaties die we realiseren.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 fade-in">
+        <div class="relative rounded-xl overflow-hidden">
+          <div class="aspect-square">
+            <img src="/img/schilderwerk/schilderwerk-buitenkant-kozijnen-steigers-amsterdam-centrum-profielfoto-google-ads.jpg" alt="Schilder op steiger schildert kozijnen bij Amsterdams grachtenpand" class="w-full h-full object-cover portfolio-img" loading="lazy" width="981" height="878">
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 work-photo-caption p-4 pt-10">
+            <span class="text-white font-semibold text-sm flex items-center gap-2"><i class="ph ph-house text-brand-orange"></i> Buitenschilderwerk</span>
+          </div>
+        </div>
+        <div class="relative rounded-xl overflow-hidden">
+          <div class="aspect-square">
+            <img src="/img/schilderwerk/sauzen-spuiten-schilderen-schuren-amsterdam-centrum.png" alt="Schilder aan het werk: sauzen, spuiten, schilderen en schuren in Amsterdam" class="w-full h-full object-cover portfolio-img" loading="lazy" width="1024" height="1024">
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 work-photo-caption p-4 pt-10">
+            <span class="text-white font-semibold text-sm flex items-center gap-2"><i class="ph ph-paint-brush text-brand-orange"></i> Binnenschilderwerk</span>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+        <div class="bg-black rounded-xl overflow-hidden">
+          <div class="grid grid-cols-2 gap-0.5">
+            <div class="relative aspect-[3/4]">
+              <img src="/img/ba_woonkamer_sierlijsten_before.webp" alt="Voor: woonkamer met sierlijsten Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
+              <span class="absolute top-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded">Voor</span>
+            </div>
+            <div class="relative aspect-[3/4]">
+              <img src="/img/ba_woonkamer_sierlijsten_after.webp" alt="Na: woonkamer met sierlijsten Amsterdam" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
+              <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">Na</span>
             </div>
           </div>
         </div>
-
-        <div class="portfolio-item">
-          <img src="/img/houtrot_reparatie_amsterdam_centrum_logo_handschoen.webp" alt="Houtrot reparatie Amsterdam" loading="lazy" srcset="/img/responsive/houtrot_reparatie_amsterdam_centrum_logo_handschoen-480w.webp 480w, /img/houtrot_reparatie_amsterdam_centrum_logo_handschoen.webp 905w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-          <div class="overlay">
-            <span class="project-type">Houtrot Herstel</span>
-            <h3 class="project-title">Houtrot Reparatie</h3>
-            <div class="project-location">
-              <i class="ph ph-map-pin"></i>
-              Amsterdam Centrum
+        <div class="bg-black rounded-xl overflow-hidden">
+          <div class="grid grid-cols-2 gap-0.5">
+            <div class="relative aspect-[3/4]">
+              <img src="/img/ba_wandschilder_deur_before.webp" alt="Voor: wand en deur Amsterdam Centrum" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
+              <span class="absolute top-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded">Voor</span>
             </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp" alt="Houtrot kozijn reparatie Amsterdam" loading="lazy" srcset="/img/responsive/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag-480w.webp 480w, /img/reparatie_houtrot_4builders_logo_handschoen_kozijn_laag.webp 1003w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-          <div class="overlay">
-            <span class="project-type">Houtrot Herstel</span>
-            <h3 class="project-title">Kozijn Houtrot Reparatie</h3>
-            <div class="project-location">
-              <i class="ph ph-map-pin"></i>
-              Amsterdam Centrum
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/img/schilderwerk_hal_appartementencomplex_amsterdam_grachtengordel.webp" alt="Schilderwerk hal appartementencomplex Amsterdam" loading="lazy">
-          <div class="overlay">
-            <span class="project-type">Binnenschilderwerk</span>
-            <h3 class="project-title">Hal Appartementencomplex</h3>
-            <div class="project-location">
-              <i class="ph ph-map-pin"></i>
-              Amsterdam Grachtengordel
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/img/schilderwerk_badkamer_appartement_amsterdam_oudzuid.webp" alt="Schilderwerk badkamer appartement Amsterdam" loading="lazy">
-          <div class="overlay">
-            <span class="project-type">Binnenschilderwerk</span>
-            <h3 class="project-title">Badkamer Appartement</h3>
-            <div class="project-location">
-              <i class="ph ph-map-pin"></i>
-              Amsterdam Oud-Zuid
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/img/schilderwerk_entree_woning_amsterdam_jordaan.webp" alt="Schilderwerk entree woning Amsterdam Jordaan" loading="lazy" srcset="/img/responsive/schilderwerk_entree_woning_amsterdam_jordaan-480w.webp 480w, /img/schilderwerk_entree_woning_amsterdam_jordaan.webp 768w" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
-          <div class="overlay">
-            <span class="project-type">Binnenschilderwerk</span>
-            <h3 class="project-title">Entree Woning</h3>
-            <div class="project-location">
-              <i class="ph ph-map-pin"></i>
-              Amsterdam Jordaan
+            <div class="relative aspect-[3/4]">
+              <img src="/img/ba_wandschilder_deur_after.webp" alt="Na: wand en deur Amsterdam Centrum" class="w-full h-full object-cover" loading="lazy" width="750" height="1024">
+              <span class="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded">Na</span>
             </div>
           </div>
         </div>
@@ -259,72 +262,66 @@
     </div>
   </section>
 
-  <!-- SUB-SERVICES SECTION -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="section-header">
-        <span class="badge">Onze Diensten</span>
-        <h2 class="font-header">Wat Wij Bieden</h2>
-        <p>Van klein onderhoud tot complete renovaties — wij staan voor u klaar.</p>
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="py-20 bg-brand-dark" id="reviews">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14 fade-in">
+        <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase mb-3 block">Ervaringen</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
+          Wat onze opdrachtgevers zeggen
+        </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="sub-service-card">
-          <div class="icon">
-            <i class="ph ph-paint-brush"></i>
+      <div class="review-carousel fade-in">
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
+          <div class="flex gap-1 mb-4">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
           </div>
-          <h3>Binnenschilderwerk</h3>
-          <ul>
-            <li>Muren en plafonds</li>
-            <li>Kozijnen en deuren</li>
-            <li>Trappen en plinten</li>
-            <li>Radiatoren</li>
-          </ul>
+          <p class="text-gray-300 leading-relaxed mb-6">"Ons hele appartement laten schilderen: woonkamer, slaapkamers en het plafond. Strak resultaat, keurige afwerking en netjes opgeruimd na afloop. Binnen een week klaar. Echt vakwerk!"</p>
+          <div>
+            <p class="font-semibold text-white">Marieke de B.</p>
+            <p class="text-sm text-brand-orange">Jordaan &mdash; Binnenschilderwerk appartement</p>
+          </div>
         </div>
 
-        <div class="sub-service-card">
-          <div class="icon">
-            <i class="ph ph-house"></i>
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
+          <div class="flex gap-1 mb-4">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
           </div>
-          <h3>Buitenschilderwerk</h3>
-          <ul>
-            <li>Kozijnen en ramen</li>
-            <li>Deuren en luiken</li>
-            <li>Gevelbekleding</li>
-            <li>Dakgoten en boeidelen</li>
-          </ul>
+          <p class="text-gray-300 leading-relaxed mb-6">"We had our entire apartment painted &mdash; walls, ceilings and all the woodwork. The team was punctual, tidy and delivered a beautiful finish. Exactly what we needed as expats navigating renovations in Amsterdam."</p>
+          <div>
+            <p class="font-semibold text-white">James &amp; Sarah W.</p>
+            <p class="text-sm text-brand-orange">Oud-Zuid &mdash; Full apartment painting</p>
+          </div>
         </div>
 
-        <div class="sub-service-card">
-          <div class="icon">
-            <i class="ph ph-wrench"></i>
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
+          <div class="flex gap-1 mb-4">
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
+            <i class="ph-fill ph-star text-yellow-400"></i>
           </div>
-          <h3>Houtrot & Herstel</h3>
-          <ul>
-            <li>Houtrot reparatie</li>
-            <li>Kitwerk vernieuwen</li>
-            <li>Klein timmerwerk</li>
-            <li>Onderhoudsadvies</li>
-          </ul>
-        </div>
-
-        <div class="sub-service-card">
-          <div class="icon">
-            <i class="ph ph-buildings"></i>
+          <p class="text-gray-300 leading-relaxed mb-6">"Woonkamer en keuken laten schilderen inclusief kleuradvies. Ze dachten goed mee over de juiste kleuren bij ons interieur. Nette schilders die op tijd kwamen en de boel schoon achterlieten."</p>
+          <div>
+            <p class="font-semibold text-white">Thomas &amp; Lieke V.</p>
+            <p class="text-sm text-brand-orange">Oud-Zuid &mdash; Schilderwerk met kleuradvies</p>
           </div>
-          <h3>VvE Onderhoud</h3>
-          <ul>
-            <li>Meerjarenplannen</li>
-            <li>Trappenhuizen</li>
-            <li>Gezamenlijke gevels</li>
-            <li>Periodiek onderhoud</li>
-          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- USP SECTION -->
+  <!-- ============ USP SECTION ============ -->
   <section class="py-20 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="section-header">
@@ -368,9 +365,7 @@
     </div>
   </section>
 
-    <div id="reviews-placeholder"></div>
-
-  <!-- FAQ SECTION -->
+  <!-- ============ FAQ ============ -->
   <section class="py-20 bg-brand-light">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="section-header">
@@ -408,7 +403,7 @@
     </div>
   </section>
 
-  <!-- RELATED SERVICES -->
+  <!-- ============ RELATED SERVICES ============ -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="section-header">
@@ -450,11 +445,10 @@
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="contact-section pt-2 lg:pt-8 pb-12">
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="contact-section pt-8 lg:pt-12 pb-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
-        <!-- Heading (hidden on mobile - user already clicked "Offerte") -->
         <div class="hidden lg:block">
           <span class="badge">Contact</span>
           <h2 class="font-header text-4xl md:text-5xl font-bold text-gray-900 mb-3 mt-3">
@@ -465,10 +459,8 @@
           </p>
         </div>
 
-        <!-- Form (spans 2 rows on desktop: next to heading + contact info) -->
         <div id="form-placeholder" class="lg:row-span-2"></div>
 
-        <!-- Contact info + map -->
         <div class="flex flex-col">
           <div class="space-y-5">
             <div class="flex items-center gap-4">
@@ -513,7 +505,6 @@
             </div>
           </div>
 
-          <!-- Google Maps (grows to fill remaining height, bottom-aligned with form) -->
           <div class="mt-6 flex-1 min-h-[280px] rounded-xl overflow-hidden shadow-lg border border-gray-100">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.5076854889844!2d4.8821!3d52.3534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609e8a1c7c8f7%3A0x6c5c3b8c2d8e9b4a!2sPieter%20Baststraat%2029%2C%201071%20TV%20Amsterdam!5e0!3m2!1snl!2snl!4v1705750000000!5m2!1snl!2snl"
@@ -532,6 +523,50 @@
   </section>
 
 <div id="footer-placeholder"></div>
+
+<!-- Fade-in animations -->
+<script>
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+})();
+</script>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "4Builders Amsterdam",
+  "url": "https://4builders-amsterdam.nl/schilderwerk/",
+  "telephone": "+31618922134",
+  "email": "info@4builders-amsterdam.nl",
+  "description": "Professioneel schilderwerk in Amsterdam. Binnen- en buitenschilderwerk, lakwerk, houtrot herstel.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Pieter Baststraat 29 H",
+    "addressLocality": "Amsterdam",
+    "postalCode": "1071TV",
+    "addressCountry": "NL"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Amsterdam"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "12"
+  }
+}
+</script>
 
 </body>
 </html>
