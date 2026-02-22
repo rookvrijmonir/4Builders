@@ -19,6 +19,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 <meta name="theme-color" content="#FF5722">
+<link rel="icon" href="/img/logo-4builders-square.png" type="image/png">
 
 <!-- Google tag (gtag.js) — GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0XLK96R0P8"></script>
@@ -33,6 +34,11 @@
 <link rel="preload" href="/fonts/inter/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
+  /* WCAG AA color overrides */
+  :root { --accent-orange: #c23a00 !important; --accent-orange-light: #fef7f4 !important; --accent-copper: #a0572f !important; }
+  .bg-brand-orange { background-color: #d54300 !important; }
+  .text-brand-orange { color: #d54300 !important; }
+
   .font-display { font-family: 'Playfair Display', serif; }
   .hero-gradient { background: linear-gradient(135deg, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.5) 50%, rgba(17,17,17,0.3) 100%); }
   .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -123,7 +129,7 @@
             <i class="ph ph-bank text-2xl text-brand-orange"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-white mb-1">Specialist in grachtenpanden</h3>
+            <p class="font-semibold text-white mb-1">Specialist in grachtenpanden</p>
             <p class="text-sm text-gray-400">Ervaring met monumentale details, sierlijsten en oude ondergronden. Wij kennen de Amsterdamse bouwstijlen.</p>
           </div>
         </div>
@@ -132,7 +138,7 @@
             <i class="ph ph-shield-check text-2xl text-brand-orange"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-white mb-1">Sigma &amp; Sikkens vakpartner</h3>
+            <p class="font-semibold text-white mb-1">Sigma &amp; Sikkens vakpartner</p>
             <p class="text-sm text-gray-400">Wij werken uitsluitend met premium verven voor duurzaam, professioneel resultaat.</p>
           </div>
         </div>
@@ -141,7 +147,7 @@
             <i class="ph ph-translate text-2xl text-brand-orange"></i>
           </div>
           <div>
-            <h3 class="font-semibold text-white mb-1">Vloeiend Engels &amp; Nederlands</h3>
+            <p class="font-semibold text-white mb-1">Vloeiend Engels &amp; Nederlands</p>
             <p class="text-sm text-gray-400">Transparante communicatie en heldere planning. Ook voor expats in Amsterdam.</p>
           </div>
         </div>

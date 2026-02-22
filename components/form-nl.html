@@ -11,17 +11,17 @@
 
         <div class="grid grid-cols-2 gap-2 md:gap-4">
             <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Voornaam*</label>
+                <label for="field-firstname" class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Voornaam*</label>
                 <div class="relative">
-                    <input type="text" name="firstname" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
+                    <input type="text" name="firstname" id="field-firstname" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
                     <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
                 </div>
                 <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
             </div>
             <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Achternaam*</label>
+                <label for="field-lastname" class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Achternaam*</label>
                 <div class="relative">
-                    <input type="text" name="lastname" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
+                    <input type="text" name="lastname" id="field-lastname" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
                     <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
                 </div>
                 <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
@@ -30,17 +30,17 @@
 
         <div class="grid grid-cols-2 gap-2 md:gap-4">
             <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">E-mail*</label>
+                <label for="field-email" class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">E-mail*</label>
                 <div class="relative">
-                    <input type="email" name="email" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
+                    <input type="email" name="email" id="field-email" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
                     <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
                 </div>
                 <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
             </div>
             <div class="relative">
-                <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Telefoon*</label>
+                <label for="field-phone" class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Telefoon*</label>
                 <div class="relative">
-                    <input type="tel" name="phone" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
+                    <input type="tel" name="phone" id="field-phone" required class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
                     <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
                 </div>
                 <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
@@ -48,9 +48,9 @@
         </div>
 
         <div class="relative">
-            <label class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Postcode klus*</label>
+            <label for="field-zip" class="block text-gray-700 text-xs md:text-sm font-semibold mb-1 md:mb-2">Postcode klus*</label>
             <div class="relative">
-                <input type="text" name="zip" required placeholder="1234 AB" class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
+                <input type="text" name="zip" id="field-zip" required placeholder="1234 AB" class="w-full bg-white border border-gray-200 p-2 md:p-3 pr-8 md:pr-10 text-sm md:text-base text-gray-900 rounded focus:border-brand-orange outline-none transition">
                 <span class="validation-icon absolute right-2 md:right-3 top-2 md:top-3 hidden"></span>
             </div>
             <p class="error-text text-red-500 text-xs mt-1 hidden"></p>
@@ -119,7 +119,7 @@
             <i class="ph-fill ph-star text-brand-orange text-xs"></i>
             <i class="ph-fill ph-star text-brand-orange text-xs"></i>
             <span class="text-xs font-semibold text-gray-700 ml-1">5.0</span>
-            <span class="text-xs text-gray-400">Google Reviews</span>
+            <span class="text-xs text-gray-500">Google Reviews</span>
         </div>
 
         <!-- Trust signals -->
